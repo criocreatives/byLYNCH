@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LYNCH — Photography Portfolio</title>
+  <meta name="description" content="Selected photography by LYNCH. Portraiture, editorial and visual storytelling from Jamaica.">
+  <meta property="og:title" content="LYNCH — Photography Portfolio">
+  <meta property="og:description" content="I saw it. Now you get to.">
+  <meta property="og:image" content="https://portfolio.bylynch.com/assets/photos/bw-profile-close.jpg">
+  <meta property="og:url" content="https://portfolio.bylynch.com/">
+  <link rel="icon" href="./assets/brand/lynch-logo.png">
+  <style>
+    :root{
+      --bg:#050505;
+      --text:#f5f5f2;
+      --muted:#9d9d99;
+      --line:#242424;
+      --max:1460px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:Arial,Helvetica,sans-serif;
+      -webkit-font-smoothing:antialiased;
+    }
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    button{font:inherit}
+    .wrap{width:min(var(--max),calc(100% - 56px));margin:auto}
+    header{
+      position:sticky;top:0;z-index:30;
+      background:rgba(5,5,5,.86);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(255,255,255,.07);
+    }
+    .nav{
+      min-height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:28px;
+    }
+    .logo img{width:152px;height:auto}
+    .nav-right{
+      display:flex;
+      gap:28px;
+      align-items:center;
+      color:#c9c9c5;
+      font-size:11px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      font-weight:700;
+    }
+    .nav-right a:hover{color:#fff}
+    .hero{padding:72px 0 30px}
+    .hero-grid{
+      display:grid;
+      grid-template-columns:minmax(250px,.7fr) minmax(0,1.3fr);
+      gap:7vw;
+      align-items:end;
+    }
+    .hero-copy{padding:10px 0 32px}
+    .hero-mark{width:min(520px,100%);margin-bottom:34px}
+    .hero-copy h1{
+      margin:0;
+      font-size:clamp(34px,4.2vw,64px);
+      line-height:.98;
+      letter-spacing:-.045em;
+      font-weight:500;
+      max-width:620px;
+    }
+    .hero-copy p{
+      margin:26px 0 0;
+      max-width:480px;
+      color:var(--muted);
+      line-height:1.7;
+      font-size:15px;
+    }
+    .hero-image{
+      position:relative;
+      min-height:72vh;
+      overflow:hidden;
+      background:#101010;
+    }
+    .hero-image img{
+      width:100%;
+      height:100%;
+      min-height:72vh;
+      object-fit:cover;
+      object-position:center 35%;
+    }
+    .hero-index{
+      position:absolute;
+      left:18px;
+      bottom:16px;
+      font-size:10px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:rgba(255,255,255,.7);
+    }
+    .statement{
+      padding:108px 0 82px;
+      border-bottom:1px solid var(--line);
+    }
+    .statement p{
+      max-width:970px;
+      margin:0;
+      font-size:clamp(34px,5.5vw,82px);
+      line-height:.98;
+      letter-spacing:-.055em;
+      font-weight:500;
+    }
+    .statement p span{color:#666}
+    .gallery-section{padding:84px 0 110px}
+    .section-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:end;
+      gap:32px;
+      margin-bottom:32px;
+    }
+    .section-head h2{
+      margin:0;
+      font-size:clamp(30px,4vw,54px);
+      letter-spacing:-.04em;
+      font-weight:500;
+    }
+    .section-head div{
+      color:var(--muted);
+      font-size:11px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+    }
+    .gallery{
+      columns:3 320px;
+      column-gap:16px;
+    }
+    .shot{
+      position:relative;
+      width:100%;
+      display:block;
+      break-inside:avoid;
+      margin:0 0 16px;
+      border:0;
+      padding:0;
+      background:#111;
+      cursor:zoom-in;
+      overflow:hidden;
+    }
+    .shot img{
+      width:100%;
+      height:auto;
+      transition:transform .45s ease,filter .45s ease;
+    }
+    .shot:hover img{transform:scale(1.008);filter:brightness(.94)}
+    .shot:after{
+      content:"VIEW";
+      position:absolute;
+      right:13px;
+      bottom:12px;
+      padding:7px 9px;
+      background:rgba(0,0,0,.72);
+      color:#fff;
+      font-size:9px;
+      letter-spacing:.14em;
+      opacity:0;
+      transition:opacity .2s ease;
+    }
+    .shot:hover:after{opacity:1}
+    .about{
+      border-top:1px solid var(--line);
+      padding:94px 0 104px;
+    }
+    .about-grid{
+      display:grid;
+      grid-template-columns:.75fr 1.25fr;
+      gap:8vw;
+    }
+    .about-label{
+      color:var(--muted);
+      font-size:11px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+    }
+    .about-copy{
+      max-width:760px;
+      font-size:clamp(22px,2.7vw,38px);
+      line-height:1.25;
+      letter-spacing:-.025em;
+    }
+    .about-copy small{
+      display:block;
+      margin-top:28px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.7;
+      letter-spacing:0;
+    }
+    footer{
+      border-top:1px solid var(--line);
+      padding:30px 0 42px;
+      color:#777;
+      font-size:11px;
+      letter-spacing:.08em;
+    }
+    .footer-grid{
+      display:flex;
+      justify-content:space-between;
+      gap:24px;
+      flex-wrap:wrap;
+    }
+    dialog{
+      border:0;
+      padding:0;
+      background:rgba(0,0,0,.96);
+      width:100vw;
+      height:100vh;
+      max-width:none;
+      max-height:none;
+      margin:0;
+    }
+    dialog::backdrop{background:rgba(0,0,0,.96)}
+    .lightbox{
+      position:relative;
+      width:100%;
+      height:100%;
+      display:grid;
+      place-items:center;
+      padding:42px;
+    }
+    .lightbox img{
+      max-width:min(92vw,1600px);
+      max-height:88vh;
+      width:auto;
+      height:auto;
+      object-fit:contain;
+    }
+    .close{
+      position:fixed;
+      top:18px;
+      right:18px;
+      width:44px;
+      height:44px;
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(0,0,0,.55);
+      color:#fff;
+      border-radius:999px;
+      cursor:pointer;
+      font-size:21px;
+    }
+    @media(max-width:900px){
+      .hero-grid,.about-grid{grid-template-columns:1fr}
+      .hero{padding-top:46px}
+      .hero-image,.hero-image img{min-height:62vh}
+      .statement{padding:76px 0 66px}
+      .gallery-section{padding-top:66px}
+    }
+    @media(max-width:620px){
+      .wrap{width:min(var(--max),calc(100% - 28px))}
+      .nav{min-height:66px}
+      .logo img{width:120px}
+      .nav-right a:first-child{display:none}
+      .hero-copy{padding-bottom:16px}
+      .hero-mark{width:88%;margin-bottom:22px}
+      .hero-image,.hero-image img{min-height:56vh}
+      .gallery{columns:1}
+      .statement p{font-size:42px}
+      .lightbox{padding:18px}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top"><img src="./assets/brand/lynch-logo.png" alt="LYNCH"></a>
+    <nav class="nav-right">
+      <a href="#work">Selected Work</a>
+      <a href="https://bylynch.com" target="_blank" rel="noopener">Journal</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <img class="hero-mark" src="./assets/brand/lynch-logo.png" alt="LYNCH">
+        <h1>I saw it.<br>Now you get to.</h1>
+        <p>Selected portraiture, editorial photography and visual storytelling by LYNCH.</p>
+      </div>
+      <div class="hero-image">
+        <img src="./assets/photos/bw-profile-close.jpg" alt="Black and white editorial portrait">
+        <div class="hero-index">Photography · Selected Work</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="statement">
+    <div class="wrap">
+      <p>People. Texture. Light. <span>The moment between the obvious ones.</span></p>
+    </div>
+  </section>
+
+  <section class="gallery-section" id="work">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Selected photographs</h2>
+        <div>Jamaica · by LYNCH</div>
+      </div>
+
+      <div class="gallery">
+        <button class="shot"><img loading="lazy" src="./assets/photos/orange-fashion.jpg" alt="Editorial portrait in orange"></button>
+        <button class="shot"><img loading="lazy" src="./assets/photos/desert-back-wide.jpg" alt="Fashion portrait in landscape"></button>
+        <button class="shot"><img loading="lazy" src="./assets/photos/bw-portrait-hands.jpg" alt="Black and white portrait with hands"></button>
+        <button class="shot"><img loading="lazy" src="./assets/photos/male-portrait.jpg" alt="Environmental male portrait"></button>
+        <button class="shot"><img loading="lazy" src="./assets/photos/lowlight-face.jpg" alt="Low light portrait"></button>
+        <button class="shot"><img loading="lazy" src="./assets/photos/sunhat-portrait.jpg" alt="Portrait with sunhat"></button>
+        <button class="shot"><img loading="lazy" src="./assets/photos/bw-gold-portrait.jpg" alt="Selective colour portrait"></button>
+        <button class="shot"><img loading="lazy" src="./assets/photos/silver-hair-back.jpg" alt="Portrait from behind with silver hair"></button>
+        <button class="shot"><img loading="lazy" src="./assets/photos/locs-portrait.jpg" alt="Portrait with locs"></button>
+        <button class="shot"><img loading="lazy" src="./assets/photos/desert-back-close.jpg" alt="Close fashion portrait in landscape"></button>
+        <button class="shot"><img loading="lazy" src="./assets/photos/bw-headshot.jpg" alt="Black and white headshot"></button>
+        <button class="shot"><img loading="lazy" src="./assets/photos/street-scene.jpg" alt="Street documentary scene"></button>
+        <button class="shot"><img loading="lazy" src="./assets/photos/bw-profile-close.jpg" alt="Black and white profile portrait"></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="about">
+    <div class="wrap about-grid">
+      <div class="about-label">by LYNCH</div>
+      <div class="about-copy">
+        Photography driven by observation first—portraiture that feels intentional without losing the person inside the frame.
+        <small>Kingston, Jamaica · Photography since 2014.</small>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-grid">
+    <span>© 2026 LYNCH</span>
+    <span>portfolio.bylynch.com</span>
+  </div>
+</footer>
+
+<dialog id="viewer">
+  <div class="lightbox">
+    <button class="close" aria-label="Close image">×</button>
+    <img id="viewerImage" src="" alt="">
+  </div>
+</dialog>
+
+<script>
+  const viewer = document.getElementById('viewer');
+  const viewerImage = document.getElementById('viewerImage');
+  document.querySelectorAll('.shot').forEach(button => {
+    button.addEventListener('click', () => {
+      const img = button.querySelector('img');
+      viewerImage.src = img.src;
+      viewerImage.alt = img.alt;
+      viewer.showModal();
+    });
+  });
+  document.querySelector('.close').addEventListener('click', () => viewer.close());
+  viewer.addEventListener('click', (event) => {
+    if (event.target === viewer || event.target.classList.contains('lightbox')) viewer.close();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && viewer.open) viewer.close();
+  });
+</script>
+</body>
+</html>
