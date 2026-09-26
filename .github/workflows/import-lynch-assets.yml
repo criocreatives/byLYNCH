@@ -1,0 +1,44 @@
+name: Import LYNCH portfolio assets
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/import-lynch-assets.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  import-assets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download compressed photography assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p assets/photos assets/brand
+          curl -L --fail --retry 3 -o assets/photos/bw-profile-close.jpg 'https://photoshop-api.adobe.io/v2/short-url/urn:aaid:ps:US:df0b20aa-b610-476a-b582-e095213ad08b'
+          curl -L --fail --retry 3 -o assets/photos/bw-portrait-hands.jpg 'https://photoshop-api.adobe.io/v2/short-url/urn:aaid:ps:US:40ae7d94-b865-43b3-b53c-db0e6c29e3ce'
+          curl -L --fail --retry 3 -o assets/photos/bw-gold-portrait.jpg 'https://photoshop-api.adobe.io/v2/short-url/urn:aaid:ps:US:c5d6cc89-b0c3-456d-afc3-1314c8d0c741'
+          curl -L --fail --retry 3 -o assets/photos/desert-back-wide.jpg 'https://photoshop-api.adobe.io/v2/short-url/urn:aaid:ps:US:40605273-49b7-4a60-acce-61f03b046089'
+          curl -L --fail --retry 3 -o assets/photos/desert-back-close.jpg 'https://photoshop-api.adobe.io/v2/short-url/urn:aaid:ps:US:8b240ccc-8a45-4d26-a2d3-9dcee57e3b71'
+          curl -L --fail --retry 3 -o assets/photos/sunhat-portrait.jpg 'https://photoshop-api.adobe.io/v2/short-url/urn:aaid:ps:US:70b09453-f4bc-4e11-88c1-b08e5e15f3d4'
+          curl -L --fail --retry 3 -o assets/photos/lowlight-face.jpg 'https://photoshop-api.adobe.io/v2/short-url/urn:aaid:ps:US:92fbc31e-49d9-47a7-b327-ca89b0305317'
+          curl -L --fail --retry 3 -o assets/photos/silver-hair-back.jpg 'https://photoshop-api.adobe.io/v2/short-url/urn:aaid:ps:US:129f72bf-3661-4b61-a32d-eab598c5ebf9'
+          curl -L --fail --retry 3 -o assets/photos/street-scene.jpg 'https://photoshop-api.adobe.io/v2/short-url/urn:aaid:ps:US:3038fec8-2e2f-463b-b698-390d600b398c'
+          curl -L --fail --retry 3 -o assets/photos/locs-portrait.jpg 'https://photoshop-api.adobe.io/v2/short-url/urn:aaid:ps:US:70fa9da0-1c8b-4ecb-a181-ae5f41ffdd13'
+          curl -L --fail --retry 3 -o assets/photos/male-portrait.jpg 'https://photoshop-api.adobe.io/v2/short-url/urn:aaid:ps:US:014e9131-3f59-436d-8c77-e8cf75360a73'
+          curl -L --fail --retry 3 -o assets/photos/orange-fashion.jpg 'https://photoshop-api.adobe.io/v2/short-url/urn:aaid:ps:US:b77ac8e5-600f-4d34-bfef-6570b41f1608'
+          curl -L --fail --retry 3 -o assets/photos/bw-headshot.jpg 'https://photoshop-api.adobe.io/v2/short-url/urn:aaid:ps:US:787482f0-02e6-4360-aae4-7ad879269249'
+          curl -L --fail --retry 3 -o assets/brand/lynch-logo.png 'https://at.adobe.com/dIoSGJ8PZ64HW1BJ'
+      - name: Commit assets and remove importer
+        shell: bash
+        run: |
+          rm -f .github/workflows/import-lynch-assets.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets .github/workflows/import-lynch-assets.yml
+          git commit -m 'Add LYNCH photography portfolio assets'
+          git push
