@@ -12,7 +12,7 @@ tags:
   - "faebylynch"
   - "video"
 ---
-<p style="text-align:center;">[youtube https://www.youtube.com/watch?v=AQy36IlT9yg&amp;w=560&amp;h=315]</p>
+<p style="text-align:center;"><div class="embed"><iframe src="https://www.youtube.com/embed/AQy36IlT9yg" title="YouTube video" loading="lazy" allowfullscreen></iframe></div></p>
 <p style="text-align:left;">Star Trek monologue about love from the 1999 episode "The Disease"</p>
 <span style="color:#3366ff;"><strong>Seven of Nine</strong></span>: Parental love, romantic love, affection between friends – specify.
 <span style="color:#ffcc00;"><strong>Harry Kim</strong></span>: Romantic love.

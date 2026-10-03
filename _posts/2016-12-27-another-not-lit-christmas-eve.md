@@ -23,22 +23,22 @@ archived_comments:
 ---
 Yet again, the squad set out to enjoy another Christmas Eve like it's 2012. Alas, another failed attempt; for me at least. Much of the night was spent... planning the night. In the end, I came to the realization that, much like Trix, <a href="http://www.cool-kids-jamaica.com/Grand-market.html" target="_blank" rel="noopener">Grand Market</a> is for kids.
 
-[caption id="attachment_49" align="alignnone" width="5999"]<img class="alignnone size-full wp-image-49" src="https://bylynch.com/wp-content/uploads/2016/12/img_4659.jpg" alt="img_4659" width="5999" height="3999" /> Eric, Mandeville[/caption]
+<figure><img class="alignnone size-full wp-image-49" src="/assets/uploads/2016/12/img_4659.jpg" alt="img_4659" width="5999" height="3999" /><figcaption>Eric, Mandeville</figcaption></figure>
 
-The night began with the <strong>mandem </strong>congregating at Lazarus' Plaza to blaze and plan the evenings shenanigans.
+The night began with the <strong>mandem </strong>congregating at Lazarus' Plaza to blaze and plan the evenings shenanigans.
 
-[gallery ids="53,70,73,74,76,71" type="rectangular" link="none" orderby="rand"]
+<div class="wp-gallery"></div>
 
-Talks of making a move to Junction were laughed off, but eventually, through mild peer pressure (and a generous gas donation), we made the move. Onward to the place where KFC is a myth and Juice Beef is a luxury to be cherished.
+Talks of making a move to Junction were laughed off, but eventually, through mild peer pressure (and a generous gas donation), we made the move. Onward to the place where KFC is a myth and Juice Beef is a luxury to be cherished.
 
-[gallery ids="55,84,85,56,54,86,87,88" type="rectangular" link="none" orderby="rand"]
+<div class="wp-gallery"></div>
 
-"I have arrived" - A text message I sent to a new and very interesting friend (and possibly my cousin), <a href="https://twitter.com/_banblackbird" target="_blank" rel="noopener">Suzanna Missenberger</a>. Junction, St. Elizabeth. I never liked this place. Junction was never <em>lit</em>. But we are here, and I quickly come to the conclusion that I am too old for this shit. <em>Buggu yagga</em> music &amp; marijuana filled the air. Adolescent teens consuming liquor and dry humping each other. Not my ting, seen? I dapped up the friends then proceed to sleep in my car.
+"I have arrived" - A text message I sent to a new and very interesting friend (and possibly my cousin), <a href="https://twitter.com/_banblackbird" target="_blank" rel="noopener">Suzanna Missenberger</a>. Junction, St. Elizabeth. I never liked this place. Junction was never <em>lit</em>. But we are here, and I quickly come to the conclusion that I am too old for this shit. <em>Buggu yagga</em> music &amp; marijuana filled the air. Adolescent teens consuming liquor and dry humping each other. Not my ting, seen? I dapped up the friends then proceed to sleep in my car.
 
 A night well spent.
 
 Well, it was a night. And I definitely spent. Too much money.
 
-[gallery ids="109,110,111,112" type="square" columns="2" link="none"]
+<div class="wp-gallery"></div>
 
 &nbsp;
