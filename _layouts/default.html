@@ -1,1 +1,21 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.title }}</title><meta name="description" content="{{ page.excerpt | default: site.description | strip_html | strip_newlines | truncate: 160 }}"><link rel="canonical" href="{{ page.url | absolute_url }}"><link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}"></head><body><header class="site-header"><div class="site"><a class="brand" href="{{ '/' | relative_url }}">by LYNCH</a><div class="tagline">I saw it. Now you get to.</div><nav class="nav"><a href="{{ '/' | relative_url }}">Journal</a><a href="{{ '/about/' | relative_url }}">About LYNCH</a><a href="{{ '/contact/' | relative_url }}">Contact</a></nav><form class="search" data-search><input type="search" placeholder="Search …" aria-label="Search posts"><button>Search</button></form></div></header><main class="site content">{{ content }}</main><footer class="site-footer"><div class="site">© {{ 'now' | date: '%Y' }} by LYNCH · I saw it. Now you get to.</div></footer><script src="{{ '/assets/js/site.js' | relative_url }}"></script></body></html>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.title }}</title>
+<meta name="description" content="{{ page.excerpt | default: site.description | strip_html | strip_newlines | truncate: 160 }}">
+<link rel="canonical" href="{{ page.url | absolute_url }}"><link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}"></head>
+<body class="{% if page.layout == 'post' %}single{% endif %}">
+<header class="site-header"><div class="site navrow">
+<a class="site-logo-link" href="{{ '/' | relative_url }}"><img src="{{ '/assets/brand/lynch-logo.png' | relative_url }}" alt="LYNCH"></a>
+<nav class="main-navigation">
+<a class="active" href="{{ '/' | relative_url }}">HOME</a>
+<a href="https://gumroad.com/seenbylynch" target="_blank" rel="noopener">STORE</a>
+<a href="{{ '/' | relative_url }}">FILM</a>
+<div class="menu-parent"><a href="{{ '/' | relative_url }}">CULTURE &amp; ARTS <span>⌄</span></a><div class="submenu"><a href="{{ '/' | relative_url }}">MUSIC</a><a href="{{ '/' | relative_url }}">ARTS</a><a href="{{ '/' | relative_url }}">NEW WAVE</a></div></div>
+<a href="https://www.flickr.com/photos/lebosslynch/albums" target="_blank" rel="noopener">PHOTOGRAPHY</a>
+<div class="menu-parent"><a href="{{ '/' | relative_url }}">SERIES <span>⌄</span></a><div class="submenu"><a href="{{ '/' | relative_url }}">KNIGHT LOVE L’S</a><a href="{{ '/' | relative_url }}">PHOTO SETS</a><a href="{{ '/' | relative_url }}">PIXTAPE</a></div></div>
+<a href="https://instagram.com/lebosslynch/" target="_blank" rel="noopener">INSTAGRAM</a>
+<a class="about-link" href="{{ '/about/' | relative_url }}">about LYNCH</a>
+</nav><button class="search-toggle" aria-label="Search">⌕</button></div></header>
+{{ content }}
+<footer class="site-footer"><div class="site">© {{ 'now' | date: '%Y' }} by LYNCH</div></footer>
+<script src="{{ '/assets/js/site.js' | relative_url }}"></script></body></html>
