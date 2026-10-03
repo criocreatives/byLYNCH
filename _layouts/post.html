@@ -1,0 +1,4 @@
+---
+layout: default
+---
+<article><div class="eyebrow">{% if page.categories %}{{ page.categories | join: ' · ' }}{% endif %}</div><h1>{{ page.title }}</h1><div class="meta"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>{% if page.modified and page.modified != page.date_string %} · Updated {{ page.modified | date: "%B %-d, %Y" }}{% endif %}</div><div class="post-body">{{ content }}</div>{% if page.archived_comments and page.archived_comments.size > 0 %}<section class="archive-comments"><h2>Comments</h2>{% for comment in page.archived_comments %}<div class="comment"><div class="comment-meta">{{ comment.author }} · {{ comment.date | date: "%B %-d, %Y" }}</div><div>{{ comment.content }}</div></div>{% endfor %}</section>{% endif %}</article>
