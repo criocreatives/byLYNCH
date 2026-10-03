@@ -6,7 +6,7 @@
 <body class="{% if page.layout == 'post' %}single{% endif %}">
 <header class="site-header"><div class="site navrow">
 <a class="site-logo-link" href="{{ '/' | relative_url }}"><img src="{{ '/assets/brand/lynch-logo.svg' | relative_url }}" alt="LYNCH"></a>
-<nav class="main-navigation">
+<button class="menu-toggle" type="button" aria-controls="primary-menu" aria-expanded="false"><span></span><span></span><span></span><span class="screen-reader-text">Primary Menu</span></button><nav id="primary-menu" class="main-navigation">
 <a class="active" href="{{ '/' | relative_url }}">HOME</a>
 <a href="https://gumroad.com/seenbylynch" target="_blank" rel="noopener">STORE</a>
 <a href="{{ '/' | relative_url }}">FILM</a>
