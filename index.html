@@ -14,7 +14,9 @@ title:
     <a class="post-thumbnail" href="{{ post.url | relative_url }}"{% if feature %} style="background-image:url('{{ '/assets/uploads/' | append: feature | relative_url }}')"{% endif %}></a>
     <h2 class="entry-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
   </header>
-  <div class="entry-summary"><p>{{ post.excerpt | strip_html | truncatewords: 24 }} <a class="more-link" href="{{ post.url | relative_url }}">Continue reading</a></p></div>
+  {% assign card_excerpt = post.excerpt | strip_html | strip %}
+  {% if card_excerpt == "" %}{% assign card_excerpt = post.content | strip_html | strip %}{% endif %}
+  <div class="entry-summary"><p>{{ card_excerpt | truncatewords: 24 }} <a class="more-link" href="{{ post.url | relative_url }}">Continue reading</a></p></div>
 </article>
 {% endfor %}
 </div>
