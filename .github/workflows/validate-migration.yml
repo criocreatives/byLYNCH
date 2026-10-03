@@ -1,0 +1,36 @@
+name: Validate WordPress migration
+
+on:
+  push:
+    branches:
+      - wordpress-migration
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout migration branch
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+
+      - name: Install Jekyll
+        run: gem install jekyll jekyll-paginate
+
+      - name: Build site
+        run: jekyll build --trace
+
+      - name: Verify key output
+        shell: bash
+        run: |
+          test -f _site/index.html
+          test -f _site/2024/09/26/swove-in-ledish/index.html
+          test -f _site/2016/11/23/anchor-studio-with-runkus/index.html
+          echo "Migration build verified."
