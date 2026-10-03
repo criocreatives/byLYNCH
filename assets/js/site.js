@@ -1,0 +1,1 @@
+(function(){const f=document.querySelector('[data-search]');if(!f)return;f.addEventListener('submit',e=>{e.preventDefault();const q=f.querySelector('input').value.trim().toLowerCase();if(!q)return;document.querySelectorAll('[data-post-card]').forEach(c=>{c.style.display=c.innerText.toLowerCase().includes(q)?'block':'none';});});})();
