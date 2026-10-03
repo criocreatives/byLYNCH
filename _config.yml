@@ -1,0 +1,13 @@
+title: "by LYNCH"
+description: "I saw it. Now you get to."
+url: "https://bylynch.com"
+baseurl: ""
+timezone: America/Jamaica
+permalink: /:year/:month/:day/:title/
+markdown: kramdown
+plugins:
+  - jekyll-paginate
+paginate: 12
+paginate_path: "/page/:num/"
+exclude:
+  - README.md
