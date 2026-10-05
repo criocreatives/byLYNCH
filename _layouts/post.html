@@ -1,37 +1,42 @@
 ---
 layout: default
 ---
-<header class="entry-header entry-hero" data-entry-hero data-slug="{{ page.slug }}">
-  <div class="post-thumbnail"><img data-featured-image alt=""></div>
+{% assign feature = site.data.featured[page.slug] %}
+<header class="entry-header entry-hero" data-entry-hero>
+  <div class="post-thumbnail">
+    <img data-featured-image {% if feature %}src="{{ '/assets/uploads/' | append: feature | relative_url }}"{% endif %} alt="">
+  </div>
   <div class="entry-header-wrapper">
-    <div class="entry-header-inner site">
-      <div class="entry-meta hero-meta">{% if page.categories %}{{ page.categories | join: ' · ' }}{% endif %}</div>
+    <div class="entry-header-inner">
+      <div class="entry-meta">{% if page.categories %}{{ page.categories | join: ', ' }}{% endif %}</div>
       <h1 class="entry-title">{{ page.title }}</h1>
     </div>
   </div>
 </header>
-
-<main class="site single-main">
-  <article class="hentry single-entry">
-    <div class="entry-content post-body">{{ content }}</div>
-    <footer class="entry-footer">
-      <span class="posted-on"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time></span>
-      {% if page.modified and page.modified != page.date_string %}<span class="updated-on">{{ page.modified | date: "%B %-d, %Y" }}</span>{% endif %}
-      <span class="byline">{{ page.author | default: "lebosslynch" }}</span>
-      {% if page.tags and page.tags.size > 0 %}<span class="tags-links">{{ page.tags | join: ", " }}</span>{% endif %}
-    </footer>
-  </article>
-
-  {% if page.archived_comments and page.archived_comments.size > 0 %}
-  <section class="comments-area">
-    <h2>{{ page.archived_comments.size }} thought{% if page.archived_comments.size != 1 %}s{% endif %} on “{{ page.title }}”</h2>
-    {% for comment in page.archived_comments %}
-    <article class="comment">
-      <div class="comment-author">{{ comment.author }} says:</div>
-      <div class="comment-date">{{ comment.date | date: "%B %-d, %Y at %-I:%M %p" }}</div>
-      <div class="comment-body">{{ comment.content }}</div>
-    </article>
-    {% endfor %}
-  </section>
-  {% endif %}
-</main>
+<div class="site-content-inner">
+  <div class="content-area">
+    <main class="site-main">
+      <article class="hentry single-entry">
+        <div class="entry-content">{{ content }}</div>
+        <footer class="entry-footer">
+          <span class="posted-on"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time></span>
+          {% if page.modified and page.modified != page.date_string %}<span class="updated-on">{{ page.modified | date: "%B %-d, %Y" }}</span>{% endif %}
+          <span class="byline">{{ page.author | default: "lebosslynch" }}</span>
+          {% if page.tags and page.tags.size > 0 %}<span class="tags-links">{{ page.tags | join: ", " }}</span>{% endif %}
+        </footer>
+      </article>
+      {% if page.archived_comments and page.archived_comments.size > 0 %}
+      <section class="comments-area">
+        <h2>{{ page.archived_comments.size }} thought{% if page.archived_comments.size != 1 %}s{% endif %} on “{{ page.title }}”</h2>
+        {% for comment in page.archived_comments %}
+        <article class="comment">
+          <div class="comment-author">{{ comment.author }} says:</div>
+          <div class="comment-date">{{ comment.date | date: "%B %-d, %Y at %-I:%M %p" }}</div>
+          <div class="comment-body">{{ comment.content }}</div>
+        </article>
+        {% endfor %}
+      </section>
+      {% endif %}
+    </main>
+  </div>
+</div>
