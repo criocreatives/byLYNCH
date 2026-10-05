@@ -392,3 +392,16 @@ body:not(.single) .format-gallery.has-post-thumbnail{color:#fff;position:relativ
 .bk-redesign .comment{
   border-radius:10px!important;
 }
+
+/* Site-wide header link treatment */
+.main-navigation a,
+.main-navigation .current-menu-item > a{
+  color:#000!important;
+  transition:color .2s ease;
+}
+.main-navigation a:hover,
+.main-navigation a:focus,
+.main-navigation .current-menu-item > a:hover,
+.main-navigation .current-menu-item > a:focus{
+  color:#ed1744!important;
+}
