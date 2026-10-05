@@ -376,3 +376,19 @@ body:not(.single) .format-gallery.has-post-thumbnail{color:#fff;position:relativ
   margin:0!important;
   box-sizing:border-box;
 }
+
+/* B***K v7 — 10px corner radius */
+.bk-redesign .entry-content figure img,
+.bk-redesign .entry-content > img,
+.bk-redesign .entry-content .wp-block-image img,
+.bk-redesign .entry-content > p,
+.bk-redesign .entry-content > blockquote,
+.bk-redesign .entry-content > h1,
+.bk-redesign .entry-content > h2,
+.bk-redesign .entry-content > h3,
+.bk-redesign .entry-content > h4,
+.bk-redesign .entry-content > h5,
+.bk-redesign .entry-content > h6,
+.bk-redesign .comment{
+  border-radius:10px!important;
+}
