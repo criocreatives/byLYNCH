@@ -327,3 +327,39 @@ body:not(.single) .format-gallery.has-post-thumbnail{color:#fff;position:relativ
   padding-top:10px;
 }
 .bk-redesign .bk-post-meta{display:none!important}
+
+/* B***K v5 — align metadata/gallery with hero title; 3 columns max */
+.bk-post-meta-inner,
+.bk-redesign .content-area{
+  width:90%;
+  max-width:none;
+  margin-left:auto;
+  margin-right:auto;
+}
+.bk-redesign{
+  padding-left:0;
+  padding-right:0;
+}
+@media(min-width:768px){
+  .bk-post-meta-inner,
+  .bk-redesign .content-area{width:648px}
+}
+@media(min-width:840px){
+  .bk-post-meta-inner,
+  .bk-redesign .content-area{width:720px}
+}
+@media(min-width:960px){
+  .bk-post-meta-inner,
+  .bk-redesign .content-area{width:840px}
+}
+@media(min-width:1080px){
+  .bk-post-meta-inner,
+  .bk-redesign .content-area{width:960px}
+}
+@media(min-width:1380px){
+  .bk-post-meta-inner,
+  .bk-redesign .content-area{width:1260px}
+}
+@media(min-width:1250px){
+  .single .bk-redesign .entry-content{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+}
