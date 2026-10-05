@@ -8,6 +8,7 @@ permalink: /2020/01/03/purplereign/
 author: "lebosslynch"
 categories:
   - "PHOTO SET"
+  - "ARTS"
 tags:
   - "body art"
   - "nude"
