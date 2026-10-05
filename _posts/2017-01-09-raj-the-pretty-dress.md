@@ -6,8 +6,7 @@ date_string: "2017-01-09 10:30:14"
 modified: 2023-12-03 17:57:11 -0500
 permalink: /2017/01/09/raj-the-pretty-dress/
 author: "lebosslynch"
-categories:
-  - "PHOTO SET"
+categories: []
 tags:
   - "series"
 ---
