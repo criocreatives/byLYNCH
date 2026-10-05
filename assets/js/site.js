@@ -29,36 +29,43 @@
   function cleanImageLists(){
     document.querySelectorAll('.entry-content li').forEach(li=>{if(li.querySelector('img')){li.style.listStyle='none';li.style.marginLeft='0';li.style.paddingLeft='0';const p=li.parentElement;if(p){p.classList.add('image-list');}}});
   }
+  function bkColumnCount(){
+    const w=window.innerWidth;
+    if(w>=900)return 3;
+    if(w>=600)return 2;
+    return 1;
+  }
   function layoutBkMasonry(){
     const grid=document.querySelector('.bk-redesign .entry-content');
     if(!grid)return;
-    const cs=getComputedStyle(grid);
-    const gap=parseFloat(cs.rowGap)||10;
-    const row=parseFloat(cs.gridAutoRows)||1;
-    const cols=Math.max(1,cs.gridTemplateColumns.split(/\s+/).filter(Boolean).length);
+    const gap=10;
+    const cols=bkColumnCount();
     const items=[...grid.children].filter(el=>getComputedStyle(el).display!=='none');
+    const total=grid.clientWidth;
+    const colWidth=(total-gap*(cols-1))/cols;
+    const heights=new Array(cols).fill(0);
+
     items.forEach((item,i)=>{
-      item.style.gridColumn=String((i%cols)+1);
-      item.style.gridRowEnd='auto';
+      const col=i%cols;
+      item.style.position='absolute';
+      item.style.width=colWidth+'px';
+      item.style.left=(col*(colWidth+gap))+'px';
+      item.style.top=heights[col]+'px';
+      item.style.gridColumn='';
+      item.style.gridRow='';
+      const h=item.getBoundingClientRect().height;
+      heights[col]+=h+gap;
     });
-    requestAnimationFrame(()=>{
-      items.forEach(item=>{
-        const h=item.getBoundingClientRect().height;
-        const span=Math.max(1,Math.ceil((h+gap)/(row+gap)));
-        item.style.gridRowEnd='span '+span;
-      });
-    });
+
+    grid.style.height=Math.max(0,...heights)-gap+'px';
   }
   function initBkMasonry(){
     const grid=document.querySelector('.bk-redesign .entry-content');
     if(!grid)return;
-    grid.querySelectorAll('img').forEach(img=>{if(!img.complete)img.addEventListener('load',layoutBkMasonry);});
-    if('ResizeObserver' in window){
-      const ro=new ResizeObserver(layoutBkMasonry);
-      [...grid.children].forEach(el=>ro.observe(el));
-      window.__bkMasonryObserver=ro;
-    }
-    layoutBkMasonry();
+    grid.querySelectorAll('img').forEach(img=>{
+      if(!img.complete)img.addEventListener('load',layoutBkMasonry,{once:false});
+    });
+    requestAnimationFrame(()=>requestAnimationFrame(layoutBkMasonry));
   }
   const hero=document.querySelector('[data-entry-hero] [data-featured-image]');
   if(hero){
