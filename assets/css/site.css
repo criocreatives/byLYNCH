@@ -787,3 +787,140 @@ body.lightbox-open{overflow:hidden}
   overflow:visible;
   -webkit-line-clamp:unset;
 }
+
+/* Homepage grid — 40% tighter spacing; overall grid span unchanged */
+@media(min-width:768px){
+  .blog .site-main{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:36px;
+  }
+  .blog .hentry,
+  .blog .hentry.format-gallery.has-post-thumbnail{
+    float:none!important;
+    clear:none!important;
+    width:auto!important;
+    margin:0!important;
+  }
+}
+@media(min-width:960px){
+  .blog .site-main{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+
+/* Only genuinely clipped excerpts reveal/slide; slower motion */
+.blog .hentry.format-gallery.has-post-thumbnail .card-copy{
+  transition:transform .55s cubic-bezier(.2,.7,.2,1);
+}
+.blog .hentry.format-gallery.has-post-thumbnail:hover .card-copy,
+.blog .hentry.format-gallery.has-post-thumbnail:focus-within .card-copy{
+  transform:none!important;
+}
+.blog .hentry.format-gallery.has-post-thumbnail:hover .card-copy .entry-summary p,
+.blog .hentry.format-gallery.has-post-thumbnail:focus-within .card-copy .entry-summary p{
+  display:-webkit-box!important;
+  -webkit-box-orient:vertical!important;
+  -webkit-line-clamp:2!important;
+  overflow:hidden!important;
+}
+.blog .hentry.format-gallery.has-post-thumbnail.has-clipped-excerpt:hover .card-copy,
+.blog .hentry.format-gallery.has-post-thumbnail.has-clipped-excerpt:focus-within .card-copy{
+  transform:translateY(-8px)!important;
+}
+.blog .hentry.format-gallery.has-post-thumbnail.has-clipped-excerpt:hover .card-copy .entry-summary p,
+.blog .hentry.format-gallery.has-post-thumbnail.has-clipped-excerpt:focus-within .card-copy .entry-summary p{
+  display:block!important;
+  -webkit-line-clamp:unset!important;
+  overflow:visible!important;
+}
+
+/* Functional site search */
+.site-header{position:relative}
+@media(min-width:840px){.site-header{position:sticky}}
+.site-search-panel{
+  position:absolute;
+  top:100%;
+  left:0;
+  width:100%;
+  display:none;
+  background:#fff;
+  border-top:1px solid #eee;
+  box-shadow:0 8px 18px rgba(0,0,0,.10);
+  z-index:9999;
+}
+.site-search-panel.is-open{display:block}
+.site-search-inner{
+  width:90%;
+  max-width:1260px;
+  margin:0 auto;
+  padding:18px 0 20px;
+}
+.site-search-form{display:flex;align-items:center;gap:10px}
+.site-search-input{
+  width:100%;
+  min-width:0;
+  border:1px solid #d8d8d8;
+  border-radius:10px;
+  padding:13px 15px;
+  font:400 16px/1.2 Lato,Arial,sans-serif;
+  color:#111;
+  background:#fff;
+}
+.site-search-input:focus{
+  outline:none;
+  border-color:#ed1744;
+  box-shadow:0 0 0 2px rgba(237,23,68,.10);
+}
+.site-search-close{
+  flex:0 0 44px;
+  width:44px;
+  height:44px;
+  border:0;
+  border-radius:50%;
+  background:#f4f4f4;
+  color:#111;
+  font:400 26px/1 Arial,sans-serif;
+  cursor:pointer;
+}
+.site-search-close:hover,
+.site-search-close:focus{background:#ed1744;color:#fff;outline:none}
+.site-search-results{
+  margin-top:12px;
+  max-height:min(60vh,520px);
+  overflow:auto;
+}
+.site-search-empty{padding:12px 2px 4px;color:#777;font-size:14px}
+.site-search-result{
+  display:block;
+  padding:12px 2px;
+  border-top:1px solid #eee;
+  text-decoration:none;
+  color:#111;
+}
+.site-search-result:first-child{border-top:0}
+.site-search-result-title{
+  display:block;
+  font-weight:700;
+  color:#111;
+  transition:color .18s ease;
+}
+.site-search-result:hover .site-search-result-title,
+.site-search-result:focus .site-search-result-title{color:#ed1744}
+.site-search-result-meta{
+  display:block;
+  margin-top:3px;
+  color:#999;
+  font-size:12px;
+  text-transform:uppercase;
+}
+.site-search-result-excerpt{
+  display:block;
+  margin-top:4px;
+  color:#555;
+  font-size:13px;
+  line-height:1.4;
+}
+@media(min-width:768px){.site-search-inner{width:648px}}
+@media(min-width:840px){.site-search-inner{width:720px}}
+@media(min-width:960px){.site-search-inner{width:840px}}
+@media(min-width:1080px){.site-search-inner{width:960px}}
+@media(min-width:1380px){.site-search-inner{width:1260px}}
