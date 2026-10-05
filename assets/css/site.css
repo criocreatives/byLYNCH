@@ -995,3 +995,23 @@ body.lightbox-open{overflow:hidden}
   font-weight:700!important;
   text-decoration:none!important;
 }
+
+/* The Disease — preserve original dialogue formatting */
+.bk-redesign .entry-content > .disease-dialogue{
+  background:#151515;
+  color:#f5f5f5;
+  padding:18px;
+  border-radius:10px;
+  font:400 16px/1.5 Lato,Arial,sans-serif;
+}
+.disease-dialogue .dialogue-line{
+  margin:0;
+}
+.disease-dialogue .seven{
+  color:#3366ff;
+  font-weight:700;
+}
+.disease-dialogue .harry{
+  color:#ffcc00;
+  font-weight:700;
+}
