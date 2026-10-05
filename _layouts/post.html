@@ -4,7 +4,7 @@ layout: default
 {% assign feature = site.data.featured[page.slug] %}
 <header class="entry-header entry-hero" data-entry-hero>
   <div class="post-thumbnail">
-    <img data-featured-image {% if feature %}src="{{ '/assets/uploads/' | append: feature | relative_url }}"{% endif %} alt="">
+    <img data-featured-image loading="eager" fetchpriority="high" decoding="async" {% if feature %}src="{{ '/assets/uploads/' | append: feature | relative_url }}"{% endif %} alt="">
   </div>
   <div class="entry-header-wrapper">
     <div class="entry-header-inner">
@@ -23,7 +23,8 @@ layout: default
   <div class="content-area">
     <main class="site-main">
       <article class="hentry single-entry">
-        <div class="entry-content">{{ content }}</div>
+        {% assign lazy_content = content | replace: '<img ', '<img loading="lazy" decoding="async" ' %}
+        <div class="entry-content">{{ lazy_content }}</div>
       </article>
       {% if page.archived_comments and page.archived_comments.size > 0 %}
       <section class="comments-area">
