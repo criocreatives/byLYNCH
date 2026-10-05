@@ -13,7 +13,7 @@ layout: default
     </div>
   </div>
 </header>
-{% if page.slug == 'bk' %}
+{% if page.slug == 'bk' or page.slug == 'falling-edge' %}
 <div class="bk-post-meta">
   <div class="bk-post-meta-inner">
     <div class="bk-post-date"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time></div>
@@ -21,12 +21,12 @@ layout: default
   </div>
 </div>
 {% endif %}
-<div class="site-content-inner{% if page.slug == 'bk' %} bk-redesign{% endif %}">
+<div class="site-content-inner{% if page.slug == 'bk' or page.slug == 'falling-edge' %} bk-redesign{% endif %}">
   <div class="content-area">
     <main class="site-main">
       <article class="hentry single-entry">
         <div class="entry-content">{{ content }}</div>
-        {% unless page.slug == 'bk' %}
+        {% unless page.slug == 'bk' or page.slug == 'falling-edge' %}
         <footer class="entry-footer">
           <span class="posted-on"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time></span>
           {% if page.modified and page.modified != page.date_string %}<span class="updated-on">{{ page.modified | date: "%B %-d, %Y" }}</span>{% endif %}
