@@ -25,6 +25,6 @@ title:
       </article>
       {% endfor %}
     </main>
-    <nav class="pagination">{% if paginator.previous_page %}<a href="{{ paginator.previous_page_path | relative_url }}">Newer posts</a>{% endif %}{% if paginator.next_page %}<a href="{{ paginator.next_page_path | relative_url }}">Older posts</a>{% endif %}</nav>
+    <div class="older-posts-wrap">{% if paginator.next_page %}<button class="older-posts-button" type="button" data-next-url="{{ paginator.next_page_path | relative_url }}">OLDER POSTS</button>{% endif %}</div>
   </div>
 </div>
