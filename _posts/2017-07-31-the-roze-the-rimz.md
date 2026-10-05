@@ -6,8 +6,7 @@ date_string: "2017-07-31 18:30:48"
 modified: 2017-07-31 02:24:00 -0500
 permalink: /2017/07/31/the-roze-the-rimz/
 author: "lebosslynch"
-categories:
-  - "PHOTO SET"
+categories: []
 tags:
   - ""
 excerpt: "Melanin on rims. Melanin on mangoes. Melanin on metal."
