@@ -34,11 +34,19 @@
     if(!grid)return;
     [...grid.children].forEach(child=>{
       const imgs=[...child.querySelectorAll('img')];
+
+      if(!imgs.length && !child.textContent.trim() &&
+         child.matches('.wp-gallery,.wp-block-gallery,.wp-block-image,h1,h2,h3,h4,h5,h6,p')){
+        child.remove();
+        return;
+      }
+
       if(imgs.length<2)return;
       const galleryLike=
-        child.matches('.wp-block-gallery,.wp-block-coblocks-gallery-stacked,.gallery,[class*="gallery"]') ||
-        !!child.querySelector('.wp-block-gallery,.coblocks-gallery,.gallery,[class*="gallery"]');
-      if(!galleryLike)return;
+        child.matches('.wp-block-gallery,.wp-block-coblocks-gallery-stacked,.gallery,.wp-gallery,[class*="gallery"]') ||
+        !!child.querySelector('.wp-block-gallery,.coblocks-gallery,.gallery,.wp-gallery,[class*="gallery"]');
+      const imagesOnly=!child.textContent.trim();
+      if(!galleryLike && !imagesOnly)return;
 
       const frag=document.createDocumentFragment();
       imgs.forEach(img=>{
