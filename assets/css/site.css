@@ -363,3 +363,16 @@ body:not(.single) .format-gallery.has-post-thumbnail{color:#fff;position:relativ
 @media(min-width:1250px){
   .single .bk-redesign .entry-content{grid-template-columns:repeat(3,minmax(0,1fr))!important}
 }
+
+/* B***K v6 — true gapless masonry, preserving source order */
+.single .bk-redesign .entry-content{
+  display:block!important;
+  position:relative;
+  width:100%!important;
+  min-height:1px;
+}
+.bk-redesign .entry-content > *{
+  position:absolute;
+  margin:0!important;
+  box-sizing:border-box;
+}
