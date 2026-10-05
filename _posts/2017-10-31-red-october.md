@@ -20,15 +20,25 @@ archived_comments:
 <p style="text-align:left"><em>Rage is red...</em></p>
 <p style="text-align:right"><em>...Red</em></p>
 <p style="text-align:center"><span style="color:#ff0000"><em>RED.</em></span></p>
-<div class="wp-gallery"></div>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/10/censored-2.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/10/censored-1.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/10/censored-3.jpg?w=1200" alt=""></figure>
 
-<div class="wp-gallery"></div>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/10/mg_8782.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/10/mg_8783-2.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/10/mg_8784-2.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/10/mg_8785-2.jpg?w=1200" alt=""></figure>
 
-<div class="wp-gallery"></div>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/10/mg_8622.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/10/mg_8625.jpg?w=1200" alt=""></figure>
 
-<div class="wp-gallery"></div>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/10/mg_8584.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/10/mg_8596.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/10/mg_8579.jpg?w=1200" alt=""></figure>
 
-<div class="wp-gallery"></div>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/10/mg_8594.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/10/mg_8585.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/10/mg_8593.jpg?w=1200" alt=""></figure>
 
 <img class="alignnone size-full wp-image-2710" src="/assets/uploads/2017/10/mg_8647.jpg" alt="_MG_8647.jpg" width="5184" height="3456" />
 <p style="text-align:center"><span style="color:#ff0000"><strong>fin.</strong></span></p>
