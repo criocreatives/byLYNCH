@@ -514,3 +514,34 @@ body:not(.single) .format-gallery.has-post-thumbnail{color:#fff;position:relativ
 .blog .hentry.format-gallery.has-post-thumbnail .entry-meta{
   display:none!important;
 }
+
+/* Homepage card image treatment */
+.blog .hentry.format-gallery.has-post-thumbnail .post-thumbnail::before{
+  background:linear-gradient(
+    to bottom,
+    rgba(0,0,0,0) 38%,
+    rgba(0,0,0,.10) 55%,
+    rgba(0,0,0,.72) 100%
+  )!important;
+  opacity:1!important;
+  z-index:1;
+}
+.blog .hentry.format-gallery.has-post-thumbnail .post-thumbnail::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:#000;
+  opacity:0;
+  transition:opacity .22s ease;
+  z-index:1;
+  pointer-events:none;
+}
+.blog .hentry.format-gallery.has-post-thumbnail:hover .post-thumbnail::after,
+.blog .hentry.format-gallery.has-post-thumbnail:focus-within .post-thumbnail::after{
+  opacity:.18;
+}
+@media(min-width:768px){
+  .blog .hentry.format-gallery.has-post-thumbnail{
+    margin-bottom:60px!important;
+  }
+}
