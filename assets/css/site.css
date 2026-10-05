@@ -950,3 +950,20 @@ body.lightbox-open{overflow:hidden}
 .search-toggle:focus::after{
   background:#fff;
 }
+
+/* Full-width YouTube embeds inside ordered post masonry */
+.single .bk-redesign .entry-content .embed,
+.single .bk-redesign .entry-content .full-width-embed{
+  background:#000;
+  border-radius:10px;
+  overflow:hidden;
+}
+.single .bk-redesign .entry-content .embed iframe,
+.single .bk-redesign .entry-content .full-width-embed iframe{
+  display:block;
+  width:100%!important;
+  height:auto!important;
+  aspect-ratio:16 / 9;
+  border:0;
+  border-radius:0;
+}
