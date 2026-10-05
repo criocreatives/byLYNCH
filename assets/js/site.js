@@ -14,6 +14,7 @@
   });
   function styleCards(){
     document.querySelectorAll('.blog .hentry.format-gallery.has-post-thumbnail').forEach(card=>{
+      if(getComputedStyle(card).display==='none')return;
       const meta=card.querySelector('.entry-meta'), thumb=card.querySelector('.post-thumbnail');
       if(!thumb)return;
       const bg=thumb.dataset.bg;if(bg)thumb.style.backgroundImage='url("'+bg+'")';
@@ -370,6 +371,19 @@
       else if(e.key==='ArrowRight')move(1);
     });
   }
+  function initArchiveFilter(){
+    if(!document.body.classList.contains('archive-page'))return;
+    const params=new URLSearchParams(location.search);
+    const cat=(params.get('cat')||'').trim().toLowerCase();
+    const tag=(params.get('tag')||'').trim().toLowerCase();
+    document.querySelectorAll('.archive-page .site-main > .hentry').forEach(card=>{
+      const cats=(card.dataset.categories||'').split('||').map(x=>x.trim().toLowerCase()).filter(Boolean);
+      const tags=(card.dataset.tags||'').split('||').map(x=>x.trim().toLowerCase()).filter(Boolean);
+      const matchCat=!cat||cats.includes(cat);
+      const matchTag=!tag||tags.includes(tag);
+      card.style.display=(matchCat&&matchTag)?'block':'none';
+    });
+  }
   function initOlderPosts(){
     const button=document.querySelector('.older-posts-button');
     if(!button)return;
@@ -408,6 +422,6 @@
     hero.addEventListener('error',()=>{const first=document.querySelector('.entry-content img');if(first&&hero.src!==first.src)hero.src=first.src;});
     if(!hero.getAttribute('src')){const first=document.querySelector('.entry-content img');if(first)hero.src=first.src;}
   }
-  window.addEventListener('load',()=>{styleCards();markClippedExcerpts();cleanImageLists();initBkMasonry();initOlderPosts();initPhotoLightbox();initSiteSearch();});
+  window.addEventListener('load',()=>{initArchiveFilter();styleCards();markClippedExcerpts();cleanImageLists();initBkMasonry();initOlderPosts();initPhotoLightbox();initSiteSearch();});
   window.addEventListener('resize',()=>{clearTimeout(window.__gazetteResize);window.__gazetteResize=setTimeout(()=>{styleCards();markClippedExcerpts();layoutBkMasonry();},180);});
 })();
