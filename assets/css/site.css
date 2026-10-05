@@ -562,3 +562,14 @@ body:not(.single) .format-gallery.has-post-thumbnail{color:#fff;position:relativ
   border-radius:10px;
   padding:18px 18px 18px 38px;
 }
+
+/* Progressive post-gallery loading */
+.single .bk-redesign .entry-content img[loading="lazy"]:not(.lazy-loaded){
+  aspect-ratio:4 / 5;
+  object-fit:cover;
+  background:#0b0b0b;
+}
+.single .bk-redesign .entry-content img.lazy-loaded{
+  aspect-ratio:auto!important;
+  object-fit:initial;
+}
