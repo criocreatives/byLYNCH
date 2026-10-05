@@ -291,3 +291,20 @@ body:not(.single) .format-gallery.has-post-thumbnail{color:#fff;position:relativ
 @media(min-width:1250px){
   .single .bk-redesign .entry-content{grid-template-columns:repeat(4,minmax(0,1fr))}
 }
+
+/* B***K v3 — full-bleed meta bar + gapless ordered masonry */
+.bk-redesign .bk-post-meta{
+  width:100vw;
+  margin:10px 0 10px 50%;
+  transform:translateX(-50%);
+  border-radius:2px;
+  padding-top:16px;
+  padding-bottom:16px;
+  padding-left:max(18px, calc((100vw - 1600px)/2 + 18px));
+  padding-right:max(18px, calc((100vw - 1600px)/2 + 18px));
+}
+.single .bk-redesign .entry-content{
+  grid-auto-rows:1px;
+  grid-auto-flow:row;
+  align-items:start;
+}
