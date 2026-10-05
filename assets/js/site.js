@@ -29,6 +29,19 @@
   function cleanImageLists(){
     document.querySelectorAll('.entry-content li').forEach(li=>{if(li.querySelector('img')){li.style.listStyle='none';li.style.marginLeft='0';li.style.paddingLeft='0';const p=li.parentElement;if(p){p.classList.add('image-list');}}});
   }
+  function normalizePostTextNodes(){
+    const grid=document.querySelector('.bk-redesign .entry-content');
+    if(!grid)return;
+    [...grid.childNodes].forEach(node=>{
+      if(node.nodeType!==Node.TEXT_NODE)return;
+      const text=node.textContent.replace(/\s+/g,' ').trim();
+      if(!text){node.remove();return;}
+      const p=document.createElement('p');
+      p.textContent=text;
+      node.replaceWith(p);
+    });
+    grid.querySelectorAll(':scope > hr').forEach(hr=>hr.remove());
+  }
   function normalizeNestedPostGalleries(){
     const grid=document.querySelector('.bk-redesign .entry-content');
     if(!grid)return;
@@ -99,6 +112,7 @@
   function initBkMasonry(){
     const grid=document.querySelector('.bk-redesign .entry-content');
     if(!grid)return;
+    normalizePostTextNodes();
     normalizeNestedPostGalleries();
     grid.querySelectorAll('img').forEach(img=>{
       const markLoaded=()=>{
