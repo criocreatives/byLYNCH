@@ -1015,3 +1015,105 @@ body.lightbox-open{overflow:hidden}
   color:#ffcc00;
   font-weight:700;
 }
+
+/* New Wave archive landing */
+.new-wave-page .site-main{overflow:visible}
+.new-wave-intro,
+.new-wave-albums{
+  width:90%;
+  margin-left:auto;
+  margin-right:auto;
+}
+.new-wave-intro{
+  padding:60px 0 54px;
+  border-bottom:1px solid #eee;
+}
+.new-wave-intro h1{
+  margin:0 0 28px;
+  font-size:38px;
+  line-height:1.15;
+  font-weight:900;
+  color:#111;
+}
+.new-wave-intro p{
+  max-width:1050px;
+  margin:0 0 18px;
+  font-size:18px;
+  line-height:1.55;
+  color:#222;
+}
+.new-wave-intro p:last-child{
+  margin-bottom:0;
+  font-weight:700;
+}
+.new-wave-albums{
+  padding:54px 0 70px;
+}
+.new-wave-albums h2{
+  margin:0 0 28px;
+  font-size:25px;
+  line-height:1.2;
+  font-weight:900;
+  color:#111;
+}
+.new-wave-album-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:36px;
+}
+.new-wave-album-card{
+  position:relative;
+  aspect-ratio:4/5;
+  overflow:hidden;
+  border-radius:10px;
+  background:#111;
+}
+.new-wave-album-card img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .32s ease;
+}
+.new-wave-album-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to bottom,rgba(0,0,0,0) 42%,rgba(0,0,0,.12) 58%,rgba(0,0,0,.76) 100%);
+  pointer-events:none;
+}
+.new-wave-album-card:hover img,
+.new-wave-album-card:focus-within img{transform:scale(1.05)}
+.new-wave-album-card a{
+  position:absolute;
+  inset:0;
+  z-index:2;
+  display:flex;
+  align-items:flex-end;
+  padding:30px;
+  color:#fff!important;
+  text-decoration:none;
+}
+.new-wave-album-title{
+  font-size:25px;
+  line-height:1.2;
+  font-weight:700;
+  text-shadow:0 0 .125em rgba(0,0,0,.3);
+}
+@media(min-width:768px){
+  .new-wave-intro,.new-wave-albums{width:648px}
+  .new-wave-album-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(min-width:840px){
+  .new-wave-intro,.new-wave-albums{width:720px}
+}
+@media(min-width:960px){
+  .new-wave-intro,.new-wave-albums{width:840px}
+  .new-wave-album-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(min-width:1080px){
+  .new-wave-intro,.new-wave-albums{width:960px}
+}
+@media(min-width:1380px){
+  .new-wave-intro,.new-wave-albums{width:1260px}
+}
