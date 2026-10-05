@@ -715,3 +715,29 @@ body.lightbox-open{overflow:hidden}
   .photo-lightbox-counter{left:14px;top:16px}
   .photo-lightbox-caption{padding:0 64px 2px}
 }
+
+/* Header depth + homepage card hover polish */
+.site-header{
+  box-shadow:0 3px 10px rgba(0,0,0,.08);
+}
+
+.blog .hentry.format-gallery.has-post-thumbnail .post-thumbnail{
+  transition:transform .32s ease;
+  transform:scale(1);
+  transform-origin:center center;
+}
+.blog .hentry.format-gallery.has-post-thumbnail:hover .post-thumbnail,
+.blog .hentry.format-gallery.has-post-thumbnail:focus-within .post-thumbnail{
+  transform:scale(1.05);
+}
+
+.blog .hentry.format-gallery.has-post-thumbnail .entry-summary{
+  padding-bottom:38px!important;
+  max-height:112px;
+}
+.blog .hentry.format-gallery.has-post-thumbnail .entry-summary p{
+  margin:0;
+}
+.blog .hentry.format-gallery.has-post-thumbnail .entry-title{
+  bottom:112px;
+}
