@@ -10,14 +10,16 @@ title:
         <header class="entry-header">
           {% assign feature = site.data.featured[post.slug] %}
           <a class="post-thumbnail" href="{{ post.url | relative_url }}" {% if feature %}data-bg="{{ '/assets/uploads/' | append: feature | relative_url }}"{% endif %}></a>
-          <h1 class="entry-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h1>
         </header>
+        <div class="card-copy">
+          <h1 class="entry-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h1>
         {% if post.slug == 'bk' %}
           {% assign card_excerpt = post.excerpt | strip_html | strip %}
         {% else %}
           {% assign card_excerpt = post.content | strip_html | strip_newlines | strip %}
         {% endif %}
-        <div class="entry-summary"><p>{{ card_excerpt | truncatewords: 55 }} <a class="more-link" href="{{ post.url | relative_url }}">Continue reading</a></p></div>
+          <div class="entry-summary"><p>{{ card_excerpt | truncatewords: 55 }} <a class="more-link" href="{{ post.url | relative_url }}">Continue reading</a></p></div>
+        </div>
       </article>
       {% endfor %}
     </main>
