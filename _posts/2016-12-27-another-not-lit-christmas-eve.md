@@ -27,11 +27,23 @@ Yet again, the squad set out to enjoy another Christmas Eve like it's 2012. Alas
 
 The night began with the <strong>mandem </strong>congregating at Lazarus' Plaza to blaze and plan the evenings shenanigans.
 
-<div class="wp-gallery"></div>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2016/12/img_4712.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2016/12/img_4687.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2016/12/img_4697.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2016/12/img_4699.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2016/12/img_4702.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2016/12/img_4693.jpg?w=1200" alt=""></figure>
 
 Talks of making a move to Junction were laughed off, but eventually, through mild peer pressure (and a generous gas donation), we made the move. Onward to the place where KFC is a myth and Juice Beef is a luxury to be cherished.
 
-<div class="wp-gallery"></div>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2016/12/img_4727.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2016/12/img_4731.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2016/12/img_4735.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2016/12/img_4734.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2016/12/img_4723.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2016/12/img_4736.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2016/12/img_4737.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2016/12/img_4730.jpg?w=1200" alt=""></figure>
 
 "I have arrived" - A text message I sent to a new and very interesting friend (and possibly my cousin), <a href="https://twitter.com/_banblackbird" target="_blank" rel="noopener">Suzanna Missenberger</a>. Junction, St. Elizabeth. I never liked this place. Junction was never <em>lit</em>. But we are here, and I quickly come to the conclusion that I am too old for this shit. <em>Buggu yagga</em> music &amp; marijuana filled the air. Adolescent teens consuming liquor and dry humping each other. Not my ting, seen? I dapped up the friends then proceed to sleep in my car.
 
@@ -39,6 +51,9 @@ A night well spent.
 
 Well, it was a night. And I definitely spent. Too much money.
 
-<div class="wp-gallery"></div>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2016/12/img_46551.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2016/12/img_4661.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2016/12/img_4671.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2016/12/img_4672.jpg?w=1200" alt=""></figure>
 
 &nbsp;
