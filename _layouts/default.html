@@ -8,7 +8,7 @@
 <link rel="canonical" href="{{ page.url | absolute_url }}">
 <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
 </head>
-<body class="{% if page.layout == 'post' %}single{% elsif page.archive %}blog archive-page{% elsif page.url == '/' %}blog{% endif %}">
+<body class="{% if page.layout == 'post' %}single{% elsif page.new_wave %}blog new-wave-page{% elsif page.archive %}blog archive-page{% elsif page.url == '/' %}blog{% endif %}">
 <div id="page" class="hfeed site-shell">
 <header class="site-header">
   <div class="site-header-inner">
@@ -23,7 +23,7 @@
           <li><a href="https://gumroad.com/seenbylynch" target="_blank" rel="noopener">STORE</a></li>
           <li><a href="{{ '/archive/?cat=FILM' | relative_url }}">FILM</a></li>
           <li class="menu-item-has-children"><a href="{{ '/archive/?cat=CULTURE' | relative_url }}">CULTURE &amp; ARTS</a>
-            <ul class="sub-menu"><li><a href="{{ '/archive/?tag=music' | relative_url }}">MUSIC</a></li><li><a href="{{ '/archive/?cat=ARTS' | relative_url }}">ARTS</a></li></ul>
+            <ul class="sub-menu"><li><a href="{{ '/archive/?tag=music' | relative_url }}">MUSIC</a></li><li><a href="{{ '/archive/?cat=ARTS' | relative_url }}">ARTS</a></li><li><a href="{{ '/category/culture/new-wave/' | relative_url }}">NEW WAVE</a></li></ul>
           </li>
           <li><a href="https://www.flickr.com/photos/lebosslynch/albums" target="_blank" rel="noopener">ARCHIVE</a></li>
           <li><a href="{{ '/archive/?cat=PIXTAPE' | relative_url }}">PIXTAPE</a></li>
