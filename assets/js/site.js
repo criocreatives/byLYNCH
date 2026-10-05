@@ -26,6 +26,30 @@
       }
     });
   }
+  function markClippedExcerpts(root=document){
+    root.querySelectorAll('.blog .hentry.format-gallery.has-post-thumbnail').forEach(card=>{
+      const p=card.querySelector('.card-copy .entry-summary p');
+      const copy=card.querySelector('.card-copy');
+      if(!p||!copy)return;
+
+      const clone=p.cloneNode(true);
+      clone.style.position='absolute';
+      clone.style.visibility='hidden';
+      clone.style.pointerEvents='none';
+      clone.style.display='block';
+      clone.style.webkitLineClamp='unset';
+      clone.style.overflow='visible';
+      clone.style.maxHeight='none';
+      clone.style.width=p.clientWidth+'px';
+      copy.appendChild(clone);
+
+      const cs=getComputedStyle(p);
+      const line=parseFloat(cs.lineHeight)||parseFloat(cs.fontSize)*1.5;
+      const clipped=clone.scrollHeight>(line*2+2);
+      clone.remove();
+      card.classList.toggle('has-clipped-excerpt',clipped);
+    });
+  }
   function cleanImageLists(){
     document.querySelectorAll('.entry-content li').forEach(li=>{if(li.querySelector('img')){li.style.listStyle='none';li.style.marginLeft='0';li.style.paddingLeft='0';const p=li.parentElement;if(p){p.classList.add('image-list');}}});
   }
@@ -160,6 +184,82 @@
     });
     requestAnimationFrame(()=>requestAnimationFrame(layoutBkMasonry));
   }
+  function initSiteSearch(){
+    const header=document.querySelector('.site-header');
+    const button=document.querySelector('.search-toggle');
+    if(!header||!button||header.querySelector('.site-search-panel'))return;
+
+    const panel=document.createElement('div');
+    panel.className='site-search-panel';
+    panel.innerHTML=
+      '<div class="site-search-inner">'+
+        '<div class="site-search-form">'+
+          '<input class="site-search-input" type="search" placeholder="Search by LYNCH…" aria-label="Search posts">'+
+          '<button class="site-search-close" type="button" aria-label="Close search">×</button>'+
+        '</div>'+
+        '<div class="site-search-results"><div class="site-search-empty">Type to search all posts.</div></div>'+
+      '</div>';
+    header.appendChild(panel);
+
+    const input=panel.querySelector('.site-search-input');
+    const results=panel.querySelector('.site-search-results');
+    const close=panel.querySelector('.site-search-close');
+    let docs=null,loading=null,timer=null;
+
+    const escHtml=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
+    const searchUrl=new URL('search.json',document.querySelector('.site-logo-link')?.href||location.origin+'/').href;
+    const load=()=>{
+      if(docs)return Promise.resolve(docs);
+      if(loading)return loading;
+      loading=fetch(searchUrl,{cache:'no-store'})
+        .then(r=>{if(!r.ok)throw new Error('Search index unavailable');return r.json();})
+        .then(data=>docs=data)
+        .finally(()=>loading=null);
+      return loading;
+    };
+    const draw=async()=>{
+      const q=input.value.trim().toLowerCase();
+      if(!q){results.innerHTML='<div class="site-search-empty">Type to search all posts.</div>';return;}
+      results.innerHTML='<div class="site-search-empty">Searching…</div>';
+      try{
+        const data=await load();
+        const terms=q.split(/\s+/).filter(Boolean);
+        const matches=data.filter(d=>{
+          const hay=[d.title,d.excerpt,d.text,(d.categories||[]).join(' '),(d.tags||[]).join(' ')].join(' ').toLowerCase();
+          return terms.every(t=>hay.includes(t));
+        }).slice(0,10);
+        if(!matches.length){results.innerHTML='<div class="site-search-empty">No matching posts.</div>';return;}
+        results.innerHTML=matches.map(d=>{
+          const date=d.date?new Date(d.date).toLocaleDateString('en-US',{year:'numeric',month:'short',day:'numeric'}):'';
+          return '<a class="site-search-result" href="'+escHtml(d.url)+'">'+
+            '<span class="site-search-result-title">'+escHtml(d.title)+'</span>'+
+            (date?'<span class="site-search-result-meta">'+escHtml(date)+'</span>':'')+
+            (d.excerpt?'<span class="site-search-result-excerpt">'+escHtml(d.excerpt)+'</span>':'')+
+          '</a>';
+        }).join('');
+      }catch(err){
+        results.innerHTML='<div class="site-search-empty">Search is temporarily unavailable.</div>';
+      }
+    };
+    const open=()=>{
+      panel.classList.add('is-open');
+      button.setAttribute('aria-expanded','true');
+      setTimeout(()=>input.focus(),0);
+    };
+    const hide=()=>{
+      panel.classList.remove('is-open');
+      button.setAttribute('aria-expanded','false');
+    };
+
+    button.setAttribute('aria-expanded','false');
+    button.addEventListener('click',e=>{e.preventDefault();panel.classList.contains('is-open')?hide():open();});
+    close.addEventListener('click',hide);
+    input.addEventListener('input',()=>{clearTimeout(timer);timer=setTimeout(draw,140);});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape'&&panel.classList.contains('is-open'))hide();});
+    document.addEventListener('click',e=>{
+      if(panel.classList.contains('is-open')&&!panel.contains(e.target)&&!button.contains(e.target))hide();
+    });
+  }
   function initPhotoLightbox(){
     if(document.querySelector('.photo-lightbox'))return;
 
@@ -266,7 +366,7 @@
         }else{
           button.closest('.older-posts-wrap')?.remove();
         }
-        requestAnimationFrame(()=>requestAnimationFrame(styleCards));
+        requestAnimationFrame(()=>requestAnimationFrame(()=>{styleCards();markClippedExcerpts();}));
       }catch(err){
         button.disabled=false;
         button.textContent=original;
@@ -279,6 +379,6 @@
     hero.addEventListener('error',()=>{const first=document.querySelector('.entry-content img');if(first&&hero.src!==first.src)hero.src=first.src;});
     if(!hero.getAttribute('src')){const first=document.querySelector('.entry-content img');if(first)hero.src=first.src;}
   }
-  window.addEventListener('load',()=>{styleCards();cleanImageLists();initBkMasonry();initOlderPosts();initPhotoLightbox();});
-  window.addEventListener('resize',()=>{clearTimeout(window.__gazetteResize);window.__gazetteResize=setTimeout(()=>{styleCards();layoutBkMasonry();},120);});
+  window.addEventListener('load',()=>{styleCards();markClippedExcerpts();cleanImageLists();initBkMasonry();initOlderPosts();initPhotoLightbox();initSiteSearch();});
+  window.addEventListener('resize',()=>{clearTimeout(window.__gazetteResize);window.__gazetteResize=setTimeout(()=>{styleCards();markClippedExcerpts();layoutBkMasonry();},180);});
 })();
