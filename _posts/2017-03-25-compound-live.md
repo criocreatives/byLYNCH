@@ -22,18 +22,42 @@ My condolences to those who missed it. Don't fret; this is the first of many.
 
 The Spot was set on fire with performances from Courtni, Leno Banton, Pag3y, Blvk H3ro, Royal Blu, Chavez Illmatiq, Kione Ziare, Chike The Chemist, The Grei Show, &amp; Jeeby.
 
-<div class="wp-gallery"></div>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/03/mg_7444.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/03/mg_7454.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/03/mg_7465.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/03/mg_7269.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/03/mg_7325.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/03/mg_7360.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/03/mg_7389.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/03/mg_7421.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/03/mg_7366.jpg?w=1200" alt=""></figure>
 
 When mic nah bun up, turn table a bun up. In comes man like R3wind. Man like JujuTron. Man like Joshera. Man like Wavy Jones!
 
-<div class="wp-gallery"></div>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/03/mg_7251.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/03/mg_7290.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/03/mg_7337.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/03/mg_7237.jpg?w=1200" alt=""></figure>
 
 Good vibes. Pure litness. Bare tings. Music and liquid courage buss inah people head. Dance floor shenanigans definitely keep.
 
-<div class="wp-gallery"></div>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/03/mg_7373.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/03/mg_7432.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/03/mg_7297.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/03/mg_7307.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/03/mg_7312.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/03/mg_7343.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/03/mg_7344.jpg?w=1200" alt=""></figure>
 
 Few popular faces passed through. Star ting. Man like EvaFlow. Man like Iotosh (<a href="https://www.youtube.com/watch?v=E88jhjKVbe0" target="_blank">shot a music video for him recently</a>). Man like Kheemy. Tings like Roux &amp; Lila Ike. Love was shown. Art was also on display.
 
-<div class="wp-gallery"></div>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/03/mg_7478.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/03/mg_7487.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/03/mg_7189.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/03/mg_7191.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/03/mg_7212.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/03/mg_7282.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/03/mg_7287.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/03/mg_7280.jpg?w=1200" alt=""></figure>
 
 Very lit. Very culture. Full photo album here: <a href="https://www.flickr.com/gp/lebosslynch/863d82" target="_blank">Compound Live (#seenbyLYNCH)</a>
