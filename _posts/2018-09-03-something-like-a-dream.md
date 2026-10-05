@@ -16,7 +16,10 @@ excerpt: "You know seh you are something like a dream?\nBaby, I couldn't lie."
 <p style="text-align:center">Catch a tiger by the toe.</p>
 <p style="text-align:center">If he hollers, let him go,</p>
 <p style="text-align:center">Eeny, meeny, miny, moe.</p>
-<div class="wp-gallery"></div>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2018/09/mg_7909.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2018/09/mg_7783.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2018/09/mg_7786.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2018/09/mg_7750.jpg?w=1200" alt=""></figure>
 <p style="text-align:center">I just, wanna, take you, by the, wata
 Girl you, feel so, nice
 In your eyes, I, see myself</p>
@@ -35,7 +38,8 @@ Mek wi lips block the moon like is an eclipse
 Yuh clutch to me face while mi holding your hips girl</p>
 <img class="alignnone size-full wp-image-2952" src="/assets/uploads/2018/09/mg_7929.jpg" alt="_MG_7929" width="5999" height="3999" /><img class="alignnone size-full wp-image-2953" src="/assets/uploads/2018/09/mg_7931.jpg" alt="_MG_7931" width="5999" height="3999" /><img class="alignnone size-full wp-image-2954" src="/assets/uploads/2018/09/mg_7939.jpg" alt="_MG_7939" width="5999" height="3999" /><img class="alignnone size-full wp-image-2955" src="/assets/uploads/2018/09/mg_7945.jpg" alt="_MG_7945" width="3999" height="5999" /><img class="alignnone size-full wp-image-2976" src="/assets/uploads/2018/09/mg_7859.jpg" alt="_MG_7859" width="4382" height="5477" />
 
-<div class="wp-gallery"></div>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2018/09/mg_7772.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2018/09/mg_7776.jpg?w=1200" alt=""></figure>
 <p style="text-align:center">I just, wanna, take you, by the, wata
 Girl you, feel so, nice
 In your eyes, I, see myself</p>
