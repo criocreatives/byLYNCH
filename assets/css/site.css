@@ -103,3 +103,95 @@ body:not(.single) .format-gallery.has-post-thumbnail{color:#fff;position:relativ
     position:relative;
   }
 }
+
+/* B***K experimental post redesign */
+.bk-redesign{
+  width:100%;
+  max-width:none;
+  margin:0;
+  padding:0 10px 40px;
+  background:#000;
+}
+.bk-redesign .content-area{
+  width:100%;
+  max-width:1600px;
+  margin:0 auto;
+}
+.single .bk-redesign .site-main{
+  width:100%;
+  max-width:none;
+  margin:0;
+  padding:10px 0 0;
+}
+.bk-redesign .single-entry{
+  width:100%;
+  padding:0;
+  overflow:visible;
+}
+.single .bk-redesign .entry-content{
+  float:none;
+  width:100%;
+  column-count:1;
+  column-gap:10px;
+  font-size:16px;
+  line-height:1.5;
+}
+.bk-redesign .entry-content > *{
+  break-inside:avoid;
+  -webkit-column-break-inside:avoid;
+  page-break-inside:avoid;
+  margin:0 0 10px;
+}
+.bk-redesign .entry-content figure,
+.bk-redesign .entry-content .wp-block-image{
+  display:block;
+  width:100%;
+  margin:0 0 10px;
+  padding:0;
+  background:transparent;
+}
+.bk-redesign .entry-content figure img,
+.bk-redesign .entry-content > img,
+.bk-redesign .entry-content .wp-block-image img{
+  display:block;
+  width:100%;
+  max-width:100%;
+  height:auto;
+  margin:0;
+  border-radius:2px;
+}
+.bk-redesign .entry-content > p,
+.bk-redesign .entry-content > blockquote,
+.bk-redesign .entry-content > h1,
+.bk-redesign .entry-content > h2,
+.bk-redesign .entry-content > h3,
+.bk-redesign .entry-content > h4,
+.bk-redesign .entry-content > h5,
+.bk-redesign .entry-content > h6{
+  padding:18px;
+  background:#151515;
+  color:#f5f5f5;
+  border-radius:2px;
+}
+.bk-redesign .entry-content > p:empty{display:none}
+.bk-redesign .entry-content blockquote p:last-child{margin-bottom:0}
+.bk-redesign .entry-content a{color:#fff}
+.bk-redesign .entry-footer{
+  float:none;
+  clear:both;
+  width:100%;
+  margin:0;
+  padding:10px 0 0;
+  color:#aaa;
+}
+.bk-redesign + .comments-area,
+.bk-redesign .comments-area{background:#000;color:#fff}
+@media(min-width:600px){
+  .single .bk-redesign .entry-content{column-count:2}
+}
+@media(min-width:900px){
+  .single .bk-redesign .entry-content{column-count:3}
+}
+@media(min-width:1250px){
+  .single .bk-redesign .entry-content{column-count:4}
+}
