@@ -470,3 +470,47 @@ body:not(.single) .format-gallery.has-post-thumbnail{color:#fff;position:relativ
   cursor:wait;
   opacity:.65;
 }
+
+/* Homepage cards — clean 4:5 format */
+.blog .hentry.format-gallery.has-post-thumbnail{
+  aspect-ratio:4 / 5;
+  height:auto!important;
+  min-height:0!important;
+  border-radius:10px;
+  overflow:hidden;
+  position:relative;
+}
+.blog .hentry.format-gallery.has-post-thumbnail .entry-header{
+  position:static;
+}
+.blog .hentry.format-gallery.has-post-thumbnail .post-thumbnail{
+  top:0!important;
+  left:0;
+  width:100%!important;
+  height:100%!important;
+  margin:0!important;
+  border-radius:10px;
+}
+.blog .hentry.format-gallery.has-post-thumbnail .entry-title{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:96px;
+  margin:0!important;
+  padding:0 30px 15px!important;
+  z-index:2;
+}
+.blog .hentry.format-gallery.has-post-thumbnail .entry-summary{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  margin:0!important;
+  padding:0 30px 30px!important;
+  z-index:2;
+  max-height:96px;
+  overflow:hidden;
+}
+.blog .hentry.format-gallery.has-post-thumbnail .entry-meta{
+  display:none!important;
+}
