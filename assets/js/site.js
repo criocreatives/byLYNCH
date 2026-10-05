@@ -32,15 +32,48 @@
   function normalizePostTextNodes(){
     const grid=document.querySelector('.bk-redesign .entry-content');
     if(!grid)return;
+
+    const inlineTags=new Set(['A','ABBR','B','BR','CITE','CODE','DEL','EM','I','INS','MARK','Q','S','SMALL','SPAN','STRONG','SUB','SUP','U']);
+    let paragraph=null;
+
+    const startParagraph=(before)=>{
+      if(paragraph)return paragraph;
+      paragraph=document.createElement('p');
+      grid.insertBefore(paragraph,before);
+      return paragraph;
+    };
+
     [...grid.childNodes].forEach(node=>{
-      if(node.nodeType!==Node.TEXT_NODE)return;
-      const text=node.textContent.replace(/\s+/g,' ').trim();
-      if(!text){node.remove();return;}
-      const p=document.createElement('p');
-      p.textContent=text;
-      node.replaceWith(p);
+      if(node.nodeType===Node.TEXT_NODE){
+        if(!node.textContent.replace(/\u00a0/g,' ').trim()){
+          if(paragraph)paragraph.appendChild(document.createTextNode(' '));
+          node.remove();
+          return;
+        }
+        startParagraph(node).appendChild(node);
+        return;
+      }
+
+      if(node.nodeType!==Node.ELEMENT_NODE)return;
+
+      if(node.tagName==='HR'){
+        node.remove();
+        paragraph=null;
+        return;
+      }
+
+      if(inlineTags.has(node.tagName)){
+        startParagraph(node).appendChild(node);
+        return;
+      }
+
+      paragraph=null;
     });
-    grid.querySelectorAll(':scope > hr').forEach(hr=>hr.remove());
+
+    [...grid.querySelectorAll(':scope > p')].forEach(p=>{
+      const plain=p.textContent.replace(/\u00a0/g,' ').replace(/\s+/g,' ').trim();
+      if(!plain || /^[,;:.!?'"“”‘’\-–—…]+(?:\s+(?:and|or))?$/i.test(plain))p.remove();
+    });
   }
   function normalizeNestedPostGalleries(){
     const grid=document.querySelector('.bk-redesign .entry-content');
