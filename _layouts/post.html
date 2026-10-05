@@ -13,16 +13,18 @@ layout: default
     </div>
   </div>
 </header>
+{% if page.slug == 'bk' %}
+<div class="bk-post-meta">
+  <div class="bk-post-meta-inner">
+    <div class="bk-post-date"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time></div>
+    {% if page.tags and page.tags.size > 0 %}<div class="bk-post-tags"><em>{{ page.tags | join: ", " }}</em></div>{% endif %}
+  </div>
+</div>
+{% endif %}
 <div class="site-content-inner{% if page.slug == 'bk' %} bk-redesign{% endif %}">
   <div class="content-area">
     <main class="site-main">
       <article class="hentry single-entry">
-        {% if page.slug == 'bk' %}
-        <div class="bk-post-meta">
-          <div class="bk-post-date"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time></div>
-          {% if page.tags and page.tags.size > 0 %}<div class="bk-post-tags"><em>{{ page.tags | join: ", " }}</em></div>{% endif %}
-        </div>
-        {% endif %}
         <div class="entry-content">{{ content }}</div>
         {% unless page.slug == 'bk' %}
         <footer class="entry-footer">
