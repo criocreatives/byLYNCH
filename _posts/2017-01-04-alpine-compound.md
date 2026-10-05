@@ -25,7 +25,10 @@ You're on SoundCloud. The track you searched for finished playing. Algorithms s
 
 Block C. Chancellor Hall. UWI, Mona. Kingston. A room with a red light. Equipped with a PC and a pair of KRK Rokit 5 G3 studio monitors. The sounds come from here (among other places). Nothing fancy. Functional.
 
-<div class="wp-gallery"></div>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/01/img_0177.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/01/img_0184.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/01/img_0201.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/01/img_0237.jpg?w=1200" alt=""></figure>
 
 <a href="https://soundcloud.com/alpinecompound" target="_blank" rel="noopener">Alpine Compound</a> makes do with what they have. A small room, wires everywhere. Cozy. Saturday night link-up with<i> mandem </i>for a <em>cook sesh</em>. One by one, the team rolls through. Supplying constructive criticism and uplifting remarks. Mary Jane is present. Hotbox ting.
 
@@ -33,9 +36,30 @@ Block C. Chancellor Hall. UWI, Mona. Kingston. A room with a red light. Equipped
 
 The tal<strong>ent</strong> and skill pres<strong>ent</strong> in this room is preval<strong>ent</strong>. All being put to use in the name of expression and entertainment. Here are a few members of the collective:
 
-<div class="wp-gallery"></div>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/01/img_0331.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/01/img_0286.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/01/img_0250.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/01/img_0229.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/01/img_0136.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/01/img_0120.jpg?w=1200" alt=""></figure>
 
 <hr />
 
 <h2 style="text-align:center;">Gallery</h2>
-<div class="wp-gallery"></div>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/01/img_0142.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/01/img_0328.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/01/img_0206.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/01/img_0109.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/01/img_0135.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/01/img_0211.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/01/img_0219.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/01/img_0105.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/01/img_0092.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/01/img_0087.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/01/img_0089.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/01/img_0098.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/01/img_0106.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/01/img_0165.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/01/img_0157.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/01/img_0338.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/01/img_0068.jpg?w=1200" alt=""></figure>
