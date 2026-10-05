@@ -67,11 +67,44 @@
     });
     requestAnimationFrame(()=>requestAnimationFrame(layoutBkMasonry));
   }
+  function initOlderPosts(){
+    const button=document.querySelector('.older-posts-button');
+    if(!button)return;
+    button.addEventListener('click',async()=>{
+      const next=button.dataset.nextUrl;
+      if(!next)return;
+      const original=button.textContent;
+      button.disabled=true;
+      button.textContent='LOADING…';
+      try{
+        const res=await fetch(next,{credentials:'same-origin'});
+        if(!res.ok)throw new Error('Could not load older posts');
+        const html=await res.text();
+        const doc=new DOMParser().parseFromString(html,'text/html');
+        const incoming=[...doc.querySelectorAll('.blog .site-main > .hentry')];
+        const target=document.querySelector('.blog .site-main');
+        if(target)incoming.forEach(card=>target.appendChild(document.importNode(card,true)));
+        const nextButton=doc.querySelector('.older-posts-button');
+        if(nextButton&&nextButton.dataset.nextUrl){
+          button.dataset.nextUrl=nextButton.dataset.nextUrl;
+          button.disabled=false;
+          button.textContent=original;
+        }else{
+          button.closest('.older-posts-wrap')?.remove();
+        }
+        requestAnimationFrame(()=>requestAnimationFrame(styleCards));
+      }catch(err){
+        button.disabled=false;
+        button.textContent=original;
+        console.error(err);
+      }
+    });
+  }
   const hero=document.querySelector('[data-entry-hero] [data-featured-image]');
   if(hero){
     hero.addEventListener('error',()=>{const first=document.querySelector('.entry-content img');if(first&&hero.src!==first.src)hero.src=first.src;});
     if(!hero.getAttribute('src')){const first=document.querySelector('.entry-content img');if(first)hero.src=first.src;}
   }
-  window.addEventListener('load',()=>{styleCards();cleanImageLists();initBkMasonry();});
+  window.addEventListener('load',()=>{styleCards();cleanImageLists();initBkMasonry();initOlderPosts();});
   window.addEventListener('resize',()=>{clearTimeout(window.__gazetteResize);window.__gazetteResize=setTimeout(()=>{styleCards();layoutBkMasonry();},120);});
 })();
