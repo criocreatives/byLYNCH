@@ -18,7 +18,7 @@ title:
         {% else %}
           {% assign card_excerpt = post.content | strip_html | strip_newlines | strip %}
         {% endif %}
-          <div class="entry-summary"><p>{{ card_excerpt | truncatewords: 55 }} <a class="more-link" href="{{ post.url | relative_url }}">Continue reading</a></p></div>
+          <div class="entry-summary"><p>{{ card_excerpt | truncatewords: 55 }} <a class="more-link" href="{{ post.url | relative_url }}">View gallery</a></p></div>
         </div>
       </article>
       {% endfor %}
