@@ -967,3 +967,31 @@ body.lightbox-open{overflow:hidden}
   border:0;
   border-radius:0;
 }
+
+/* Match original Gazette homepage card typography */
+.blog .hentry.format-gallery.has-post-thumbnail .card-copy{
+  padding:0 30px 30px!important;
+}
+.blog .hentry.format-gallery.has-post-thumbnail .card-copy .entry-title{
+  margin:0 0 14px!important;
+  font-size:25px!important;
+  line-height:1.2!important;
+  font-weight:700!important;
+}
+.blog .hentry.format-gallery.has-post-thumbnail .card-copy .entry-title a{
+  color:#fff!important;
+  font-weight:700!important;
+  text-decoration:none!important;
+}
+.blog .hentry.format-gallery.has-post-thumbnail .card-copy .entry-summary,
+.blog .hentry.format-gallery.has-post-thumbnail .card-copy .entry-summary p{
+  font-size:16px!important;
+  line-height:1.5!important;
+  font-weight:400!important;
+  color:#fff!important;
+}
+.blog .hentry.format-gallery.has-post-thumbnail .card-copy .more-link{
+  color:#fff!important;
+  font-weight:700!important;
+  text-decoration:none!important;
+}
