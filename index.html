@@ -2,22 +2,29 @@
 layout: default
 title:
 ---
-<div class="gazette-archive">
-{% for post in paginator.posts %}
-<article class="gazette-card format-gallery has-post-thumbnail">
-  <header class="entry-header">
-    <div class="entry-meta">
-      <span class="cat-links">{{ post.categories | join: ', ' }}</span>
-      <span class="comments-link">{% if post.archived_comments and post.archived_comments.size > 0 %}{{ post.archived_comments.size }} Comment{% if post.archived_comments.size != 1 %}s{% endif %}{% else %}Leave a comment{% endif %}</span>
-    </div>
-    {% assign feature = site.data.featured[post.slug] %}
-    <a class="post-thumbnail" href="{{ post.url | relative_url }}"{% if feature %} style="background-image:url('{{ '/assets/uploads/' | append: feature | relative_url }}')"{% endif %}></a>
-    <h2 class="entry-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-  </header>
-  {% assign card_excerpt = post.excerpt | strip_html | strip %}
-  {% if card_excerpt == "" %}{% assign card_excerpt = post.content | strip_html | strip %}{% endif %}
-  <div class="entry-summary"><p>{{ card_excerpt | truncatewords: 24 }} <a class="more-link" href="{{ post.url | relative_url }}">Continue reading</a></p></div>
-</article>
-{% endfor %}
+<div class="site-content-inner">
+  <div class="content-area">
+    <main class="site-main">
+      {% for post in paginator.posts %}
+      <article class="hentry format-gallery has-post-thumbnail">
+        <header class="entry-header">
+          <div class="entry-meta">
+            <span class="cat-links">{{ post.categories | join: ', ' }}</span>
+            <span class="comments-link">{% if post.archived_comments and post.archived_comments.size > 0 %}{{ post.archived_comments.size }} Comment{% if post.archived_comments.size != 1 %}s{% endif %}{% else %}Leave a comment{% endif %}</span>
+          </div>
+          {% assign feature = site.data.featured[post.slug] %}
+          <a class="post-thumbnail" href="{{ post.url | relative_url }}" {% if feature %}data-bg="{{ '/assets/uploads/' | append: feature | relative_url }}"{% endif %}></a>
+          <h1 class="entry-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h1>
+        </header>
+        {% if post.slug == 'bk' %}
+          {% assign card_excerpt = post.excerpt | strip_html | strip %}
+        {% else %}
+          {% assign card_excerpt = post.content | strip_html | strip_newlines | strip %}
+        {% endif %}
+        <div class="entry-summary"><p>{{ card_excerpt | truncatewords: 55 }} <a class="more-link" href="{{ post.url | relative_url }}">Continue reading</a></p></div>
+      </article>
+      {% endfor %}
+    </main>
+    <nav class="pagination">{% if paginator.previous_page %}<a href="{{ paginator.previous_page_path | relative_url }}">Newer posts</a>{% endif %}{% if paginator.next_page %}<a href="{{ paginator.next_page_path | relative_url }}">Older posts</a>{% endif %}</nav>
+  </div>
 </div>
-<nav class="pagination">{% if paginator.previous_page %}<a href="{{ paginator.previous_page_path | relative_url }}">Newer posts</a>{% else %}<span></span>{% endif %}{% if paginator.next_page %}<a href="{{ paginator.next_page_path | relative_url }}">Older posts</a>{% endif %}</nav>
