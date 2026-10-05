@@ -6,8 +6,7 @@ date_string: "2017-01-07 18:34:01"
 modified: 2017-01-07 18:35:23 -0500
 permalink: /2017/01/07/boaty-ft-pedro-deniro/
 author: "lebosslynch"
-categories:
-  - "PHOTO SET"
+categories: []
 tags:
   - "series"
 ---
