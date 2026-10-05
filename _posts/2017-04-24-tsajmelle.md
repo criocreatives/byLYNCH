@@ -6,8 +6,7 @@ date_string: "2017-04-24 18:30:41"
 modified: 2023-12-29 02:43:30 -0500
 permalink: /2017/04/24/tsajmelle/
 author: "lebosslynch"
-categories:
-  - "PHOTO SET"
+categories: []
 tags:
   - ""
 excerpt: "Set di link nuh bredda."
