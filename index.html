@@ -8,10 +8,6 @@ title:
       {% for post in paginator.posts %}
       <article class="hentry format-gallery has-post-thumbnail">
         <header class="entry-header">
-          <div class="entry-meta">
-            <span class="cat-links">{{ post.categories | join: ', ' }}</span>
-            <span class="comments-link">{% if post.archived_comments and post.archived_comments.size > 0 %}{{ post.archived_comments.size }} Comment{% if post.archived_comments.size != 1 %}s{% endif %}{% else %}Leave a comment{% endif %}</span>
-          </div>
           {% assign feature = site.data.featured[post.slug] %}
           <a class="post-thumbnail" href="{{ post.url | relative_url }}" {% if feature %}data-bg="{{ '/assets/uploads/' | append: feature | relative_url }}"{% endif %}></a>
           <h1 class="entry-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h1>
