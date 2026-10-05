@@ -14,12 +14,10 @@ tags:
 ---
 <p style="text-align:center;"><div class="embed"><iframe src="https://www.youtube.com/embed/AQy36IlT9yg" title="YouTube video" loading="lazy" allowfullscreen></iframe></div></p>
 <p style="text-align:left;">Star Trek monologue about love from the 1999 episode "The Disease"</p>
-<div class="disease-dialogue">
-  <div class="dialogue-line"><strong class="seven">Seven of Nine</strong>: Parental love, romantic love, affection between friends – specify.</div>
-  <div class="dialogue-line"><strong class="harry">Harry Kim</strong>: Romantic love.</div>
-  <div class="dialogue-line"><strong class="seven">Seven of Nine</strong>: An attraction based on sexual desire, one that facilitates procreation.</div>
-  <div class="dialogue-line"><strong class="seven">Seven of Nine</strong>: The Borg have referenced this condition in over 6,000 assimilated species.</div>
-  <div class="dialogue-line"><strong class="harry">Harry Kim</strong>: Condition? You make it sound like a disease.</div>
-  <div class="dialogue-line"><strong class="seven">Seven of Nine</strong>: Physiologically, it bears a striking similarity to disease. A series of biochemical responses that trigger an emotional cascade, impairing normal functioning.</div>
-  <div class="dialogue-line"><strong class="harry">Harry Kim</strong>: Forget it.</div>
-</div>
+<p class="disease-dialogue"><strong class="seven">Seven of Nine</strong>: Parental love, romantic love, affection between friends – specify.<br>
+<strong class="harry">Harry Kim</strong>: Romantic love.<br>
+<strong class="seven">Seven of Nine</strong>: An attraction based on sexual desire, one that facilitates procreation.<br>
+<strong class="seven">Seven of Nine</strong>: The Borg have referenced this condition in over 6,000 assimilated species.<br>
+<strong class="harry">Harry Kim</strong>: Condition? You make it sound like a disease.<br>
+<strong class="seven">Seven of Nine</strong>: Physiologically, it bears a striking similarity to disease. A series of biochemical responses that trigger an emotional cascade, impairing normal functioning.<br>
+<strong class="harry">Harry Kim</strong>: Forget it.</p>
