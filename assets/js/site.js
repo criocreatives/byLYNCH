@@ -29,6 +29,35 @@
   function cleanImageLists(){
     document.querySelectorAll('.entry-content li').forEach(li=>{if(li.querySelector('img')){li.style.listStyle='none';li.style.marginLeft='0';li.style.paddingLeft='0';const p=li.parentElement;if(p){p.classList.add('image-list');}}});
   }
+  function normalizeNestedPostGalleries(){
+    const grid=document.querySelector('.bk-redesign .entry-content');
+    if(!grid)return;
+    [...grid.children].forEach(child=>{
+      const imgs=[...child.querySelectorAll('img')];
+      if(imgs.length<2)return;
+      const galleryLike=
+        child.matches('.wp-block-gallery,.wp-block-coblocks-gallery-stacked,.gallery,[class*="gallery"]') ||
+        !!child.querySelector('.wp-block-gallery,.coblocks-gallery,.gallery,[class*="gallery"]');
+      if(!galleryLike)return;
+
+      const frag=document.createDocumentFragment();
+      imgs.forEach(img=>{
+        const closest=img.closest('figure');
+        let item;
+        if(closest && closest!==child && child.contains(closest) && closest.querySelectorAll('img').length===1){
+          item=closest.cloneNode(true);
+        }else{
+          item=document.createElement('figure');
+          item.className='wp-block-image';
+          item.appendChild(img.cloneNode(true));
+        }
+        item.classList.add('masonry-item');
+        item.removeAttribute('style');
+        frag.appendChild(item);
+      });
+      child.replaceWith(frag);
+    });
+  }
   function bkColumnCount(){
     const w=window.innerWidth;
     if(w>=900)return 3;
@@ -62,6 +91,7 @@
   function initBkMasonry(){
     const grid=document.querySelector('.bk-redesign .entry-content');
     if(!grid)return;
+    normalizeNestedPostGalleries();
     grid.querySelectorAll('img').forEach(img=>{
       if(!img.complete)img.addEventListener('load',layoutBkMasonry,{once:false});
     });
