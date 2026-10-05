@@ -308,3 +308,22 @@ body:not(.single) .format-gallery.has-post-thumbnail{color:#fff;position:relativ
   grid-auto-flow:row;
   align-items:start;
 }
+
+/* B***K v4 — metadata bar is a true full-bleed band attached to hero */
+.bk-post-meta{
+  width:100%;
+  margin:0;
+  padding:0;
+  background:#fff;
+  color:#111;
+  border-radius:0;
+}
+.bk-post-meta-inner{
+  width:min(1600px,calc(100% - 20px));
+  margin:0 auto;
+  padding:16px 8px;
+}
+.bk-redesign{
+  padding-top:10px;
+}
+.bk-redesign .bk-post-meta{display:none!important}
