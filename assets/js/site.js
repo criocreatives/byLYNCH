@@ -29,11 +29,42 @@
   function cleanImageLists(){
     document.querySelectorAll('.entry-content li').forEach(li=>{if(li.querySelector('img')){li.style.listStyle='none';li.style.marginLeft='0';li.style.paddingLeft='0';const p=li.parentElement;if(p){p.classList.add('image-list');}}});
   }
+  function layoutBkMasonry(){
+    const grid=document.querySelector('.bk-redesign .entry-content');
+    if(!grid)return;
+    const cs=getComputedStyle(grid);
+    const gap=parseFloat(cs.rowGap)||10;
+    const row=parseFloat(cs.gridAutoRows)||1;
+    const cols=Math.max(1,cs.gridTemplateColumns.split(/\s+/).filter(Boolean).length);
+    const items=[...grid.children].filter(el=>getComputedStyle(el).display!=='none');
+    items.forEach((item,i)=>{
+      item.style.gridColumn=String((i%cols)+1);
+      item.style.gridRowEnd='auto';
+    });
+    requestAnimationFrame(()=>{
+      items.forEach(item=>{
+        const h=item.getBoundingClientRect().height;
+        const span=Math.max(1,Math.ceil((h+gap)/(row+gap)));
+        item.style.gridRowEnd='span '+span;
+      });
+    });
+  }
+  function initBkMasonry(){
+    const grid=document.querySelector('.bk-redesign .entry-content');
+    if(!grid)return;
+    grid.querySelectorAll('img').forEach(img=>{if(!img.complete)img.addEventListener('load',layoutBkMasonry);});
+    if('ResizeObserver' in window){
+      const ro=new ResizeObserver(layoutBkMasonry);
+      [...grid.children].forEach(el=>ro.observe(el));
+      window.__bkMasonryObserver=ro;
+    }
+    layoutBkMasonry();
+  }
   const hero=document.querySelector('[data-entry-hero] [data-featured-image]');
   if(hero){
     hero.addEventListener('error',()=>{const first=document.querySelector('.entry-content img');if(first&&hero.src!==first.src)hero.src=first.src;});
     if(!hero.getAttribute('src')){const first=document.querySelector('.entry-content img');if(first)hero.src=first.src;}
   }
-  window.addEventListener('load',()=>{styleCards();cleanImageLists();});
-  window.addEventListener('resize',()=>{clearTimeout(window.__gazetteResize);window.__gazetteResize=setTimeout(styleCards,120);});
+  window.addEventListener('load',()=>{styleCards();cleanImageLists();initBkMasonry();});
+  window.addEventListener('resize',()=>{clearTimeout(window.__gazetteResize);window.__gazetteResize=setTimeout(()=>{styleCards();layoutBkMasonry();},120);});
 })();
