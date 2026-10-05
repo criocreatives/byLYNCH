@@ -6,8 +6,7 @@ date_string: "2017-01-07 12:00:31"
 modified: 2024-01-26 11:30:03 -0500
 permalink: /2017/01/07/jada-the-iphone/
 author: "lebosslynch"
-categories:
-  - "PHOTO SET"
+categories: []
 tags:
   - "series"
 ---
