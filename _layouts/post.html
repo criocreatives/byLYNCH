@@ -8,7 +8,9 @@ layout: default
   </div>
   <div class="entry-header-wrapper">
     <div class="entry-header-inner">
-      <div class="entry-meta">{% if page.categories %}{{ page.categories | join: ', ' }}{% endif %}</div>
+      {% capture visible_categories %}{% assign first_visible = true %}{% for cat in page.categories %}{% unless cat == 'PHOTO SET' or cat == 'Uncategorized' %}{% unless first_visible %}, {% endunless %}{{ cat }}{% assign first_visible = false %}{% endunless %}{% endfor %}{% endcapture %}
+      {% assign visible_categories = visible_categories | strip %}
+      {% if visible_categories != '' %}<div class="entry-meta">{{ visible_categories }}</div>{% endif %}
       <h1 class="entry-title">{{ page.title }}</h1>
     </div>
   </div>
