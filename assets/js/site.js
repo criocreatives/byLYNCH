@@ -93,7 +93,15 @@
     if(!grid)return;
     normalizeNestedPostGalleries();
     grid.querySelectorAll('img').forEach(img=>{
-      if(!img.complete)img.addEventListener('load',layoutBkMasonry,{once:false});
+      const markLoaded=()=>{
+        img.classList.add('lazy-loaded');
+        layoutBkMasonry();
+      };
+      if(img.complete && img.naturalWidth){
+        markLoaded();
+      }else{
+        img.addEventListener('load',markLoaded,{once:true});
+      }
     });
     requestAnimationFrame(()=>requestAnimationFrame(layoutBkMasonry));
   }
