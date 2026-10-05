@@ -46,12 +46,18 @@ One was once undesirable because they're dark skinned. Now, one may be undesirab
 
 I've even seen someone say they've found a person with all the traits they're looking for except one draw back; they're light skinned. The common excuse of "<em>preference</em>" may be used here.
 
-<div class="wp-gallery"></div>The offensive things once said about us dark skins are now frowned upon. That is good. Similar offensive comments being aimed at the light skins are lauded in a sense. This is bad.
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/07/mg_4430.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/07/mg_4446.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/07/mg_4432.jpg?w=1200" alt=""></figure>The offensive things once said about us dark skins are now frowned upon. That is good. Similar offensive comments being aimed at the light skins are lauded in a sense. This is bad.
 
 It's like when everyone wore baggy jeans and over-sized t-shirts. That was in style. Clothes that fit right were <em>ew</em>. Time passes. Everyone's clothes now fit (some closer than others. Ha!). Baggy and over-sized clothes are ridiculous. Laughed at.
 
 How long until the next shift?&nbsp;What's the next wave? I want know so I can pick who I have children with. Can't have the wrong colour kids now can we? Lol. <em>Taam</em>.
 
-<div class="wp-gallery"></div>Let's stop offending our fellow humans because of skin tone. It's all the same stuff on the inside. Heart. Lungs. Liver.
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/07/mg_4442.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/07/mg_4436.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/07/mg_4438.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/07/mg_4437.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/07/mg_4435.jpg?w=1200" alt=""></figure>Let's stop offending our fellow humans because of skin tone. It's all the same stuff on the inside. Heart. Lungs. Liver.
 
 Excuse mi.
