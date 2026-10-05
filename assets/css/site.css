@@ -545,3 +545,20 @@ body:not(.single) .format-gallery.has-post-thumbnail{color:#fff;position:relativ
     margin-bottom:60px!important;
   }
 }
+
+/* Universal post redesign */
+.single .bk-redesign .entry-content video,
+.single .bk-redesign .entry-content iframe,
+.single .bk-redesign .entry-content embed{
+  display:block;
+  width:100%;
+  max-width:100%;
+  border-radius:10px;
+}
+.single .bk-redesign .entry-content > ul,
+.single .bk-redesign .entry-content > ol{
+  background:#151515;
+  color:#f5f5f5;
+  border-radius:10px;
+  padding:18px 18px 18px 38px;
+}
