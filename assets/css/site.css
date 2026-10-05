@@ -405,3 +405,35 @@ body:not(.single) .format-gallery.has-post-thumbnail{color:#fff;position:relativ
 .main-navigation .current-menu-item > a:focus{
   color:#ed1744!important;
 }
+
+/* Match original Gazette desktop submenu indicator */
+@media(min-width:840px){
+  .main-navigation .dropdown-toggle{
+    display:none!important;
+  }
+  .main-navigation .menu-item-has-children{
+    padding-right:38.5px!important;
+    position:relative;
+  }
+  .main-navigation .menu-item-has-children>a{
+    padding-right:0!important;
+    position:static!important;
+  }
+  .main-navigation .menu-item-has-children>a::after{
+    content:""!important;
+    position:absolute!important;
+    right:16px!important;
+    top:50%!important;
+    width:6px!important;
+    height:6px!important;
+    margin-top:-5px!important;
+    border-right:2px solid #ed1744!important;
+    border-bottom:2px solid #ed1744!important;
+    transform:rotate(45deg)!important;
+    background:none!important;
+  }
+  .main-navigation ul ul .menu-item-has-children>a::after{
+    transform:rotate(-45deg)!important;
+    margin-top:-3px!important;
+  }
+}
