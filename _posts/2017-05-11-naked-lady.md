@@ -8,7 +8,6 @@ permalink: /2017/05/11/naked-lady/
 author: "lebosslynch"
 categories:
   - "ARTS"
-  - "PHOTO SET"
 tags:
   - ""
 ---
