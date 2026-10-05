@@ -924,3 +924,29 @@ body.lightbox-open{overflow:hidden}
 @media(min-width:960px){.site-search-inner{width:840px}}
 @media(min-width:1080px){.site-search-inner{width:960px}}
 @media(min-width:1380px){.site-search-inner{width:1260px}}
+
+/* Search button hover */
+.search-toggle{
+  cursor:pointer;
+  transition:background-color .22s ease,border-color .22s ease;
+}
+.search-toggle::before{
+  transition:border-color .22s ease;
+}
+.search-toggle::after{
+  transition:background-color .22s ease;
+}
+.search-toggle:hover,
+.search-toggle:focus{
+  background:#ed1744;
+  border-color:#ed1744;
+  outline:none;
+}
+.search-toggle:hover::before,
+.search-toggle:focus::before{
+  border-color:#fff;
+}
+.search-toggle:hover::after,
+.search-toggle:focus::after{
+  background:#fff;
+}
