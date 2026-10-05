@@ -18,7 +18,11 @@ Meet the "Sonically Revealing" HiiDDEN FVCES. A group of five music producers, p
 
 Top five. Top five. Top five.
 
-<div class="wp-gallery"></div>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/02/img_7202.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/02/img_7206.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/02/img_7213.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/02/img_7358.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/02/img_7277.jpg?w=1200" alt=""></figure>
 
 <p><a href="https://api.soundcloud.com/users/223341363" target="_blank" rel="noopener">Listen on SoundCloud</a></p>
 
@@ -27,4 +31,28 @@ Mandem roll out fresh inah di jungle. Good vibes as usual. Mhm. A it.
 <hr />
 
 <h2 style="text-align:center;">Gallery</h2>
-<div class="wp-gallery"></div>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/02/img_7565.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/02/img_7481.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/02/img_7272.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/02/img_7266.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/02/img_7275.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/02/img_7276.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/02/img_7407.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/02/img_7455.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/02/img_7422.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/02/img_7434.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/02/img_7433.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/02/img_7432.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/02/img_7430.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/02/img_7424.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/02/img_7208.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/02/img_7265.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/02/img_7330.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/02/img_7374.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/02/img_7376.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/02/img_7382.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/02/img_7403.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/02/img_7459.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/02/img_7408.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/02/img_7516.jpg?w=1200" alt=""></figure>
+<figure class="wp-block-image"><img src="https://bylynch.wordpress.com/wp-content/uploads/2017/02/img_7406.jpg?w=1200" alt=""></figure>
