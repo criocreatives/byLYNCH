@@ -1117,3 +1117,74 @@ body.lightbox-open{overflow:hidden}
 @media(min-width:1380px){
   .new-wave-intro,.new-wave-albums{width:1260px}
 }
+
+/* Demo AdSense placeholder */
+.demo-ad-wrap{
+  width:90%;
+  max-width:970px;
+  margin:22px auto 10px;
+  font-family:Lato,Arial,sans-serif;
+}
+.demo-ad-label{
+  margin:0 0 5px;
+  color:#8a8a8a;
+  font-size:9px;
+  line-height:1.2;
+  letter-spacing:.12em;
+  text-align:center;
+}
+.demo-ad-unit{
+  min-height:90px;
+  border:1px solid #e2e2e2;
+  background:#fafafa;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  padding:16px 20px;
+  box-sizing:border-box;
+}
+.demo-ad-copy{
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  gap:3px;
+  color:#202124;
+}
+.demo-ad-copy strong{
+  font-size:17px;
+  line-height:1.25;
+  font-weight:700;
+}
+.demo-ad-copy > span:last-child{
+  color:#5f6368;
+  font-size:12px;
+  line-height:1.35;
+}
+.demo-ad-sponsored{
+  color:#5f6368!important;
+  font-size:10px!important;
+  line-height:1.2!important;
+}
+.demo-ad-cta{
+  flex:0 0 auto;
+  border:1px solid #dadce0;
+  border-radius:3px;
+  background:#fff;
+  color:#1a73e8;
+  padding:9px 13px;
+  font-size:12px;
+  font-weight:700;
+  white-space:nowrap;
+}
+@media(max-width:767px){
+  .demo-ad-wrap{margin:14px auto 4px}
+  .demo-ad-unit{
+    min-height:100px;
+    padding:13px 14px;
+    gap:12px;
+  }
+  .demo-ad-copy strong{font-size:15px}
+  .demo-ad-copy > span:last-child{display:none}
+  .demo-ad-cta{padding:8px 10px}
+}
