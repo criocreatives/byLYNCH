@@ -17,8 +17,18 @@ layout: default
 </header>
 <div class="bk-post-meta">
   <div class="bk-post-meta-inner">
-    <div class="bk-post-date"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time></div>
-    {% if page.tags and page.tags.size > 0 %}<div class="bk-post-tags"><em>{{ page.tags | join: ", " }}</em></div>{% endif %}
+    <div class="bk-post-meta-copy">
+      <div class="bk-post-date"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time></div>
+      {% if page.tags and page.tags.size > 0 %}<div class="bk-post-tags"><em>{{ page.tags | join: ", " }}</em></div>{% endif %}
+    </div>
+    <aside class="demo-ad-inline" aria-label="Advertisement preview">
+      <span class="demo-ad-inline-label">ADVERTISEMENT</span>
+      <div class="demo-ad-inline-body">
+        <span class="demo-ad-sponsored">Sponsored · Demo ad</span>
+        <strong>Sample Google ad placement</strong>
+      </div>
+      <span class="demo-ad-cta">Learn more</span>
+    </aside>
   </div>
 </div>
 <div class="site-content-inner bk-redesign">
@@ -28,6 +38,17 @@ layout: default
         {% assign lazy_content = content | replace: '<img ', '<img loading="lazy" decoding="async" ' %}
         <div class="entry-content">{{ lazy_content }}</div>
       </article>
+      <aside class="demo-ad-after-gallery" aria-label="Advertisement preview">
+        <div class="demo-ad-label">ADVERTISEMENT</div>
+        <div class="demo-ad-unit">
+          <div class="demo-ad-copy">
+            <span class="demo-ad-sponsored">Sponsored · Demo ad</span>
+            <strong>See what an AdSense banner would feel like here.</strong>
+            <span>This is only a visual placeholder — no ad network is loaded.</span>
+          </div>
+          <span class="demo-ad-cta">Learn more</span>
+        </div>
+      </aside>
       {% if page.archived_comments and page.archived_comments.size > 0 %}
       <section class="comments-area">
         <h2>{{ page.archived_comments.size }} thought{% if page.archived_comments.size != 1 %}s{% endif %} on “{{ page.title }}”</h2>
