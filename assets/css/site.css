@@ -1174,6 +1174,9 @@ body.lightbox-open{overflow:hidden}
 .single .bk-redesign .entry-content:not(.masonry-initialized){
   display:grid!important;
   grid-template-columns:minmax(0,1fr);
+  /* Earlier masonry styling used 1px implicit rows; reset for CSS-grid fallback. */
+  grid-auto-rows:auto!important;
+  grid-auto-flow:row!important;
   gap:10px;
   height:auto!important;
   align-items:start;
@@ -1269,6 +1272,9 @@ body.lightbox-open{overflow:hidden}
   height:auto!important;
   min-height:0!important;
   position:relative!important;
+  /* Override legacy grid-auto-rows:1px (the overlapping/gallery-collapse bug). */
+  grid-auto-rows:auto!important;
+  grid-auto-flow:row!important;
   gap:10px!important;
   align-items:start!important;
   grid-template-columns:minmax(0,1fr)!important;
