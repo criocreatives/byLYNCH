@@ -14,7 +14,7 @@ excerpt: "808's slide tackle your tympanic membrane and high-hats slice up your 
 ---
 You're on SoundCloud. The track you searched for finished playing. Algorithms shuffle to another <em>related </em>track. 808's slide tackle your tympanic membrane and high-hats slice up your cochlea. Clean sounds. Professional. You think it's safe to assume these sounds came out of big studio. Big control panel. Big A/C unit. Big front desk. Big building. Bare tings. Lol, no still.
 
-<img class="alignnone size-full wp-image-810" src="/assets/uploads/2017/01/img_0240.jpg" alt="img_0240" width="5999" height="3999" />
+<figure class="wp-block-image size-large"><img class="alignnone size-full wp-image-810" src="/assets/uploads/2017/01/img_0240.jpg" alt="img_0240" width="5999" height="3999" /></figure>
 
 Block C. Chancellor Hall. UWI, Mona. Kingston. A room with a red light. Equipped with a PC and a pair of KRK Rokit 5 G3 studio monitors. The sounds come from here (among other places). Nothing fancy. Functional.
 
@@ -25,7 +25,7 @@ Block C. Chancellor Hall. UWI, Mona. Kingston. A room with a red light. Equipped
 
 <a href="https://soundcloud.com/alpinecompound" target="_blank" rel="noopener">Alpine Compound</a> makes do with what they have. A small room, wires everywhere. Cozy. Saturday night link-up with<i> mandem </i>for a <em>cook sesh</em>. One by one, the team rolls through. Supplying constructive criticism and uplifting remarks. Mary Jane is present. Hotbox ting.
 
-<img class="alignnone size-full wp-image-811" src="/assets/uploads/2017/01/img_0248.jpg" alt="img_0248" width="5656" height="4242" />
+<figure class="wp-block-image size-large"><img class="alignnone size-full wp-image-811" src="/assets/uploads/2017/01/img_0248.jpg" alt="img_0248" width="5656" height="4242" /></figure>
 
 The tal<strong>ent</strong> and skill pres<strong>ent</strong> in this room is preval<strong>ent</strong>. All being put to use in the name of expression and entertainment. Here are a few members of the collective:
 

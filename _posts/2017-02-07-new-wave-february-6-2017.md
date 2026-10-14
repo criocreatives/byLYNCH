@@ -12,7 +12,7 @@ tags:
   - "NEW WAVE"
 excerpt: "Seani B. Toddla T. Meleku. Bare tings."
 ---
-<img class="alignnone size-full wp-image-1995" src="/assets/uploads/2017/02/img_8030.jpg" alt="IMG_8030.jpg" width="5184" height="3456" />
+<figure class="wp-block-image size-large"><img class="alignnone size-full wp-image-1995" src="/assets/uploads/2017/02/img_8030.jpg" alt="IMG_8030.jpg" width="5184" height="3456" /></figure>
 
 It's February 6. A Monday. Bob Marley's <em>earthstrong. </em>New Wave is back.<i> </i>This season starts off with a performance from <a href="https://twitter.com/themeleku" target="_blank">Meleku</a>, son of Sizzla Kalonji.
 
@@ -34,7 +34,6 @@ Bare vibes. Bare remixes. Bare tings. Popular faces rolling in. Photographers. A
 <figure class="wp-block-image"><img src="/assets/uploads/2017/02/img_8271.jpg" alt=""></figure>
 <figure class="wp-block-image"><img src="/assets/uploads/2017/02/img_8105.jpg" alt=""></figure>
 <p style="text-align:left;">So much culture in the air. Seen by LYNCH. Now seen by you.</p>
-
 
 <hr />
 
