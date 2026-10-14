@@ -1,5 +1,6 @@
 ---
 layout: post
+gallery_safe_mode: true
 title: "Russian Rickolette"
 date: 2018-03-20 21:30:18 -0500
 date_string: "2018-03-20 21:30:18"

@@ -1260,3 +1260,52 @@ body.lightbox-open{overflow:hidden}
   .post-chronology-prev{border-top:1px solid #e6e6e6!important}
   .post-comments-outer{padding:32px 0 38px}
 }
+
+/* Russian Rickolette: reliable native-flow gallery with original photo order.
+   This opt-in layout avoids absolutely positioned lazy images without changing
+   the black gallery styling or the layout of other posts. */
+.single .bk-redesign .entry-content.gallery-safe-mode{
+  display:grid!important;
+  height:auto!important;
+  min-height:0!important;
+  position:relative!important;
+  gap:10px!important;
+  align-items:start!important;
+  grid-template-columns:minmax(0,1fr)!important;
+}
+.single .bk-redesign .entry-content.gallery-safe-mode > *{
+  position:static!important;
+  width:100%!important;
+  max-width:100%!important;
+  height:auto!important;
+  top:auto!important;
+  left:auto!important;
+  grid-row:auto!important;
+  grid-column:auto;
+  min-width:0;
+  margin:0!important;
+}
+.single .bk-redesign .entry-content.gallery-safe-mode > img,
+.single .bk-redesign .entry-content.gallery-safe-mode img[loading="lazy"]{
+  display:block!important;
+  width:100%!important;
+  height:auto!important;
+  max-width:100%!important;
+  aspect-ratio:auto!important;
+  object-fit:contain!important;
+  opacity:1!important;
+  visibility:visible!important;
+}
+.single .bk-redesign .entry-content.gallery-safe-mode > p,
+.single .bk-redesign .entry-content.gallery-safe-mode > blockquote,
+.single .bk-redesign .entry-content.gallery-safe-mode > h1,
+.single .bk-redesign .entry-content.gallery-safe-mode > h2,
+.single .bk-redesign .entry-content.gallery-safe-mode > h3{
+  grid-column:1/-1!important;
+}
+@media(min-width:600px){
+  .single .bk-redesign .entry-content.gallery-safe-mode{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+@media(min-width:900px){
+  .single .bk-redesign .entry-content.gallery-safe-mode{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+}

@@ -30,7 +30,7 @@ layout: default
         {% else %}
           {% assign gallery_content = content | replace: '<img ', '<img loading="lazy" decoding="async" ' %}
         {% endif %}
-        <div class="entry-content">{{ gallery_content }}</div>
+        <div class="entry-content{% if page.gallery_safe_mode %} gallery-safe-mode{% endif %}">{{ gallery_content }}</div>
       </article>
 
     </main>
