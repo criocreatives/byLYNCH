@@ -10,10 +10,6 @@ categories:
   - "PHOTO SET"
 tags:
   - ""
-archived_comments:
-  - author: "Caribbean Artists on Art: Romario Lynch | The Timeless Photo | LENAUGNE"
-    date: "2018-02-04 09:03:57"
-    content: "[…] series: Chocolaté, Codeine Crazy, and Red October, as well as his digital photo book, “seen by LYNCH Vol. 1: 100 Shots from 2015,” are the works […]"
 ---
 <p style="text-align:left"><em>Roses are red...</em></p>
 <p style="text-align:right"><em>...Blood is red</em></p>

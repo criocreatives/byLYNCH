@@ -11,10 +11,6 @@ categories:
 tags:
   - ""
 excerpt: "Codeine crazy. Bodeine Brazy."
-archived_comments:
-  - author: "Caribbean Artists on Art: Romario Lynch | The Timeless Photo | LENAUGNE"
-    date: "2018-02-04 09:03:54"
-    content: "[…] series: Chocolaté, Codeine Crazy, and Red October, as well as his digital photo book, “seen by LYNCH Vol. 1: 100 Shots from […]"
 ---
 <h5 style="text-align:center">Stir well &amp; enjoy.</h5>
 

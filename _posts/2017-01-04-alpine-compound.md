@@ -11,13 +11,6 @@ categories:
 tags:
   - "music"
 excerpt: "808's slide tackle your tympanic membrane and high-hats slice up your cochlea."
-archived_comments:
-  - author: "Rivière Fléchir – Seen by LYNCH"
-    date: "2017-01-16 13:44:12"
-    content: "[…] Audio track by Wavy Jones, member of Alpine Compound. […]"
-  - author: "Saturday Night Blues w/ Yanah & Kone – Seen by LYNCH"
-    date: "2017-01-26 23:35:10"
-    content: "[…] we have Kone, member of Alpine Compound, and Yanah, the soulful voice on Leno Banton’s track […]"
 ---
 You're on SoundCloud. The track you searched for finished playing. Algorithms shuffle to another <em>related </em>track. 808's slide tackle your tympanic membrane and high-hats slice up your cochlea. Clean sounds. Professional. You think it's safe to assume these sounds came out of big studio. Big control panel. Big A/C unit. Big front desk. Big building. Bare tings. Lol, no still.
 

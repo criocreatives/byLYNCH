@@ -11,9 +11,6 @@ categories:
 tags:
   - ""
 archived_comments:
-  - author: "Caribbean Artists on Art: Romario Lynch | The Timeless Photo | LENAUGNE"
-    date: "2018-02-04 09:03:51"
-    content: "[…] series: Chocolaté, Codeine Crazy, and Red October, as well as his digital photo book, “seen by LYNCH Vol. 1: 100 […]"
   - author: "Athaliah"
     date: "2017-12-05 22:56:23"
     content: "Explicit AF! I like"
