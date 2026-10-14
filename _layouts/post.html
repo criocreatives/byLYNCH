@@ -25,8 +25,12 @@ layout: default
   <div class="content-area">
     <main class="site-main">
       <article class="hentry single-entry">
-        {% assign lazy_content = content | replace: '<img ', '<img loading="lazy" decoding="async" ' %}
-        <div class="entry-content">{{ lazy_content }}</div>
+        {% if page.eager_images %}
+          {% assign gallery_content = content %}
+        {% else %}
+          {% assign gallery_content = content | replace: '<img ', '<img loading="lazy" decoding="async" ' %}
+        {% endif %}
+        <div class="entry-content">{{ gallery_content }}</div>
       </article>
       {% if page.archived_comments and page.archived_comments.size > 0 %}
       <section class="comments-area">
