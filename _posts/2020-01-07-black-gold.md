@@ -27,47 +27,25 @@ archived_comments:
 <p class="has-text-align-center">D'Sweeta D'Juice.</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:gallery {"columns":1,"linkTo":"none"} -->
-<figure class="wp-block-gallery has-nested-images columns-1 is-cropped"><!-- wp:image {"id":3217,"linkDestination":"none"} -->
-<figure class="wp-block-image"><img src="/assets/uploads/2020/01/mg_1471.jpg" alt="" class="wp-image-3217" /></figure>
-<!-- /wp:image -->
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2020/01/mg_1471.jpg" alt="" class="wp-image-3217" /></figure>
 
-<!-- wp:image {"id":3221,"linkDestination":"none"} -->
-<figure class="wp-block-image"><img src="/assets/uploads/2020/01/mg_1423-2.jpg" alt="" class="wp-image-3221" /></figure>
-<!-- /wp:image -->
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2020/01/mg_1423-2.jpg" alt="" class="wp-image-3221" /></figure>
 
-<!-- wp:image {"id":3219,"linkDestination":"none"} -->
-<figure class="wp-block-image"><img src="/assets/uploads/2020/01/mg_1395.jpg" alt="" class="wp-image-3219" /></figure>
-<!-- /wp:image -->
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2020/01/mg_1395.jpg" alt="" class="wp-image-3219" /></figure>
 
-<!-- wp:image {"id":3223,"linkDestination":"none"} -->
-<figure class="wp-block-image"><img src="/assets/uploads/2020/01/mg_1448-2.jpg" alt="" class="wp-image-3223" /></figure>
-<!-- /wp:image -->
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2020/01/mg_1448-2.jpg" alt="" class="wp-image-3223" /></figure>
 
-<!-- wp:image {"id":3220,"linkDestination":"none"} -->
-<figure class="wp-block-image"><img src="/assets/uploads/2020/01/mg_1422.jpg" alt="" class="wp-image-3220" /></figure>
-<!-- /wp:image -->
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2020/01/mg_1422.jpg" alt="" class="wp-image-3220" /></figure>
 
-<!-- wp:image {"id":3225,"linkDestination":"none"} -->
-<figure class="wp-block-image"><img src="/assets/uploads/2020/01/mg_1452.jpg" alt="" class="wp-image-3225" /></figure>
-<!-- /wp:image -->
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2020/01/mg_1452.jpg" alt="" class="wp-image-3225" /></figure>
 
-<!-- wp:image {"id":3224,"linkDestination":"none"} -->
-<figure class="wp-block-image"><img src="/assets/uploads/2020/01/mg_1451-2.jpg" alt="" class="wp-image-3224" /></figure>
-<!-- /wp:image -->
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2020/01/mg_1451-2.jpg" alt="" class="wp-image-3224" /></figure>
 
-<!-- wp:image {"id":3218,"linkDestination":"none"} -->
-<figure class="wp-block-image"><img src="/assets/uploads/2020/01/mg_1483-2.jpg" alt="" class="wp-image-3218" /></figure>
-<!-- /wp:image -->
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2020/01/mg_1483-2.jpg" alt="" class="wp-image-3218" /></figure>
 
-<!-- wp:image {"id":3226,"linkDestination":"none"} -->
-<figure class="wp-block-image"><img src="/assets/uploads/2020/01/mg_1453-2.jpg" alt="" class="wp-image-3226" /></figure>
-<!-- /wp:image -->
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2020/01/mg_1453-2.jpg" alt="" class="wp-image-3226" /></figure>
 
-<!-- wp:image {"id":3227,"linkDestination":"none"} -->
-<figure class="wp-block-image"><img src="/assets/uploads/2020/01/mg_1454.jpg" alt="" class="wp-image-3227" /></figure>
-<!-- /wp:image --></figure>
-<!-- /wp:gallery -->
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2020/01/mg_1454.jpg" alt="" class="wp-image-3227" /></figure>
 
 <!-- wp:heading {"textAlign":"center"} -->
 <h2 class="wp-block-heading has-text-align-center"><em>Fin.</em></h2>
