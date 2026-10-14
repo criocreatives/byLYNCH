@@ -137,6 +137,25 @@
       child.replaceWith(frag);
     });
   }
+  function normalizeStandalonePostImages(){
+    const grid=document.querySelector('.bk-redesign .entry-content');
+    if(!grid)return;
+    [...grid.children].forEach(child=>{
+      if(child.tagName==='IMG'){
+        const figure=document.createElement('figure');
+        figure.className='wp-block-image masonry-item';
+        child.replaceWith(figure);
+        figure.appendChild(child);
+      }else if(child.tagName==='P'&&child.querySelectorAll('img').length===1
+          &&!child.textContent.trim()&&!child.querySelector('video,iframe,figcaption')){
+        const img=child.querySelector('img');
+        const figure=document.createElement('figure');
+        figure.className='wp-block-image masonry-item';
+        child.replaceWith(figure);
+        figure.appendChild(img);
+      }
+    });
+  }
   function markFullWidthEmbeds(){
     const grid=document.querySelector('.bk-redesign .entry-content');
     if(!grid)return;
@@ -200,18 +219,51 @@
     if(!grid)return;
     normalizePostTextNodes();
     normalizeNestedPostGalleries();
+    normalizeStandalonePostImages();
     markFullWidthEmbeds();
-    grid.querySelectorAll('img').forEach(img=>{
+    grid.classList.add('masonry-initialized');
+    const images=[...grid.querySelectorAll('img')];
+    let layoutFrame=0;
+    const scheduleLayout=()=>{
+      if(layoutFrame)return;
+      layoutFrame=requestAnimationFrame(()=>{
+        layoutFrame=0;
+        layoutBkMasonry();
+      });
+    };
+    images.forEach((img,index)=>{
+      img.decoding='async';
+      // Get the first few photos on screen promptly, without loading the whole gallery.
+      if(index<3)img.loading='eager';
+      else if(!img.hasAttribute('loading'))img.loading='lazy';
       const markLoaded=()=>{
         img.classList.add('lazy-loaded');
-        layoutBkMasonry();
+        scheduleLayout();
       };
-      if(img.complete && img.naturalWidth){
-        markLoaded();
-      }else{
+      if(img.complete&&img.naturalWidth)markLoaded();
+      else if(img.complete)img.addEventListener('error',scheduleLayout,{once:true});
+      else{
         img.addEventListener('load',markLoaded,{once:true});
+        img.addEventListener('error',scheduleLayout,{once:true});
       }
     });
+    // Explicitly activate near-viewport images in the absolute masonry layout.
+    // The browser's native lazy-loading heuristic can otherwise leave blanks.
+    if('IntersectionObserver' in window){
+      const near=new IntersectionObserver(entries=>{
+        entries.forEach(entry=>{
+          if(!entry.isIntersecting)return;
+          const img=entry.target;
+          if(img.loading==='lazy')img.loading='eager';
+          near.unobserve(img);
+        });
+      },{rootMargin:'1100px 0px'});
+      images.slice(3).forEach(img=>{if(img.loading==='lazy')near.observe(img);});
+    }
+    if('ResizeObserver' in window){
+      const resize=new ResizeObserver(scheduleLayout);
+      [...grid.children].forEach(child=>resize.observe(child));
+    }
     requestAnimationFrame(()=>requestAnimationFrame(layoutBkMasonry));
   }
   function initSiteSearch(){

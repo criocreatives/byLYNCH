@@ -32,34 +32,48 @@ layout: default
         {% endif %}
         <div class="entry-content">{{ gallery_content }}</div>
       </article>
-      {% if page.archived_comments and page.archived_comments.size > 0 %}
-      <section class="comments-area">
+
+    </main>
+  </div>
+</div>
+{% if page.archived_comments and page.archived_comments.size > 0 %}
+<div class="post-comments-outer">
+  <div class="post-comments-inner">
+<section class="comments-area" aria-label="Archived comments">
         <h2>{{ page.archived_comments.size }} thought{% if page.archived_comments.size != 1 %}s{% endif %} on “{{ page.title }}”</h2>
         {% for comment in page.archived_comments %}
         <article class="comment">
-          <div class="comment-author">{{ comment.author }} says:</div>
+          <div class="comment-author">
+            {% assign author_url_prefix = comment.author_url | slice: 0, 8 %}
+            {% if comment.author == 'lebosslynch' %}
+              <a href="https://www.instagram.com/lebosslynch/" target="_blank" rel="noopener noreferrer">{{ comment.author | escape }}</a>
+            {% elsif author_url_prefix == 'https://' %}
+              <a href="{{ comment.author_url | escape }}" target="_blank" rel="noopener noreferrer">{{ comment.author | escape }}</a>
+            {% else %}
+              {{ comment.author | escape }}
+            {% endif %} says:
+          </div>
           <div class="comment-date">{{ comment.date | date: "%B %-d, %Y at %-I:%M %p" }}</div>
           <div class="comment-body">{{ comment.content }}</div>
         </article>
         {% endfor %}
       </section>
-      {% endif %}
-    </main>
   </div>
 </div>
+{% endif %}
 {% if page.previous or page.next %}
 <nav class="post-chronology" aria-label="Browse adjacent posts">
   <div class="post-chronology-inner">
-    {% if page.previous %}
-    <a class="post-chronology-link post-chronology-prev" href="{{ page.previous.url | relative_url }}" rel="prev">
-      <span class="post-chronology-label">← Previous Post</span>
-      <span class="post-chronology-title">{{ page.previous.title | escape }}</span>
-    </a>
-    {% else %}<span class="post-chronology-spacer" aria-hidden="true"></span>{% endif %}
     {% if page.next %}
     <a class="post-chronology-link post-chronology-next" href="{{ page.next.url | relative_url }}" rel="next">
-      <span class="post-chronology-label">Next Post →</span>
+      <span class="post-chronology-label">← Next Post</span>
       <span class="post-chronology-title">{{ page.next.title | escape }}</span>
+    </a>
+    {% else %}<span class="post-chronology-spacer" aria-hidden="true"></span>{% endif %}
+    {% if page.previous %}
+    <a class="post-chronology-link post-chronology-prev" href="{{ page.previous.url | relative_url }}" rel="prev">
+      <span class="post-chronology-label">Previous Post →</span>
+      <span class="post-chronology-title">{{ page.previous.title | escape }}</span>
     </a>
     {% else %}<span class="post-chronology-spacer" aria-hidden="true"></span>{% endif %}
   </div>
