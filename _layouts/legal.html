@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<main class="policy-page" id="main-content">
+  <div class="policy-page-inner">
+    <header class="policy-heading">
+      <p class="policy-kicker">byLYNCH / LEGAL &amp; RIGHTS</p>
+      <h1>{{ page.title }}</h1>
+    </header>
+    <div class="policy-grid">
+      <article class="policy-document">{{ content }}</article>
+      <aside class="policy-sidebar" aria-label="Other policies">
+        <p class="policy-sidebar-title">DOCUMENT INDEX</p>
+        <nav aria-label="Legal documents">
+          <a href="{{ '/privacy/' | relative_url }}" {% if page.url == '/privacy/' %}aria-current="page"{% endif %}>01 <span>Privacy Policy</span></a>
+          <a href="{{ '/terms/' | relative_url }}" {% if page.url == '/terms/' %}aria-current="page"{% endif %}>02 <span>Terms of Use</span></a>
+          <a href="{{ '/cookies/' | relative_url }}" {% if page.url == '/cookies/' %}aria-current="page"{% endif %}>03 <span>Cookies &amp; Tracking</span></a>
+          <a href="{{ '/content-rights/' | relative_url }}" {% if page.url == '/content-rights/' %}aria-current="page"{% endif %}>04 <span>Content &amp; Photography Rights</span></a>
+        </nav>
+        <p class="policy-sidebar-help">Questions or requests?<br><a href="{{ '/contact/' | relative_url }}">Contact byLYNCH →</a></p>
+      </aside>
+    </div>
+  </div>
+</main>
