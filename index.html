@@ -4,7 +4,7 @@ title:
 ---
 <div class="site-content-inner">
   <div class="content-area">
-    <main class="site-main">
+    <main class="site-main" data-post-feed>
       {% for post in paginator.posts %}
       <article class="hentry format-gallery has-post-thumbnail">
         <header class="entry-header">
@@ -23,6 +23,11 @@ title:
       </article>
       {% endfor %}
     </main>
-    <div class="older-posts-wrap">{% if paginator.next_page %}<button class="older-posts-button" type="button" data-next-url="{{ paginator.next_page_path | relative_url }}">OLDER POSTS</button>{% endif %}</div>
+    {% if paginator.next_page %}
+    <div class="older-posts-wrap">
+      <a class="older-posts-link" href="{{ paginator.next_page_path | relative_url }}">OLDER POSTS</a>
+      <span class="older-posts-status" role="status" aria-live="polite"></span>
+    </div>
+    {% endif %}
   </div>
 </div>

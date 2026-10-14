@@ -43,3 +43,21 @@ layout: default
     </main>
   </div>
 </div>
+{% if page.previous or page.next %}
+<nav class="post-chronology" aria-label="Browse adjacent posts">
+  <div class="post-chronology-inner">
+    {% if page.previous %}
+    <a class="post-chronology-link post-chronology-prev" href="{{ page.previous.url | relative_url }}" rel="prev">
+      <span class="post-chronology-label">← Previous Post</span>
+      <span class="post-chronology-title">{{ page.previous.title | escape }}</span>
+    </a>
+    {% else %}<span class="post-chronology-spacer" aria-hidden="true"></span>{% endif %}
+    {% if page.next %}
+    <a class="post-chronology-link post-chronology-next" href="{{ page.next.url | relative_url }}" rel="next">
+      <span class="post-chronology-label">Next Post →</span>
+      <span class="post-chronology-title">{{ page.next.title | escape }}</span>
+    </a>
+    {% else %}<span class="post-chronology-spacer" aria-hidden="true"></span>{% endif %}
+  </div>
+</nav>
+{% endif %}

@@ -385,37 +385,80 @@
     });
   }
   function initOlderPosts(){
-    const button=document.querySelector('.older-posts-button');
-    if(!button)return;
-    button.addEventListener('click',async()=>{
-      const next=button.dataset.nextUrl;
-      if(!next)return;
-      const original=button.textContent;
-      button.disabled=true;
-      button.textContent='LOADING…';
+    const feed=document.querySelector('[data-post-feed]');
+    const wrap=document.querySelector('.older-posts-wrap');
+    const link=wrap?.querySelector('.older-posts-link');
+    const status=wrap?.querySelector('.older-posts-status');
+    if(!feed||!wrap||!link||!status||!('IntersectionObserver' in window))return;
+
+    let nextUrl=link.href;
+    let loading=false;
+    const visited=new Set();
+    wrap.classList.add('is-auto');
+
+    async function loadMore(){
+      if(loading||!nextUrl||wrap.classList.contains('has-error'))return;
+      loading=true;
+      wrap.classList.add('is-loading');
+      status.textContent='LOADING OLDER POSTS…';
+
       try{
-        const res=await fetch(next,{credentials:'same-origin'});
-        if(!res.ok)throw new Error('Could not load older posts');
-        const html=await res.text();
+        const url=new URL(nextUrl,location.href);
+        if(url.origin!==location.origin||visited.has(url.href))throw new Error('Invalid next page');
+        const response=await fetch(url.href,{credentials:'same-origin'});
+        if(!response.ok)throw new Error('Older posts could not be retrieved');
+        const html=await response.text();
         const doc=new DOMParser().parseFromString(html,'text/html');
-        const incoming=[...doc.querySelectorAll('.blog .site-main > .hentry')];
-        const target=document.querySelector('.blog .site-main');
-        if(target)incoming.forEach(card=>target.appendChild(document.importNode(card,true)));
-        const nextButton=doc.querySelector('.older-posts-button');
-        if(nextButton&&nextButton.dataset.nextUrl){
-          button.dataset.nextUrl=nextButton.dataset.nextUrl;
-          button.disabled=false;
-          button.textContent=original;
+        const source=doc.querySelector('[data-post-feed]');
+        const incoming=source?[...source.querySelectorAll(':scope > .hentry')]:[];
+        if(!incoming.length)throw new Error('Older posts page contains no cards');
+
+        const existing=new Set(
+          [...feed.querySelectorAll(':scope > .hentry .entry-title a')]
+            .map(a=>new URL(a.getAttribute('href'),location.href).pathname)
+        );
+        let added=0;
+        incoming.forEach(card=>{
+          const href=card.querySelector('.entry-title a')?.getAttribute('href');
+          if(!href)return;
+          const path=new URL(href,url.href).pathname;
+          if(existing.has(path))return;
+          existing.add(path);
+          feed.appendChild(document.importNode(card,true));
+          added++;
+        });
+        if(!added)throw new Error('No new posts on the next page');
+        visited.add(url.href);
+
+        const nextLink=doc.querySelector('.older-posts-link');
+        nextUrl=nextLink?new URL(nextLink.getAttribute('href'),url.href).href:null;
+        if(nextUrl){
+          link.href=nextUrl;
         }else{
-          button.closest('.older-posts-wrap')?.remove();
+          observer.disconnect();
+          wrap.remove();
         }
-        requestAnimationFrame(()=>requestAnimationFrame(()=>{styleCards();markClippedExcerpts();}));
-      }catch(err){
-        button.disabled=false;
-        button.textContent=original;
-        console.error(err);
+        requestAnimationFrame(()=>requestAnimationFrame(()=>{
+          styleCards();
+          markClippedExcerpts();
+          if(nextUrl&&wrap.getBoundingClientRect().top<window.innerHeight+600)loadMore();
+        }));
+      }catch(error){
+        console.error('Could not load older posts:',error);
+        observer.disconnect();
+        wrap.classList.add('has-error');
+        status.textContent='Unable to load automatically. Use the link below to continue.';
+      }finally{
+        loading=false;
+        wrap.classList.remove('is-loading');
+        if(!wrap.classList.contains('has-error'))status.textContent='';
       }
-    });
+    }
+
+    const observer=new IntersectionObserver(entries=>{
+      if(entries.some(entry=>entry.isIntersecting))loadMore();
+    },{rootMargin:'600px 0px'});
+    observer.observe(wrap);
   }
   const hero=document.querySelector('[data-entry-hero] [data-featured-image]');
   if(hero){
