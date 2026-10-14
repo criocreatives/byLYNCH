@@ -1263,3 +1263,44 @@ body.lightbox-open{overflow:hidden}
   .post-chronology-prev{border-top:1px solid #e6e6e6!important}
   .post-comments-outer{padding:32px 0 38px}
 }
+
+
+/* Full-width SoundCloud audio player in posts.
+   Retain the 166px SoundCloud player height (not YouTube's 16:9 ratio). */
+.single .bk-redesign .entry-content .soundcloud-embed{
+  box-sizing:border-box;
+  padding:14px;
+  background:#151515;
+  color:#d0d0d0;
+  border-radius:10px;
+  overflow:hidden;
+  font-family:Lato,Arial,sans-serif;
+}
+.single .bk-redesign .entry-content .soundcloud-embed iframe{
+  display:block;
+  width:100%!important;
+  height:166px!important;
+  min-height:166px!important;
+  aspect-ratio:auto!important;
+  border:0;
+  border-radius:6px;
+}
+.single .bk-redesign .entry-content .soundcloud-credit{
+  margin-top:10px;
+  font-family:Lato,Arial,sans-serif;
+  font-size:12px;
+  line-height:1.55;
+  font-weight:400;
+  color:#b5b5b5;
+  overflow-wrap:anywhere;
+}
+.single .bk-redesign .entry-content .soundcloud-credit a{
+  color:#f1f1f1;
+  font-weight:700;
+  text-decoration:none;
+}
+.single .bk-redesign .entry-content .soundcloud-credit a:hover,
+.single .bk-redesign .entry-content .soundcloud-credit a:focus-visible{
+  color:#ed1744;
+  text-decoration:underline;
+}

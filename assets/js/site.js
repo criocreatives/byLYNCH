@@ -163,7 +163,7 @@
       const frame=child.matches('iframe[src*="youtube.com/embed"],iframe[src*="youtube-nocookie.com/embed"]')
         ? child
         : child.querySelector('iframe[src*="youtube.com/embed"],iframe[src*="youtube-nocookie.com/embed"]');
-      if(frame)child.classList.add('full-width-embed');
+      if(frame || child.matches('.soundcloud-embed'))child.classList.add('full-width-embed');
     });
   }
   function bkColumnCount(){
