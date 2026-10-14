@@ -20,7 +20,21 @@ archived_comments:
 ---
 &nbsp;
 
-<img class="alignnone size-full wp-image-2580" src="/assets/uploads/2017/07/mg_3918-1.jpg" alt="_MG_3918" width="4965" height="3310" /><img class="alignnone size-full wp-image-2574" src="/assets/uploads/2017/07/mg_3936-1.jpg" alt="_MG_3936" width="3456" height="4320" /><img class="alignnone size-full wp-image-2581" src="/assets/uploads/2017/07/mg_3928-1.jpg" alt="_MG_3928" width="3456" height="4320" /><img class="alignnone size-full wp-image-2575" src="/assets/uploads/2017/07/mg_3938.jpg" alt="_MG_3938" width="3456" height="4320" /><img class="alignnone size-full wp-image-2576" src="/assets/uploads/2017/07/mg_3942-1.jpg" alt="_MG_3942" width="3456" height="5184" /><img class="alignnone size-full wp-image-2577" src="/assets/uploads/2017/07/mg_3947-1.jpg" alt="_MG_3947" width="5184" height="3456" /><img class="alignnone size-full wp-image-2578" src="/assets/uploads/2017/07/mg_3977-1.jpg" alt="_MG_3977" width="5184" height="3456" /><img class="alignnone size-full wp-image-2579" src="/assets/uploads/2017/07/mg_3982-1.jpg" alt="_MG_3982" width="5184" height="3456" />
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2017/07/mg_3918-1.jpg" alt="_MG_3918" class="wp-image-2580" /></figure>
+
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2017/07/mg_3936-1.jpg" alt="_MG_3936" class="wp-image-2574" /></figure>
+
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2017/07/mg_3928-1.jpg" alt="_MG_3928" class="wp-image-2581" /></figure>
+
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2017/07/mg_3938.jpg" alt="_MG_3938" class="wp-image-2575" /></figure>
+
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2017/07/mg_3942-1.jpg" alt="_MG_3942" class="wp-image-2576" /></figure>
+
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2017/07/mg_3947-1.jpg" alt="_MG_3947" class="wp-image-2577" /></figure>
+
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2017/07/mg_3977-1.jpg" alt="_MG_3977" class="wp-image-2578" /></figure>
+
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2017/07/mg_3982-1.jpg" alt="_MG_3982" class="wp-image-2579" /></figure>
 
 <hr />
 <p style="text-align:right;">Model: <a href="https://www.instagram.com/summerroze/" target="_blank" rel="noopener">Summer Roze</a></p>

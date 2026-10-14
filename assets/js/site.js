@@ -217,9 +217,6 @@
   function initBkMasonry(){
     const grid=document.querySelector('.bk-redesign .entry-content');
     if(!grid)return;
-    // Use normal CSS flow for posts opting out of JS positioning.
-    // Native loading works reliably because image items stay in document flow.
-    if(grid.classList.contains('gallery-safe-mode'))return;
     normalizePostTextNodes();
     normalizeNestedPostGalleries();
     normalizeStandalonePostImages();
