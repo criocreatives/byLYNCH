@@ -13,7 +13,7 @@ tags:
   - ""
 excerpt: "\"One of the mechanics of my artwork is 'conflict'.\" - Leasho J."
 ---
-<img class="alignnone size-full wp-image-2031" src="/assets/uploads/2017/02/mg_8639.jpg" alt="_MG_8639.jpg" width="5184" height="3456" />
+<figure class="wp-block-image size-large"><img class="alignnone size-full wp-image-2031" src="/assets/uploads/2017/02/mg_8639.jpg" alt="_MG_8639.jpg" width="5184" height="3456" /></figure>
 
 <figure class="wp-block-image"><img src="/assets/uploads/2017/02/mg_8548.jpg" alt=""></figure>
 <figure class="wp-block-image"><img src="/assets/uploads/2017/02/mg_8549.jpg" alt=""></figure>
@@ -46,7 +46,11 @@ excerpt: "\"One of the mechanics of my artwork is 'conflict'.\" - Leasho J."
 <figure class="wp-block-image"><img src="/assets/uploads/2017/02/mg_8554.jpg" alt=""></figure>
 <figure class="wp-block-image"><img src="/assets/uploads/2017/02/mg_8563.jpg" alt=""></figure>
 <figure class="wp-block-image"><img src="/assets/uploads/2017/02/mg_8590.jpg" alt=""></figure>
-<blockquote><img class="alignleft size-medium wp-image-2053" src="/assets/uploads/2017/02/mg_8557.jpg" alt="_mg_8557" width="300" height="200" />"Social commentary is an integral part of my work. I believe the contradictions that I encounter, living in Jamaica need to be highlighted and explored. I often juxtapose cartoons with realistic imagery since the approachable nature of cartoons enables me to break down contentious, often disturbing issues and make them seem harmless, even comedic and in the end more palatable.
+<blockquote>
+
+<figure class="wp-block-image size-large"><img class="alignleft size-medium wp-image-2053" src="/assets/uploads/2017/02/mg_8557.jpg" alt="_mg_8557" width="300" height="200" /></figure>
+
+"Social commentary is an integral part of my work. I believe the contradictions that I encounter, living in Jamaica need to be highlighted and explored. I often juxtapose cartoons with realistic imagery since the approachable nature of cartoons enables me to break down contentious, often disturbing issues and make them seem harmless, even comedic and in the end more palatable.
 
 My works are influenced by Pop Art with a mix of various graffiti/graphic art styles; I then seek to re-establish the aesthetics within the context of my own environment. In an attempt to ensure a more relevant connection to my environment, my works are usually easily translated into social commentary. One of the mechanics of my artwork is “conflict”. I also explore my own childhood and my journey as a young Jamaican male. My works spans from paintings / Illustrations, collage, sculpture and some digital medium. I am a Jamaican Contemporary Artist." - Leasho Johnson</blockquote>
 <figure class="wp-block-image"><img src="/assets/uploads/2017/02/mg_8546.jpg" alt=""></figure>

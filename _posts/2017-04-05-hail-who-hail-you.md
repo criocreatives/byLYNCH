@@ -24,4 +24,4 @@ This occurrence still affects me today. I do not hail a soul unless I am first a
 
 <a href="http://lynchphotography.co.vu/post/111188268979/thumb-flick-jamaican-hand-gesture-where-both" target="_blank">Hail who hail you.</a>
 
-<img class="alignnone size-full wp-image-2244" src="/assets/uploads/2017/04/img_9942.jpg" alt="IMG_9942" width="3456" height="3456" />
+<figure class="wp-block-image size-large"><img class="alignnone size-full wp-image-2244" src="/assets/uploads/2017/04/img_9942.jpg" alt="IMG_9942" width="3456" height="3456" /></figure>

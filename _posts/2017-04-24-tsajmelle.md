@@ -11,7 +11,7 @@ tags:
   - ""
 excerpt: "Set di link nuh bredda."
 ---
-<img class="alignnone size-full wp-image-2258" src="/assets/uploads/2017/04/mg_8748.jpg" alt="_MG_8748.jpg" width="3456" height="4320" />
+<figure class="wp-block-image size-large"><img class="alignnone size-full wp-image-2258" src="/assets/uploads/2017/04/mg_8748.jpg" alt="_MG_8748.jpg" width="3456" height="4320" /></figure>
 
 <figure class="wp-block-image"><img src="/assets/uploads/2017/04/mg_8898.jpg" alt=""></figure>
 <figure class="wp-block-image"><img src="/assets/uploads/2017/04/mg_8836.jpg" alt=""></figure>
@@ -54,7 +54,7 @@ excerpt: "Set di link nuh bredda."
 <figure class="wp-block-image"><img src="/assets/uploads/2017/04/mg_8984.jpg" alt=""></figure>
 <figure class="wp-block-image"><img src="/assets/uploads/2017/04/mg_8985.jpg" alt=""></figure>
 
-<img class="alignnone size-full wp-image-2326" src="/assets/uploads/2017/04/mg_9024.jpg" alt="_MG_9024.jpg" width="3456" height="5184" />
+<figure class="wp-block-image size-large"><img class="alignnone size-full wp-image-2326" src="/assets/uploads/2017/04/mg_9024.jpg" alt="_MG_9024.jpg" width="3456" height="5184" /></figure>
 
 <hr />
 

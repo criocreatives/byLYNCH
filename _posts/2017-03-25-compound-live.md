@@ -14,7 +14,7 @@ excerpt: "Good vibes. Pure litness. Bare tings. Music and liquid courage buss in
 ---
 Compound Live was a <em>ting</em>. Lit performances. Lit vibes. Lit music. Lit. Lit. Lit. Very culture.
 
-<img class="alignnone size-full wp-image-2165" src="/assets/uploads/2017/03/mg_7278.jpg" alt="_MG_7278.jpg" width="5184" height="3456" />
+<figure class="wp-block-image size-large"><img class="alignnone size-full wp-image-2165" src="/assets/uploads/2017/03/mg_7278.jpg" alt="_MG_7278.jpg" width="5184" height="3456" /></figure>
 
 &nbsp;
 

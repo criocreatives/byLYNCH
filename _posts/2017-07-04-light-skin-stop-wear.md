@@ -22,7 +22,9 @@ When I was in the fourth grade, I had a crush on a girl. My friends knew. Withou
 She comes over to me and whispers into my ear:
 <blockquote><strong><em>"Me woulda neva want you because you black like ants."</em></strong>
 
-</blockquote><img src="/assets/uploads/2017/07/mg_4445.jpg" class="alignnone size-full wp-image-2394" alt="_MG_4445" width="3456" height="5184">
+</blockquote>
+
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2017/07/mg_4445.jpg" class="alignnone size-full wp-image-2394" alt="_MG_4445" width="3456" height="5184"></figure>
 
 I am SHOOK.
 
@@ -32,17 +34,17 @@ Fast forward fifteen years. Her current significant other is about the same comp
 
 For years I witnessed the slander thrown at the dark skinned people. Dark skin was undesirable. Dark skin was unwanted. Dark skin is ew. Everybody wants a light skinned partner. Myself included up until I was about fifteen. I came to the conclusion that the mentality was foolish and shallow.
 
-<img src="/assets/uploads/2017/07/mg_4447.jpg" class="alignnone size-full wp-image-2396" alt="_MG_4447" width="3456" height="4320">
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2017/07/mg_4447.jpg" class="alignnone size-full wp-image-2396" alt="_MG_4447" width="3456" height="4320"></figure>
 
 Within the years after that, I noticed a change. <strong>Us dark skins</strong><em>&nbsp;</em>were becoming 'desirable'. I saw this as progress. I thought "wow, now they like us too". I thought the shadeism was ending. All shades could now flourish. Thrive. Prosper. It's lit!
 
-<img src="/assets/uploads/2017/07/mg_4443.jpg" class="alignnone size-full wp-image-2393" alt="_MG_4443" width="5184" height="3456">
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2017/07/mg_4443.jpg" class="alignnone size-full wp-image-2393" alt="_MG_4443" width="5184" height="3456"></figure>
 
 Things weren't really as they seemed. It wasn't progress... not entirely. It was something else. A paradigm shift. For a while, both shades flourished and prospered. Fast forward to the present. The same slander that was being thrown at <strong>us dark skins</strong>&nbsp;is now being thrown at the light skins.
 
 One was once undesirable because they're dark skinned. Now, one may be undesirable because they are light skinned. I see comments made on twitter where, if you switched the skin tone being referred, the <em>woke</em> task force would come for you. For example, I saw someone tweet something along the lines of "Why the hell would I want a <em>light skin nigga</em>? Ew!", and others chimed in to agree. Yikesicles. A few years ago, I would see something like this play out on Facebook. A <strong>dark skin nigga</strong> being the subject. Had this tweet been made about the now cherished chocolates, that girl would have been dragged across the TL for all to see.
 
-<img src="/assets/uploads/2017/07/mg_4433.jpg" class="alignnone size-full wp-image-2401" alt="_MG_4433" width="3595" height="2883">
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2017/07/mg_4433.jpg" class="alignnone size-full wp-image-2401" alt="_MG_4433" width="3595" height="2883"></figure>
 
 I've even seen someone say they've found a person with all the traits they're looking for except one draw back; they're light skinned. The common excuse of "<em>preference</em>" may be used here.
 

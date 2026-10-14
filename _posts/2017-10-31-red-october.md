@@ -36,5 +36,6 @@ tags:
 <figure class="wp-block-image"><img src="/assets/uploads/2017/10/mg_8585.jpg" alt=""></figure>
 <figure class="wp-block-image"><img src="/assets/uploads/2017/10/mg_8593.jpg" alt=""></figure>
 
-<img class="alignnone size-full wp-image-2710" src="/assets/uploads/2017/10/mg_8647.jpg" alt="_MG_8647.jpg" width="5184" height="3456" />
+<figure class="wp-block-image size-large"><img class="alignnone size-full wp-image-2710" src="/assets/uploads/2017/10/mg_8647.jpg" alt="_MG_8647.jpg" width="5184" height="3456" /></figure>
+
 <p style="text-align:center"><span style="color:#ff0000"><strong>fin.</strong></span></p>

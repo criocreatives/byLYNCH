@@ -18,7 +18,7 @@ excerpt: "Fix me..."
 
 <figure><img class="alignnone size-full wp-image-2896" src="/assets/uploads/2018/03/mg_4372.jpg" alt="_MG_4372" width="5184" height="3456" /><figcaption>Call him.</figcaption></figure>
 
-<img class="alignnone size-full wp-image-2899" src="/assets/uploads/2018/03/mg_4570.jpg" alt="_MG_4570" width="3456" height="5184" />
+<figure class="wp-block-image size-large"><img class="alignnone size-full wp-image-2899" src="/assets/uploads/2018/03/mg_4570.jpg" alt="_MG_4570" width="3456" height="5184" /></figure>
 
 <figure><img class="alignnone size-full wp-image-2900" src="/assets/uploads/2018/03/mg_4572.jpg" alt="_MG_4572" width="5184" height="3456" /><figcaption>Dialing...</figcaption></figure>
 
@@ -28,7 +28,7 @@ excerpt: "Fix me..."
 
 <figure><img class="alignnone size-full wp-image-2902" src="/assets/uploads/2018/03/mg_4581.jpg" alt="_MG_4581" width="3456" height="4320" /><figcaption>Fix me...</figcaption></figure>
 
-<img class="alignnone size-full wp-image-2892" src="/assets/uploads/2018/03/mg_4591.jpg" alt="_MG_4591" width="3456" height="5184" />
+<figure class="wp-block-image size-large"><img class="alignnone size-full wp-image-2892" src="/assets/uploads/2018/03/mg_4591.jpg" alt="_MG_4591" width="3456" height="5184" /></figure>
 
 <figure><img class="alignnone size-full wp-image-2893" src="/assets/uploads/2018/03/mg_4594.jpg" alt="_MG_4594" width="3456" height="5184" /><figcaption>O</figcaption></figure>
 
