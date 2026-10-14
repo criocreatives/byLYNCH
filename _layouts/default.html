@@ -6,7 +6,12 @@
 <meta name="google-adsense-account" content="ca-pub-4888519100229596">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4888519100229596" crossorigin="anonymous"></script>
 <title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.title }}</title>
-<meta name="description" content="{{ page.excerpt | default: site.description | strip_html | strip_newlines | truncate: 160 }}">
+{% if page.layout == 'post' %}
+{% assign meta_description = site.data.card_previews[page.slug] | default: 'Explore this visual story from the byLYNCH archive.' %}
+{% else %}
+{% assign meta_description = page.description | default: page.excerpt | default: site.description %}
+{% endif %}
+<meta name="description" content="{{ meta_description | strip_html | strip_newlines | truncate: 160 | escape }}">
 <link rel="canonical" href="{{ page.url | absolute_url }}">
 <link rel="icon" type="image/png" href="{{ '/assets/brand/lynch-favicon.png' | relative_url }}">
 <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
