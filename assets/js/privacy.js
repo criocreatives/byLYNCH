@@ -1,24 +1,7 @@
-/* byLYNCH privacy controls.
-   Interim advertising preference: NOT a Google-certified or IAB TCF CMP. */
+/* byLYNCH on-demand third-party media and browser-only request preparation.
+   This script does not display a sitewide privacy/consent banner. */
 (function(){
   'use strict';
-  const KEY='bylynch-ad-choice-v1';
-  let choice=null, adLoaded=false;
-  try{choice=localStorage.getItem(KEY);}catch(e){}
-  if(choice!=='allow'&&choice!=='decline')choice=null;
-  function loadAds(){
-    if(choice!=='allow'||adLoaded)return;
-    const meta=document.querySelector('meta[name="google-adsense-account"]');
-    // No publisher meta on classified galleries: advertising stays disabled there.
-    if(!meta||meta.content!=='ca-pub-4888519100229596')return;
-    adLoaded=true;
-    const tag=document.createElement('script');
-    tag.async=true;
-    tag.crossOrigin='anonymous';
-    tag.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client='+encodeURIComponent(meta.content);
-    document.head.appendChild(tag);
-  }
-  if(choice==='allow')loadAds();
   function loadMediaOnDemand(){
     document.querySelectorAll('iframe[data-embed-src]').forEach(frame=>{
       let url;
@@ -76,30 +59,6 @@
     });
   }
   function init(){
-    const panel=document.createElement('section');
-    panel.className='bylynch-privacy-panel';
-    panel.hidden=true;
-    panel.setAttribute('aria-labelledby','bylynch-privacy-title');
-    panel.innerHTML='<div class="privacy-panel-inner"><div><p class="privacy-panel-eyebrow">BY LYNCH / PRIVACY</p>'+
-      '<h2 id="bylynch-privacy-title">Your privacy choices</h2>'+
-      '<p>Optional Google advertising is off until you allow it. Audio and video players load only when you choose to play them. You can change the advertising choice at any time.</p>'+
-      '<p class="privacy-panel-details">This local preference is not a certified consent management platform. <a href="/cookies/">Read Cookies &amp; Tracking</a>.</p></div>'+
-      '<div class="privacy-panel-actions"><button type="button" data-ads-choice="decline">Decline optional ads</button>'+
-      '<button type="button" class="privacy-allow-button" data-ads-choice="allow">Allow advertising</button></div></div>';
-    document.body.appendChild(panel);
-    const show=(focus)=>{panel.hidden=false;if(focus)panel.querySelector('[data-ads-choice="decline"]').focus();};
-    panel.querySelectorAll('[data-ads-choice]').forEach(b=>{
-      b.addEventListener('click',()=>{
-        const alreadyLoaded=adLoaded;
-        choice=b.dataset.adsChoice;
-        try{localStorage.setItem(KEY,choice);}catch(e){}
-        panel.hidden=true;
-        if(choice==='allow')loadAds();
-        if(choice==='decline'&&alreadyLoaded)location.reload();
-      });
-    });
-    document.querySelectorAll('[data-privacy-choices]').forEach(button=>button.addEventListener('click',()=>show(true)));
-    if(choice===null)show(false);
     loadMediaOnDemand();
     initRequestPreparer();
   }
