@@ -3,8 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+{% assign e_posts = site.data.content_flags.e_notice %}
+{% assign adsense_allowed = true %}
+{% if page.layout == 'post' %}
+  {% if e_posts contains page.slug %}
+    {% assign adsense_allowed = false %}
+  {% endif %}
+{% endif %}
+{% if adsense_allowed %}
 <meta name="google-adsense-account" content="ca-pub-4888519100229596">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4888519100229596" crossorigin="anonymous"></script>
+{% endif %}
 <title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.title }}</title>
 {% if page.layout == 'post' %}
 {% assign meta_description = site.data.card_previews[page.slug] | default: 'Explore this visual story from the byLYNCH archive.' %}
