@@ -1367,3 +1367,42 @@ body.lightbox-open{overflow:hidden}
   pointer-events: none;
   user-select: none;
 }
+
+/* F04: interim local preference (not a Google-certified consent platform) */
+.privacy-choice-link{border:0;background:transparent;padding:0;color:inherit;font:700 12px/1.5 Lato,Arial,sans-serif;cursor:pointer}
+.privacy-choice-link:hover,.privacy-choice-link:focus-visible{text-decoration:underline;color:#ed1744}
+.bylynch-privacy-panel[hidden]{display:none!important}
+.bylynch-privacy-panel{position:fixed;z-index:100000;bottom:16px;left:50%;transform:translateX(-50%);width:min(94vw,680px);background:#171719;color:#fff;box-shadow:0 12px 55px rgba(0,0,0,.35);border:1px solid #3b3b3e;border-top:3px solid #ed1744;border-radius:8px;font:400 14px/1.5 Lato,Arial,sans-serif}
+.privacy-panel-inner{padding:24px 27px;display:grid;gap:14px}
+.privacy-panel-eyebrow{font-size:11px;font-weight:900;letter-spacing:.15em;color:#ed1744;margin:0 0 6px}
+.bylynch-privacy-panel h2{font-size:24px;font-weight:900;color:#fff;line-height:1.2;margin:0 0 8px}
+.bylynch-privacy-panel p{margin:0 0 8px}
+.bylynch-privacy-panel .privacy-panel-details{color:#bbb;font-size:12px}
+.bylynch-privacy-panel a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.privacy-panel-actions{display:flex;flex-wrap:wrap;gap:9px}
+.privacy-panel-actions button,.privacy-media-play,.request-copy-button{border:1px solid #e9e9e9;cursor:pointer;font:800 13px/1.3 Lato,Arial,sans-serif;padding:12px 16px;background:#fff;color:#242424;border-radius:4px}
+.privacy-panel-actions .privacy-allow-button{background:#ed1744;border-color:#ed1744;color:#fff}
+.privacy-panel-actions button:focus-visible,.privacy-choice-link:focus-visible,.privacy-media-play:focus-visible,.request-copy-button:focus-visible{outline:3px solid #ed1744;outline-offset:3px}
+@media(max-width:550px){.bylynch-privacy-panel{bottom:0;width:100%;border-radius:8px 8px 0 0}.privacy-panel-inner{padding:20px}.privacy-panel-actions button{flex:1}}
+/* F06: external audio/video require individual interaction */
+.privacy-media-gate{box-sizing:border-box;width:100%;min-height:190px;aspect-ratio:16/9;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:8px;padding:24px;background:#1d1d1f;color:#f3f3f3;border:1px solid #36363a;border-radius:8px}
+.privacy-media-gate.is-audio{aspect-ratio:auto;min-height:166px}
+.privacy-media-gate p{color:inherit!important;margin:0!important}
+.privacy-media-title{font-size:18px;font-weight:900;line-height:1.3}
+.privacy-media-info{font-size:12px;line-height:1.5;color:#c3c3c3!important}
+.privacy-media-play{border:0;background:#fff;color:#111;margin-top:6px}
+.privacy-media-play:hover{background:#ed1744;color:#fff}
+.media-noscript{padding:15px;background:#242424;color:#fff}
+/* F07: transparent historical comment section */
+.comment-archive-notice{font-size:13px;line-height:1.65;color:#555;max-width:760px;margin:0 0 24px}
+.comment-archive-notice a{color:#b20e37;text-decoration:underline}
+/* F09: browser-only request preparation; no website submission */
+.bylynch-request-preparer{display:grid;gap:13px;max-width:720px;margin:26px 0;background:#f8f8f8;border:1px solid #e8e8e8;padding:24px}
+.bylynch-request-preparer label{display:block;font-size:13px;font-weight:800;margin:0 0 6px}
+.bylynch-request-preparer select,.bylynch-request-preparer input,.bylynch-request-preparer textarea{box-sizing:border-box;width:100%;min-width:0;border:1px solid #cfcfcf;padding:11px;font:400 15px/1.5 Lato,Arial,sans-serif;border-radius:4px;background:#fff;color:#222}
+.bylynch-request-preparer textarea{resize:vertical;min-height:125px}
+.bylynch-request-preparer input:focus-visible,.bylynch-request-preparer textarea:focus-visible,.bylynch-request-preparer select:focus-visible{outline:2px solid #ed1744;outline-offset:2px}
+.request-copy-button{background:#ed1744;color:#fff;border-color:#ed1744;justify-self:start}
+.request-disclaimer{font-size:13px;line-height:1.55;color:#555}
+#bylynch-request-copy[hidden]{display:none}
+#bylynch-request-status{font-size:13px;font-weight:700;color:#222;min-height:18px}
