@@ -1,0 +1,19 @@
+{% comment %}
+  Shared manual AdSense ad-unit markup.
+  Only invoked from _layouts/post.html on non-explicit posts with a configured slot.
+  The publisher script already loads once from _layouts/default.html on eligible pages.
+  Do not add an additional external script here or enable Google Auto Ads.
+{% endcomment %}
+{% assign ad_unit_slot = include.slot | default: '' | strip %}
+{% if ad_unit_slot != '' %}
+<aside class="bylynch-manual-ad bylynch-manual-ad--{{ include.position }}" aria-label="Advertisement">
+  <span class="bylynch-manual-ad-label" aria-hidden="true">ADVERTISEMENT</span>
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4888519100229596"
+       data-ad-slot="{{ ad_unit_slot | escape }}"
+       data-ad-format="{% if include.position == 'metadata' %}horizontal{% else %}auto{% endif %}"
+       data-full-width-responsive="{% if include.position == 'metadata' %}false{% else %}true{% endif %}"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</aside>
+{% endif %}
