@@ -465,7 +465,7 @@
   // The shared AdSense script comes from the default layout (Auto Ads OFF).
   // Initial page is server-rendered; this helper handles older cards added on scroll.
   function createHomeGridAd(slot){
-    if(!/^\\d+$/.test(slot))return null;
+    if(!/^\d+$/.test(slot))return null;
     const tile=document.createElement('aside');
     tile.className='bylynch-home-grid-ad';
     tile.dataset.homeGridAd='';
