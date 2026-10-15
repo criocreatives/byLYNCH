@@ -6,7 +6,8 @@
 {% assign e_posts = site.data.content_flags.e_notice %}
 {% assign adsense_allowed = true %}
 {% if page.layout == 'post' %}
-  {% if e_posts contains page.slug %}
+  {% assign page_url_slug = page.url | split: '/' | last %}
+  {% if e_posts contains page.slug or e_posts contains page_url_slug %}
     {% assign adsense_allowed = false %}
   {% endif %}
 {% endif %}
@@ -23,7 +24,7 @@
 <meta name="description" content="{{ meta_description | strip_html | strip_newlines | truncate: 160 | escape }}">
 <link rel="canonical" href="{{ page.url | absolute_url }}">
 <link rel="icon" type="image/png" href="{{ '/assets/brand/lynch-favicon.png' | relative_url }}">
-<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v=20261015-e2">
+<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v=20261015-e3">
 </head>
 <body class="{% if page.layout == 'post' %}single{% elsif page.new_wave %}blog new-wave-page{% elsif page.archive %}blog archive-page{% elsif paginator or page.url == '/' %}blog{% endif %}">
 <div id="page" class="hfeed site-shell">
@@ -66,5 +67,6 @@
   </div>
 </footer>
 </div>
-<script src="{{ '/assets/js/site.js' | relative_url }}"></script>
+<script type="application/json" id="bylynch-rating-slugs">{{ site.data.content_flags.e_notice | jsonify }}</script>
+<script src="{{ '/assets/js/site.js' | relative_url }}?v=20261015-e3"></script>
 </body></html>
