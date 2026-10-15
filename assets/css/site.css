@@ -1408,13 +1408,13 @@ body.lightbox-open{overflow:hidden}
   letter-spacing:.15em;
   text-transform:uppercase;
 }
-.bylynch-manual-ad .adsbygoogle{width:100%;max-width:100%;min-width:0}
+.bylynch-manual-ad .adsbygoogle{max-width:100%;min-width:0;margin:0 auto}
 .bylynch-manual-ad--metadata{
   flex:0 1 440px;
   width:min(440px,100%);
   max-width:100%;
 }
-.bylynch-manual-ad--metadata .adsbygoogle{min-height:60px}
+.bylynch-manual-ad--metadata .adsbygoogle{max-width:100%}
 @media(max-width:700px){
   .bk-post-meta-inner.bylynch-meta-has-ad{display:block}
   .bylynch-manual-ad--metadata{
@@ -1435,9 +1435,7 @@ body.lightbox-open{overflow:hidden}
   border-radius:10px;
 }
 .single .bk-redesign .bylynch-manual-ad--after-gallery .adsbygoogle{
-  width:100%;
-  max-width:970px;
-  min-height:100px;
+  max-width:100%;
   margin:0 auto;
 }
 @media(max-width:600px){
@@ -1458,12 +1456,14 @@ body.lightbox-open{overflow:hidden}
   min-height:0;
   display:flex;
   flex-direction:column;
-  overflow:visible;
+  align-items:center;
   position:relative;
   margin:0 0 30px;
+  padding:0;
+  border:1px solid #e5e5e5;
   border-radius:10px;
-  background:#18181a;
-  color:#aaa;
+  background:#f6f6f6;
+  color:#777;
 }
 .bylynch-home-grid-ad-label{
   display:flex;
@@ -1472,19 +1472,27 @@ body.lightbox-open{overflow:hidden}
   align-items:center;
   font:700 10px/1.2 Lato,Arial,sans-serif;
   letter-spacing:.15em;
-  color:#bcbcbc;
+  color:#777;
   text-align:center;
 }
 .bylynch-home-grid-ad .bylynch-home-grid-ad-unit{
   box-sizing:border-box;
   display:block;
-  flex:1 1 auto;
-  align-self:stretch;
-  width:100%!important;
-  min-width:0;
-  min-height:120px;
-  height:auto!important;
+  flex:0 0 auto;
+  align-self:center;
+  max-width:100%;
+  margin:auto!important;
 }
 @media(min-width:768px){
   .blog [data-post-feed] > .bylynch-home-grid-ad{margin:0}
+}
+
+/* Sized before ad requests. Keep creatives fully visible and centered. */
+.bylynch-manual-ad--metadata{
+  flex:0 1 350px;
+  width:min(350px,100%);
+}
+.bylynch-manual-ad--metadata .adsbygoogle,
+.single .bk-redesign .bylynch-manual-ad--after-gallery .adsbygoogle{
+  display:block;
 }
