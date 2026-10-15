@@ -35,12 +35,7 @@ layout: default
           {% assign gallery_content = content | replace: '<img ', '<img loading="lazy" decoding="async" ' %}
         {% endif %}
         {% comment %}Only third-party iframe URLs are deferred; photographs and original article text stay intact.{% endcomment %}
-        {% assign gallery_content = gallery_content
-          | replace: 'src="https://www.youtube.com/embed/', 'data-embed-src="https://www.youtube.com/embed/'
-          | replace: 'src="https://youtube.com/embed/', 'data-embed-src="https://youtube.com/embed/'
-          | replace: 'src="https://www.youtube-nocookie.com/embed/', 'data-embed-src="https://www.youtube-nocookie.com/embed/'
-          | replace: 'src="https://w.soundcloud.com/player/', 'data-embed-src="https://w.soundcloud.com/player/'
-        %}
+        {% assign gallery_content = gallery_content | replace: 'src="https://www.youtube.com/embed/', 'data-embed-src="https://www.youtube.com/embed/' | replace: 'src="https://youtube.com/embed/', 'data-embed-src="https://youtube.com/embed/' | replace: 'src="https://www.youtube-nocookie.com/embed/', 'data-embed-src="https://www.youtube-nocookie.com/embed/' | replace: 'src="https://w.soundcloud.com/player/', 'data-embed-src="https://w.soundcloud.com/player/' %}
         <div class="entry-content">{{ gallery_content }}</div>
         <noscript><p class="media-noscript">External audio/video players are paused by default. Enable JavaScript to choose whether to load them.</p></noscript>
       </article>
@@ -67,7 +62,7 @@ layout: default
             {% endif %} says:
           </div>
           <div class="comment-date">{{ comment.date | date: "%B %-d, %Y at %-I:%M %p" }}</div>
-          <div class="comment-body">{{ comment.content | escape | newline_to_br }}</div>
+          <div class="comment-body">{{ comment.content | escape }}</div>
         </article>
         {% endfor %}
       </section>
