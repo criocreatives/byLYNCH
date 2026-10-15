@@ -7,3 +7,8 @@
 # After gallery: below all photographs, before comments/post navigation.
 metadata_slot: "9856514493"
 after_gallery_slot: "7038779463"
+
+# Reused for one 4:5 grid tile after each six published homepage cards.
+# Add the new Google AdSense responsive Display unit's numeric data-ad-slot.
+# Leave blank until Google provides the actual unit ID; no empty tiles will appear.
+homepage_card_slot: ""
