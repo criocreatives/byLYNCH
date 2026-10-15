@@ -10,7 +10,8 @@ permalink: /archive/
       {% for post in site.posts %}
       <article class="hentry format-gallery has-post-thumbnail" data-categories="{{ post.categories | join: '||' | escape }}" data-tags="{{ post.tags | join: '||' | escape }}">
           {% assign e_posts = site.data.content_flags.e_notice %}
-          {% if e_posts contains post.slug %}
+          {% assign url_slug = post.url | split: '/' | last %}
+          {% if e_posts contains post.slug or e_posts contains url_slug %}
           <span class="content-rating-badge" role="img" aria-label="Mature content: nudity" title="Mature content">E</span>
           {% endif %}
         <header class="entry-header">
