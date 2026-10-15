@@ -11,11 +11,13 @@ This tracks F04, F06, F07 and F09. It does **not** certify privacy-law or AdSens
 - Test real browser network behavior on unflagged pages and the nine excluded galleries. No website-wide custom opt-in banner is presently active.
 - Removing the custom panel does not relieve the publisher from any legal or Google-policy consent requirement.
 
-## F06 — Third-party media and fonts
-- The Jekyll post layout defers eight known YouTube iframe sources and one SoundCloud iframe source until individual click-to-load activation.
-- Original article bodies, photographs, cover mappings, and captions were not changed.
-- Google Fonts remains requested by CSS. Review suitable licensed self-hosted Lato assets to eliminate the third-party font request without unapproved visual changes.
-- Verify embeds and players in a desktop and mobile browser, including no-JavaScript behavior; their content must remain available on click, not automatically loaded.
+## F06 — Third-party media and fonts (original embeds restored by owner request)
+- The earlier click-to-load wrappers for YouTube and SoundCloud were removed on 15 October 2026.
+- Posts now use their original YouTube and SoundCloud iframe sources. These embeds can contact the external provider as soon as an article loads, before the visitor presses Play.
+- The previously identified eight YouTube embeds and one SoundCloud embed are **not** rewritten or replaced with alternate services. Original posts, photography, captions and links are unchanged.
+- Browser-only contact request helper (F09) remains implemented in `assets/js/privacy.js`; it no longer handles media.
+- Google Fonts continues to load externally. Review licensed self-hosted Lato files separately if desired.
+- Confirm normal iframe presentation on mobile and desktop, and verify actual network and cookie behavior for any applicable privacy/consent obligations.
 
 ## F07 — Archived comments
 - Historic comments are clearly labeled and linked to a review request procedure.
@@ -31,6 +33,6 @@ This tracks F04, F06, F07 and F09. It does **not** certify privacy-law or AdSens
 - Check GitHub Pages build status and current deployed HTML.
 - With browser dev tools, confirm AdSense is loaded on unflagged pages and omitted on the nine flagged galleries.
 - Confirm the custom pop-up and footer "Privacy choices" button no longer appear; validate regional certified CMP behavior separately when configured.
-- Check no YouTube/SoundCloud player requests occur before a specific player is clicked.
+- Confirm YouTube/SoundCloud players load normally without an intermediary click-to-load prompt; assess third-party requests and disclosures.
 - Confirm archived comments remain readable, their content is HTML escaped, and review links open Contact #privacy-request.
 - Check that local request preparation copies text and **never sends it** automatically.
