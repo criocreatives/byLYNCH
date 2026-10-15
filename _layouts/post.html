@@ -2,6 +2,14 @@
 layout: default
 ---
 {% assign feature = site.data.featured[page.slug] %}
+{% assign excluded_posts = site.data.content_flags.e_notice %}
+{% assign url_slug = page.url | split: '/' | last %}
+{% assign bylynch_ads_eligible = true %}
+{% if excluded_posts contains page.slug or excluded_posts contains url_slug %}
+  {% assign bylynch_ads_eligible = false %}
+{% endif %}
+{% assign metadata_ad_slot = site.data.manual_ads.metadata_slot | default: '' | strip %}
+{% assign after_gallery_ad_slot = site.data.manual_ads.after_gallery_slot | default: '' | strip %}
 <header class="entry-header entry-hero" data-entry-hero>
   {% assign e_posts = site.data.content_flags.e_notice %}
   {% if e_posts contains page.slug %}
@@ -20,9 +28,14 @@ layout: default
   </div>
 </header>
 <div class="bk-post-meta">
-  <div class="bk-post-meta-inner">
-    <div class="bk-post-date"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time></div>
-    {% if page.tags and page.tags.size > 0 %}<div class="bk-post-tags"><em>{{ page.tags | join: ", " }}</em></div>{% endif %}
+  <div class="bk-post-meta-inner{% if bylynch_ads_eligible and metadata_ad_slot != '' %} bylynch-meta-has-ad{% endif %}">
+    <div class="bk-post-meta-details">
+      <div class="bk-post-date"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time></div>
+      {% if page.tags and page.tags.size > 0 %}<div class="bk-post-tags"><em>{{ page.tags | join: ", " }}</em></div>{% endif %}
+    </div>
+    {% if bylynch_ads_eligible and metadata_ad_slot != '' %}
+      {% include manual_ad.html position="metadata" slot=metadata_ad_slot %}
+    {% endif %}
   </div>
 </div>
 <div class="site-content-inner bk-redesign">
@@ -39,6 +52,9 @@ layout: default
         <div class="entry-content">{{ gallery_content }}</div>
         <noscript><p class="media-noscript">External audio/video players are paused by default. Enable JavaScript to choose whether to load them.</p></noscript>
       </article>
+      {% if bylynch_ads_eligible and after_gallery_ad_slot != '' %}
+        {% include manual_ad.html position="after-gallery" slot=after_gallery_ad_slot %}
+      {% endif %}
 
     </main>
   </div>
