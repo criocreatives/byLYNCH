@@ -461,9 +461,42 @@
       card.style.display=(matchCat&&matchTag)?'block':'none';
     });
   }
-  // Homepage: one independently labelled 4:5 Display ad tile per six post cards.
-  // The shared AdSense script comes from the default layout (Auto Ads OFF).
-  // Initial page is server-rendered; this helper handles older cards added on scroll.
+  // Google-supported exact creative sizes. Select one before requesting each ad.
+  // Never crop, hide or resize a creative after it has been served.
+  function requestSizedAd(unit,availableWidth,type){
+    if(!unit||unit.dataset.adInitialized==='1'||unit.hasAttribute('data-adsbygoogle-status'))return;
+    const available=Math.floor(availableWidth);
+    let size=null;
+    if(type==='home'){
+      const safe=available-24;
+      if(safe>=300)size=[300,250];
+      else if(safe>=250)size=[250,250];
+      else if(safe>=200)size=[200,200];
+      else if(safe>=180)size=[180,150];
+    }else if(type==='metadata'){
+      if(available>=320)size=[320,100];
+      else if(available>=234)size=[234,60];
+    }else if(type==='after-gallery'){
+      if(available>=748)size=[728,90];
+      else if(available>=488)size=[468,60];
+      else if(available>=320)size=[300,250];
+      else if(available>=270)size=[250,250];
+      else if(available>=220)size=[200,200];
+    }
+    if(!size)return;
+    unit.style.display='block';
+    unit.style.width=size[0]+'px';
+    unit.style.height=size[1]+'px';
+    unit.style.margin='0 auto';
+    unit.removeAttribute('data-ad-format');
+    unit.removeAttribute('data-full-width-responsive');
+    unit.dataset.adInitialized='1';
+    try{(window.adsbygoogle=window.adsbygoogle||[]).push({});}
+    catch(error){
+      delete unit.dataset.adInitialized;
+      console.error('byLYNCH ad request failed',error);
+    }
+  }
   function createHomeGridAd(slot){
     if(!/^\d+$/.test(slot))return null;
     const tile=document.createElement('aside');
@@ -477,21 +510,26 @@
     const unit=document.createElement('ins');
     unit.className='adsbygoogle bylynch-home-grid-ad-unit';
     unit.style.display='block';
+    unit.style.width='200px';
+    unit.style.height='200px';
     unit.dataset.adClient='ca-pub-4888519100229596';
     unit.dataset.adSlot=slot;
-    unit.dataset.adFormat='auto';
-    unit.dataset.fullWidthResponsive='true';
     tile.append(label,unit);
     return tile;
   }
   function activateHomeGridAds(){
     document.querySelectorAll('[data-post-feed] > [data-home-grid-ad]').forEach(tile=>{
-      if(tile.dataset.adInitialized==='1')return;
       const unit=tile.querySelector('ins.adsbygoogle');
-      if(!unit||tile.getBoundingClientRect().width<50)return;
-      tile.dataset.adInitialized='1';
-      try{(window.adsbygoogle=window.adsbygoogle||[]).push({});}
-      catch(err){console.error('Homepage ad request failed',err);}
+      requestSizedAd(unit,tile.getBoundingClientRect().width,'home');
+    });
+  }
+  function activateManualPostAds(){
+    document.querySelectorAll('.bylynch-manual-ad').forEach(box=>{
+      const unit=box.querySelector('ins.adsbygoogle');
+      const style=getComputedStyle(box);
+      const width=box.clientWidth-(parseFloat(style.paddingLeft)||0)-(parseFloat(style.paddingRight)||0);
+      const type=box.classList.contains('bylynch-manual-ad--metadata')?'metadata':'after-gallery';
+      requestSizedAd(unit,width,type);
     });
   }
   function initOlderPosts(){
@@ -582,6 +620,6 @@
     hero.addEventListener('error',()=>{const first=document.querySelector('.entry-content img');if(first&&hero.src!==first.src)hero.src=first.src;});
     if(!hero.getAttribute('src')){const first=document.querySelector('.entry-content img');if(first)hero.src=first.src;}
   }
-  window.addEventListener('load',()=>{initArchiveFilter();styleCards();markClippedExcerpts();cleanImageLists();initBkMasonry();activateHomeGridAds();initOlderPosts();initPhotoLightbox();initSiteSearch();});
+  window.addEventListener('load',()=>{initArchiveFilter();styleCards();markClippedExcerpts();cleanImageLists();initBkMasonry();activateHomeGridAds();activateManualPostAds();initOlderPosts();initPhotoLightbox();initSiteSearch();});
   window.addEventListener('resize',()=>{clearTimeout(window.__gazetteResize);window.__gazetteResize=setTimeout(()=>{styleCards();markClippedExcerpts();layoutBkMasonry();},180);});
 })();
