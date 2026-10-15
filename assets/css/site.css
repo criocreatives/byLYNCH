@@ -1393,3 +1393,65 @@ body.lightbox-open{overflow:hidden}
 .request-disclaimer{font-size:13px;line-height:1.55;color:#555}
 #bylynch-request-copy[hidden]{display:none}
 #bylynch-request-status{font-size:13px;font-weight:700;color:#222;min-height:18px}
+
+
+/* byLYNCH manual display ad placements — no automatic ads, no photo overlays.
+   Empty slots cause no DOM output or layout changes. */
+
+/* Placement 1: date/tags in the white metadata strip, ad alongside. */
+.bk-post-meta-inner.bylynch-meta-has-ad{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:space-between;
+  column-gap:28px;
+  row-gap:16px;
+}
+.bylynch-meta-has-ad .bk-post-meta-details{flex:1 1 220px;min-width:0}
+.bylynch-manual-ad{box-sizing:border-box;min-width:0;overflow:hidden;text-align:center}
+.bylynch-manual-ad-label{
+  display:block;
+  margin-bottom:7px;
+  color:#8a8a8a;
+  font:700 9px/1.35 Lato,Arial,sans-serif;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+}
+.bylynch-manual-ad .adsbygoogle{width:100%;max-width:100%;min-width:0}
+.bylynch-manual-ad--metadata{
+  flex:0 1 440px;
+  width:min(440px,100%);
+  max-width:100%;
+}
+.bylynch-manual-ad--metadata .adsbygoogle{min-height:60px}
+@media(max-width:700px){
+  .bk-post-meta-inner.bylynch-meta-has-ad{display:block}
+  .bylynch-manual-ad--metadata{
+    width:100%;
+    margin-top:14px;
+    padding-top:13px;
+    border-top:1px solid #e9e9e9;
+  }
+}
+/* Placement 2: its own block after the full gallery, never inside the masonry grid. */
+.single .bk-redesign .bylynch-manual-ad--after-gallery{
+  clear:both;
+  width:100%;
+  margin:36px 0 8px;
+  padding:25px 18px 30px;
+  background:#fff;
+  color:#161616;
+  border-radius:10px;
+}
+.single .bk-redesign .bylynch-manual-ad--after-gallery .adsbygoogle{
+  width:100%;
+  max-width:970px;
+  min-height:100px;
+  margin:0 auto;
+}
+@media(max-width:600px){
+  .single .bk-redesign .bylynch-manual-ad--after-gallery{
+    margin-top:24px;
+    padding:20px 12px 24px;
+  }
+}
