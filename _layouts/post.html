@@ -78,7 +78,7 @@ layout: default
             {% endif %} says:
           </div>
           <div class="comment-date">{{ comment.date | date: "%B %-d, %Y at %-I:%M %p" }}</div>
-          <div class="comment-body">{{ comment.content | escape }}</div>
+          <div class="comment-body">{{ comment.content | strip_html | strip | escape }}</div>
         </article>
         {% endfor %}
       </section>
