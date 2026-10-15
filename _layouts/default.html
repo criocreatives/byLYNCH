@@ -12,9 +12,8 @@
   {% endif %}
 {% endif %}
 {% if adsense_allowed %}
-<!-- Advertising loads only after an affirmative local preference.
-     This does not replace a Google-certified IAB TCF CMP. -->
 <meta name="google-adsense-account" content="ca-pub-4888519100229596">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4888519100229596" crossorigin="anonymous"></script>
 {% endif %}
 <title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.title }}</title>
 {% if page.layout == 'post' %}
@@ -25,7 +24,7 @@
 <meta name="description" content="{{ meta_description | strip_html | strip_newlines | truncate: 160 | escape }}">
 <link rel="canonical" href="{{ page.url | absolute_url }}">
 <link rel="icon" type="image/png" href="{{ '/assets/brand/lynch-favicon.png' | relative_url }}">
-<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v=20261015-p1">
+<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v=20261015-p2">
 </head>
 <body class="{% if page.layout == 'post' %}single{% elsif page.new_wave %}blog new-wave-page{% elsif page.archive %}blog archive-page{% elsif paginator or page.url == '/' %}blog{% endif %}">
 <div id="page" class="hfeed site-shell">
@@ -62,7 +61,6 @@
       <a href="{{ '/privacy/' | relative_url }}">Privacy</a>
       <a href="{{ '/terms/' | relative_url }}">Terms</a>
       <a href="{{ '/cookies/' | relative_url }}">Cookies &amp; Tracking</a>
-      <button type="button" class="privacy-choice-link" data-privacy-choices>Privacy choices</button>
       <a href="{{ '/content-rights/' | relative_url }}">Content &amp; Photography Rights</a>
       <a href="{{ '/contact/' | relative_url }}">Contact</a>
     </nav>
@@ -70,6 +68,6 @@
 </footer>
 </div>
 <script type="application/json" id="bylynch-rating-slugs">{{ site.data.content_flags.e_notice | jsonify }}</script>
-<script defer src="{{ '/assets/js/privacy.js' | relative_url }}?v=20261015-p1"></script>
+<script defer src="{{ '/assets/js/privacy.js' | relative_url }}?v=20261015-p2"></script>
 <script src="{{ '/assets/js/site.js' | relative_url }}?v=20261015-e3"></script>
 </body></html>
