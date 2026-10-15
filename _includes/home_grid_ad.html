@@ -1,0 +1,18 @@
+{% comment %}
+  A labelled, responsive, portrait tile matching the 4:5 homepage post cards.
+  Rendered after every six genuine post cards, never within the photographs.
+  Empty / not-yet-configured slot IDs produce no element.
+  One Google Display slot is reused in each instance; Auto Ads stays OFF.
+{% endcomment %}
+{% assign home_ad_slot = include.slot | default: '' | strip %}
+{% if home_ad_slot != '' %}
+<aside class="bylynch-home-grid-ad" data-home-grid-ad aria-label="Advertisement">
+  <div class="bylynch-home-grid-ad-label" aria-hidden="true">ADVERTISEMENT</div>
+  <ins class="adsbygoogle bylynch-home-grid-ad-unit"
+       style="display:block;width:100%;height:100%"
+       data-ad-client="ca-pub-4888519100229596"
+       data-ad-slot="{{ home_ad_slot | escape }}"
+       data-ad-format="rectangle"
+       data-full-width-responsive="false"></ins>
+</aside>
+{% endif %}
