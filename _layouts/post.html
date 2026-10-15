@@ -3,6 +3,10 @@ layout: default
 ---
 {% assign feature = site.data.featured[page.slug] %}
 <header class="entry-header entry-hero" data-entry-hero>
+  {% assign e_posts = site.data.content_flags.e_notice %}
+  {% if e_posts contains page.slug %}
+  <span class="content-rating-badge" role="img" aria-label="Mature content: nudity" title="Mature content">E</span>
+  {% endif %}
   <div class="post-thumbnail">
     <img data-featured-image loading="eager" fetchpriority="high" decoding="async" {% if feature %}src="{{ '/assets/uploads/' | append: feature | relative_url }}"{% endif %} alt="">
   </div>
