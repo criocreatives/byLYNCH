@@ -461,6 +461,41 @@
       card.style.display=(matchCat&&matchTag)?'block':'none';
     });
   }
+  // Homepage: one independently labelled 4:5 Display ad tile per six post cards.
+  // The shared AdSense script comes from the default layout (Auto Ads OFF).
+  // Initial page is server-rendered; this helper handles older cards added on scroll.
+  function createHomeGridAd(slot){
+    if(!/^\\d+$/.test(slot))return null;
+    const tile=document.createElement('aside');
+    tile.className='bylynch-home-grid-ad';
+    tile.dataset.homeGridAd='';
+    tile.setAttribute('aria-label','Advertisement');
+    const label=document.createElement('div');
+    label.className='bylynch-home-grid-ad-label';
+    label.setAttribute('aria-hidden','true');
+    label.textContent='ADVERTISEMENT';
+    const unit=document.createElement('ins');
+    unit.className='adsbygoogle bylynch-home-grid-ad-unit';
+    unit.style.display='block';
+    unit.style.width='100%';
+    unit.style.height='100%';
+    unit.dataset.adClient='ca-pub-4888519100229596';
+    unit.dataset.adSlot=slot;
+    unit.dataset.adFormat='rectangle';
+    unit.dataset.fullWidthResponsive='false';
+    tile.append(label,unit);
+    return tile;
+  }
+  function activateHomeGridAds(){
+    document.querySelectorAll('[data-post-feed] > [data-home-grid-ad]').forEach(tile=>{
+      if(tile.dataset.adInitialized==='1')return;
+      const unit=tile.querySelector('ins.adsbygoogle');
+      if(!unit||tile.getBoundingClientRect().width<50)return;
+      tile.dataset.adInitialized='1';
+      try{(window.adsbygoogle=window.adsbygoogle||[]).push({});}
+      catch(err){console.error('Homepage ad request failed',err);}
+    });
+  }
   function initOlderPosts(){
     const feed=document.querySelector('[data-post-feed]');
     const wrap=document.querySelector('.older-posts-wrap');
@@ -503,6 +538,12 @@
           existing.add(path);
           feed.appendChild(document.importNode(card,true));
           added++;
+          // Count only photographic post cards. Ad tiles never affect the six-card cadence.
+          const totalCards=feed.querySelectorAll(':scope > .hentry.format-gallery.has-post-thumbnail').length;
+          if(totalCards%6===0&&feed.dataset.homeAdSlot){
+            const ad=createHomeGridAd(feed.dataset.homeAdSlot);
+            if(ad)feed.appendChild(ad);
+          }
         });
         if(!added)throw new Error('No new posts on the next page');
         visited.add(url.href);
@@ -518,6 +559,7 @@
         requestAnimationFrame(()=>requestAnimationFrame(()=>{
           styleCards();
           markClippedExcerpts();
+          activateHomeGridAds();
           if(nextUrl&&wrap.getBoundingClientRect().top<window.innerHeight+600)loadMore();
         }));
       }catch(error){
@@ -542,6 +584,6 @@
     hero.addEventListener('error',()=>{const first=document.querySelector('.entry-content img');if(first&&hero.src!==first.src)hero.src=first.src;});
     if(!hero.getAttribute('src')){const first=document.querySelector('.entry-content img');if(first)hero.src=first.src;}
   }
-  window.addEventListener('load',()=>{initArchiveFilter();styleCards();markClippedExcerpts();cleanImageLists();initBkMasonry();initOlderPosts();initPhotoLightbox();initSiteSearch();});
+  window.addEventListener('load',()=>{initArchiveFilter();styleCards();markClippedExcerpts();cleanImageLists();initBkMasonry();activateHomeGridAds();initOlderPosts();initPhotoLightbox();initSiteSearch();});
   window.addEventListener('resize',()=>{clearTimeout(window.__gazetteResize);window.__gazetteResize=setTimeout(()=>{styleCards();markClippedExcerpts();layoutBkMasonry();},180);});
 })();
