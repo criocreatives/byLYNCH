@@ -1,0 +1,12 @@
+# Single source of truth for E-marked (nudity) photography sets.
+# Listed posts get a viewer-facing E badge on homepage/archive cards
+# and have the site-managed AdSense script omitted on their article pages.
+# Classification does not change the underlying photographs or guarantee Google ad eligibility.
+e_notice:
+  - naked-lady
+  - red-october
+  - codeine-crazy
+  - chocolate
+  - lust
+  - purplereign
+  - bk
