@@ -477,12 +477,10 @@
     const unit=document.createElement('ins');
     unit.className='adsbygoogle bylynch-home-grid-ad-unit';
     unit.style.display='block';
-    unit.style.width='100%';
-    unit.style.height='100%';
     unit.dataset.adClient='ca-pub-4888519100229596';
     unit.dataset.adSlot=slot;
-    unit.dataset.adFormat='rectangle';
-    unit.dataset.fullWidthResponsive='false';
+    unit.dataset.adFormat='auto';
+    unit.dataset.fullWidthResponsive='true';
     tile.append(label,unit);
     return tile;
   }
