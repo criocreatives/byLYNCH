@@ -4,5 +4,23 @@ title: "CONTACT"
 permalink: /contact/
 ---
 <p>Reach me via <a href="https://www.instagram.com/lebosslynch/" target="_blank" rel="noopener noreferrer">Instagram</a>, <a href="https://twitter.com/leBossLYNCH" target="_blank" rel="noopener noreferrer">Twitter</a> or <a href="https://www.facebook.com/leBossLYNCH" target="_blank" rel="noopener noreferrer">Facebook</a>.</p>
-<p>For photo licensing, an image-subject concern, copyright or a privacy request, begin with a short message on <a href="https://www.instagram.com/lebosslynch/" target="_blank" rel="noopener noreferrer">Instagram (@lebosslynch)</a> and include the relevant byLYNCH page link. <strong>Do not send identification documents or sensitive details in a social-media message.</strong> If verification is necessary, request a more secure contact method.</p>
-<p>The previous WordPress contact form is not available on this static website. See the <a href="{{ '/privacy/' | relative_url }}">Privacy Policy</a> and <a href="{{ '/content-rights/' | relative_url }}">Content &amp; Photography Rights</a> for more information.</p>
+<section id="privacy-request" aria-labelledby="privacy-request-title">
+<h2 id="privacy-request-title">Privacy, image rights &amp; comment reviews</h2>
+<p>For a historic-comment correction, image concern, attribution correction or other privacy or rights request, identify the page and briefly explain the issue. The site does not yet have a verified private request inbox or hosted submission form.</p>
+<p><strong>Do not send identification documents, intimate photos, phone numbers or other sensitive details via social media.</strong> Start with a minimal request; ask for an appropriate private channel if verification is required.</p>
+<form id="bylynch-request-preparer" class="bylynch-request-preparer">
+  <div><label for="request-type">Request type</label><select name="request_type" id="request-type">
+    <option>Archived comment correction/removal</option><option>Image or likeness concern</option>
+    <option>Privacy and personal information</option><option>Copyright or attribution</option>
+    <option>Photography licensing</option><option>Other inquiry</option>
+  </select></div>
+  <div><label for="request-page">Related byLYNCH page (optional)</label><input name="page_url" id="request-page" type="url" placeholder="https://bylynch.com/…"></div>
+  <div><label for="request-description">Brief explanation</label><textarea name="request_detail" id="request-description" required maxlength="2000" placeholder="Describe what you want reviewed. Avoid sensitive personal details."></textarea></div>
+  <button class="request-copy-button" type="submit">Prepare &amp; copy request</button>
+  <p class="request-disclaimer">This helper works in your browser. It does <strong>not</strong> submit, transmit or save your request. You must send the prepared message separately.</p>
+  <textarea id="bylynch-request-copy" hidden aria-label="Prepared request message" readonly rows="7"></textarea>
+  <p id="bylynch-request-status" role="status" aria-live="polite"></p>
+</form>
+<p><a href="https://www.instagram.com/lebosslynch/" target="_blank" rel="noopener noreferrer">Open @lebosslynch on Instagram ↗</a> to start your request. If sensitive verification becomes necessary, first ask for a more suitable private communication channel.</p>
+<p>See the <a href="{{ '/privacy/' | relative_url }}">Privacy Policy</a> and <a href="{{ '/content-rights/' | relative_url }}">Content &amp; Photography Rights</a> notice for details.</p>
+</section>
