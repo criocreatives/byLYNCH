@@ -4,7 +4,8 @@ title:
 ---
 <div class="site-content-inner">
   <div class="content-area">
-    <main class="site-main" data-post-feed>
+    {% assign home_ad_slot = site.data.manual_ads.homepage_card_slot | default: '' | strip %}
+    <main class="site-main" data-post-feed{% if home_ad_slot != '' %} data-home-ad-slot="{{ home_ad_slot | escape }}"{% endif %}>
       {% for post in paginator.posts %}
       <article class="hentry format-gallery has-post-thumbnail">
           {% assign e_posts = site.data.content_flags.e_notice %}
@@ -22,6 +23,10 @@ title:
           <div class="entry-summary"><p>{{ card_excerpt | escape }} <a class="more-link" href="{{ post.url | relative_url }}">View gallery</a></p></div>
         </div>
       </article>
+      {% assign ad_interval = forloop.index | modulo: 6 %}
+      {% if home_ad_slot != '' and ad_interval == 0 %}
+        {% include home_grid_ad.html slot=home_ad_slot %}
+      {% endif %}
       {% endfor %}
     </main>
     {% if paginator.next_page %}
