@@ -2,15 +2,14 @@
 
 This tracks F04, F06, F07 and F09. It does **not** certify privacy-law or AdSense compliance.
 
-## F04 — Advertising and consent
-- The site-managed AdSense script is no longer inserted unconditionally.
-- It loads on eligible pages only after an affirmative *local* advertising preference; an initial visitor or one who declines does not trigger the site's AdSense script.
-- Consent preference is stored under localStorage key `bylynch-ad-choice-v1`, with a "Privacy choices" footer button for later updates.
-- Flagged mature post pages still omit the publisher meta tag and block the AdSense script regardless of the preference.
-- **Important:** This is an interim preference widget, **not** a certified IAB TCF CMP. It sends no TCF consent string and does not solve every jurisdiction's requirements.
-- **Owner action (AdSense dashboard):** Privacy & messaging → European regulations → Create message → select bylynch.com → configure vendors, languages and an accessible decline option → set Privacy Policy URL `https://bylynch.com/privacy/` → publish. Google offers a certified CMP through Privacy & messaging.
-- Coordinate Google CMP integration with the interim local preference layer. The opt-in-gated script can also affect AdSense verification. Do not treat the local panel as a replacement for a certified CMP.
-- Test actual network requests and cookies in fresh / declined / allowed browsers in relevant jurisdictions; check account Auto Ads exclusions and site approval.
+## F04 — Advertising and consent (custom banner removed by owner request)
+- The local byLYNCH consent/opt-in panel and footer "Privacy choices" button were removed on 15 October 2026.
+- On **unflagged** pages, the original shared AdSense publisher script now loads directly again. This is a technical revert, **not** a compliance determination.
+- Nine mature galleries remain on the ad-exclusion list; they omit both the publisher meta and script.
+- The site's localStorage key `bylynch-ad-choice-v1` is no longer read or written. Old stored values may remain in a visitor's browser until cleared, but have no effect.
+- **Outstanding / material:** In AdSense → Privacy & messaging, configure and publish a Google-certified IAB TCF-integrated CMP for applicable personalized-ad traffic in the EEA, UK and Switzerland. Confirm other applicable regional consent obligations, vendor settings, and Google Auto Ads page exclusions.
+- Test real browser network behavior on unflagged pages and the nine excluded galleries. No website-wide custom opt-in banner is presently active.
+- Removing the custom panel does not relieve the publisher from any legal or Google-policy consent requirement.
 
 ## F06 — Third-party media and fonts
 - The Jekyll post layout defers eight known YouTube iframe sources and one SoundCloud iframe source until individual click-to-load activation.
@@ -30,8 +29,8 @@ This tracks F04, F06, F07 and F09. It does **not** certify privacy-law or AdSens
 
 ## Verification
 - Check GitHub Pages build status and current deployed HTML.
-- With browser dev tools, confirm no AdSense request on first visit, after decline, or on any flagged gallery even after an allow choice.
-- Confirm that choosing allow triggers the script on a permitted route and that returning to decline reloads the page.
+- With browser dev tools, confirm AdSense is loaded on unflagged pages and omitted on the nine flagged galleries.
+- Confirm the custom pop-up and footer "Privacy choices" button no longer appear; validate regional certified CMP behavior separately when configured.
 - Check no YouTube/SoundCloud player requests occur before a specific player is clicked.
 - Confirm archived comments remain readable, their content is HTML escaped, and review links open Contact #privacy-request.
 - Check that local request preparation copies text and **never sends it** automatically.
