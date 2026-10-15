@@ -12,6 +12,10 @@ permalink: /archive/
         <header class="entry-header">
           {% assign feature = site.data.featured[post.slug] %}
           <a class="post-thumbnail" href="{{ post.url | relative_url }}" {% if feature %}data-bg="{{ '/assets/uploads/' | append: feature | relative_url }}"{% endif %}></a>
+          {% assign e_posts = site.data.content_flags.e_notice %}
+          {% if e_posts contains post.slug %}
+          <span class="content-rating-badge" role="img" aria-label="Mature content: nudity" title="Mature content">E</span>
+          {% endif %}
         </header>
         <div class="card-copy">
           <h1 class="entry-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h1>
