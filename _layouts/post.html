@@ -47,10 +47,7 @@ layout: default
         {% else %}
           {% assign gallery_content = content | replace: '<img ', '<img loading="lazy" decoding="async" ' %}
         {% endif %}
-        {% comment %}Only third-party iframe URLs are deferred; photographs and original article text stay intact.{% endcomment %}
-        {% assign gallery_content = gallery_content | replace: 'src="https://www.youtube.com/embed/', 'data-embed-src="https://www.youtube.com/embed/' | replace: 'src="https://youtube.com/embed/', 'data-embed-src="https://youtube.com/embed/' | replace: 'src="https://www.youtube-nocookie.com/embed/', 'data-embed-src="https://www.youtube-nocookie.com/embed/' | replace: 'src="https://w.soundcloud.com/player/', 'data-embed-src="https://w.soundcloud.com/player/' %}
         <div class="entry-content">{{ gallery_content }}</div>
-        <noscript><p class="media-noscript">External audio/video players are paused by default. Enable JavaScript to choose whether to load them.</p></noscript>
       </article>
       {% if bylynch_ads_eligible and after_gallery_ad_slot != '' %}
         {% include manual_ad.html position="after-gallery" slot=after_gallery_ad_slot %}
