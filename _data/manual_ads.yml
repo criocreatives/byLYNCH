@@ -1,0 +1,11 @@
+# Manual AdSense display ad unit IDs for byLYNCH.
+# These are numeric data-ad-slot values, NOT the publisher ID.
+# Leave each empty until the matching Google AdSense Display ad unit is created.
+# Empty slots render absolutely nothing (no mockups, blank boxes or scripts).
+# Auto Ads must remain OFF in the AdSense account.
+#
+# 1) AdSense > Ads > By ad unit > Display ads > new responsive ad unit
+# 2) Create separate units for 'Post metadata' and 'After gallery'
+# 3) Paste their numeric data-ad-slot values inside the quotes below.
+metadata_slot: ""
+after_gallery_slot: ""
