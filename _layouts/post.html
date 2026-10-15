@@ -34,7 +34,15 @@ layout: default
         {% else %}
           {% assign gallery_content = content | replace: '<img ', '<img loading="lazy" decoding="async" ' %}
         {% endif %}
+        {% comment %}Only third-party iframe URLs are deferred; photographs and original article text stay intact.{% endcomment %}
+        {% assign gallery_content = gallery_content
+          | replace: 'src="https://www.youtube.com/embed/', 'data-embed-src="https://www.youtube.com/embed/'
+          | replace: 'src="https://youtube.com/embed/', 'data-embed-src="https://youtube.com/embed/'
+          | replace: 'src="https://www.youtube-nocookie.com/embed/', 'data-embed-src="https://www.youtube-nocookie.com/embed/'
+          | replace: 'src="https://w.soundcloud.com/player/', 'data-embed-src="https://w.soundcloud.com/player/'
+        %}
         <div class="entry-content">{{ gallery_content }}</div>
+        <noscript><p class="media-noscript">External audio/video players are paused by default. Enable JavaScript to choose whether to load them.</p></noscript>
       </article>
 
     </main>
@@ -44,7 +52,8 @@ layout: default
 <div class="post-comments-outer">
   <div class="post-comments-inner">
 <section class="comments-area" aria-label="Archived comments">
-        <h2>{{ page.archived_comments.size }} thought{% if page.archived_comments.size != 1 %}s{% endif %} on “{{ page.title }}”</h2>
+        <h2>{{ page.archived_comments.size }} thought{% if page.archived_comments.size != 1 %}s{% endif %} on “{{ page.title | escape }}”</h2>
+        <p class="comment-archive-notice">These are historical comments from the original publication. New comments are closed. For attribution, correction or removal review, <a href="{{ '/contact/#privacy-request' | relative_url }}">request a comment review</a>.</p>
         {% for comment in page.archived_comments %}
         <article class="comment">
           <div class="comment-author">
@@ -52,13 +61,13 @@ layout: default
             {% if comment.author == 'lebosslynch' %}
               <a href="https://www.instagram.com/lebosslynch/" target="_blank" rel="noopener noreferrer">{{ comment.author | escape }}</a>
             {% elsif author_url_prefix == 'https://' %}
-              <a href="{{ comment.author_url | escape }}" target="_blank" rel="noopener noreferrer">{{ comment.author | escape }}</a>
+              <a href="{{ comment.author_url | escape }}" target="_blank" rel="nofollow ugc noopener noreferrer">{{ comment.author | escape }}</a>
             {% else %}
               {{ comment.author | escape }}
             {% endif %} says:
           </div>
           <div class="comment-date">{{ comment.date | date: "%B %-d, %Y at %-I:%M %p" }}</div>
-          <div class="comment-body">{{ comment.content }}</div>
+          <div class="comment-body">{{ comment.content | escape | newline_to_br }}</div>
         </article>
         {% endfor %}
       </section>
