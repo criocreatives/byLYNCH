@@ -12,7 +12,32 @@
     li.appendChild(b);
     b.addEventListener('click',e=>{e.preventDefault();const sub=li.querySelector('.sub-menu');if(!sub)return;const on=sub.classList.toggle('toggled');b.classList.toggle('toggled',on);b.setAttribute('aria-expanded',on?'true':'false');});
   });
+  // Backstop for homepage/archive card badges, including infinite-scroll posts.
+  // Match the card's actual link slug if Jekyll's server-rendered badge is absent.
+  function ensureGalleryRatingBadges(){
+    const source=document.getElementById('bylynch-rating-slugs');
+    if(!source)return;
+    let slugs;
+    try{slugs=new Set(JSON.parse(source.textContent||'[]'));}catch(error){return;}
+    if(!slugs.size)return;
+    document.querySelectorAll('.blog .hentry.format-gallery.has-post-thumbnail').forEach(card=>{
+      const link=card.querySelector('.entry-title a[href]');
+      if(!link)return;
+      let slug;
+      try{slug=new URL(link.getAttribute('href'),document.baseURI).pathname.split('/').filter(Boolean).pop();}
+      catch(error){return;}
+      if(!slugs.has(slug)||card.querySelector('.content-rating-badge'))return;
+      const badge=document.createElement('span');
+      badge.className='content-rating-badge';
+      badge.setAttribute('role','img');
+      badge.setAttribute('aria-label','Mature content: nudity');
+      badge.title='Mature content';
+      badge.textContent='E';
+      card.insertBefore(badge,card.firstChild);
+    });
+  }
   function styleCards(){
+    ensureGalleryRatingBadges();
     document.querySelectorAll('.blog .hentry.format-gallery.has-post-thumbnail').forEach(card=>{
       if(getComputedStyle(card).display==='none')return;
       const meta=card.querySelector('.entry-meta'), thumb=card.querySelector('.post-thumbnail');
