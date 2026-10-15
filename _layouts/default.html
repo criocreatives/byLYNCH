@@ -24,7 +24,7 @@
 <meta name="description" content="{{ meta_description | strip_html | strip_newlines | truncate: 160 | escape }}">
 <link rel="canonical" href="{{ page.url | absolute_url }}">
 <link rel="icon" type="image/png" href="{{ '/assets/brand/lynch-favicon.png' | relative_url }}">
-<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v=20261015-media-normal">
+<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v=20261015-home-ad-1">
 </head>
 <body class="{% if page.layout == 'post' %}single{% elsif page.new_wave %}blog new-wave-page{% elsif page.archive %}blog archive-page{% elsif paginator or page.url == '/' %}blog{% endif %}">
 <div id="page" class="hfeed site-shell">
@@ -69,5 +69,5 @@
 </div>
 <script type="application/json" id="bylynch-rating-slugs">{{ site.data.content_flags.e_notice | jsonify }}</script>
 <script defer src="{{ '/assets/js/privacy.js' | relative_url }}?v=20261015-media-normal"></script>
-<script src="{{ '/assets/js/site.js' | relative_url }}?v=20261015-e3"></script>
+<script src="{{ '/assets/js/site.js' | relative_url }}?v=20261015-home-ad-1"></script>
 </body></html>
