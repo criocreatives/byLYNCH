@@ -30,6 +30,7 @@ class Extract(HTMLParser):
         self.meta: dict[str, str] = {}
         self.links: dict[str, str] = {}
         self.images: list[dict[str, str]] = []
+        self.sources: list[dict[str, str]] = []
         self.headings: list[str] = []
         self.ld_json: list[str] = []
         self._in_ld = False
@@ -45,6 +46,8 @@ class Extract(HTMLParser):
                 self.links[a["rel"]] = a.get("href", "")
         elif tag == "img":
             self.images.append(a)
+        elif tag == "source":
+            self.sources.append(a)
         elif tag in ("h1", "h2"):
             self.headings.append(tag)
         elif tag == "script" and a.get("type") == "application/ld+json":
@@ -109,11 +112,16 @@ check(len(covers) == 12, f"Homepage should expose 12 native cover <img> tags, fo
 for cover in covers:
     check(cover.get("src", "").startswith("/assets/uploads/"), "Homepage cover missing original asset src")
     check(bool(cover.get("alt")), "Homepage cover has missing/empty accessible alt text")
+    check(bool(cover.get("width")) and bool(cover.get("height")), "Homepage cover missing original dimensions")
+check(len([source for source in home.sources if source.get("type") == "image/webp"]) == 12,
+      "Homepage must render 12 responsive WebP picture sources")
 
 archive_html, archive = inspect("/archive/")
 check(archive.headings.count("h1") == 1, "Archive should have exactly one H1")
 archive_covers = [image for image in archive.images if "post-thumbnail-image" in image.get("class", "")]
 check(len(archive_covers) == 52, f"Archive should expose 52 cover <img> tags, found {len(archive_covers)}")
+check(len([source for source in archive.sources if source.get("type") == "image/webp"]) == 52,
+      "Archive should render 52 responsive WebP picture sources")
 
 post_sources = sorted((ROOT / "_posts").glob("*.md"))
 check(len(post_sources) == 52, f"Expected 52 published post sources, found {len(post_sources)}")
@@ -150,6 +158,23 @@ for slug in flagged:
               "AdSense library must be excluded from " + slug)
         check('<ins class="adsbygoogle"' not in html,
               "Manual ad units must be excluded from " + slug)
+
+# Optimized image files are checked as actual built assets, not just srcset strings.
+optimized = sorted((ROOT / "assets" / "optimized" / "covers").rglob("*.webp"))
+check(len(optimized) == 104, f"Expected 104 curated optimized covers, found {len(optimized)}")
+for file in optimized:
+    with file.open("rb") as handle:
+        header = handle.read(12)
+    check(header[:4] == b"RIFF" and header[8:12] == b"WEBP",
+          "Invalid WebP signature: " + str(file.relative_to(ROOT)))
+    check((SITE / file.relative_to(ROOT)).is_file(),
+          "Optimized cover omitted from generated Jekyll site: " + str(file.relative_to(ROOT)))
+for url in ("/2024/09/26/swove-in-ledish/", "/2020/01/04/fabricki/"):
+    _, parsed = inspect(url)
+    check(any(s.get("type") == "image/webp" for s in parsed.sources),
+          url + ": missing mobile optimized hero picture source")
+    check(any(img.get("data-featured-image") is not None for img in parsed.images),
+          url + ": missing featured hero image element")
 
 # Ad configuration is deliberately not changed during SEO work.
 ad_config = (ROOT / "_data" / "manual_ads.yml").read_text(encoding="utf-8")
