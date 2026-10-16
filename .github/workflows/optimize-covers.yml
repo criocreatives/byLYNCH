@@ -1,0 +1,44 @@
+name: Generate responsive cover images
+
+on:
+  push:
+    branches:
+      - 'seo/performance-*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bylynch-cover-images-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build-covers:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out this branch
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install image optimization dependencies
+        run: pip install 'Pillow>=10,<13' 'PyYAML>=6,<7'
+      - name: Generate and validate 52 curated cover variants
+        run: python3 scripts/build_responsive_covers.py
+      - name: Commit generated derivatives to this branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/optimized/covers/ _data/responsive_covers.yml
+          if git diff --cached --quiet; then
+            echo "Optimized covers already current."
+          else
+            git commit -m "Generate non-destructive optimized byLYNCH cover images"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
