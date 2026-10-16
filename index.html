@@ -3,6 +3,7 @@ layout: default
 title:
 ---
 <div class="site-content-inner">
+  <h1 class="screen-reader-text">byLYNCH — Jamaican Photography and Visual Stories</h1>
   <div class="content-area">
     {% assign home_ad_slot = site.data.manual_ads.homepage_card_slot | default: '' | strip %}
     <main class="site-main" data-post-feed{% if home_ad_slot != '' %} data-home-ad-slot="{{ home_ad_slot | escape }}"{% endif %}>
@@ -15,10 +16,18 @@ title:
           {% endif %}
         <header class="entry-header">
           {% assign feature = site.data.featured[post.slug] %}
-          <a class="post-thumbnail" href="{{ post.url | relative_url }}" {% if feature %}data-bg="{{ '/assets/uploads/' | append: feature | relative_url }}"{% endif %}></a>
+          <a class="post-thumbnail" href="{{ post.url | relative_url }}">
+            {% if feature %}
+            <img class="post-thumbnail-image"
+                 src="{{ '/assets/uploads/' | append: feature | relative_url }}"
+                 alt="Cover photograph for {{ post.title | strip_html | escape }} — by LYNCH"
+                 {% if forloop.index <= 3 and page.url == '/' %}loading="eager" fetchpriority="high"{% else %}loading="lazy"{% endif %}
+                 decoding="async">
+            {% endif %}
+          </a>
         </header>
         <div class="card-copy">
-          <h1 class="entry-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h1>
+          <h2 class="entry-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
         {% assign card_excerpt = site.data.card_previews[post.slug] | default: 'Explore this visual story from the byLYNCH archive.' %}
           <div class="entry-summary"><p>{{ card_excerpt | escape }} <a class="more-link" href="{{ post.url | relative_url }}">View gallery</a></p></div>
         </div>
