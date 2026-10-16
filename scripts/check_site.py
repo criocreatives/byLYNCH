@@ -116,6 +116,17 @@ for cover in covers:
 check(len([source for source in home.sources if source.get("type") == "image/webp"]) == 12,
       "Homepage must render 12 responsive WebP picture sources")
 
+# Regression guard: optimized <picture> images must fill 4:5 cover cards.
+css_text = (SITE / "assets/css/site.css").read_text(encoding="utf-8")
+image_rule = ".post-cover-picture > img.post-thumbnail-image{"
+rule_at = css_text.find(image_rule)
+check(
+    rule_at >= 0
+    and "height:100%" in css_text[rule_at:rule_at + 400]
+    and "object-fit:cover" in css_text[rule_at:rule_at + 400],
+    "Optimized homepage/archive cover must fill its 4:5 card",
+)
+
 archive_html, archive = inspect("/archive/")
 check(archive.headings.count("h1") == 1, "Archive should have exactly one H1")
 archive_covers = [image for image in archive.images if "post-thumbnail-image" in image.get("class", "")]
