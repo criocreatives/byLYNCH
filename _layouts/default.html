@@ -15,16 +15,73 @@
 <meta name="google-adsense-account" content="ca-pub-4888519100229596">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4888519100229596" crossorigin="anonymous"></script>
 {% endif %}
-<title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.title }}</title>
-{% if page.layout == 'post' %}
-{% assign meta_description = site.data.card_previews[page.slug] | default: 'Explore this visual story from the byLYNCH archive.' %}
+{% if page.url == '/' %}
+<title>byLYNCH | Jamaican Photography, Portraits &amp; Culture</title>
+{% elsif page.title %}
+<title>{{ page.title | escape }} — {{ site.title | escape }}</title>
 {% else %}
-{% assign meta_description = page.description | default: page.excerpt | default: site.description %}
+<title>{{ site.title | escape }}</title>
 {% endif %}
-<meta name="description" content="{{ meta_description | strip_html | strip_newlines | truncate: 160 | escape }}">
+{% if page.layout == 'post' %}
+  {% assign meta_description = site.data.card_previews[page.slug] | default: 'Explore this visual story from the byLYNCH archive.' %}
+{% elsif page.url == '/' %}
+  {% assign meta_description = 'Jamaican photography, portraiture, music and culture through the lens of byLYNCH.' %}
+{% else %}
+  {% assign meta_description = page.description | default: page.excerpt | default: site.description %}
+{% endif %}
+{% assign seo_description = meta_description | strip_html | strip_newlines | truncate: 160 %}
+{% assign og_image = '/assets/brand/lynch-logo.png' | absolute_url %}
+{% if page.layout == 'post' %}
+  {% assign featured_for_share = site.data.featured[page.slug] %}
+  {% if featured_for_share %}
+    {% assign og_image = '/assets/uploads/' | append: featured_for_share | absolute_url %}
+  {% endif %}
+{% endif %}
+<meta name="description" content="{{ seo_description | escape }}">
 <link rel="canonical" href="{{ page.url | absolute_url }}">
+<meta property="og:site_name" content="byLYNCH">
+<meta property="og:locale" content="en_JM">
+<meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+<meta property="og:title" content="{% if page.title %}{{ page.title | escape }}{% else %}byLYNCH — Jamaican Photography{% endif %}">
+<meta property="og:description" content="{{ seo_description | escape }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:image" content="{{ og_image | escape }}">
+<meta name="twitter:card" content="{% if page.layout == 'post' %}summary_large_image{% else %}summary{% endif %}">
+<meta name="twitter:title" content="{% if page.title %}{{ page.title | escape }}{% else %}byLYNCH — Jamaican Photography{% endif %}">
+<meta name="twitter:description" content="{{ seo_description | escape }}">
+<meta name="twitter:image" content="{{ og_image | escape }}">
+{% if page.layout == 'post' %}
+<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ page.title | jsonify }},
+  "description": {{ seo_description | jsonify }},
+  "url": {{ page.url | absolute_url | jsonify }},
+  "mainEntityOfPage": {{ page.url | absolute_url | jsonify }},
+  "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
+  "dateModified": {{ page.modified | default: page.date | date_to_xmlschema | jsonify }},
+  "author": {"@type": "Person", "name": "Romario Lynch", "url": "https://bylynch.com/about/"},
+  "publisher": {"@type": "Person", "name": "Romario Lynch", "url": "https://bylynch.com/about/"},
+  "image": {{ og_image | jsonify }},
+  "inLanguage": "en"
+}
+</script>
+{% elsif page.url == '/' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "byLYNCH",
+  "url": {{ '/' | absolute_url | jsonify }},
+  "description": {{ seo_description | jsonify }},
+  "inLanguage": "en"
+}
+</script>
+{% endif %}
 <link rel="icon" type="image/png" href="{{ '/assets/brand/lynch-favicon.png' | relative_url }}">
-<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v=20261015-ad-fit-1">
+<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v=20261015-seo-1">
 </head>
 <body class="{% if page.layout == 'post' %}single{% elsif page.new_wave %}blog new-wave-page{% elsif page.archive %}blog archive-page{% elsif paginator or page.url == '/' %}blog{% endif %}">
 <div id="page" class="hfeed site-shell">
@@ -69,5 +126,5 @@
 </div>
 <script type="application/json" id="bylynch-rating-slugs">{{ site.data.content_flags.e_notice | jsonify }}</script>
 <script defer src="{{ '/assets/js/privacy.js' | relative_url }}?v=20261015-media-normal"></script>
-<script src="{{ '/assets/js/site.js' | relative_url }}?v=20261015-ad-fit-1"></script>
+<script src="{{ '/assets/js/site.js' | relative_url }}?v=20261015-seo-1"></script>
 </body></html>
