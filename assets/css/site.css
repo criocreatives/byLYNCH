@@ -1496,3 +1496,22 @@ body.lightbox-open{overflow:hidden}
 .single .bk-redesign .bylynch-manual-ad--after-gallery .adsbygoogle{
   display:block;
 }
+
+/* Native images are discoverable to search crawlers; this preserves the
+   existing 4:5 cover crop, overlays and hover effects without changing assets. */
+.blog .hentry.format-gallery.has-post-thumbnail .post-thumbnail > .post-thumbnail-image {
+  position:absolute;
+  display:block;
+  inset:0;
+  width:100%;
+  height:100%;
+  max-width:none;
+  object-fit:cover;
+  object-position:50% 50%;
+  z-index:0;
+}
+.blog .hentry.format-gallery.has-post-thumbnail .post-thumbnail::before,
+.blog .hentry.format-gallery.has-post-thumbnail .post-thumbnail::after {
+  z-index:1;
+  pointer-events:none;
+}
