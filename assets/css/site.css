@@ -1666,3 +1666,12 @@ body.lightbox-open{overflow:hidden}
   .lynch-about-button,.lynch-about-publication-list>a{transition:none}
   .lynch-about-button:hover{transform:none}
 }
+
+/* Exact solid-brick LYNCH SVG, used instead of retypeset lettering. */
+.lynch-about .lynch-about-end-mark img{
+  display:inline-block;
+  width:clamp(138px,18vw,210px);
+  max-width:100%;
+  height:auto;
+  vertical-align:middle;
+}
