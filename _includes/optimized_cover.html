@@ -1,0 +1,27 @@
+{% comment %}
+  Non-destructive cover delivery: mobile/card WebP variants generated from
+  featured.yml; the original JPG/PNG remains the universal fallback.
+  The hero is WebP on narrow viewports only; desktop keeps the original.
+{% endcomment %}
+{% assign cover_photo = site.data.featured[include.post.slug] %}
+{% assign cover_data = site.data.responsive_covers[include.post.slug] %}
+{% if cover_photo %}
+<picture class="{% if include.hero %}post-hero-picture{% else %}post-cover-picture{% endif %}">
+  {% if cover_data %}
+  <source type="image/webp"
+    {% if include.hero %}media="(max-width: 767px)"{% endif %}
+    srcset="{{ '/assets/optimized/covers/' | append: cover_data.small | relative_url }} {{ cover_data.small_width }}w{% if cover_data.large %}, {{ '/assets/optimized/covers/' | append: cover_data.large | relative_url }} {{ cover_data.large_width }}w{% endif %}"
+    sizes="{% if include.hero %}100vw{% else %}(max-width: 767px) 90vw, (max-width: 959px) 330px, (max-width: 1379px) 300px, 380px{% endif %}">
+  {% endif %}
+  <img {% if include.hero %}data-featured-image
+       alt=""
+       loading="eager" fetchpriority="high"
+       {% else %}class="post-thumbnail-image"
+       alt="Cover photograph for {{ include.post.title | strip_html | escape }} — by LYNCH"
+       {% if include.priority %}loading="eager" fetchpriority="high"{% else %}loading="lazy"{% endif %}
+       {% endif %}
+       decoding="async"
+       src="{{ '/assets/uploads/' | append: cover_photo | relative_url }}"
+       {% if cover_data %}width="{{ cover_data.original_width }}" height="{{ cover_data.original_height }}"{% endif %}>
+</picture>
+{% endif %}
