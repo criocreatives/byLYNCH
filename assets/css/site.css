@@ -1524,6 +1524,19 @@ body.lightbox-open{overflow:hidden}
   width:100%;
   height:100%;
 }
+/* Restore full-bleed cropping inside optimized <picture> cover wrappers. */
+.blog .hentry.format-gallery.has-post-thumbnail .post-thumbnail > .post-cover-picture > img.post-thumbnail-image{
+  display:block;
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  max-width:none;
+  max-height:none;
+  object-fit:cover;
+  object-position:50% 50%;
+  z-index:0;
+}
 .single .entry-hero .post-thumbnail > .post-hero-picture{
   display:block;
   width:100%;
