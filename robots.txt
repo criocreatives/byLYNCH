@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bylynch.com/sitemap.xml
