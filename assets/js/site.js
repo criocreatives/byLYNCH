@@ -42,7 +42,8 @@
       if(getComputedStyle(card).display==='none')return;
       const meta=card.querySelector('.entry-meta'), thumb=card.querySelector('.post-thumbnail');
       if(!thumb)return;
-      const bg=thumb.dataset.bg;if(bg)thumb.style.backgroundImage='url("'+bg+'")';
+      const bg=thumb.dataset.bg;
+      if(bg&&!thumb.querySelector('.post-thumbnail-image'))thumb.style.backgroundImage='url("'+bg+'")';
       const top=meta?(meta.offsetHeight+15):0;
       thumb.style.top=top+'px';
       thumb.style.height=Math.max(0,card.offsetHeight-top)+'px';
