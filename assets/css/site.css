@@ -1615,7 +1615,7 @@ body.lightbox-open{overflow:hidden}
 .lynch-about-publication-list small{font-weight:900;color:var(--about-pink);letter-spacing:.16em;font-size:10px}
 .lynch-about-publication-list strong{font-size:17px;letter-spacing:-.015em}
 .lynch-about-publication-list .lynch-about-source-type{font-size:12px;color:#777}
-.lynch-about-publication-list>a>span:last-child{font-size:27px;color:var(--about-pink)}
+.lynch-about-publication-list>a>svg.lynch-about-icon{width:23px;height:23px;color:var(--about-pink);flex:0 0 auto}
 .lynch-about-end{padding:75px 65px 48px;background:#171719;color:#fff;margin-bottom:80px;position:relative;overflow:hidden}
 .lynch-about-end::before{position:absolute;content:"";width:500px;height:500px;border:1px solid rgba(237,23,68,.3);border-radius:50%;right:-180px;top:-240px;pointer-events:none}
 .lynch-about-end-overline{color:#ff5374;display:block;margin-bottom:23px}
@@ -1674,4 +1674,24 @@ body.lightbox-open{overflow:hidden}
   max-width:100%;
   height:auto;
   vertical-align:middle;
+}
+
+/* Vector navigation marks: no Unicode or emoji arrow characters in About UI. */
+.lynch-about .lynch-about-icon{
+  display:inline-block;
+  width:1.05em;
+  height:1.05em;
+  flex:0 0 auto;
+  vertical-align:-.16em;
+  stroke:currentColor;
+}
+.lynch-about-portrait-bottom .lynch-about-icon-location{
+  width:12px;
+  height:12px;
+  vertical-align:-.14em;
+  margin:0 4px;
+}
+.lynch-about-publication-list>a>svg.lynch-about-icon{
+  width:23px;
+  height:23px;
 }
