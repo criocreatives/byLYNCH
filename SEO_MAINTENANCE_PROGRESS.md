@@ -27,3 +27,12 @@
 6. Verify public `robots.txt` and `sitemap.xml`, then submit the sitemap in Search Console.
 
 Notes: A passing build is not proof that Google has indexed every page, that Search Console is configured, or that Core Web Vitals meet thresholds.
+
+## Performance pass — 15 October 2026
+- 52 curated covers now have 480px and 960px WebP derivatives under `assets/optimized/covers/` (104 files), with actual widths and dimensions in `_data/responsive_covers.yml`.
+- Homepage/archive tiles use a `<picture>` WebP source and the original JPG/PNG fallback. The original cover selection, image order, 4:5 crop and overlay treatment remain unchanged.
+- On mobile (up to 767px), single-post hero images select optimized WebP variants; wider devices retain original full-resolution hero image.
+- A reproducible `scripts/build_responsive_covers.py` generator and `.github/workflows/optimize-covers.yml` pipeline generate/commit derivatives on `seo/performance-*` staging branches (also supports manual workflow dispatch). Future cover changes must refresh the manifest and derivatives before publishing.
+- Moved Google Fonts out of CSS `@import` into the HTML head with preconnect; retained the identical Lato weights and `display=swap`. Deferred the main site script without changing event handlers.
+- The quality workflow verifies the expected 104 WebP files, responsive picture markup, source fallbacks, metadata and nine explicit-gallery ad exclusions.
+- **Not part of this phase:** 993 gallery originals remain unchanged. No claim of improved Lighthouse/Core Web Vitals score until real measurements are obtained.
