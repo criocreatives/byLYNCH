@@ -18,11 +18,9 @@ title:
           {% assign feature = site.data.featured[post.slug] %}
           <a class="post-thumbnail" href="{{ post.url | relative_url }}">
             {% if feature %}
-            <img class="post-thumbnail-image"
-                 src="{{ '/assets/uploads/' | append: feature | relative_url }}"
-                 alt="Cover photograph for {{ post.title | strip_html | escape }} — by LYNCH"
-                 {% if forloop.index <= 3 and page.url == '/' %}loading="eager" fetchpriority="high"{% else %}loading="lazy"{% endif %}
-                 decoding="async">
+            {% assign cover_prioritized = false %}
+            {% if forloop.index <= 3 and page.url == '/' %}{% assign cover_prioritized = true %}{% endif %}
+            {% include optimized_cover.html post=post priority=cover_prioritized %}
             {% endif %}
           </a>
         </header>
