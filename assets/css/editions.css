@@ -1,0 +1,39 @@
+
+/* Scoped byLYNCH commercial enquiries and editions landing page */
+.editions-hub{--ed-paper:#f7f6f3;--ed-ink:#171717;--ed-accent:#d82424;background:var(--ed-paper);color:var(--ed-ink);font-family:Lato,Arial,sans-serif;line-height:1.5}
+.editions-hub *{box-sizing:border-box}
+.editions-hub a{text-decoration:none}
+.editions-wrap{width:min(1140px,calc(100% - 40px));margin:0 auto}
+.editions-hero{background:#101010;color:#fff;padding:clamp(66px,9vw,118px) 0}
+.editions-eyebrow{display:block;color:#dc403b;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.21em}
+.editions-hero h1{margin:14px 0 22px;color:#fff;font-size:clamp(54px,8vw,112px);letter-spacing:-.075em;line-height:.91;font-weight:900;max-width:960px}
+.editions-hero h1 span{color:#ef3b39}
+.editions-lede{font-size:clamp(17px,2vw,22px);line-height:1.65;max-width:730px;color:#d1d1d1;margin:0}
+.editions-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.editions-button{display:inline-flex;align-items:center;justify-content:center;min-height:47px;background:#e02927;color:#fff!important;padding:13px 22px;border-radius:4px;font-size:12px;font-weight:900;letter-spacing:.09em;text-transform:uppercase}
+.editions-button:hover{background:#b81c1b;color:#fff}
+.editions-button.secondary{background:transparent;border:1px solid #aaa}
+.editions-button.secondary:hover{background:#292929}
+.editions-section{padding:clamp(55px,7vw,100px) 0}
+.editions-section h2{font-size:clamp(30px,4.5vw,56px);line-height:1;letter-spacing:-.05em;margin:12px 0 23px}
+.editions-intro{font-size:17px;line-height:1.7;max-width:760px;color:#545454}
+.editions-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:30px}
+.editions-card{background:#fff;border:1px solid #d9d7d2;min-height:275px;padding:26px;display:flex;flex-direction:column}
+.editions-card small{font-size:10px;color:#9a1f1b;font-weight:900;letter-spacing:.14em;text-transform:uppercase}
+.editions-card h3{margin:15px 0 8px;font-size:26px;font-weight:900;letter-spacing:-.035em;line-height:1.14}
+.editions-card p{font-size:14px;color:#555;line-height:1.6;margin:0 0 20px;flex:1}
+.editions-card a{font-size:12px;font-weight:900;text-transform:uppercase;color:#bd211f;letter-spacing:.05em}
+.editions-inquiry{background:#e9e7e2;padding:clamp(55px,7vw,94px) 0}
+.editions-grid-two{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}
+.editions-checklist{padding-left:22px;font-size:15px;color:#474747;line-height:1.85}
+.editions-form label{display:block;font-size:12px;font-weight:900;letter-spacing:.04em;margin-bottom:17px}
+.editions-form select,.editions-form textarea{width:100%;padding:14px 16px;margin-top:8px;font:400 15px/1.5 Lato,Arial,sans-serif;color:#111;background:white;border:1px solid #b8b7b2;border-radius:3px}
+.editions-form textarea{min-height:170px;resize:vertical}
+.editions-form .editions-button{border:0;cursor:pointer}
+.editions-form .editions-note,.editions-footnote{font-size:12px;line-height:1.6;color:#666;max-width:720px}
+.editions-form .editions-status{font-size:13px;font-weight:700;color:#333;min-height:1.5em}
+.editions-form .editions-copy{width:100%;margin-top:12px;min-height:110px;font-size:13px}
+.editions-small{padding:28px 0;border-top:1px solid #d7d4cf;font-size:12px;color:#666}
+.editions-small a{color:#9b1b1b;text-decoration:underline}
+@media(max-width:800px){.editions-grid{grid-template-columns:1fr}.editions-grid-two{grid-template-columns:1fr;gap:16px}.editions-card{min-height:230px}.editions-hub .editions-actions{flex-direction:column}.editions-button{width:100%}}
+@media(prefers-reduced-motion:reduce){.editions-hub *{scroll-behavior:auto}}

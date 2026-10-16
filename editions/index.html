@@ -1,0 +1,76 @@
+---
+layout: default
+title: "Editions, Prints & Licensing"
+permalink: /editions/
+description: "Explore byLYNCH photography editions, print enquiries and editorial or commercial image licensing."
+---
+<main class="editions-hub" id="main">
+  <section class="editions-hero">
+    <div class="editions-wrap">
+      <span class="editions-eyebrow">byLYNCH / Photography &amp; culture</span>
+      <h1>Images worth <span>keeping.</span></h1>
+      <p class="editions-lede">Photography and visual stories from Jamaica. Discover the existing store, ask about prints, or explore licensing an image for editorial and commercial projects.</p>
+      <div class="editions-actions">
+        <a class="editions-button" href="#licensing">Enquire about an image →</a>
+        <a class="editions-button secondary" href="https://gumroad.com/seenbylynch" rel="noopener noreferrer" target="_blank">Visit existing store ↗</a>
+      </div>
+    </div>
+  </section>
+  <section class="editions-section">
+    <div class="editions-wrap">
+      <span class="editions-eyebrow">Work and collections</span>
+      <h2>Three ways to work with the archive.</h2>
+      <p class="editions-intro">Individual photographs and collections have different rights and availability. Enquiries are reviewed before any use or purchase is agreed.</p>
+      <div class="editions-grid">
+        <article class="editions-card">
+          <small>01 · Enquiry-based</small>
+          <h3>Photography prints</h3>
+          <p>Ask about a selected image, preferred size and destination. Print editions, availability and pricing are confirmed individually; no print inventory is being advertised here.</p>
+          <a href="#licensing">Ask about a print ↗</a>
+        </article>
+        <article class="editions-card">
+          <small>02 · Licensing enquiry</small>
+          <h3>Image licensing</h3>
+          <p>For magazines, campaigns, documentary production and cultural projects seeking permission to reproduce a specific photograph.</p>
+          <a href="#licensing">Request licensing terms ↗</a>
+        </article>
+        <article class="editions-card">
+          <small>03 · In development</small>
+          <h3>Digital creator tools</h3>
+          <p>An offline six-page Photo Zine Studio has been developed as a candidate digital product. It uses the creator's own rights-cleared photographs. A store listing has not been approved or published.</p>
+          <a href="https://gumroad.com/seenbylynch" target="_blank" rel="noopener noreferrer">View current store ↗</a>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section class="editions-inquiry" id="licensing">
+    <div class="editions-wrap editions-grid-two">
+      <div>
+        <span class="editions-eyebrow">Print &amp; licensing enquiries</span>
+        <h2>Tell us which image you have in mind.</h2>
+        <p class="editions-intro">Start with a public gallery link and an intended use. Permission, availability, fees and any required clearances are confirmed separately in writing.</p>
+        <ul class="editions-checklist"><li>Image or gallery URL</li><li>Editorial, commercial, personal print or other purpose</li><li>Publication/platform and intended territory</li><li>Quantity, size and duration when relevant</li></ul>
+        <p class="editions-footnote">Commercial use may require rights clearances from subjects, collaborators or other rights holders. No licence is granted by filling out this form.</p>
+      </div>
+      <form class="editions-form" id="editions-enquiry">
+        <label>Enquiry type
+          <select name="category" required>
+            <option value="Photography print enquiry">Photography print enquiry</option>
+            <option value="Editorial image licensing">Editorial image licensing</option>
+            <option value="Commercial image licensing">Commercial image licensing</option>
+            <option value="Digital edition interest">Digital edition interest</option>
+          </select>
+        </label>
+        <label>Brief description (avoid sensitive personal information)
+          <textarea name="details" required maxlength="1600" placeholder="Paste the gallery link and tell us about the proposed use, location or print size."></textarea>
+        </label>
+        <button class="editions-button" type="submit">Prepare enquiry message →</button>
+        <p class="editions-status" id="editions-enquiry-status" role="status" aria-live="polite"></p>
+        <textarea class="editions-copy" id="editions-copy" hidden readonly aria-label="Prepared enquiry text"></textarea>
+        <p class="editions-note">This form prepares text on your device. It does not send your request or store personal data. Copy the message, then contact <a href="https://instagram.com/lebosslynch/" target="_blank" rel="noopener noreferrer">@lebosslynch</a>. For sensitive rights matters, see the <a href="{{ '/contact/' | relative_url }}">Contact page</a>.</p>
+      </form>
+    </div>
+  </section>
+  <div class="editions-wrap editions-small">All photographs remain subject to applicable copyrights, privacy and collaboration rights. Review the <a href="{{ '/content-rights/' | relative_url }}">Content &amp; Photography Rights</a> notice before proposing reuse.</div>
+</main>
+<script src="{{ '/assets/js/editions.js' | relative_url }}" defer></script>
