@@ -1,0 +1,29 @@
+name: Build and validate byLYNCH
+
+on:
+  push:
+    branches:
+      - main
+      - 'seo/**'
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  site-quality:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+      - name: Install the supported Jekyll build dependencies
+        run: gem install jekyll jekyll-paginate --no-document
+      - name: Build the site
+        run: jekyll build --trace
+      - name: Validate SEO, archive and ad exclusions
+        run: python3 scripts/check_site.py
