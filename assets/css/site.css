@@ -1579,7 +1579,7 @@ body.lightbox-open{overflow:hidden}
 .lynch-about-portrait-bottom a:hover{color:#ff3a60}
 .lynch-about-avatar-link{width:min(78%,355px);aspect-ratio:1;display:block;margin:35px auto}
 .lynch-about-avatar{position:relative;width:100%;height:100%;border-radius:50%;overflow:hidden;background:radial-gradient(circle at 40% 30%,#38383b,#131315 70%);border:4px solid #fff;box-shadow:0 0 0 10px rgba(237,23,68,.8),0 22px 75px rgba(0,0,0,.34)}
-.lynch-about-avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#171719;display:block}
+.lynch-about-avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 34%;background:#171719;display:block}
 .lynch-about-avatar img[hidden]{display:none}
 .lynch-about-avatar-fallback{position:absolute;inset:0;display:grid;place-items:center;color:#fff;font-size:clamp(90px,12vw,154px);font-weight:900;letter-spacing:-.1em}
 .lynch-about-container{max-width:1200px;margin:0 auto;padding:0 28px}
