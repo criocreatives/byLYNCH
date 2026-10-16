@@ -187,6 +187,17 @@ for url in ("/2024/09/26/swove-in-ledish/", "/2020/01/04/fabricki/"):
     check(any(img.get("data-featured-image") is not None for img in parsed.images),
           url + ": missing featured hero image element")
 
+# Editorial UI policy: About page must use vector icons, not emoji/text arrows.
+about_source = (ROOT / "about" / "index.html").read_text(encoding="utf-8")
+about_html, about_parsed = inspect("/about/")
+arrow_characters = "\u2192\u2190\u2197\u2196\u2198\u2199\u27a1\u27a4\u279c\u2794"
+check(not any(ch in about_source for ch in arrow_characters),
+      "About page must not contain Unicode navigation arrow glyphs")
+check('class="lynch-about-icon' in about_html,
+      "About navigation links should use consistent SVG icons")
+check(about_html.count('class="lynch-about-icon') >= 10,
+      "Expected vector marks on About external, archive, and location links")
+
 # Ad configuration is deliberately not changed during SEO work.
 ad_config = (ROOT / "_data" / "manual_ads.yml").read_text(encoding="utf-8")
 for slot in ("9856514493", "7038779463", "8559569688"):
