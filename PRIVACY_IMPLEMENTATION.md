@@ -37,3 +37,10 @@ This tracks F04, F06, F07 and F09. It does **not** certify privacy-law or AdSens
 - Confirm YouTube/SoundCloud players load normally without an intermediary click-to-load prompt; assess third-party requests and disclosures.
 - Confirm archived comments remain readable, their content is HTML escaped, and review links open Contact #privacy-request.
 - Check that local request preparation copies text and **never sends it** automatically.
+
+## GA4 sitewide measurement — 17 October 2026
+- Measurement ID: `G-K95ENNDT6F`. The global Jekyll default layout loads the Google tag on **all public routes**, including all nine E-rated galleries; the AdSense loader and manual ad-unit exclusions remain unchanged.
+- The page URL reported by GA4 includes origin and pathname only, not arbitrary query parameters. Google Signals and ad-personalization signals are disabled for this tag. No photos, post copy, cover mappings or AdSense slots are modified.
+- Consent default: `analytics_storage=denied` in EEA/UK/Switzerland; `granted` outside those regions, subject to applicable law. This is an advanced consent-mode integration: denied storage can still yield cookieless Google pings. Verify whether the published Google European regulations message has **Consent mode enabled** in AdSense Privacy & messaging, and verify that it passes analytics consent updates where shown.
+- **Important coverage gap:** The AdSense library is absent on mature galleries, so Google's CMP may not appear on those pages. Without another verified choice mechanism, those regional visitors remain at the denied Analytics storage default; reports can be partial. Do not introduce a home-made banner without user approval.
+- Verify in actual desktop/mobile browsers using Analytics Realtime/DebugView and browser network inspection, including E-rated gallery URLs, and test eligible-region accept/refuse choices. Passing Jekyll CI does not demonstrate consent correctness or that GA4 has received live hits.

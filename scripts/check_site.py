@@ -170,6 +170,30 @@ for slug in flagged:
         check('<ins class="adsbygoogle"' not in html,
               "Manual ad units must be excluded from " + slug)
 
+# GA4 must remain independent of AdSense eligibility, including all nine mature galleries.
+GA_ID = "G-K95ENNDT6F"
+GA_LIBRARY = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID
+for slug, url in post_urls.items():
+    html = rendered(url).read_text(encoding="utf-8")
+    check(html.count(GA_LIBRARY) == 1, slug + ": expected exactly one GA4 loader")
+    check(html.count("gtag('config', '" + GA_ID + "'") == 1,
+          slug + ": expected exactly one GA4 configuration")
+check(home_html.count(GA_LIBRARY) == 1, "Homepage GA4 script missing or duplicated")
+check(archive_html.count(GA_LIBRARY) == 1, "Archive GA4 script missing or duplicated")
+for url in ("/about/", "/privacy/", "/cookies/"):
+    content = rendered(url).read_text(encoding="utf-8")
+    check(content.count(GA_LIBRARY) == 1, url + ": GA4 script missing or duplicated")
+layout_source = (ROOT / "_layouts/default.html").read_text(encoding="utf-8")
+check(layout_source.index(GA_LIBRARY) < layout_source.index("{% if adsense_allowed %}"),
+      "GA4 loader must not be placed behind the mature-gallery AdSense gate")
+check("'analytics_storage': 'denied'" in layout_source and "'analytics_storage': 'granted'" in layout_source,
+      "GA4 regional consent defaults are missing")
+check("'allow_google_signals': false" in layout_source
+      and "'allow_ad_personalization_signals': false" in layout_source,
+      "GA4 privacy-oriented ad settings are missing")
+check("'page_location': window.location.origin + window.location.pathname" in layout_source,
+      "GA4 must not send arbitrary URL query parameters")
+
 # Optimized image files are checked as actual built assets, not just srcset strings.
 optimized = sorted((ROOT / "assets" / "optimized" / "covers").rglob("*.webp"))
 check(len(optimized) == 104, f"Expected 104 curated optimized covers, found {len(optimized)}")

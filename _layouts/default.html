@@ -3,6 +3,31 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+{% comment %}GA4 measures all public pages. Mature-gallery exclusions below apply only to AdSense.{% endcomment %}
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){window.dataLayer.push(arguments);}
+// Default to denied analytics storage in EEA, UK and Switzerland.
+// Google Privacy & messaging must be configured to update consent when granted.
+gtag('consent', 'default', {
+  'analytics_storage': 'denied',
+  'region': ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR',
+             'HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK',
+             'SI','ES','SE','IS','LI','NO','GB','CH']
+});
+// Visitors outside these regions use normal analytics measurement.
+gtag('consent', 'default', {'analytics_storage': 'granted'});
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K95ENNDT6F"></script>
+<script>
+gtag('js', new Date());
+gtag('config', 'G-K95ENNDT6F', {
+  'allow_google_signals': false,
+  'allow_ad_personalization_signals': false,
+  // Never send arbitrary search parameters from historic post URLs.
+  'page_location': window.location.origin + window.location.pathname
+});
+</script>
 {% assign e_posts = site.data.content_flags.e_notice %}
 {% assign adsense_allowed = true %}
 {% if page.layout == 'post' %}
