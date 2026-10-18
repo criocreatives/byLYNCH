@@ -9,6 +9,7 @@ from __future__ import annotations
 import json
 import re
 import sys
+import zlib
 import xml.etree.ElementTree as ET
 from html.parser import HTMLParser
 from pathlib import Path
@@ -113,10 +114,35 @@ social_path = ROOT / "assets/brand/lynch-social-preview.png"
 check(social_path.is_file(), "Social-sharing brand image missing")
 if social_path.is_file():
     png = social_path.read_bytes()
-    check(png[:8] == b"\\x89PNG\\r\\n\\x1a\\n", "Social preview must be PNG")
+    check(png[:8] == b"\x89PNG\r\n\x1a\n", "Social preview must be PNG")
     if len(png) >= 24:
         size = (int.from_bytes(png[16:20], "big"), int.from_bytes(png[20:24], "big"))
         check(size == (1200, 630), "Social preview must be 1200x630")
+    # Validate chunk CRCs and compressed raster, not just the PNG header.
+    pos, idat = 8, []
+    while pos + 12 <= len(png):
+        count = int.from_bytes(png[pos:pos + 4], "big")
+        end = pos + 12 + count
+        check(end <= len(png), "Social preview has a truncated PNG chunk")
+        if end > len(png):
+            break
+        kind = png[pos + 4:pos + 8]
+        payload = png[pos + 8:pos + 8 + count]
+        expected_crc = int.from_bytes(png[pos + 8 + count:end], "big")
+        check(zlib.crc32(kind + payload) & 0xffffffff == expected_crc,
+              "Social preview contains a corrupt PNG chunk")
+        if kind == b"IDAT":
+            idat.append(payload)
+        pos = end
+        if kind == b"IEND":
+            break
+    check(bool(idat), "Social preview has no image pixel data")
+    if idat:
+        try:
+            check(len(zlib.decompress(b"".join(idat))) > 1000,
+                  "Social preview raster has too little data")
+        except zlib.error:
+            check(False, "Social preview raster cannot be decoded")
     check((SITE / social_path.relative_to(ROOT)).is_file(),
           "Social preview omitted from site build")
 expected_share = BASE + "/assets/brand/lynch-social-preview.png"
