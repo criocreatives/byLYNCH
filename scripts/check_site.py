@@ -106,6 +106,27 @@ if sitemap.is_file():
         errors.append("sitemap.xml is not valid XML: " + str(ex))
 
 home_html, home = inspect("/")
+
+# Social-sharing preview must use the original solid-brick LYNCH logo, not
+# the old white-on-white transparent logo asset.
+social_path = ROOT / "assets/brand/lynch-social-preview.png"
+check(social_path.is_file(), "Social-sharing brand image missing")
+if social_path.is_file():
+    png = social_path.read_bytes()
+    check(png[:8] == b"\\x89PNG\\r\\n\\x1a\\n", "Social preview must be PNG")
+    if len(png) >= 24:
+        size = (int.from_bytes(png[16:20], "big"), int.from_bytes(png[20:24], "big"))
+        check(size == (1200, 630), "Social preview must be 1200x630")
+    check((SITE / social_path.relative_to(ROOT)).is_file(),
+          "Social preview omitted from site build")
+expected_share = BASE + "/assets/brand/lynch-social-preview.png"
+check(home.meta.get("og:image") == expected_share, "Homepage social preview URL mismatch")
+check(home.meta.get("og:image:width") == "1200", "Homepage social image width missing")
+check(home.meta.get("og:image:height") == "630", "Homepage social image height missing")
+check(home.meta.get("og:image:type") == "image/png", "Homepage social image type missing")
+check(home.meta.get("twitter:card") == "summary_large_image",
+      "Homepage Twitter/X card should use large image format")
+
 check(home.headings.count("h1") == 1, "Homepage should contain exactly one primary H1")
 covers = [image for image in home.images if "post-thumbnail-image" in image.get("class", "")]
 check(len(covers) == 12, f"Homepage should expose 12 native cover <img> tags, found {len(covers)}")
