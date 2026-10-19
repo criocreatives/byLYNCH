@@ -10,6 +10,9 @@ categories:
   - "PHOTO SET"
 tags:
   - "seenbylynch"
+  - "mcavelle"
+featured_people:
+  - mcavelle
 excerpt: "Victoria has a secret..."
 ---
 <!-- wp:paragraph -->

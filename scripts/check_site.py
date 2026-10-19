@@ -219,6 +219,7 @@ for slug in flagged:
 
 # People & Credits: verify person associations, readable credits and structured data.
 expected_people = {
+    "mcavelle": ["mcavelle", "mcavelle-returns", "bk"],
     "complex-ricki": ["bk", "fabricki", "ricki-ticki", "russian-rickolette"],
     "jada-kingdom": ["jada-the-iphone", "kingdom", "sblv1", "yada",
                      "no-rest-for-the-wicked-ft-jada-kingdom"],
@@ -231,6 +232,7 @@ expected_people = {
 }
 people_data = (ROOT / "_data/people.yml").read_text(encoding="utf-8")
 people_names = {
+    "mcavelle": "McAvellé",
     "complex-ricki": "Complex Ricki", "jada-kingdom": "Jada Kingdom",
     "runkus": "Runkus", "amanyea": "Amanyea",
     "iotosh": "Iotosh", "blvk-h3ro": "Blvk H3ro"
@@ -265,6 +267,17 @@ for slug in expected_people["complex-ricki"]:
     for tag in ("complex ricki", "ricki"):
         check(front.count('  - "' + tag + '"') == 1,
               slug + ": missing or repeated canonical tag " + tag)
+for slug in expected_people["mcavelle"]:
+    post_path = next(p for p in post_sources if p.name[11:-3] == slug)
+    front = post_path.read_text(encoding="utf-8").split("\n---\n", 1)[0]
+    check(front.count('  - "mcavelle"') == 1,
+          slug + ": missing or duplicated McAvellé tag")
+# B***K is a shared-feature gallery; both credits must survive.
+bk_post = next(p for p in post_sources if p.name[11:-3] == "bk")
+bk_front = bk_post.read_text(encoding="utf-8").split("\n---\n", 1)[0]
+check("  - complex-ricki" in bk_front and "  - mcavelle" in bk_front,
+      "B***K should credit both Complex Ricki and McAvellé")
+
 for slug in expected_people["jada-kingdom"]:
     post_path = next(p for p in post_sources if p.name[11:-3] == slug)
     front = post_path.read_text(encoding="utf-8").split("\n---\n", 1)[0]
@@ -289,6 +302,17 @@ check("/2022/08/01/bk/" not in credits,
 bk = rendered(post_urls["bk"]).read_text(encoding="utf-8")
 check('class="lynch-credits"' in bk and "Complex Ricki" in bk,
       "B***K credits missing while maintaining classified-gallery exclusions")
+
+# Non-mature McAvellé pages must not recommend the E-rated B***K gallery.
+for slug in ("mcavelle", "mcavelle-returns"):
+    mc_html = rendered(post_urls[slug]).read_text(encoding="utf-8")
+    credit_section = mc_html.split('<section class="lynch-credits"', 1)[-1].split("</section>", 1)[0]
+    check("/2022/08/01/bk/" not in credit_section,
+          slug + ": credits must not link into an E-rated post from an ad-supported page")
+bk_html = rendered(post_urls["bk"]).read_text(encoding="utf-8")
+check('class="lynch-credits"' in bk_html and "McAvellé" in bk_html
+      and "Complex Ricki" in bk_html,
+      "B***K needs both featured subjects in its visible credit section")
 
 # GA4 must remain independent of AdSense eligibility, including all nine mature galleries.
 GA_ID = "G-K95ENNDT6F"
