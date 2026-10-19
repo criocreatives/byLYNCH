@@ -9,7 +9,26 @@ author: "lebosslynch"
 categories:
   - "CULTURE"
 tags:
-  - ""
+  - "runkus"
+  - "chronixx"
+  - "dubwise"
+mentioned_people:
+  - protoje
+  - popcaan
+  - royal-blu
+  - jah9
+  - giark
+  - lila-ike
+  - leno-banton
+  - dre-island
+  - naomi-cowan
+  - irie-souljah
+  - ragga-muffin
+  - sevana
+  - kabaka-pyramid
+featured_people:
+  - runkus
+  - chronixx
 excerpt: "If you missed it then you missed something big. Eventful. Hype. Cultural. Lit."
 ---
 <h3><span id="Etymology" class="mw-headline">Etymology</span></h3>

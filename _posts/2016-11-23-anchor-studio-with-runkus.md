@@ -12,6 +12,8 @@ tags:
   - "faebylynch"
   - "video"
   - "runkus"
+collaborators:
+  - chenee-daley
 featured_people:
   - runkus
 ---

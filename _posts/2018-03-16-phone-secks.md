@@ -9,7 +9,9 @@ author: "lebosslynch"
 categories:
   - "PHOTO SET"
 tags:
-  - ""
+  - "amanyea"
+featured_people:
+  - amanyea
 excerpt: "Fix me..."
 ---
 <figure><img class="alignnone size-full wp-image-2898" src="/assets/uploads/2018/03/mg_4528.jpg" alt="_MG_4528" width="2326" height="2907" /><figcaption>Antsy...</figcaption></figure>
