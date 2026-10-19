@@ -9,7 +9,10 @@ author: "lebosslynch"
 categories:
   - "PHOTO SET"
 tags:
-  - ""
+  - "complex ricki"
+  - "ricki"
+featured_people:
+  - complex-ricki
 ---
 <figure class="wp-block-image size-large"><img src="/assets/uploads/2018/03/mg_5263-1.jpg" alt="_MG_5263" class="wp-image-2924" /></figure>
 

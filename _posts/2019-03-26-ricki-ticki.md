@@ -18,6 +18,8 @@ tags:
   - "ricki"
   - "romario lynch"
   - "seenbylynch"
+featured_people:
+  - complex-ricki
 excerpt: "A baay tings we gwaan wid ova Bay Beach."
 ---
 <!-- wp:paragraph {"align":"center"} -->

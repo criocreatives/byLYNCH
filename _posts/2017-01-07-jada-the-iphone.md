@@ -10,6 +10,9 @@ author: "lebosslynch"
 categories: []
 tags:
   - "series"
+  - "jada kingdom"
+featured_people:
+  - jada-kingdom
 ---
 <figure class="wp-block-image"><img class="alignnone size-full wp-image-1022" src="/assets/uploads/2017/01/img_3844.jpg" alt="img_3844" width="5184" height="3456" /></figure>
 

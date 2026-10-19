@@ -25,10 +25,13 @@ cross-link an ad-supported page directly to an E-rated gallery.
           {% capture related_links %}
             {% for other in site.posts %}
               {% if other.url != include.post.url and other.featured_people contains person_id %}
-                {% assign other_is_mature = site.data.content_flags.e_notice contains other.slug %}
-                {% unless include.ads_eligible and other_is_mature %}
-                <a href="{{ other.url | relative_url }}" class="lynch-credit-related-link">{{ other.title | escape }}</a>
-                {% endunless %}
+                {% if include.ads_eligible %}
+                  {% unless site.data.content_flags.e_notice contains other.slug %}
+                    <a href="{{ other.url | relative_url }}" class="lynch-credit-related-link">{{ other.title | escape }}</a>
+                  {% endunless %}
+                {% else %}
+                  <a href="{{ other.url | relative_url }}" class="lynch-credit-related-link">{{ other.title | escape }}</a>
+                {% endif %}
               {% endif %}
             {% endfor %}
           {% endcapture %}
