@@ -217,6 +217,79 @@ for slug in flagged:
         check('<ins class="adsbygoogle"' not in html,
               "Manual ad units must be excluded from " + slug)
 
+# People & Credits: verify person associations, readable credits and structured data.
+expected_people = {
+    "complex-ricki": ["bk", "fabricki", "ricki-ticki", "russian-rickolette"],
+    "jada-kingdom": ["jada-the-iphone", "kingdom", "sblv1", "yada",
+                     "no-rest-for-the-wicked-ft-jada-kingdom"],
+    "runkus": ["anchor-studio-with-runkus", "god-ting",
+               "new-wave-february-6-2017", "my-gf",
+               "dubwise-ft-chronixx-friends"],
+    "amanyea": ["my-gf", "phone-secks"],
+    "iotosh": ["new-wave-february-6-2017"],
+    "blvk-h3ro": ["new-wave-february-6-2017"]
+}
+people_data = (ROOT / "_data/people.yml").read_text(encoding="utf-8")
+people_names = {
+    "complex-ricki": "Complex Ricki", "jada-kingdom": "Jada Kingdom",
+    "runkus": "Runkus", "amanyea": "Amanyea",
+    "iotosh": "Iotosh", "blvk-h3ro": "Blvk H3ro"
+}
+for person_id, slugs in expected_people.items():
+    check((person_id + ":") in people_data, "Missing person in canonical registry: " + person_id)
+    for slug in slugs:
+        path = next((p for p in post_sources if p.name[11:-3] == slug), None)
+        check(path is not None, "Credited post missing: " + slug)
+        if path is None:
+            continue
+        source = path.read_text(encoding="utf-8")
+        front_matter = source.split("\n---\n", 1)[0]
+        check(("  - " + person_id + "\n") in front_matter + "\n",
+              slug + ": missing credits association for " + person_id)
+        url = post_urls[slug]
+        html = rendered(url).read_text(encoding="utf-8")
+        check('class="lynch-credits"' in html, slug + ": missing visible credit section")
+        check(people_names[person_id] in html,
+              slug + ": missing visible credit for " + person_id)
+        _, parsed = inspect(url)
+        items = [json.loads(x) for x in parsed.ld_json]
+        blog = [x for x in items if x.get("@type") == "BlogPosting"]
+        check(bool(blog) and people_names[person_id] in [
+              m.get("name") for m in blog[0].get("mentions", [])],
+              slug + ": missing structured-data mention for " + person_id)
+
+# Preserve normalized subject tags while retaining original story-specific tags.
+for slug in expected_people["complex-ricki"]:
+    post_path = next(p for p in post_sources if p.name[11:-3] == slug)
+    front = post_path.read_text(encoding="utf-8").split("\n---\n", 1)[0]
+    for tag in ("complex ricki", "ricki"):
+        check(front.count('  - "' + tag + '"') == 1,
+              slug + ": missing or repeated canonical tag " + tag)
+for slug in expected_people["jada-kingdom"]:
+    post_path = next(p for p in post_sources if p.name[11:-3] == slug)
+    front = post_path.read_text(encoding="utf-8").split("\n---\n", 1)[0]
+    check(front.count('  - "jada kingdom"') == 1, slug + ": missing Jada Kingdom tag")
+
+for slug in ("new-wave-february-6-2017", "my-gf", "dubwise-ft-chronixx-friends"):
+    html = rendered(post_urls[slug]).read_text(encoding="utf-8")
+    check('class="lynch-credits"' in html, "Extended credits missing on " + slug)
+for person_name in ("Iotosh", "Blvk H3ro", "Meleku", "Jimmy Q", "Seani B", "Toddla T"):
+    html = rendered(post_urls["new-wave-february-6-2017"]).read_text(encoding="utf-8")
+    check(person_name in html, "New Wave credit absent: " + person_name)
+for person_name in ("GiARK", "Lila Iké", "Naomi Cowan", "Sevana", "Protoje",
+                    "Popcaan", "Kabaka Pyramid", "Chronixx"):
+    html = rendered(post_urls["dubwise-ft-chronixx-friends"]).read_text(encoding="utf-8")
+    check(person_name in html, "Dubwise credit absent: " + person_name)
+
+# Prevent an ad-supported person's related-posts block linking to B***K, the E-rated gallery.
+rk = rendered(post_urls["ricki-ticki"]).read_text(encoding="utf-8")
+credits = rk.split('<section class="lynch-credits"', 1)[-1].split("</section>", 1)[0]
+check("/2022/08/01/bk/" not in credits,
+      "Ad-eligible Ricki Ticki credits must not link into the E-rated gallery")
+bk = rendered(post_urls["bk"]).read_text(encoding="utf-8")
+check('class="lynch-credits"' in bk and "Complex Ricki" in bk,
+      "B***K credits missing while maintaining classified-gallery exclusions")
+
 # GA4 must remain independent of AdSense eligibility, including all nine mature galleries.
 GA_ID = "G-K95ENNDT6F"
 GA_LIBRARY = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID
