@@ -10,6 +10,17 @@ categories:
   - "CULTURE"
 tags:
   - "NEW WAVE"
+  - "runkus"
+  - "meleku"
+  - "jimmy q"
+  - "seani b"
+  - "toddla t"
+featured_people:
+  - runkus
+  - meleku
+  - jimmy-q
+  - seani-b
+  - toddla-t
 excerpt: "Seani B. Toddla T. Meleku. Bare tings."
 ---
 <figure class="wp-block-image size-large"><img class="alignnone size-full wp-image-1995" src="/assets/uploads/2017/02/img_8030.jpg" alt="IMG_8030.jpg" width="5184" height="3456" /></figure>

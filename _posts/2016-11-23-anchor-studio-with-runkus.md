@@ -11,6 +11,9 @@ categories:
 tags:
   - "faebylynch"
   - "video"
+  - "runkus"
+featured_people:
+  - runkus
 ---
 <p style="text-align:center;"><div class="embed"><iframe src="https://www.youtube.com/embed/KEuuQwqoV0w" title="YouTube video" loading="lazy" allowfullscreen></iframe></div></p>
 <p style="text-align:left;">Summary of a three hour session at Anchor Recording Studio with Runkus (<a href="http://twitter.com/runkusinno" target="_blank" rel="noopener">@runkusinno</a>) and Chenee (<a href="http://twitter.com/anomyyyy" target="_blank" rel="noopener">@anomyyyy</a>).
