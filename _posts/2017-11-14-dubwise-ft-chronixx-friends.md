@@ -24,7 +24,7 @@ From Jamaican English; <i class="Latn mention"><a title="dub" href="https://en.
 
 If you missed it then you missed something big. Eventful. Hype. Cultural. <em>Lit</em>.
 
-Thankfully I was there. Therefore four minus one that's three quick maffs... Therefore I saw everything, Now you can too. Protoje. Popcaan. Runkus. Royal Blu. Jah9. Giark. Lila Ike. Leno Banton. Dre Island. Naomi. Irie Souljah. Ragga Muffin. Sevanna. Kabaka Pyramid.
+Thankfully I was there. Therefore four minus one that's three quick maffs... Therefore I saw everything, Now you can too. Protoje. Popcaan. Runkus. Royal Blu. Jah9. GiARK. Lila Iké. Leno Banton. Dre Island. Naomi Cowan. Irie Souljah. Ragga Muffin. Sevana. Kabaka Pyramid.
 
 Mad Ting.
 
