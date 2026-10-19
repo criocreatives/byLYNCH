@@ -219,7 +219,7 @@ for slug in flagged:
 
 # People & Credits: verify person associations, readable credits and structured data.
 expected_people = {
-    "mcavelle": ["mcavelle", "mcavelle-returns", "bk"],
+    "mcavelle": ["mcavelle", "mcavelle-returns", "bk", "sblv1"],
     "complex-ricki": ["bk", "fabricki", "ricki-ticki", "russian-rickolette"],
     "jada-kingdom": ["jada-the-iphone", "kingdom", "sblv1", "yada",
                      "no-rest-for-the-wicked-ft-jada-kingdom"],
@@ -277,6 +277,16 @@ bk_post = next(p for p in post_sources if p.name[11:-3] == "bk")
 bk_front = bk_post.read_text(encoding="utf-8").split("\n---\n", 1)[0]
 check("  - complex-ricki" in bk_front and "  - mcavelle" in bk_front,
       "B***K should credit both Complex Ricki and McAvellé")
+
+# SBL Vol. 1 is a group compilation; preserve both confirmed subjects.
+sblv1_path = next(p for p in post_sources if p.name[11:-3] == "sblv1")
+sblv1_front = sblv1_path.read_text(encoding="utf-8").split("\n---\n", 1)[0]
+check("  - jada-kingdom" in sblv1_front and "  - mcavelle" in sblv1_front,
+      "SBL Vol. 1 must credit both Jada Kingdom and McAvellé")
+sblv1_html = rendered(post_urls["sblv1"]).read_text(encoding="utf-8")
+check('class="lynch-credits"' in sblv1_html and
+      "Jada Kingdom" in sblv1_html and "McAvellé" in sblv1_html,
+      "SBL Vol. 1 missing visible credits")
 
 for slug in expected_people["jada-kingdom"]:
     post_path = next(p for p in post_sources if p.name[11:-3] == slug)
