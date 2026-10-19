@@ -1,0 +1,82 @@
+# Single source of truth for named people in editorial credits.
+# Names reflect user-confirmed spelling or names already printed in source articles.
+# Add verified profile URLs only after approval; never infer social handles.
+complex-ricki:
+  name: "Complex Ricki"
+  role: "Featured subject"
+jada-kingdom:
+  name: "Jada Kingdom"
+  role: "Recording artist / featured subject"
+runkus:
+  name: "Runkus"
+  role: "Recording artist"
+amanyea:
+  name: "Amanyea"
+  role: "Featured subject"
+meleku:
+  name: "Meleku"
+  role: "Recording artist"
+jimmy-q:
+  name: "Jimmy Q"
+  role: "DJ"
+seani-b:
+  name: "Seani B"
+  role: "DJ"
+toddla-t:
+  name: "Toddla T"
+  role: "DJ"
+krs:
+  name: "Krs."
+  role: "Musical collaborator"
+roux:
+  name: "Roux"
+  role: "Body artist"
+  profile_url: "https://www.instagram.com/rouxlixir/"
+chenee-daley:
+  name: "Chenée Daley"
+  role: "Vocalist"
+travis-john-bailey:
+  name: "Travis-John Bailey"
+  role: "Manager"
+chronixx:
+  name: "Chronixx"
+  role: "Recording artist"
+protoje:
+  name: "Protoje"
+  role: "Recording artist"
+popcaan:
+  name: "Popcaan"
+  role: "Recording artist"
+royal-blu:
+  name: "Royal Blu"
+  role: "Recording artist"
+jah9:
+  name: "Jah9"
+  role: "Recording artist"
+giark:
+  name: "GiARK"
+  role: "Recording artist"
+lila-ike:
+  name: "Lila Iké"
+  role: "Recording artist"
+leno-banton:
+  name: "Leno Banton"
+  role: "Recording artist"
+dre-island:
+  name: "Dre Island"
+  role: "Recording artist"
+naomi-cowan:
+  name: "Naomi Cowan"
+  role: "Recording artist"
+irie-souljah:
+  name: "Irie Souljah"
+  role: "Recording artist"
+ragga-muffin:
+  name: "Ragga Muffin"
+  role: "Artist named in story"
+sevana:
+  name: "Sevana"
+  role: "Recording artist"
+kabaka-pyramid:
+  name: "Kabaka Pyramid"
+  role: "Recording artist"

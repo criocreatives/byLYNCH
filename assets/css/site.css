@@ -1695,3 +1695,29 @@ body.lightbox-open{overflow:hidden}
   width:23px;
   height:23px;
 }
+
+
+/* People & Credits: restrained editorial footer on credited stories. */
+.lynch-credits{background:#f8f8f7;color:#171717;border-top:1px solid #e4e4e1;border-bottom:1px solid #e4e4e1;clear:both;margin:52px 0 50px}
+.lynch-credits-inner{width:90%;max-width:1260px;margin:0 auto;padding:57px 0 47px}
+.lynch-credits-head{margin-bottom:36px}
+.lynch-credits-index{display:block;font-size:10px;letter-spacing:.19em;font-weight:900;color:#ed1744;margin-bottom:10px}
+.lynch-credits-head h2{font-size:clamp(32px,4.7vw,59px);font-weight:900;line-height:1.04;letter-spacing:-.05em;margin:0 0 12px}
+.lynch-credits-accent{color:#ed1744}
+.lynch-credits-head p{font-size:14px;color:#747474;margin:0;line-height:1.6}
+.lynch-credits-group{border-top:1px solid #d9d9d6;padding:24px 0 28px}
+.lynch-credits-group h3{font-weight:900;text-transform:uppercase;letter-spacing:.15em;font-size:11px;margin:0 0 22px}
+.lynch-credits-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 48px}
+.lynch-credit-person{min-width:0}
+.lynch-credit-role{display:block;color:#737373;font-size:11px;font-weight:700;letter-spacing:.03em;margin-bottom:4px}
+.lynch-credit-name{font-size:clamp(19px,2.2vw,29px);font-weight:900;line-height:1.22;letter-spacing:-.035em;overflow-wrap:break-word}
+.lynch-credit-profile{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:900;margin-top:8px;border-bottom:1px solid #ed1744;padding-bottom:3px}
+.lynch-credit-link-mark{height:8px;width:8px;border-top:1.5px solid #ed1744;border-right:1.5px solid #ed1744;transform:rotate(45deg)}
+.lynch-credit-related{margin-top:17px;display:flex;align-items:baseline;flex-wrap:wrap;gap:5px 14px}
+.lynch-credit-related-label{display:block;flex-basis:100%;text-transform:uppercase;letter-spacing:.12em;color:#8a8a8a;font-size:10px;font-weight:900;margin-bottom:2px}
+.lynch-credit-related-link{font-weight:700;font-size:12px;border-bottom:1px solid #aaa;line-height:1.7}
+.lynch-credit-related-link:hover,.lynch-credit-related-link:focus-visible{color:#ed1744;border-color:#ed1744}
+.lynch-credits-name-list{list-style:none;display:flex;gap:9px 11px;flex-wrap:wrap;margin:0;padding:0}
+.lynch-credits-name-list li{border:1px solid #d9d9d6;padding:6px 10px;font-size:12px;font-weight:700}
+.lynch-credits-foot{display:flex;justify-content:space-between;gap:15px;border-top:1px solid #d9d9d6;padding-top:18px;text-transform:uppercase;letter-spacing:.09em;font-size:10px;color:#777;font-weight:900}
+@media(max-width:640px){.lynch-credits{margin:34px 0}.lynch-credits-inner{padding:38px 0 29px}.lynch-credits-grid{grid-template-columns:1fr;gap:24px}.lynch-credits-group{padding:20px 0}.lynch-credits-foot{flex-direction:column;gap:7px}.lynch-credit-related{gap:4px 10px}}

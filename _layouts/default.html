@@ -54,7 +54,15 @@ gtag('config', 'G-K95ENNDT6F', {
 {% else %}
   {% assign meta_description = page.description | default: page.excerpt | default: site.description %}
 {% endif %}
-{% assign seo_description = meta_description | strip_html | strip_newlines | truncate: 160 %}
+{% assign seo_description_text = meta_description | strip_html | strip_newlines %}
+{% if page.layout == 'post' and page.featured_people and page.featured_people.size > 0 %}
+  {% capture credit_description %}{% for person_id in page.featured_people limit:2 %}{% assign credit_person = site.data.people[person_id] %}{% if credit_person %}{% unless forloop.first %} and {% endunless %}{{ credit_person.name }}{% endif %}{% endfor %}{% endcapture %}
+  {% assign credit_description = credit_description | strip %}
+  {% if credit_description != '' %}
+    {% assign seo_description_text = seo_description_text | append: ' Featuring ' | append: credit_description | append: '.' %}
+  {% endif %}
+{% endif %}
+{% assign seo_description = seo_description_text | truncate: 160 %}
 {% assign og_image = '/assets/brand/lynch-social-preview.png' | absolute_url %}
 {% if page.layout == 'post' %}
   {% assign featured_for_share = site.data.featured[page.slug] %}
@@ -97,7 +105,22 @@ gtag('config', 'G-K95ENNDT6F', {
   "author": {"@type": "Person", "name": "Romario Lynch", "url": "https://bylynch.com/about/"},
   "publisher": {"@type": "Person", "name": "Romario Lynch", "url": "https://bylynch.com/about/"},
   "image": {{ og_image | jsonify }},
-  "inLanguage": "en"
+  "inLanguage": "en"{% if page.featured_people or page.collaborators or page.mentioned_people %},
+  "mentions": [
+    {% assign first_mentioned = true %}
+    {% assign person_groups = "featured_people,collaborators,mentioned_people" | split: "," %}
+    {% for group_name in person_groups %}
+      {% assign group_people = page[group_name] %}
+      {% for person_id in group_people %}
+        {% assign person = site.data.people[person_id] %}
+        {% if person %}
+          {% unless first_mentioned %},{% endunless %}
+          {"@type": "Person", "name": {{ person.name | jsonify }}{% if person.profile_url %}, "sameAs": {{ person.profile_url | jsonify }}{% endif %}}
+          {% assign first_mentioned = false %}
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  ]{% endif %}
 }
 </script>
 {% elsif page.url == '/' %}
@@ -116,7 +139,7 @@ gtag('config', 'G-K95ENNDT6F', {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap">
-<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v=20261016-vector-arrows-1">
+<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v=20261019-people-1">
 </head>
 <body class="{% if page.layout == 'post' %}single{% elsif page.new_wave %}blog new-wave-page{% elsif page.archive %}blog archive-page{% elsif paginator or page.url == '/' %}blog{% endif %}">
 <div id="page" class="hfeed site-shell">
