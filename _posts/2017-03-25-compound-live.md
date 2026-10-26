@@ -3,7 +3,7 @@ layout: post
 title: "Compound Live"
 date: 2017-03-25 17:19:55 -0500
 date_string: "2017-03-25 17:19:55"
-modified: 2026-10-26 00:46:23 -0500
+modified: 2026-10-26 00:54:15 -0500
 permalink: /2017/03/25/compound-live/
 author: "lebosslynch"
 categories:
@@ -11,7 +11,25 @@ categories:
 tags:
   - "uncle"
 mentioned_people:
+  - courtni
+  - leno-banton
+  - pag3y
+  - blvk-h3ro
+  - royal-blu
+  - chavez-illmatiq
+  - kione-ziare
+  - chike-the-chemist
+  - the-grei-show
+  - jeeby
+  - r3wind
+  - jujutron
+  - joshera
+  - wavy-jones
+  - evaflow
+  - iotosh
   - uncle
+  - roux
+  - lila-ike
 excerpt: "Good vibes. Pure litness. Bare tings. Music and liquid courage buss inah poeple head. Dance floor shenanigans definitely keep."
 ---
 Compound Live was a <em>ting</em>. Lit performances. Lit vibes. Lit music. Lit. Lit. Lit. Very culture.

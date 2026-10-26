@@ -96,3 +96,39 @@ uncle:
   name: "Uncle"
   role: "Person named in story"
   profile_url: "https://www.instagram.com/uncle876"
+courtni:
+  name: "Courtni"
+  role: "Performer"
+pag3y:
+  name: "Pag3y"
+  role: "Performer"
+chavez-illmatiq:
+  name: "Chavez Illmatiq"
+  role: "Performer"
+kione-ziare:
+  name: "Kione Ziare"
+  role: "Performer"
+chike-the-chemist:
+  name: "Chike The Chemist"
+  role: "Performer"
+the-grei-show:
+  name: "The Grei Show"
+  role: "Performer"
+jeeby:
+  name: "Jeeby"
+  role: "Performer"
+r3wind:
+  name: "R3wind"
+  role: "DJ"
+jujutron:
+  name: "JujuTron"
+  role: "DJ"
+joshera:
+  name: "Joshera"
+  role: "DJ"
+wavy-jones:
+  name: "Wavy Jones"
+  role: "DJ"
+evaflow:
+  name: "EvaFlow"
+  role: "Person named in story"
