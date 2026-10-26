@@ -184,7 +184,7 @@ check(len([source for source in archive.sources if source.get("type") == "image/
       f"Archive should render {expected_post_count} responsive WebP picture sources")
 
 post_sources = sorted((ROOT / "_posts").glob("*.md"))
-check(len(post_sources) >= 55, f"Expected at least 55 published post sources, found {len(post_sources)}")
+check(len(post_sources) >= 56, f"Expected at least 56 published post sources, found {len(post_sources)}")
 post_urls: dict[str, str] = {}
 for path in post_sources:
     match = re.search(r"^permalink:\s*(/\S+/)\s*$", path.read_text(encoding="utf-8"), re.M)
@@ -502,6 +502,52 @@ if roux_path.is_file():
                       for p in b.get("mentions", []))
                   for b in blogs),
               "Roux Wednesday Person structured data missing current profile")
+
+# WRC Candids: every delivered photo, separate cover/hero and club link.
+wrc_candids_source = ROOT / "_posts" / "2026-08-29-wrc-candids.md"
+check(wrc_candids_source.is_file(), "WRC Candids source post missing")
+if wrc_candids_source.is_file():
+    source = wrc_candids_source.read_text(encoding="utf-8")
+    parts = source.split("\n---\n", 1)
+    front, gallery = parts if len(parts) == 2 else (source, "")
+    photos = re.findall(r'<img src="(/assets/uploads/2026/08/[^"]+)"', gallery)
+    webps = re.findall(r'<source type="image/webp" srcset="([^"]+)"', gallery)
+    expected_names = {"IMG_8571.jpg", "IMG_8572.jpg", "IMG_8573.jpg",
+                      "IMG_8586.jpg", "IMG_8591.jpg", "IMG_8616.jpg", "IMG_8618.jpg"}
+    check(len(photos) == 7 and {p.rsplit("/", 1)[-1] for p in photos} == expected_names,
+          "WRC Candids must contain all seven unique original photographs")
+    check(len(webps) == 7 and len(set(webps)) == 7,
+          "WRC Candids must contain seven distinct WebP gallery sources")
+    for rel in photos + webps:
+        check((ROOT / rel.lstrip("/")).is_file(), "WRC asset missing in Git: " + rel)
+        check((SITE / rel.lstrip("/")).is_file(), "WRC asset missing in built site: " + rel)
+    card = "/assets/uploads/2026/08/IMG_8618.jpg"
+    header = "/assets/uploads/2026/08/IMG_8591.jpg"
+    check(card in photos and header in photos,
+          "WRC card/header images must remain inside the gallery")
+    check('header_image: "2026/08/IMG_8591.jpg"' in front,
+          "WRC post header must use IMG_8591.jpg")
+    check("exclude_ads:" not in front and "wrc-candids" not in flagged,
+          "WRC post must use standard AdSense, without an E rating")
+    url = post_urls.get("wrc-candids")
+    check(url == "/2026/08/29/wrc-candids/", "WRC Candids permalink or date incorrect")
+    if url:
+        html, parsed = inspect(url)
+        check('src="' + header + '"' in html, "WRC header photo not rendered")
+        check('src="' + card + '"' in archive_html, "WRC card photo not in archive")
+        check(html.count("pagead2.googlesyndication.com/pagead/js/adsbygoogle.js") == 1,
+              "WRC article should load AdSense exactly once")
+        check(html.count('<ins class="adsbygoogle"') == 2,
+              "WRC article should have both manual ad placements")
+        check('data-ad-slot="9856514493"' in html and
+              'data-ad-slot="7038779463"' in html,
+              "WRC manual AdSense slot IDs are missing")
+        check('class="content-rating-badge"' not in html,
+              "WRC article should not show an E badge")
+        check('href="https://updates.wadadarunclub.com/"' in html,
+              "WRC article must link to the official Wadada Run Club website")
+        check("The stopwatch got the miles." in archive_html,
+              "WRC archive card needs its custom editorial caption")
 
 # GA4 must remain independent of AdSense eligibility, including all nine mature galleries.
 GA_ID = "G-K95ENNDT6F"
