@@ -174,15 +174,16 @@ check(
     "Optimized homepage/archive cover must fill its 4:5 card",
 )
 
+expected_post_count = len(list((ROOT / "_posts").glob("*.md")))
 archive_html, archive = inspect("/archive/")
 check(archive.headings.count("h1") == 1, "Archive should have exactly one H1")
 archive_covers = [image for image in archive.images if "post-thumbnail-image" in image.get("class", "")]
-check(len(archive_covers) == 52, f"Archive should expose 52 cover <img> tags, found {len(archive_covers)}")
-check(len([source for source in archive.sources if source.get("type") == "image/webp"]) == 52,
-      "Archive should render 52 responsive WebP picture sources")
+check(len(archive_covers) == expected_post_count, f"Archive should expose {expected_post_count} cover <img> tags, found {len(archive_covers)}")
+check(len([source for source in archive.sources if source.get("type") == "image/webp"]) == expected_post_count,
+      f"Archive should render {expected_post_count} responsive WebP picture sources")
 
 post_sources = sorted((ROOT / "_posts").glob("*.md"))
-check(len(post_sources) == 52, f"Expected 52 published post sources, found {len(post_sources)}")
+check(len(post_sources) >= 53, f"Expected at least 53 published post sources, found {len(post_sources)}")
 post_urls: dict[str, str] = {}
 for path in post_sources:
     match = re.search(r"^permalink:\s*(/\S+/)\s*$", path.read_text(encoding="utf-8"), re.M)
@@ -324,6 +325,60 @@ check('class="lynch-credits"' in bk_html and "McAvellé" in bk_html
       and "Complex Ricki" in bk_html,
       "B***K needs both featured subjects in its visible credit section")
 
+# Kosher's Everything: preserve all 18 originals and the two designated images.
+kosher_source = ROOT / "_posts" / "2020-11-29-koshers-everything.md"
+check(kosher_source.is_file(), "Kosher source article missing")
+if kosher_source.is_file():
+    source = kosher_source.read_text(encoding="utf-8")
+    chunks = source.split("\n---\n", 1)
+    front, gallery = chunks if len(chunks) == 2 else (source, "")
+    images = re.findall(r'<img src="(/assets/uploads/2020/11/[^"]+)"', gallery)
+    webps = re.findall(r'<source type="image/webp" srcset="([^"]+)"', gallery)
+    check(len(images) == 18 and len(set(images)) == 18,
+          "Kosher gallery must contain 18 distinct original photographs")
+    check(len(webps) == 18 and len(set(webps)) == 18,
+          "Kosher gallery must contain 18 distinct WebP sources")
+    for img in images:
+        check((ROOT / img.lstrip("/")).is_file(),
+              "Missing original Kosher image: " + img)
+        check((SITE / img.lstrip("/")).is_file(),
+              "Original Kosher image absent from site: " + img)
+    for webp in webps:
+        check((ROOT / webp.lstrip("/")).is_file(),
+              "Missing optimized Kosher image: " + webp)
+        check((SITE / webp.lstrip("/")).is_file(),
+              "Optimized Kosher image absent from site: " + webp)
+    card = "/assets/uploads/2020/11/_MG_5112.jpg"
+    header = "/assets/uploads/2020/11/IMG_9050.jpg"
+    check(card in images and header in images,
+          "Kosher gallery must include both card and header photographs")
+    check('header_image: "2020/11/IMG_9050.jpg"' in front,
+          "Wrong custom Kosher header image")
+    check('featured_people:\n  - kosher' in front,
+          "Kosher featured_people metadata missing")
+    check('exclude_ads: true' in front,
+          "Kosher post must exclude ads")
+    url = post_urls.get("koshers-everything")
+    check(bool(url), "Kosher's Everything permalink missing")
+    if url:
+        html, parsed = inspect(url)
+        check('src="' + header + '"' in html,
+              "Kosher header image missing on post page")
+        check('src="' + card + '"' in archive_html,
+              "Kosher archive card image missing")
+        check('class="lynch-credits"' in html and "Kosher" in html,
+              "Kosher People & Credits section missing")
+        check('pagead2.googlesyndication.com/pagead/js/adsbygoogle.js' not in html,
+              "Kosher post must not load AdSense")
+        check('<ins class="adsbygoogle"' not in html,
+              "Kosher post must not show manual ads")
+        check('class="content-rating-badge"' not in html,
+              "Kosher post must not get the nudity E badge")
+        blog = [json.loads(j) for j in parsed.ld_json]
+        check(any(b.get("@type") == "BlogPosting" and
+                  any(m.get("name") == "Kosher" for m in b.get("mentions", []))
+                  for b in blog), "Kosher schema Person mention missing")
+
 # GA4 must remain independent of AdSense eligibility, including all nine mature galleries.
 GA_ID = "G-K95ENNDT6F"
 GA_LIBRARY = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID
@@ -350,7 +405,9 @@ check("'page_location': window.location.origin + window.location.pathname" in la
 
 # Optimized image files are checked as actual built assets, not just srcset strings.
 optimized = sorted((ROOT / "assets" / "optimized" / "covers").rglob("*.webp"))
-check(len(optimized) == 104, f"Expected 104 curated optimized covers, found {len(optimized)}")
+header_variant_count = sum(2 for p in post_sources if "header_responsive:" in p.read_text(encoding="utf-8"))
+expected_optimized = len(post_sources) * 2 + header_variant_count
+check(len(optimized) == expected_optimized, f"Expected {expected_optimized} optimized covers, found {len(optimized)}")
 for file in optimized:
     with file.open("rb") as handle:
         header = handle.read(12)
