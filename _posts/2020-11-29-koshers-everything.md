@@ -20,7 +20,6 @@ header_responsive:
   large_width: 960
   original_width: 1280
   original_height: 1600
-exclude_ads: true
 excerpt: "An outdoor portrait series with Kosher, photographed among lush greenery, textures, and natural light."
 ---
 <figure class="wp-block-image size-large"><picture><source type="image/webp" srcset="/assets/optimized/galleries/2020/11/IMG_9050-gallery.webp"><img src="/assets/uploads/2020/11/IMG_9050.jpg" alt="Kosher looking toward the camera in an outdoor portrait framed by trees." width="1280" height="1600" /></picture></figure>

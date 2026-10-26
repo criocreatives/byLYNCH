@@ -356,8 +356,8 @@ if kosher_source.is_file():
           "Wrong custom Kosher header image")
     check('featured_people:\n  - kosher' in front,
           "Kosher featured_people metadata missing")
-    check('exclude_ads: true' in front,
-          "Kosher post must exclude ads")
+    check('exclude_ads: true' not in front and 'exclude_ads: false' not in front,
+          "Kosher should inherit standard ad eligibility from the shared post template")
     url = post_urls.get("koshers-everything")
     check(bool(url), "Kosher's Everything permalink missing")
     if url:
@@ -368,10 +368,14 @@ if kosher_source.is_file():
               "Kosher archive card image missing")
         check('class="lynch-credits"' in html and "Kosher" in html,
               "Kosher People & Credits section missing")
-        check('pagead2.googlesyndication.com/pagead/js/adsbygoogle.js' not in html,
-              "Kosher post must not load AdSense")
-        check('<ins class="adsbygoogle"' not in html,
-              "Kosher post must not show manual ads")
+        check(html.count("pagead2.googlesyndication.com/pagead/js/adsbygoogle.js") == 1,
+              "Kosher post must load the AdSense publisher script exactly once")
+        check(html.count('<ins class="adsbygoogle"') == 2,
+              "Kosher post must render its two standard manual ad units")
+        check('data-ad-slot="9856514493"' in html,
+              "Kosher metadata ad placement missing")
+        check('data-ad-slot="7038779463"' in html,
+              "Kosher after-gallery ad placement missing")
         check('class="content-rating-badge"' not in html,
               "Kosher post must not get the nudity E badge")
         blog = [json.loads(j) for j in parsed.ld_json]
