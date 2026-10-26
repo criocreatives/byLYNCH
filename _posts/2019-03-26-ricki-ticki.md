@@ -3,7 +3,7 @@ layout: post
 title: "Ricki Ticki"
 date: 2019-03-26 12:21:16 -0500
 date_string: "2019-03-26 12:21:16"
-modified: 2019-03-28 11:46:24 -0500
+modified: "2026-10-26 02:05:12 -0500"
 permalink: /2019/03/26/ricki-ticki/
 author: "lebosslynch"
 categories:
@@ -21,6 +21,7 @@ tags:
 featured_people:
   - complex-ricki
 excerpt: "A baay tings we gwaan wid ova Bay Beach."
+seo_description: "Ricki Ticki: Complex Ricki. Photography, film and culture from the byLYNCH archive."
 ---
 <!-- wp:paragraph {"align":"center"} -->
 <p style="text-align:center;">A baay tings we gwaan wid ova Bay Beach. Dem dead.</p>

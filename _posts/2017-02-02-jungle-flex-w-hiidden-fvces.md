@@ -3,7 +3,7 @@ layout: post
 title: "Jungle Flex w/ HiiDDEN FVCES"
 date: 2017-02-02 18:00:44 -0500
 date_string: "2017-02-02 18:00:44"
-modified: 2017-02-02 16:42:44 -0500
+modified: "2026-10-26 02:05:12 -0500"
 permalink: /2017/02/02/jungle-flex-w-hiidden-fvces/
 author: "lebosslynch"
 categories:
@@ -11,6 +11,15 @@ categories:
 tags:
   - "music"
 excerpt: "Meet the \"Sonically Revealing\" HiiDDEN FVCES."
+featured_people:
+  - hiidden-fvces
+  - jujutron
+  - dxcape
+  - kvje
+  - jbeatz
+  - wavy-jones
+seo_description: "Meet HiiDDEN FVCES: JujuTron88, Dxcape, KVJE, JBeatz and Wavy Jones. A five-producer music collective photographed by LYNCH."
+seo_title: "Jungle Flex with HiiDDEN FVCES"
 ---
 <figure><img class="alignnone size-full wp-image-1751" src="/assets/uploads/2017/02/img_7443.jpg" alt="IMG_7443.jpg" width="5184" height="3456" /><figcaption>From left: Jbeatz, KVJE, Wavy Jones, JujuTron88, Dxcape</figcaption></figure>
 

@@ -3,7 +3,7 @@ layout: post
 title: "Something Like A Dream"
 date: 2018-09-03 20:00:48 -0500
 date_string: "2018-09-03 20:00:48"
-modified: 2023-12-29 01:35:45 -0500
+modified: "2026-10-26 02:05:12 -0500"
 permalink: /2018/09/03/something-like-a-dream/
 author: "lebosslynch"
 categories:
@@ -11,6 +11,11 @@ categories:
 tags:
   - ""
 excerpt: "You know seh you are something like a dream?\nBaby, I couldn't lie."
+mentioned_people:
+  - leno-banton
+  - ayotemi
+  - kone
+seo_description: "Something Like A Dream, a visual story by LYNCH with Leno Banton’s Wata Baby featuring Ayotemi, produced by Kone."
 ---
 <p style="text-align:center">Eeny, meeny, miny, moe,</p>
 <p style="text-align:center">Catch a tiger by the toe.</p>

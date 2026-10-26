@@ -1,11 +1,11 @@
 ---
 layout: post
 title: "Dubwise ft. Chronixx & Friends"
-seo_description: "Dubwise ft. Chronixx & Friends, photographed by LYNCH, with Lila Iké, Leno Banton and Royal Blu among the artists named in this Jamaican music story."
-seo_title: "Dubwise: Chronixx, Lila Iké & Friends"
+seo_description: "Chronixx and Runkus at Dubwise, with Protoje, Popcaan, Royal Blu, Lila Iké and other artists named in LYNCH’s 2017 photo story."
+seo_title: "Dubwise: Chronixx, Runkus & Friends"
 date: 2017-11-14 00:46:48 -0500
 date_string: "2017-11-14 00:46:48"
-modified: 2026-10-26 01:12:21 -0500
+modified: "2026-10-26 02:05:12 -0500"
 permalink: /2017/11/14/dubwise-ft-chronixx-friends/
 author: "lebosslynch"
 categories:

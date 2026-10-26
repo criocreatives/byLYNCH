@@ -3,7 +3,7 @@ layout: post
 title: "Belisario & the Soundboy by Leasho Johnson"
 date: 2017-02-15 14:29:02 -0500
 date_string: "2017-02-15 14:29:02"
-modified: 2017-02-15 14:29:02 -0500
+modified: "2026-10-26 02:05:12 -0500"
 permalink: /2017/02/15/belisario-the-soundboy-by-leasho-johnson/
 author: "lebosslynch"
 categories:
@@ -12,6 +12,9 @@ categories:
 tags:
   - ""
 excerpt: "\"One of the mechanics of my artwork is 'conflict'.\" - Leasho J."
+collaborators:
+  - leasho-johnson
+seo_description: "Belisario & the Soundboy by Leasho Johnson: Leasho Johnson. Photography, film and culture from the byLYNCH archive."
 ---
 <figure class="wp-block-image size-large"><img class="alignnone size-full wp-image-2031" src="/assets/uploads/2017/02/mg_8639.jpg" alt="_MG_8639.jpg" width="5184" height="3456" /></figure>
 

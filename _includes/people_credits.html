@@ -1,66 +1,22 @@
-{% comment %}
-Editorial credits live outside original article content. All names resolve from
-_data/people.yml. Related links use explicit editorial associations; never
-cross-link an ad-supported page directly to an E-rated gallery.
-{% endcomment %}
+{% comment %}Names, roles and verified links resolve from the canonical people registry.{% endcomment %}
 <section class="lynch-credits" aria-labelledby="lynch-credits-heading">
   <div class="lynch-credits-inner">
     <div class="lynch-credits-head">
-      <span class="lynch-credits-index">BY LYNCH / EDITORIAL INDEX</span>
       <h2 id="lynch-credits-heading">People &amp; credits<span class="lynch-credits-accent">.</span></h2>
-      <p>People behind and in front of the lens.</p>
     </div>
-    {% assign featured = include.post.featured_people %}
-    {% if featured and featured.size > 0 %}
-    <div class="lynch-credits-group">
-      <h3>Featured people</h3>
-      <div class="lynch-credits-grid">
-      {% for person_id in featured %}
-        {% include person_credit_card.html person_id=person_id post=include.post ads_eligible=include.ads_eligible %}
-      {% endfor %}
+    {% assign credit_groups = 'featured_people,collaborators,mentioned_people' | split: ',' %}
+    {% for credit_group in credit_groups %}
+      {% assign credit_people = include.post[credit_group] %}
+      {% if credit_people and credit_people.size > 0 %}
+      <div class="lynch-credits-group">
+        <h3>{% case credit_group %}{% when 'featured_people' %}Featured{% when 'collaborators' %}Credits{% else %}Mentioned{% endcase %}</h3>
+        <div class="lynch-credits-grid">
+          {% for person_id in credit_people %}
+            {% include person_credit_card.html person_id=person_id %}
+          {% endfor %}
+        </div>
       </div>
-    </div>
-    {% endif %}
-    {% assign collaborators = include.post.collaborators %}
-    {% if collaborators and collaborators.size > 0 %}
-    <div class="lynch-credits-group">
-      <h3>Creative credits</h3>
-      <div class="lynch-credits-grid">
-        {% for person_id in collaborators %}
-          {% assign person = site.data.people[person_id] %}
-          {% if person %}
-          <div class="lynch-credit-person lynch-credit-compact">
-            <span class="lynch-credit-role">{{ person.role | escape }}</span>
-            <div class="lynch-credit-name">{{ person.name | escape }}</div>
-            {% if person.profile_url %}<a class="lynch-credit-profile" href="{{ person.profile_url | escape }}" target="_blank" rel="noopener noreferrer">Profile <span class="lynch-credit-link-mark" aria-hidden="true"></span></a>{% endif %}
-          </div>
-          {% endif %}
-        {% endfor %}
-      </div>
-    </div>
-    {% endif %}
-    {% assign mentioned = include.post.mentioned_people %}
-    {% if mentioned and mentioned.size > 0 %}
-    <div class="lynch-credits-group lynch-credits-mentioned">
-      <h3>People named in this story</h3>
-      {% capture described_people %}
-        {% for person_id in mentioned %}
-          {% assign person = site.data.people[person_id] %}
-          {% if person.description %}{% include person_credit_card.html person_id=person_id post=include.post ads_eligible=include.ads_eligible %}{% endif %}
-        {% endfor %}
-      {% endcapture %}
-      {% assign clean_described_people = described_people | strip %}
-      {% if clean_described_people != '' %}<div class="lynch-credits-grid">{{ described_people }}</div>{% endif %}
-      {% capture other_named_people %}
-        {% for person_id in mentioned %}
-          {% assign person = site.data.people[person_id] %}
-          {% if person %}{% unless person.description %}<li>{{ person.name | escape }}</li>{% endunless %}{% endif %}
-        {% endfor %}
-      {% endcapture %}
-      {% assign clean_other_named_people = other_named_people | strip %}
-      {% if clean_other_named_people != '' %}<ul class="lynch-credits-name-list{% if clean_described_people != '' %} lynch-credits-other-names{% endif %}">{{ other_named_people }}</ul>{% endif %}
-    </div>
-    {% endif %}
-    <div class="lynch-credits-foot"><span>Photography by LYNCH</span><span>Published in the byLYNCH archive</span></div>
+      {% endif %}
+    {% endfor %}
   </div>
 </section>

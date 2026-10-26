@@ -1,208 +1,704 @@
-# Single source of truth for named people in editorial credits.
-# Names reflect user-confirmed spelling or names already printed in source articles.
-# Add verified profile URLs only after approval; never infer social handles.
+# Canonical names, short roles and verified identity links for editorial credits.
+# Public profiles are checked against the sources listed below.
+# Archive-only names keep their published credit; no outside identity is inferred.
+# Full biographies are intentionally omitted.
 complex-ricki:
   name: "Complex Ricki"
-  role: "Featured subject"
+  role: "Singer & portrait subject"
+  role_is_occupation: true
+  profile_url: "https://www.instagram.com/complex.ricki/"
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://www.dancehallmag.com/2026/08/26/news/complex-ricki-goes-viral-with-raw-cover-of-sizzlas-give-me-a-try.html"
 jada-kingdom:
   name: "Jada Kingdom"
-  role: "Recording artist / featured subject"
+  role: "Singer & songwriter"
+  role_is_occupation: true
+  profile_url: "https://linktr.ee/jadakingdom"
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://www.nme.com/blogs/nme-radar/jada-kingdom-interview-jungle-jamaica-3089955"
 runkus:
   name: "Runkus"
-  role: "Recording artist"
+  role: "Vocalist, producer & composer"
+  role_is_occupation: true
+  profile_url: "https://easystar.com/artists/runkus/"
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://easystar.com/artists/runkus/"
 amanyea:
   name: "Amanyea"
-  role: "Featured subject"
+  role: "Singer, dancer & choreographer"
+  role_is_occupation: true
+  profile_url: "https://www.bluepierecords.com/artist/amanyea/"
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://www.bluepierecords.com/artist/amanyea/"
 meleku:
   name: "Meleku"
-  role: "Recording artist"
+  role: "Reggae & dancehall artist"
+  role_is_occupation: true
+  profile_url: "https://www.facebook.com/melekumusic/"
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://www.facebook.com/melekumusic/"
 jimmy-q:
   name: "Jimmy Q"
-  role: "DJ"
+  role: "DJ, producer & broadcaster"
+  role_is_occupation: true
+  profile_url: "https://www.youtube.com/c/JimmyQja"
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://www.youtube.com/c/JimmyQja"
 seani-b:
   name: "Seani B"
-  role: "DJ"
+  role: "DJ, broadcaster & producer"
+  role_is_occupation: true
+  profile_url: "https://thepmg.co.uk/seanib/"
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://thepmg.co.uk/seanib/"
 toddla-t:
   name: "Toddla T"
-  role: "DJ"
+  role: "DJ & producer"
+  role_is_occupation: true
+  profile_url: "https://easystar.com/artists/toddla-t/"
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://easystar.com/artists/toddla-t/"
 krs:
   name: "Krs."
-  role: "Musical collaborator"
+  role: "Music producer"
+  role_is_occupation: true
+  profile_url: "https://soundcloud.com/producedbykrs"
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://soundcloud.com/producedbykrs/loversrock"
 roux:
   name: "Roux"
-  role: "Body artist / featured subject"
+  role: "Body artist & digital illustrator"
+  role_is_occupation: true
   profile_url: "https://www.instagram.com/rouxrx/"
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://www.instagram.com/rouxrx/"
 chenee-daley:
   name: "Chenée Daley"
-  role: "Vocalist"
+  role: "Writer & musician"
+  role_is_occupation: true
+  profile_url: "https://www.largeup.com/contributor/chenee-daley/"
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://www.largeup.com/2014/04/04/pop-style-chenee-daley/"
+  alternate_names:
+    - "Chenee Daley"
 travis-john-bailey:
   name: "Travis-John Bailey"
-  role: "Manager"
+  role: "Creative producer & artist manager"
+  role_is_occupation: true
+  profile_url: "https://jm.linkedin.com/in/travisjohnwengikofia"
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://jm.linkedin.com/in/travisjohnwengikofia"
 chronixx:
   name: "Chronixx"
-  role: "Recording artist"
+  role: "Reggae artist"
+  role_is_occupation: true
+  profile_url: "https://www.talowa.com/en/our-artists/chronixx"
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://www.talowa.com/en/our-artists/chronixx"
 protoje:
   name: "Protoje"
-  role: "Recording artist"
+  role: "Reggae artist & songwriter"
+  role_is_occupation: true
+  profile_url: "https://www.reggaeville.com/artist-details/protoje/about/"
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://www.reggaeville.com/artist-details/protoje/about/"
 popcaan:
   name: "Popcaan"
-  role: "Recording artist"
+  role: "Dancehall artist"
+  role_is_occupation: true
+  profile_url: "https://www.reggaeville.com/artist-details/popcaan/about/"
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://www.reggaeville.com/artist-details/popcaan/about/"
 royal-blu:
   name: "Royal Blu"
-  role: "Singer, songwriter and lyricist"
-  description: "Royal Blu is a Jamaican singer, songwriter and lyricist from Spanish Town, blending reggae, hip-hop, dancehall and R&B."
+  role: "Singer, songwriter & lyricist"
+  role_is_occupation: true
   profile_url: "https://easystar.com/artists/royal-blu/"
   same_as:
     - "https://easystar.com/artists/royal-blu/"
   verified_on: "2026-10-26"
+  verification: "public-profile"
   sources:
-    - label: "Artist biography"
-      url: "https://easystar.com/artists/royal-blu/"
+    - url: "https://easystar.com/artists/royal-blu/"
 jah9:
   name: "Jah9"
-  role: "Recording artist"
+  role: "Singer, songwriter & poet"
+  role_is_occupation: true
+  profile_url: "https://www.reggaeville.com/artist-details/jah9/about/"
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://www.reggaeville.com/artist-details/jah9/about/"
 giark:
   name: "GiARK"
-  role: "Recording artist"
+  role: "Reggae recording artist"
+  role_is_occupation: true
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://www.vprecords.com/giark-releases-video-for-ive-been-there-bobby-digitals-son-presents-himself-to-the-world/"
 lila-ike:
   name: "Lila Iké"
-  role: "Singer and songwriter"
-  description: "Lila Iké, also written Lila Ike, is a Jamaican singer and songwriter blending reggae, R&B and dancehall. Treasure Self Love earned a 2026 Grammy nomination for Best Reggae Album."
-  alternate_names:
-    - "Lila Ike"
+  role: "Singer & songwriter"
+  role_is_occupation: true
   profile_url: "https://www.lilaikemusic.com/about"
   same_as:
     - "https://www.lilaikemusic.com/about"
     - "https://www.grammy.com/artists/lila-ike/61275/"
+  alternate_names:
+    - "Lila Ike"
   verified_on: "2026-10-26"
+  verification: "public-profile"
   sources:
-    - label: "Artist biography"
-      url: "https://www.lilaikemusic.com/about"
-    - label: "Grammy record"
-      url: "https://www.grammy.com/artists/lila-ike/61275/"
+    - url: "https://www.lilaikemusic.com/about"
 leno-banton:
   name: "Leno Banton"
-  role: "Reggae and dancehall artist"
-  description: "Leno Banton is a Jamaican artist from Duhaney Park, Kingston, whose sound blends reggae, dancehall and hip-hop."
+  role: "Reggae & dancehall artist"
+  role_is_occupation: true
   profile_url: "https://www.reggaeville.com/artist-details/leno-banton/about/"
   same_as:
     - "https://www.reggaeville.com/artist-details/leno-banton/about/"
   verified_on: "2026-10-26"
+  verification: "public-profile"
   sources:
-    - label: "Artist biography"
-      url: "https://www.reggaeville.com/artist-details/leno-banton/about/"
+    - url: "https://www.reggaeville.com/artist-details/leno-banton/about/"
 dre-island:
   name: "Dre Island"
-  role: "Recording artist"
+  role: "Singer, songwriter & producer"
+  role_is_occupation: true
+  profile_url: "https://www.reggaeville.com/artist-details/dre-island/about/"
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://www.reggaeville.com/artist-details/dre-island/about/"
 naomi-cowan:
   name: "Naomi Cowan"
-  role: "Recording artist"
+  role: "Singer, songwriter & actress"
+  role_is_occupation: true
+  profile_url: "https://www.reggaeville.com/artist-details/naomi-cowan/about/"
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://www.reggaeville.com/artist-details/naomi-cowan/about/"
 irie-souljah:
   name: "Irie Souljah"
-  role: "Recording artist"
+  role: "Reggae singer & songwriter"
+  role_is_occupation: true
+  profile_url: "https://www.instagram.com/iriesouljahmusic/"
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://www.dailyreggae.com/artist-profiles/from-spain-to-jamaica-irie-souljah-is-making-his-dreams-a-reality"
 ragga-muffin:
   name: "Ragga Muffin"
   role: "Artist named in story"
+  verified_on: "2026-10-26"
+  verification: "archive-credit"
+  sources:
+    - url: "https://bylynch.com/2017/11/14/dubwise-ft-chronixx-friends/"
+  search_query: "Ragga Muffin Dubwise Jamaica"
 sevana:
   name: "Sevana"
-  role: "Recording artist"
+  role: "Singer, actress & model"
+  role_is_occupation: true
+  profile_url: "https://www.reggaeville.com/artist-details/sevana/about/"
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://www.reggaeville.com/artist-details/sevana/about/"
 kabaka-pyramid:
   name: "Kabaka Pyramid"
-  role: "Recording artist"
+  role: "Reggae & hip-hop artist"
+  role_is_occupation: true
+  profile_url: "https://www.kabakapmusic.com/about"
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://www.kabakapmusic.com/about"
 iotosh:
   name: "Iotosh"
-  role: "Record producer, recording artist, songwriter and multi-instrumentalist"
-  description: "Iotosh is a Grammy-nominated Jamaican record producer, recording artist, songwriter and multi-instrumentalist from Kingston, working across reggae and dancehall."
+  role: "Producer, artist & songwriter"
+  role_is_occupation: true
   profile_url: "https://www.instagram.com/iotosh/"
   same_as:
     - "https://www.instagram.com/iotosh/"
     - "https://www.image-line.com/artists/iotosh"
   verified_on: "2026-10-26"
+  verification: "public-profile"
   sources:
-    - label: "Artist interview"
-      url: "https://www.image-line.com/artists/iotosh"
+    - url: "https://www.image-line.com/artists/iotosh"
 blvk-h3ro:
   name: "Blvk H3ro"
-  role: "Reggae and dancehall recording artist"
-  description: "Blvk H3ro, pronounced Black Hero, is a Jamaican reggae and dancehall artist. Neva Bow Down with Rocky Dawuni earned a 2023 Grammy nomination for Best Global Music Performance."
-  alternate_names:
-    - "Black Hero"
+  role: "Reggae & dancehall artist"
+  role_is_occupation: true
   profile_url: "https://www.blvkh3ro.com/"
   same_as:
     - "https://www.blvkh3ro.com/"
     - "https://www.grammy.com/artists/blvk-h3ro/51614/"
+  alternate_names:
+    - "Black Hero"
   verified_on: "2026-10-26"
+  verification: "public-profile"
   sources:
-    - label: "Artist biography"
-      url: "https://www.blvkh3ro.com/"
-    - label: "Grammy record"
-      url: "https://www.grammy.com/artists/blvk-h3ro/51614/"
+    - url: "https://www.blvkh3ro.com/"
 mcavelle:
   name: "McAvellé"
-  role: "Featured subject"
+  role: "Portrait subject"
+  verified_on: "2026-10-26"
+  verification: "archive-credit"
+  sources:
+    - url: "https://bylynch.com/2016/12/27/mcavelle/"
+  search_query: "McAvellé byLYNCH"
 kosher:
   name: "Kosher"
-  role: "Featured subject"
+  role: "Portrait subject"
+  verified_on: "2026-10-26"
+  verification: "archive-credit"
+  sources:
+    - url: "https://bylynch.com/2020/11/29/koshers-everything/"
+  search_query: "Kosher byLYNCH"
 uncle:
   name: "Uncle"
   role: "Digital creator"
-  description: "Uncle is a Jamaica-based digital creator known online as @uncle876."
-  alternate_names:
-    - "uncle876"
+  role_is_occupation: true
   profile_url: "https://www.instagram.com/uncle876"
   same_as:
     - "https://www.instagram.com/uncle876"
     - "https://linktr.ee/uncle876"
+  alternate_names:
+    - "uncle876"
   verified_on: "2026-10-26"
+  verification: "public-profile"
   sources:
-    - label: "Creator profile"
-      url: "https://www.instagram.com/uncle876"
-    - label: "Official links"
-      url: "https://linktr.ee/uncle876"
+    - url: "https://www.instagram.com/uncle876"
 courtni:
   name: "Courtni"
-  role: "Performer"
+  role: "Recording artist"
+  role_is_occupation: true
+  profile_url: "https://www.instagram.com/singcourtnising/"
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://past.jamaica-gleaner.com/article/entertainment/20210420/songstress-courtni-will-not-sekkle-less"
 pag3y:
   name: "Pag3y"
-  role: "Performer"
+  role: "Recording artist"
+  role_is_occupation: true
+  profile_url: "https://audiomack.com/pag3ymusic"
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://audiomack.com/pag3ymusic/song/another-day"
 chavez-illmatiq:
   name: "Chavez Illmatiq"
-  role: "Performer"
+  role: "Artist & songwriter"
+  role_is_occupation: true
+  profile_url: "https://music.apple.com/us/artist/chavez-illmatiq/1288632613"
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://muso.ai/profile/5727d997-187b-42d2-ab1c-255de7fcc3c2"
 kione-ziare:
-  name: "Kione Ziare"
-  role: "Performer"
+  name: "Kione Zaire"
+  role: "Recording artist"
+  role_is_occupation: true
+  profile_url: "https://www.facebook.com/KioneZaire/"
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://www.facebook.com/KioneZaire/"
+  alternate_names:
+    - "Kione Ziare"
 chike-the-chemist:
-  name: "Chike The Chemist"
-  role: "Performer"
+  name: "ChikeTheKhemist"
+  role: "Artist, producer & audio engineer"
+  role_is_occupation: true
+  profile_url: "https://www.instagram.com/chikethekhemist/"
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://www.jackrussellmusic.net/writers-artists/chike-the-khemist/"
+  alternate_names:
+    - "Chike The Chemist"
+    - "Chike The Khemist"
 the-grei-show:
   name: "The Grei Show"
-  role: "Performer"
+  role: "Artist, producer & songwriter"
+  role_is_occupation: true
+  profile_url: "https://thegreishow.com/about"
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://thegreishow.com/about"
 jeeby:
-  name: "Jeeby"
-  role: "Performer"
+  name: "Jeeby Lyricist"
+  role: "Recording artist & lyricist"
+  role_is_occupation: true
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://13thstreetpromotions.com/tag/jeeby-lyricist/"
+  alternate_names:
+    - "Jeeby"
+  search_query: "Jeeby Lyricist Jamaica artist"
 r3wind:
   name: "R3wind"
   role: "DJ"
+  role_is_occupation: true
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://www.instagram.com/preedisshow/reel/CzmoO1iOEqk/"
+  search_query: "R3wind Jamaica DJ"
 jujutron:
-  name: "JujuTron"
-  role: "DJ"
+  name: "JujuTron88"
+  role: "DJ & music producer"
+  role_is_occupation: true
+  profile_url: "https://soundcloud.com/jujutron88"
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://bylynch.com/2017/02/02/jungle-flex-w-hiidden-fvces/"
+  alternate_names:
+    - "JujuTron"
 joshera:
-  name: "Joshera"
+  name: "JoshEra"
   role: "DJ"
+  role_is_occupation: true
+  profile_url: "https://linktr.ee/joshheraa"
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://13thstreetpromotions.com/2016/08/01/get-to-know-joshera_-of-remlivingdream/"
 wavy-jones:
   name: "Wavy Jones"
-  role: "DJ"
+  role: "DJ & music producer"
+  role_is_occupation: true
+  profile_url: "https://soundcloud.com/wavy-wavy-jones"
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://www.jamaicaobserver.com/2020/12/17/wavy-jones-finds-formula/"
 evaflow:
   name: "EvaFlow"
-  role: "Recording artist, music producer and lyricist"
-  description: "EvaFlow is a Jamaican recording artist, music producer and lyricist from Santa Cruz, blending reggae, hip-hop and dancehall into Hip-Hall and Dub-Hop."
+  role: "Artist, producer & lyricist"
+  role_is_occupation: true
   profile_url: "https://soundcloud.com/evaflow"
   same_as:
     - "https://soundcloud.com/evaflow"
     - "https://www.reggaeville.com/artist-details/evaflow/about/"
   verified_on: "2026-10-26"
+  verification: "public-profile"
   sources:
-    - label: "Artist biography"
-      url: "https://soundcloud.com/evaflow"
-    - label: "Artist interview"
-      url: "https://www.reggaeville.com/artist-details/evaflow/news/view/interview-with-evaflow-the-beginning/"
+    - url: "https://www.reggaeville.com/artist-details/evaflow/about/"
+flying-lotus:
+  name: "Flying Lotus"
+  role: "Producer, musician & filmmaker"
+  role_is_occupation: true
+  profile_url: "https://warp.net/artists/flying-lotus"
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://warp.net/artists/flying-lotus"
+donisha-prendergast:
+  name: "Donisha Prendergast"
+  role: "Filmmaker, actress & activist"
+  role_is_occupation: true
+  profile_url: "https://www.instagram.com/iamdonisha/"
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://ca.linkedin.com/in/donisha-prendergast-50844879"
+purpmiya:
+  name: "Purpmiya"
+  role: "Recording artist"
+  role_is_occupation: true
+  profile_url: "https://music.apple.com/gh/artist/purpmiya/1245953864"
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://music.apple.com/gh/artist/purpmiya/1245953864"
+alpine-compound:
+  name: "Alpine Compound"
+  role: "Music collective"
+  profile_url: "https://soundcloud.com/alpinecompound"
+  verified_on: "2026-10-26"
+  verification: "archive-credit"
+  sources:
+    - url: "https://bylynch.com/2017/01/04/alpine-compound/"
+  schema_type: "MusicGroup"
+pedro-deniro:
+  name: "Pedro Deniro"
+  role: "Portrait subject"
+  verified_on: "2026-10-26"
+  verification: "archive-credit"
+  sources:
+    - url: "https://bylynch.com/2017/01/07/boaty-ft-pedro-deniro/"
+  search_query: "Pedro Deniro byLYNCH"
+raj:
+  name: "Raj"
+  role: "Portrait subject"
+  verified_on: "2026-10-26"
+  verification: "archive-credit"
+  sources:
+    - url: "https://bylynch.com/2017/01/09/raj-the-pretty-dress/"
+  search_query: "Raj byLYNCH"
+kone:
+  name: "Kone"
+  role: "Musician & guitarist"
+  role_is_occupation: true
+  profile_url: "https://www.instagram.com/konelives/"
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://www.instagram.com/konelives/"
+yanah:
+  name: "Yanah"
+  role: "Singer"
+  role_is_occupation: true
+  profile_url: "https://www.youtube.com/@yanahmusic"
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://www.youtube.com/@yanahmusic"
+hiidden-fvces:
+  name: "HiiDDEN FVCES"
+  role: "Music production collective"
+  verified_on: "2026-10-26"
+  verification: "archive-credit"
+  sources:
+    - url: "https://bylynch.com/2017/02/02/jungle-flex-w-hiidden-fvces/"
+  schema_type: "MusicGroup"
+  members:
+    - "jujutron"
+    - "dxcape"
+    - "kvje"
+    - "jbeatz"
+    - "wavy-jones"
+dxcape:
+  name: "Dxcape"
+  role: "Music producer"
+  role_is_occupation: true
+  profile_url: "https://soundcloud.com/dxcape"
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://bylynch.com/2017/02/02/jungle-flex-w-hiidden-fvces/"
+kvje:
+  name: "KVJE"
+  role: "Music producer"
+  role_is_occupation: true
+  profile_url: "https://soundcloud.com/kvje"
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://bylynch.com/2017/02/02/jungle-flex-w-hiidden-fvces/"
+jbeatz:
+  name: "JBeatz"
+  role: "Music producer"
+  role_is_occupation: true
+  profile_url: "https://soundcloud.com/shawnjsmith"
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://bylynch.com/2017/02/02/jungle-flex-w-hiidden-fvces/"
+kenika-quash:
+  name: "Kenika Quash"
+  role: "Vocalist & performer"
+  role_is_occupation: true
+  profile_url: "https://www.youtube.com/@Kenikaquash"
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://catholictt.org/2023/11/30/sweet-parang-sounds-meet-los-sonidos/"
+bob-marley:
+  name: "Bob Marley"
+  role: "Reggae singer & songwriter"
+  role_is_occupation: true
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://www.biography.com/musicians/bob-marley"
+  search_query: "Bob Marley official"
+sizzla:
+  name: "Sizzla Kalonji"
+  role: "Reggae & dancehall artist"
+  role_is_occupation: true
+  profile_url: "https://www.youtube.com/@SizzlaMusic"
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://www.mutimusic.com/artist/sizzla/"
+  alternate_names:
+    - "Sizzla"
+leasho-johnson:
+  name: "Leasho Johnson"
+  role: "Visual artist"
+  role_is_occupation: true
+  profile_url: "https://www.jamaicaartsociety.com/leasho-t-johnson"
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://www.jamaicaartsociety.com/leasho-t-johnson"
+tsajmelle:
+  name: "tSajMellé"
+  role: "Portrait subject"
+  verified_on: "2026-10-26"
+  verification: "archive-credit"
+  sources:
+    - url: "https://bylynch.com/2017/04/24/tsajmelle/"
+  search_query: "tSajMellé byLYNCH"
+summer-roze:
+  name: "Summer Roze"
+  role: "Model"
+  profile_url: "https://www.instagram.com/summerroze/"
+  verified_on: "2026-10-26"
+  verification: "archive-credit"
+  sources:
+    - url: "https://bylynch.com/2017/07/31/the-roze-the-rimz/"
+desmona-johnson:
+  name: "Desmona Johnson"
+  role: "Portrait subject"
+  verified_on: "2026-10-26"
+  verification: "archive-credit"
+  sources:
+    - url: "https://bylynch.com/2018/01/23/havana/"
+  search_query: "Desmona Johnson byLYNCH"
+chloe-ana:
+  name: "Chloé-Ana"
+  role: "Portrait subject"
+  verified_on: "2026-10-26"
+  verification: "archive-credit"
+  sources:
+    - url: "https://bylynch.com/2019/02/01/chloe-ana/"
+  alternate_names:
+    - "Chloe-Ana"
+  search_query: "Chloé-Ana byLYNCH"
+kesi-g:
+  name: "Kesi G"
+  role: "Portrait subject"
+  verified_on: "2026-10-26"
+  verification: "archive-credit"
+  sources:
+    - url: "https://bylynch.com/2019/03/17/kesi-g/"
+  search_query: "Kesi G byLYNCH"
+setsuna:
+  name: "Setsuna"
+  role: "Portrait subject"
+  verified_on: "2026-10-26"
+  verification: "archive-credit"
+  sources:
+    - url: "https://bylynch.com/2024/10/26/setsuna/"
+  search_query: "Setsuna byLYNCH"
+ayotemi:
+  name: "Ayotemi"
+  role: "Singer & rapper"
+  role_is_occupation: true
+  profile_url: "https://ayotemimusic.bandcamp.com/"
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://ayotemimusic.bandcamp.com/"
+kendrick-lamar:
+  name: "Kendrick Lamar"
+  role: "Rapper & songwriter"
+  role_is_occupation: true
+  profile_url: "https://www.grammy.com/artists/kendrick-lamar/17949/"
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://www.grammy.com/artists/kendrick-lamar/17949/"
+tupac-shakur:
+  name: "Tupac Shakur"
+  role: "Rapper, poet & actor"
+  role_is_occupation: true
+  profile_url: "https://www.2pac.com/book/"
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://www.2pac.com/book/"
+  alternate_names:
+    - "2Pac"
+wallace-thurman:
+  name: "Wallace Thurman"
+  role: "Novelist & playwright"
+  role_is_occupation: true
+  profile_url: "https://archives.yale.edu/repositories/11/resources/960"
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://archives.yale.edu/repositories/11/resources/960"
+barry-long:
+  name: "Barry Long"
+  role: "Writer & spiritual teacher"
+  role_is_occupation: true
+  profile_url: "https://www.barrylong.org/barry-long"
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://www.barrylong.org/barry-long"
+ruth-mazo-karras:
+  name: "Ruth Mazo Karras"
+  role: "Historian"
+  role_is_occupation: true
+  profile_url: "https://www.tcd.ie/history/staff/ruth-karras.php"
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://www.tcd.ie/history/staff/ruth-karras.php"
+mark-shainblum:
+  name: "Mark Shainblum"
+  role: "Writer & journalist"
+  role_is_occupation: true
+  profile_url: "https://www.signature-editions.com/index.php/books/authors/mark_shainblum"
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://www.signature-editions.com/index.php/books/authors/mark_shainblum"
+muhammad:
+  name: "Muhammad"
+  role: "Historical religious figure"
+  verified_on: "2026-10-26"
+  verification: "archive-credit"
+  sources:
+    - url: "https://academic.oup.com/book/492"
+  search_query: "Prophet Muhammad"
+vybz-kartel:
+  name: "Vybz Kartel"
+  role: "Dancehall artist"
+  role_is_occupation: true
+  profile_url: "https://www.grammy.com/artists/vybz-kartel/57975/"
+  verified_on: "2026-10-26"
+  verification: "public-profile"
+  sources:
+    - url: "https://www.grammy.com/artists/vybz-kartel/57975/"

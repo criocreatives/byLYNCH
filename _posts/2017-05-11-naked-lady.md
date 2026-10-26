@@ -3,13 +3,16 @@ layout: post
 title: "Naked Lady"
 date: 2017-05-11 17:04:00 -0500
 date_string: "2017-05-11 17:04:00"
-modified: 2017-05-11 17:04:28 -0500
+modified: "2026-10-26 02:05:12 -0500"
 permalink: /2017/05/11/naked-lady/
 author: "lebosslynch"
 categories:
   - "ARTS"
 tags:
   - ""
+collaborators:
+  - roux
+seo_description: "Naked Lady: Roux. Photography, film and culture from the byLYNCH archive."
 ---
 <blockquote>
 <p style="text-align:right;">Roses are red</p>

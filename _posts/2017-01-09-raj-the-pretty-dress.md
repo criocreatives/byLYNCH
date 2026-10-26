@@ -3,12 +3,15 @@ layout: post
 title: "Raj & The Pretty Dress"
 date: 2017-01-09 10:30:14 -0500
 date_string: "2017-01-09 10:30:14"
-modified: 2023-12-03 17:57:11 -0500
+modified: "2026-10-26 02:05:12 -0500"
 permalink: /2017/01/09/raj-the-pretty-dress/
 author: "lebosslynch"
 categories: []
 tags:
   - "series"
+featured_people:
+  - raj
+seo_description: "Raj & The Pretty Dress: Raj. Portraits and visual stories from the byLYNCH archive."
 ---
 <figure class="wp-block-image size-large"><img src="/assets/uploads/2017/01/img_5676.jpg" alt="img_5676" class="wp-image-1041" /></figure>
 

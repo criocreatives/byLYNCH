@@ -3,7 +3,7 @@ layout: post
 title: "Russian Rickolette"
 date: 2018-03-20 21:30:18 -0500
 date_string: "2018-03-20 21:30:18"
-modified: 2018-03-20 21:30:18 -0500
+modified: "2026-10-26 02:05:12 -0500"
 permalink: /2018/03/20/russian-rickolette/
 author: "lebosslynch"
 categories:
@@ -13,6 +13,7 @@ tags:
   - "ricki"
 featured_people:
   - complex-ricki
+seo_description: "Russian Rickolette: Complex Ricki. Photography, film and culture from the byLYNCH archive."
 ---
 <figure class="wp-block-image size-large"><img src="/assets/uploads/2018/03/mg_5263-1.jpg" alt="_MG_5263" class="wp-image-2924" /></figure>
 

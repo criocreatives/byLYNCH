@@ -22,6 +22,8 @@ header_responsive:
   original_width: 1200
   original_height: 1600
 excerpt: "Wednesday Addams never needed colour. Roux made a case for red."
+seo_description: "Roux as Wednesday Addams: Roux. Photography, film and culture from the byLYNCH archive."
+modified: "2026-10-26 02:05:12 -0500"
 ---
 <figure class="wp-block-image size-large"><picture><source type="image/webp" srcset="/assets/optimized/galleries/2025/10/IMG_7594-gallery.webp"><img src="/assets/uploads/2025/10/IMG_7594.jpg" alt="Full-length portrait of Roux in a black-and-white striped dress and heavy boots against a red backdrop." width="1067" height="1600" loading="lazy" decoding="async" /></picture></figure>
 

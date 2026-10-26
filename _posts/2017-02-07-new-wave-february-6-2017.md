@@ -1,11 +1,11 @@
 ---
 layout: post
 title: "New Wave - February 6, 2017"
-seo_description: "New Wave on February 6, 2017: photographs and live music with Iotosh, Blvk H3ro, Runkus, Meleku, Seani B and Toddla T, by LYNCH."
-seo_title: "New Wave: Iotosh, Blvk H3ro & Runkus | February 6, 2017"
+seo_description: "New Wave on February 6, 2017, with Meleku, Jimmy Q, Seani B, Toddla T, Runkus, Iotosh and Blvk H3ro. Music photographs by LYNCH."
+seo_title: "New Wave: Meleku, Runkus, Iotosh & Blvk H3ro"
 date: 2017-02-07 19:00:33 -0500
 date_string: "2017-02-07 19:00:33"
-modified: 2026-10-26 01:12:21 -0500
+modified: "2026-10-26 02:05:12 -0500"
 permalink: /2017/02/07/new-wave-february-6-2017/
 author: "lebosslynch"
 categories:
@@ -28,6 +28,9 @@ featured_people:
   - iotosh
   - blvk-h3ro
 excerpt: "Seani B. Toddla T. Meleku. Bare tings."
+mentioned_people:
+  - bob-marley
+  - sizzla
 ---
 <figure class="wp-block-image size-large"><img class="alignnone size-full wp-image-1995" src="/assets/uploads/2017/02/img_8030.jpg" alt="IMG_8030.jpg" width="5184" height="3456" /></figure>
 

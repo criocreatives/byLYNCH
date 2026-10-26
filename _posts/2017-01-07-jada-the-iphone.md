@@ -4,7 +4,7 @@ eager_images: true
 title: "Jada & The iPhone"
 date: 2017-01-07 12:00:31 -0500
 date_string: "2017-01-07 12:00:31"
-modified: 2024-01-26 11:30:03 -0500
+modified: "2026-10-26 02:05:12 -0500"
 permalink: /2017/01/07/jada-the-iphone/
 author: "lebosslynch"
 categories: []
@@ -13,6 +13,7 @@ tags:
   - "jada kingdom"
 featured_people:
   - jada-kingdom
+seo_description: "Jada & The iPhone: Jada Kingdom. Photography, film and culture from the byLYNCH archive."
 ---
 <figure class="wp-block-image"><img class="alignnone size-full wp-image-1022" src="/assets/uploads/2017/01/img_3844.jpg" alt="img_3844" width="5184" height="3456" /></figure>
 

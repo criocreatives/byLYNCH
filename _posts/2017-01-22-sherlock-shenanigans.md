@@ -5,7 +5,7 @@ seo_description: "Blvk H3ro, Runkus, Jeeby Lyricist and fellow artists trade lyr
 seo_title: "Sherlock Shenanigans: Blvk H3ro, Runkus & Friends"
 date: 2017-01-22 20:01:02 -0500
 date_string: "2017-01-22 20:01:02"
-modified: 2026-10-26 01:12:21 -0500
+modified: "2026-10-26 02:05:12 -0500"
 permalink: /2017/01/22/sherlock-shenanigans/
 author: "lebosslynch"
 categories:
@@ -14,6 +14,13 @@ tags:
   - "blvk h3ro"
 mentioned_people:
   - blvk-h3ro
+  - runkus
+  - jeeby
+  - chavez-illmatiq
+  - pag3y
+  - kenika-quash
+  - vybz-kartel
+  - popcaan
 excerpt: "Lyrics that contain explicit language and violent themes are often frowned upon; Based on the belief that these lyrics influence the youth to do bad things. Nonsense. Misguided youth do bad things."
 ---
 I arrive at 8:07pm. Only seven minutes late but it seems I've missed a lot. They're already free-styling on table beats.

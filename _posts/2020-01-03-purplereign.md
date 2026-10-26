@@ -3,7 +3,7 @@ layout: post
 title: "Purple Reign"
 date: 2020-01-03 12:30:00 -0500
 date_string: "2020-01-03 12:30:00"
-modified: 2023-12-29 01:32:50 -0500
+modified: "2026-10-26 02:05:12 -0500"
 permalink: /2020/01/03/purplereign/
 author: "lebosslynch"
 categories:
@@ -15,6 +15,9 @@ tags:
   - "purple"
   - "seenbylynch"
 excerpt: "Everything is Purple"
+collaborators:
+  - roux
+seo_description: "Purple Reign: Roux. Photography, film and culture from the byLYNCH archive."
 ---
 <!-- wp:paragraph {"align":"center"} -->
 <p class="has-text-align-center">Everything is Purple.</p>

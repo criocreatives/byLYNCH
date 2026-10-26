@@ -3,7 +3,7 @@ layout: post
 title: "Alpine Compound"
 date: 2017-01-04 14:00:30 -0500
 date_string: "2017-01-04 14:00:30"
-modified: 2017-08-31 10:24:37 -0500
+modified: "2026-10-26 02:05:12 -0500"
 permalink: /2017/01/04/alpine-compound/
 author: "lebosslynch"
 categories:
@@ -11,6 +11,9 @@ categories:
 tags:
   - "music"
 excerpt: "808's slide tackle your tympanic membrane and high-hats slice up your cochlea."
+featured_people:
+  - alpine-compound
+seo_description: "Alpine Compound: Alpine Compound. Photography, film and culture from the byLYNCH archive."
 ---
 You're on SoundCloud. The track you searched for finished playing. Algorithms shuffle to another <em>related </em>track. 808's slide tackle your tympanic membrane and high-hats slice up your cochlea. Clean sounds. Professional. You think it's safe to assume these sounds came out of big studio. Big control panel. Big A/C unit. Big front desk. Big building. Bare tings. Lol, no still.
 

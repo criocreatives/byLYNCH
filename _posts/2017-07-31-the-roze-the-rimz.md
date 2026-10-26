@@ -3,7 +3,7 @@ layout: post
 title: "The Roze & The Rimz"
 date: 2017-07-31 18:30:48 -0500
 date_string: "2017-07-31 18:30:48"
-modified: 2017-07-31 02:24:00 -0500
+modified: "2026-10-26 02:05:12 -0500"
 permalink: /2017/07/31/the-roze-the-rimz/
 author: "lebosslynch"
 categories: []
@@ -17,6 +17,9 @@ archived_comments:
   - author: "icecoldrebel"
     date: "2018-05-03 23:06:51"
     content: "This site is not getting nearly enough attention you have great work"
+featured_people:
+  - summer-roze
+seo_description: "The Roze & The Rimz: Summer Roze. Photography, film and culture from the byLYNCH archive."
 ---
 &nbsp;
 

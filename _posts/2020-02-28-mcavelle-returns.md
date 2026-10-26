@@ -3,7 +3,7 @@ layout: post
 title: "McAvellé Returns"
 date: 2020-02-28 12:00:00 -0500
 date_string: "2020-02-28 12:00:00"
-modified: 2024-01-26 11:29:14 -0500
+modified: "2026-10-26 02:05:12 -0500"
 permalink: /2020/02/28/mcavelle-returns/
 author: "lebosslynch"
 categories:
@@ -14,6 +14,7 @@ tags:
 featured_people:
   - mcavelle
 excerpt: "Victoria has a secret..."
+seo_description: "McAvellé Returns: McAvellé. Portraits and visual stories from the byLYNCH archive."
 ---
 <!-- wp:paragraph -->
 <p>Vicky See...</p>

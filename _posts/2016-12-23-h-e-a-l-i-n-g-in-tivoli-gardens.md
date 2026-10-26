@@ -3,13 +3,16 @@ layout: post
 title: "H.E.A.L.I.N.G. in Tivoli Gardens"
 date: 2016-12-23 12:56:10 -0500
 date_string: "2016-12-23 12:56:10"
-modified: 2017-01-27 12:58:29 -0500
+modified: "2026-10-26 02:05:12 -0500"
 permalink: /2016/12/23/h-e-a-l-i-n-g-in-tivoli-gardens/
 author: "lebosslynch"
 categories:
   - "Uncategorized"
 tags:
   - ""
+mentioned_people:
+  - donisha-prendergast
+seo_description: "H.E.A.L.I.N.G. in Tivoli Gardens: Donisha Prendergast. Photography, film and culture from the byLYNCH archive."
 ---
 <figure class="wp-block-image size-large"><img class="alignnone size-full wp-image-1707" src="/assets/uploads/2017/01/img_4513.jpg" alt="IMG_4513.jpg" width="5999" height="3999" /></figure>
 

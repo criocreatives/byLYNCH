@@ -3,7 +3,7 @@ layout: post
 title: "Phone Secks"
 date: 2018-03-16 23:27:38 -0500
 date_string: "2018-03-16 23:27:38"
-modified: 2018-03-16 23:27:38 -0500
+modified: "2026-10-26 02:05:12 -0500"
 permalink: /2018/03/16/phone-secks/
 author: "lebosslynch"
 categories:
@@ -13,6 +13,7 @@ tags:
 featured_people:
   - amanyea
 excerpt: "Fix me..."
+seo_description: "Phone Secks: Amanyea. Photography, film and culture from the byLYNCH archive."
 ---
 <figure><img class="alignnone size-full wp-image-2898" src="/assets/uploads/2018/03/mg_4528.jpg" alt="_MG_4528" width="2326" height="2907" /><figcaption>Antsy...</figcaption></figure>
 

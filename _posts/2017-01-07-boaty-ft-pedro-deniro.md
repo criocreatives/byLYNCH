@@ -3,12 +3,15 @@ layout: post
 title: "BOA$TY ft. Pedro Deniro"
 date: 2017-01-07 18:34:01 -0500
 date_string: "2017-01-07 18:34:01"
-modified: 2017-01-07 18:35:23 -0500
+modified: "2026-10-26 02:05:12 -0500"
 permalink: /2017/01/07/boaty-ft-pedro-deniro/
 author: "lebosslynch"
 categories: []
 tags:
   - "series"
+featured_people:
+  - pedro-deniro
+seo_description: "BOA$TY ft. Pedro Deniro: Pedro Deniro. Portraits and visual stories from the byLYNCH archive."
 ---
 <figure class="wp-block-image size-large"><img src="/assets/uploads/2017/01/img_5605.png" alt="img_5605" class="wp-image-1078" /></figure>
 

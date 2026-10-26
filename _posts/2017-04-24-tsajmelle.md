@@ -3,13 +3,16 @@ layout: post
 title: "tSajMellé"
 date: 2017-04-24 18:30:41 -0500
 date_string: "2017-04-24 18:30:41"
-modified: 2023-12-29 02:43:30 -0500
+modified: "2026-10-26 02:05:12 -0500"
 permalink: /2017/04/24/tsajmelle/
 author: "lebosslynch"
 categories: []
 tags:
   - ""
 excerpt: "Set di link nuh bredda."
+featured_people:
+  - tsajmelle
+seo_description: "tSajMellé: tSajMellé. Portraits and visual stories from the byLYNCH archive."
 ---
 <figure class="wp-block-image size-large"><img class="alignnone size-full wp-image-2258" src="/assets/uploads/2017/04/mg_8748.jpg" alt="_MG_8748.jpg" width="3456" height="4320" /></figure>
 

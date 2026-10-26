@@ -3,7 +3,7 @@ layout: post
 title: "Hotel In Kingston"
 date: 2017-01-02 18:00:26 -0500
 date_string: "2017-01-02 18:00:26"
-modified: 2017-11-12 23:31:13 -0500
+modified: "2026-10-26 02:05:12 -0500"
 permalink: /2017/01/02/hotel-in-kingston/
 author: "lebosslynch"
 categories:
@@ -11,6 +11,10 @@ categories:
   - "FILM"
 tags:
   - "faebylynch"
+featured_people:
+  - purpmiya
+seo_description: "Behind the scenes of Purpmiya’s Hotel in Kingston music video, filmed and directed by LYNCH in New Kingston and on the airport strip."
+seo_title: "Hotel in Kingston: Purpmiya Music Video"
 ---
 <figure class="wp-block-image size-large"><a href="/assets/uploads/2016/12/img_3121.jpg"><img class="wp-image-233 aligncenter" src="/assets/uploads/2016/12/img_3121.jpg" alt="img_3121" width="674" height="449" /></a></figure>
 

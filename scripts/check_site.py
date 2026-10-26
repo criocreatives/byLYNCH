@@ -13,6 +13,7 @@ import zlib
 import xml.etree.ElementTree as ET
 from html.parser import HTMLParser
 from pathlib import Path
+from urllib.parse import parse_qs, urlparse
 
 ROOT = Path(__file__).resolve().parent.parent
 SITE = ROOT / "_site"
@@ -560,6 +561,100 @@ check(about_html.count('class="lynch-about-icon') >= 10,
 ad_config = (ROOT / "_data" / "manual_ads.yml").read_text(encoding="utf-8")
 for slot in ("9856514493", "7038779463", "8559569688"):
     check(slot in ad_config, "Existing manual ad slot unexpectedly missing: " + slot)
+
+# Every credited entity must render as a linked name plus short role. Profile
+# destinations are verified registry URLs; unresolved identities use search only.
+registry = {}
+for record in re.finditer(r"^([a-z0-9-]+):\n(.*?)(?=^[a-z0-9-]+:\n|\Z)", people_data, re.M | re.S):
+    fields = {}
+    for field in ("name", "role", "profile_url", "search_query", "schema_type"):
+        match = re.search(r"^  " + field + r": (\".*\")$", record.group(2), re.M)
+        if match:
+            fields[field] = json.loads(match.group(1))
+    registry[record.group(1)] = fields
+
+
+class CreditRows(HTMLParser):
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.active = False
+        self.capture = None
+        self.buffer = ""
+        self.href = ""
+        self.names = []
+        self.roles = []
+        self.paragraphs = 0
+
+    def handle_starttag(self, tag, attrs):
+        attrs = dict(attrs)
+        classes = attrs.get("class", "").split()
+        if tag == "section" and "lynch-credits" in classes:
+            self.active = True
+        if not self.active:
+            return
+        if tag == "p":
+            self.paragraphs += 1
+        if tag == "a" and "lynch-credit-name" in classes:
+            self.capture, self.buffer, self.href = "name", "", attrs.get("href", "")
+        elif tag == "span" and "lynch-credit-role" in classes:
+            self.capture, self.buffer = "role", ""
+
+    def handle_data(self, data):
+        if self.active and self.capture:
+            self.buffer += data
+
+    def handle_endtag(self, tag):
+        if tag == "a" and self.capture == "name":
+            self.names.append((self.buffer.strip(), self.href))
+            self.capture = None
+        elif tag == "span" and self.capture == "role":
+            self.roles.append(self.buffer.strip())
+            self.capture = None
+        elif tag == "section":
+            self.active = False
+
+
+for path in post_sources:
+    front = path.read_text(encoding="utf-8").split("\n---\n", 1)[0] + "\n"
+    ids = []
+    for field in ("featured_people", "collaborators", "mentioned_people"):
+        group = re.search(r"^" + field + r":\n((?:  - [a-z0-9-]+\n)+)", front, re.M)
+        if group:
+            ids.extend(re.findall(r"  - ([a-z0-9-]+)", group.group(1)))
+    if not ids:
+        continue
+    check(len(ids) == len(set(ids)), path.name + ": repeated person across credit groups")
+    check(all(person_id in registry for person_id in ids), path.name + ": unresolved registry credit")
+    slug = path.name[11:-3]
+    html, parsed = inspect(post_urls[slug])
+    rows = CreditRows()
+    rows.feed(html)
+    check(len(rows.names) == len(ids) and len(rows.roles) == len(ids),
+          slug + ": every credit needs a linked name and short role")
+    check(rows.paragraphs == 0, slug + ": credit block must not contain biographies or helper paragraphs")
+    blogs = [json.loads(text) for text in parsed.ld_json]
+    article = next((item for item in blogs if item.get("@type") == "BlogPosting"), {})
+    mentions = article.get("mentions", [])
+    for index, person_id in enumerate(ids):
+        person = registry.get(person_id, {})
+        if index >= len(rows.names) or index >= len(rows.roles):
+            continue
+        name, href = rows.names[index]
+        check(name == person.get("name") and rows.roles[index] == person.get("role"),
+              slug + ": name/role mismatch for " + person_id)
+        if person.get("profile_url"):
+            check(href == person["profile_url"], slug + ": wrong profile link for " + person_id)
+        else:
+            dest = urlparse(href)
+            query = parse_qs(dest.query).get("q", [""])[0]
+            check(dest.scheme == "https" and dest.netloc == "www.google.com" and
+                  dest.path == "/search" and query == person.get("search_query", person.get("name")),
+                  slug + ": incorrect search fallback for " + person_id)
+        entity = [item for item in mentions if item.get("@id") == BASE + "/#person-" + person_id]
+        check(len(entity) == 1 and entity[0].get("name") == person.get("name") and
+              entity[0].get("description") == person.get("role") and
+              entity[0].get("@type") == person.get("schema_type", "Person"),
+              slug + ": structured identity must match visible name/role for " + person_id)
 
 if errors:
     print("\n".join("FAIL: " + error for error in errors), file=sys.stderr)

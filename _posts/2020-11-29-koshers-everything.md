@@ -21,6 +21,8 @@ header_responsive:
   original_width: 1280
   original_height: 1600
 excerpt: "Everything’s Kosher in the yard: roots in the earth, a chalice by the fire, and no reason to be anywhere else."
+seo_description: "Kosher's Everything: Kosher. Portraits and visual stories from the byLYNCH archive."
+modified: "2026-10-26 02:05:12 -0500"
 ---
 <figure class="wp-block-image size-large"><picture><source type="image/webp" srcset="/assets/optimized/galleries/2020/11/IMG_9050-gallery.webp"><img src="/assets/uploads/2020/11/IMG_9050.jpg" alt="Kosher looking toward the camera in an outdoor portrait framed by trees." width="1280" height="1600" /></picture></figure>
 
