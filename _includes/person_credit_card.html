@@ -1,0 +1,35 @@
+{% assign credit_id = include.person_id %}
+{% assign credit_person = site.data.people[credit_id] %}
+{% if credit_person %}
+<div class="lynch-credit-person">
+  <span class="lynch-credit-role">{{ credit_person.role | escape }}</span>
+  <div class="lynch-credit-name">{{ credit_person.name | escape }}</div>
+  {% if credit_person.description %}<p class="lynch-credit-bio">{{ credit_person.description | escape }}</p>{% endif %}
+  <div class="lynch-credit-links">
+    {% if credit_person.profile_url %}<a class="lynch-credit-profile" href="{{ credit_person.profile_url | escape }}" target="_blank" rel="noopener noreferrer">Profile <span class="lynch-credit-link-mark" aria-hidden="true"></span></a>{% endif %}
+    {% for credit_source in credit_person.sources %}
+      {% if credit_source.url != credit_person.profile_url %}<a class="lynch-credit-source" href="{{ credit_source.url | escape }}" target="_blank" rel="noopener noreferrer">{{ credit_source.label | escape }}</a>{% endif %}
+    {% endfor %}
+  </div>
+  {% capture person_related_links %}
+    {% for credit_other in site.posts %}
+      {% if credit_other.url != include.post.url %}
+        {% if credit_other.featured_people contains credit_id or credit_other.mentioned_people contains credit_id or credit_other.collaborators contains credit_id %}
+          {% assign credit_other_allowed = true %}
+          {% if include.ads_eligible %}
+            {% if site.data.content_flags.e_notice contains credit_other.slug or credit_other.exclude_ads %}{% assign credit_other_allowed = false %}{% endif %}
+          {% endif %}
+          {% if credit_other_allowed %}<a href="{{ credit_other.url | relative_url }}" class="lynch-credit-related-link">{{ credit_other.title | escape }}</a>{% endif %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  {% endcapture %}
+  {% assign clean_person_related_links = person_related_links | strip %}
+  {% if clean_person_related_links != '' %}
+  <nav class="lynch-credit-related" aria-label="More stories naming {{ credit_person.name | escape }}">
+    <span class="lynch-credit-related-label">More with {{ credit_person.name | escape }}</span>
+    {{ person_related_links }}
+  </nav>
+  {% endif %}
+</div>
+{% endif %}

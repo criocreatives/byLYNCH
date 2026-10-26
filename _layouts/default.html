@@ -44,19 +44,19 @@ gtag('config', 'G-K95ENNDT6F', {
 {% if page.url == '/' %}
 <title>byLYNCH | Jamaican Photography, Portraits &amp; Culture</title>
 {% elsif page.title %}
-<title>{{ page.title | escape }} — {{ site.title | escape }}</title>
+<title>{{ page.seo_title | default: page.title | escape }} — {{ site.title | escape }}</title>
 {% else %}
 <title>{{ site.title | escape }}</title>
 {% endif %}
 {% if page.layout == 'post' %}
-  {% assign meta_description = site.data.card_previews[page.slug] | default: 'Explore this visual story from the byLYNCH archive.' %}
+  {% assign meta_description = page.seo_description | default: site.data.card_previews[page.slug] | default: 'Explore this visual story from the byLYNCH archive.' %}
 {% elsif page.url == '/' %}
   {% assign meta_description = 'Jamaican photography, portraiture, music and culture through the lens of byLYNCH.' %}
 {% else %}
   {% assign meta_description = page.description | default: page.excerpt | default: site.description %}
 {% endif %}
 {% assign seo_description_text = meta_description | strip_html | strip_newlines %}
-{% if page.layout == 'post' and page.featured_people and page.featured_people.size > 0 %}
+{% if page.layout == 'post' and page.seo_description == nil and page.featured_people and page.featured_people.size > 0 %}
   {% capture credit_description %}{% for person_id in page.featured_people limit:2 %}{% assign credit_person = site.data.people[person_id] %}{% if credit_person %}{% unless forloop.first %} and {% endunless %}{{ credit_person.name }}{% endif %}{% endfor %}{% endcapture %}
   {% assign credit_description = credit_description | strip %}
   {% if credit_description != '' %}
@@ -76,7 +76,7 @@ gtag('config', 'G-K95ENNDT6F', {
 <meta property="og:site_name" content="byLYNCH">
 <meta property="og:locale" content="en_JM">
 <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
-<meta property="og:title" content="{% if page.title %}{{ page.title | escape }}{% else %}byLYNCH — Jamaican Photography{% endif %}">
+<meta property="og:title" content="{% if page.title %}{{ page.seo_title | default: page.title | escape }}{% else %}byLYNCH — Jamaican Photography{% endif %}">
 <meta property="og:description" content="{{ seo_description | escape }}">
 <meta property="og:url" content="{{ page.url | absolute_url }}">
 <meta property="og:image" content="{{ og_image | escape }}">
@@ -88,11 +88,12 @@ gtag('config', 'G-K95ENNDT6F', {
 <meta property="og:image:alt" content="LYNCH original solid-black brick logo with white lettering">
 {% endunless %}
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{% if page.title %}{{ page.title | escape }}{% else %}byLYNCH — Jamaican Photography{% endif %}">
+<meta name="twitter:title" content="{% if page.title %}{{ page.seo_title | default: page.title | escape }}{% else %}byLYNCH — Jamaican Photography{% endif %}">
 <meta name="twitter:description" content="{{ seo_description | escape }}">
 <meta name="twitter:image" content="{{ og_image | escape }}">
 {% if page.layout == 'post' %}
 <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+<meta property="article:modified_time" content="{{ page.modified | default: page.date | date_to_xmlschema }}">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -116,7 +117,7 @@ gtag('config', 'G-K95ENNDT6F', {
         {% assign person = site.data.people[person_id] %}
         {% if person %}
           {% unless first_mentioned %},{% endunless %}
-          {"@type": "Person", "name": {{ person.name | jsonify }}{% if person.profile_url %}, "sameAs": {{ person.profile_url | jsonify }}{% endif %}}
+          {% include person_schema.html person=person person_id=person_id %}
           {% assign first_mentioned = false %}
         {% endif %}
       {% endfor %}
@@ -140,7 +141,7 @@ gtag('config', 'G-K95ENNDT6F', {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap">
-<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v=20261019-people-1">
+<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v=20261026-people-2">
 </head>
 <body class="{% if page.layout == 'post' %}single{% elsif page.new_wave %}blog new-wave-page{% elsif page.archive %}blog archive-page{% elsif paginator or page.url == '/' %}blog{% endif %}">
 <div id="page" class="hfeed site-shell">

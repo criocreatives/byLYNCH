@@ -49,7 +49,15 @@ popcaan:
   role: "Recording artist"
 royal-blu:
   name: "Royal Blu"
-  role: "Recording artist"
+  role: "Singer, songwriter and lyricist"
+  description: "Royal Blu is a Jamaican singer, songwriter and lyricist from Spanish Town, blending reggae, hip-hop, dancehall and R&B."
+  profile_url: "https://easystar.com/artists/royal-blu/"
+  same_as:
+    - "https://easystar.com/artists/royal-blu/"
+  verified_on: "2026-10-26"
+  sources:
+    - label: "Artist biography"
+      url: "https://easystar.com/artists/royal-blu/"
 jah9:
   name: "Jah9"
   role: "Recording artist"
@@ -58,10 +66,31 @@ giark:
   role: "Recording artist"
 lila-ike:
   name: "Lila Iké"
-  role: "Recording artist"
+  role: "Singer and songwriter"
+  description: "Lila Iké, also written Lila Ike, is a Jamaican singer and songwriter blending reggae, R&B and dancehall. Treasure Self Love earned a 2026 Grammy nomination for Best Reggae Album."
+  alternate_names:
+    - "Lila Ike"
+  profile_url: "https://www.lilaikemusic.com/about"
+  same_as:
+    - "https://www.lilaikemusic.com/about"
+    - "https://www.grammy.com/artists/lila-ike/61275/"
+  verified_on: "2026-10-26"
+  sources:
+    - label: "Artist biography"
+      url: "https://www.lilaikemusic.com/about"
+    - label: "Grammy record"
+      url: "https://www.grammy.com/artists/lila-ike/61275/"
 leno-banton:
   name: "Leno Banton"
-  role: "Recording artist"
+  role: "Reggae and dancehall artist"
+  description: "Leno Banton is a Jamaican artist from Duhaney Park, Kingston, whose sound blends reggae, dancehall and hip-hop."
+  profile_url: "https://www.reggaeville.com/artist-details/leno-banton/about/"
+  same_as:
+    - "https://www.reggaeville.com/artist-details/leno-banton/about/"
+  verified_on: "2026-10-26"
+  sources:
+    - label: "Artist biography"
+      url: "https://www.reggaeville.com/artist-details/leno-banton/about/"
 dre-island:
   name: "Dre Island"
   role: "Recording artist"
@@ -82,10 +111,32 @@ kabaka-pyramid:
   role: "Recording artist"
 iotosh:
   name: "Iotosh"
-  role: "Recording artist / producer"
+  role: "Record producer, recording artist, songwriter and multi-instrumentalist"
+  description: "Iotosh is a Grammy-nominated Jamaican record producer, recording artist, songwriter and multi-instrumentalist from Kingston, working across reggae and dancehall."
+  profile_url: "https://www.instagram.com/iotosh/"
+  same_as:
+    - "https://www.instagram.com/iotosh/"
+    - "https://www.image-line.com/artists/iotosh"
+  verified_on: "2026-10-26"
+  sources:
+    - label: "Artist interview"
+      url: "https://www.image-line.com/artists/iotosh"
 blvk-h3ro:
   name: "Blvk H3ro"
-  role: "Recording artist"
+  role: "Reggae and dancehall recording artist"
+  description: "Blvk H3ro, pronounced Black Hero, is a Jamaican reggae and dancehall artist. Neva Bow Down with Rocky Dawuni earned a 2023 Grammy nomination for Best Global Music Performance."
+  alternate_names:
+    - "Black Hero"
+  profile_url: "https://www.blvkh3ro.com/"
+  same_as:
+    - "https://www.blvkh3ro.com/"
+    - "https://www.grammy.com/artists/blvk-h3ro/51614/"
+  verified_on: "2026-10-26"
+  sources:
+    - label: "Artist biography"
+      url: "https://www.blvkh3ro.com/"
+    - label: "Grammy record"
+      url: "https://www.grammy.com/artists/blvk-h3ro/51614/"
 mcavelle:
   name: "McAvellé"
   role: "Featured subject"
@@ -94,8 +145,20 @@ kosher:
   role: "Featured subject"
 uncle:
   name: "Uncle"
-  role: "Person named in story"
+  role: "Digital creator"
+  description: "Uncle is a Jamaica-based digital creator known online as @uncle876."
+  alternate_names:
+    - "uncle876"
   profile_url: "https://www.instagram.com/uncle876"
+  same_as:
+    - "https://www.instagram.com/uncle876"
+    - "https://linktr.ee/uncle876"
+  verified_on: "2026-10-26"
+  sources:
+    - label: "Creator profile"
+      url: "https://www.instagram.com/uncle876"
+    - label: "Official links"
+      url: "https://linktr.ee/uncle876"
 courtni:
   name: "Courtni"
   role: "Performer"
@@ -131,4 +194,15 @@ wavy-jones:
   role: "DJ"
 evaflow:
   name: "EvaFlow"
-  role: "Person named in story"
+  role: "Recording artist, music producer and lyricist"
+  description: "EvaFlow is a Jamaican recording artist, music producer and lyricist from Santa Cruz, blending reggae, hip-hop and dancehall into Hip-Hall and Dub-Hop."
+  profile_url: "https://soundcloud.com/evaflow"
+  same_as:
+    - "https://soundcloud.com/evaflow"
+    - "https://www.reggaeville.com/artist-details/evaflow/about/"
+  verified_on: "2026-10-26"
+  sources:
+    - label: "Artist biography"
+      url: "https://soundcloud.com/evaflow"
+    - label: "Artist interview"
+      url: "https://www.reggaeville.com/artist-details/evaflow/news/view/interview-with-evaflow-the-beginning/"

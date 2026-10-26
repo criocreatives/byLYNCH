@@ -1,6 +1,6 @@
 {% comment %}
 Editorial credits live outside original article content. All names resolve from
-_data/people.yml. Related links only use featured_people associations; never
+_data/people.yml. Related links use explicit editorial associations; never
 cross-link an ad-supported page directly to an E-rated gallery.
 {% endcomment %}
 <section class="lynch-credits" aria-labelledby="lynch-credits-heading">
@@ -16,34 +16,7 @@ cross-link an ad-supported page directly to an E-rated gallery.
       <h3>Featured people</h3>
       <div class="lynch-credits-grid">
       {% for person_id in featured %}
-        {% assign person = site.data.people[person_id] %}
-        {% if person %}
-        <div class="lynch-credit-person">
-          <span class="lynch-credit-role">{{ person.role | escape }}</span>
-          <div class="lynch-credit-name">{{ person.name | escape }}</div>
-          {% if person.profile_url %}<a class="lynch-credit-profile" href="{{ person.profile_url | escape }}" target="_blank" rel="noopener noreferrer">Profile <span class="lynch-credit-link-mark" aria-hidden="true"></span></a>{% endif %}
-          {% capture related_links %}
-            {% for other in site.posts %}
-              {% if other.url != include.post.url and other.featured_people contains person_id %}
-                {% if include.ads_eligible %}
-                  {% unless site.data.content_flags.e_notice contains other.slug %}
-                    <a href="{{ other.url | relative_url }}" class="lynch-credit-related-link">{{ other.title | escape }}</a>
-                  {% endunless %}
-                {% else %}
-                  <a href="{{ other.url | relative_url }}" class="lynch-credit-related-link">{{ other.title | escape }}</a>
-                {% endif %}
-              {% endif %}
-            {% endfor %}
-          {% endcapture %}
-          {% assign clean_links = related_links | strip %}
-          {% if clean_links != '' %}
-          <nav class="lynch-credit-related" aria-label="More posts featuring {{ person.name | escape }}">
-            <span class="lynch-credit-related-label">More with {{ person.name | escape }}</span>
-            {{ related_links }}
-          </nav>
-          {% endif %}
-        </div>
-        {% endif %}
+        {% include person_credit_card.html person_id=person_id post=include.post ads_eligible=include.ads_eligible %}
       {% endfor %}
       </div>
     </div>
@@ -69,13 +42,23 @@ cross-link an ad-supported page directly to an E-rated gallery.
     {% assign mentioned = include.post.mentioned_people %}
     {% if mentioned and mentioned.size > 0 %}
     <div class="lynch-credits-group lynch-credits-mentioned">
-      <h3>Other artists named in this story</h3>
-      <ul class="lynch-credits-name-list">
+      <h3>People named in this story</h3>
+      {% capture described_people %}
         {% for person_id in mentioned %}
           {% assign person = site.data.people[person_id] %}
-          {% if person %}<li>{{ person.name | escape }}</li>{% endif %}
+          {% if person.description %}{% include person_credit_card.html person_id=person_id post=include.post ads_eligible=include.ads_eligible %}{% endif %}
         {% endfor %}
-      </ul>
+      {% endcapture %}
+      {% assign clean_described_people = described_people | strip %}
+      {% if clean_described_people != '' %}<div class="lynch-credits-grid">{{ described_people }}</div>{% endif %}
+      {% capture other_named_people %}
+        {% for person_id in mentioned %}
+          {% assign person = site.data.people[person_id] %}
+          {% if person %}{% unless person.description %}<li>{{ person.name | escape }}</li>{% endunless %}{% endif %}
+        {% endfor %}
+      {% endcapture %}
+      {% assign clean_other_named_people = other_named_people | strip %}
+      {% if clean_other_named_people != '' %}<ul class="lynch-credits-name-list{% if clean_described_people != '' %} lynch-credits-other-names{% endif %}">{{ other_named_people }}</ul>{% endif %}
     </div>
     {% endif %}
     <div class="lynch-credits-foot"><span>Photography by LYNCH</span><span>Published in the byLYNCH archive</span></div>

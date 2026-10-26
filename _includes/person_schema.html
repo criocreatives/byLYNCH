@@ -1,0 +1,12 @@
+{% assign schema_person = include.person %}
+{
+  "@type": "Person",
+  "@id": {{ '/#person-' | append: include.person_id | absolute_url | jsonify }},
+  "name": {{ schema_person.name | jsonify }}{% if schema_person.alternate_names %},
+  "alternateName": {{ schema_person.alternate_names | jsonify }}{% endif %}{% if schema_person.description %},
+  "description": {{ schema_person.description | jsonify }},
+  "jobTitle": {{ schema_person.role | jsonify }}{% endif %}{% if schema_person.profile_url %},
+  "url": {{ schema_person.profile_url | jsonify }}{% endif %}{% if schema_person.same_as and schema_person.same_as.size > 0 %},
+  "sameAs": {{ schema_person.same_as | jsonify }}{% elsif schema_person.profile_url %},
+  "sameAs": {{ schema_person.profile_url | jsonify }}{% endif %}
+}

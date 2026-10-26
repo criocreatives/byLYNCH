@@ -1,15 +1,18 @@
 ---
 layout: post
 title: "Saturday Night Blues w/  Yanah & Kone"
+seo_description: "Kone and Yanah perform in Saturday Night Blues, with a link to Leno Banton's REGIME. Jamaican music and photography from the byLYNCH archive."
 date: 2017-01-26 23:35:02 -0500
 date_string: "2017-01-26 23:35:02"
-modified: 2017-06-26 01:22:25 -0500
+modified: 2026-10-26 01:12:21 -0500
 permalink: /2017/01/26/saturday-night-blues-w-yanah-kone/
 author: "lebosslynch"
 categories:
   - "CULTURE"
 tags:
-  - ""
+  - "leno banton"
+mentioned_people:
+  - leno-banton
 ---
 You don't need much to make music. Just a machine and some passion. We're at a house on Linstone Crescent. Build style is upscale 1960's-ish. Maybe 70's. A bedroom with a large desk. Empty beer bottles  and some herb for the culture. A laptop with an extra screen. Studio ting set.
 
