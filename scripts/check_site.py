@@ -348,7 +348,7 @@ if kosher_source.is_file():
               "Missing optimized Kosher image: " + webp)
         check((SITE / webp.lstrip("/")).is_file(),
               "Optimized Kosher image absent from site: " + webp)
-    card = "/assets/uploads/2020/11/_MG_5112.jpg"
+    card = "/assets/uploads/2020/11/mg_5112.jpg"
     header = "/assets/uploads/2020/11/IMG_9050.jpg"
     check(card in images and header in images,
           "Kosher gallery must include both card and header photographs")
