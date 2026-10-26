@@ -183,7 +183,7 @@ check(len([source for source in archive.sources if source.get("type") == "image/
       f"Archive should render {expected_post_count} responsive WebP picture sources")
 
 post_sources = sorted((ROOT / "_posts").glob("*.md"))
-check(len(post_sources) >= 54, f"Expected at least 54 published post sources, found {len(post_sources)}")
+check(len(post_sources) >= 55, f"Expected at least 55 published post sources, found {len(post_sources)}")
 post_urls: dict[str, str] = {}
 for path in post_sources:
     match = re.search(r"^permalink:\s*(/\S+/)\s*$", path.read_text(encoding="utf-8"), re.M)
@@ -436,6 +436,71 @@ if setsuna_source.is_file():
               "Setsuna custom editorial archive blurb missing")
 check("Everything" in archive_html and "chalice by the fire" in archive_html,
       "Kosher editorial archive blurb missing")
+
+# Roux as Wednesday Addams: six photographs with distinct card and hero.
+roux_slug = "roux-as-wednesday-addams"
+roux_path = ROOT / "_posts" / "2025-10-16-roux-as-wednesday-addams.md"
+check(roux_path.is_file(), "Roux Wednesday source post missing")
+if roux_path.is_file():
+    raw = roux_path.read_text(encoding="utf-8")
+    parts = raw.split("\n---\n", 1)
+    front, gallery = parts if len(parts) == 2 else (raw, "")
+    jpgs = re.findall(r'<img src="(/assets/uploads/2025/10/[^"]+)"', gallery)
+    webps = re.findall(r'<source type="image/webp" srcset="([^"]+)"', gallery)
+    check(len(jpgs) == 6 and len(set(jpgs)) == 6,
+          "Roux Wednesday must include six unique original photographs")
+    check(len(webps) == 6 and len(set(webps)) == 6,
+          "Roux Wednesday must include six unique WebP gallery sources")
+    for rel in jpgs + webps:
+        check((ROOT / rel.lstrip("/")).is_file(),
+              "Roux Wednesday asset missing from repository: " + rel)
+        check((SITE / rel.lstrip("/")).is_file(),
+              "Roux Wednesday asset absent from Jekyll build: " + rel)
+    card = "/assets/uploads/2025/10/IMG_7607.jpg"
+    hero = "/assets/uploads/2025/10/IMG_7612.jpg"
+    check(card in jpgs and hero in jpgs,
+          "Roux card and hero photographs must remain in the gallery")
+    check("header_image: \"2025/10/IMG_7612.jpg\"" in front,
+          "Wrong Roux Wednesday header image")
+    check("featured_people:\n  - roux" in front,
+          "Roux Wednesday missing featured subject")
+    check("exclude_ads:" not in front,
+          "Roux Wednesday must inherit standard manual ads")
+    check(roux_slug not in flagged,
+          "Roux Wednesday must not be given an E-rating badge")
+    check("https://www.instagram.com/rouxrx/" in people_data,
+          "Roux current Instagram profile missing")
+    url = post_urls.get(roux_slug)
+    check(url == "/2025/10/16/roux-as-wednesday-addams/",
+          "Roux Wednesday date/permalink incorrect")
+    if url:
+        html, parsed = inspect(url)
+        check('src="' + hero + '"' in html,
+              "Roux Wednesday hero image missing on post")
+        check('src="' + card + '"' in archive_html,
+              "Roux Wednesday card image missing from archive")
+        check("Wednesday Addams never needed colour." in archive_html,
+              "Roux Wednesday editorial card description missing")
+        check('class="lynch-credits"' in html and "Roux" in html,
+              "Roux Wednesday visible People & Credits missing")
+        check("https://www.instagram.com/rouxrx/" in html,
+              "Roux Wednesday linked credit missing updated Instagram")
+        check(html.count("pagead2.googlesyndication.com/pagead/js/adsbygoogle.js") == 1,
+              "Roux Wednesday must load standard AdSense publisher script once")
+        check(html.count('<ins class="adsbygoogle"') == 2,
+              "Roux Wednesday must render two manual ad placements")
+        check('data-ad-slot="9856514493"' in html and
+              'data-ad-slot="7038779463"' in html,
+              "Roux Wednesday manual ad slots missing")
+        check('class="content-rating-badge"' not in html,
+              "Roux Wednesday incorrectly shows nudity rating")
+        blogs = [json.loads(x) for x in parsed.ld_json]
+        check(any(b.get("@type") == "BlogPosting" and
+                  any(p.get("name") == "Roux" and
+                      p.get("sameAs") == "https://www.instagram.com/rouxrx/"
+                      for p in b.get("mentions", []))
+                  for b in blogs),
+              "Roux Wednesday Person structured data missing current profile")
 
 # GA4 must remain independent of AdSense eligibility, including all nine mature galleries.
 GA_ID = "G-K95ENNDT6F"
