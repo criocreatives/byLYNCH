@@ -1,9 +1,11 @@
 ---
 layout: post
 title: "New Wave - February 6, 2017"
+seo_description: "New Wave on February 6, 2017: photographs and live music with Iotosh, Blvk H3ro, Runkus, Meleku, Seani B and Toddla T, by LYNCH."
+seo_title: "New Wave: Iotosh, Blvk H3ro & Runkus | February 6, 2017"
 date: 2017-02-07 19:00:33 -0500
 date_string: "2017-02-07 19:00:33"
-modified: 2017-02-09 20:37:31 -0500
+modified: 2026-10-26 01:12:21 -0500
 permalink: /2017/02/07/new-wave-february-6-2017/
 author: "lebosslynch"
 categories:

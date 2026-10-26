@@ -1,15 +1,19 @@
 ---
 layout: post
 title: "Sherlock Shenanigans"
+seo_description: "Blvk H3ro, Runkus, Jeeby Lyricist and fellow artists trade lyrics and table beats in Sherlock Shenanigans, photographed by LYNCH in Jamaica."
+seo_title: "Sherlock Shenanigans: Blvk H3ro, Runkus & Friends"
 date: 2017-01-22 20:01:02 -0500
 date_string: "2017-01-22 20:01:02"
-modified: 2017-06-26 01:22:20 -0500
+modified: 2026-10-26 01:12:21 -0500
 permalink: /2017/01/22/sherlock-shenanigans/
 author: "lebosslynch"
 categories:
   - "CULTURE"
 tags:
-  - ""
+  - "blvk h3ro"
+mentioned_people:
+  - blvk-h3ro
 excerpt: "Lyrics that contain explicit language and violent themes are often frowned upon; Based on the belief that these lyrics influence the youth to do bad things. Nonsense. Misguided youth do bad things."
 ---
 I arrive at 8:07pm. Only seven minutes late but it seems I've missed a lot. They're already free-styling on table beats.
