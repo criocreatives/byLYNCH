@@ -30,6 +30,7 @@ gtag('config', 'G-K95ENNDT6F', {
 </script>
 {% assign e_posts = site.data.content_flags.e_notice %}
 {% assign adsense_allowed = true %}
+{% if page.exclude_ads %}{% assign adsense_allowed = false %}{% endif %}
 {% if page.layout == 'post' %}
   {% assign page_url_slug = page.url | split: '/' | last %}
   {% if e_posts contains page.slug or e_posts contains page_url_slug %}

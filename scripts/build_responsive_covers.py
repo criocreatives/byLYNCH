@@ -19,8 +19,8 @@ QUALITY = 82
 
 def generate() -> None:
     featured = yaml.safe_load((ROOT / "_data" / "featured.yml").read_text(encoding="utf-8"))
-    if not isinstance(featured, dict) or len(featured) != 52:
-        raise RuntimeError("Expected 52 curated featured cover mappings")
+    if not isinstance(featured, dict) or len(featured) != len(list((ROOT / "_posts").glob("*.md"))):
+        raise RuntimeError("Curated featured cover mappings must match published post count")
 
     entries = {}
     original_sum = 0

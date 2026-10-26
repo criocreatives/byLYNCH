@@ -5,6 +5,10 @@
 {% endcomment %}
 {% assign cover_photo = site.data.featured[include.post.slug] %}
 {% assign cover_data = site.data.responsive_covers[include.post.slug] %}
+{% if include.hero and include.post.header_image %}
+  {% assign cover_photo = include.post.header_image %}
+  {% assign cover_data = include.post.header_responsive %}
+{% endif %}
 {% if cover_photo %}
 <picture class="{% if include.hero %}post-hero-picture{% else %}post-cover-picture{% endif %}">
   {% if cover_data %}

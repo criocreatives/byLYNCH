@@ -5,6 +5,7 @@ layout: default
 {% assign excluded_posts = site.data.content_flags.e_notice %}
 {% assign url_slug = page.url | split: '/' | last %}
 {% assign bylynch_ads_eligible = true %}
+{% if page.exclude_ads %}{% assign bylynch_ads_eligible = false %}{% endif %}
 {% if excluded_posts contains page.slug or excluded_posts contains url_slug %}
   {% assign bylynch_ads_eligible = false %}
 {% endif %}
