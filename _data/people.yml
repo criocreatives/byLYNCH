@@ -92,3 +92,7 @@ mcavelle:
 kosher:
   name: "Kosher"
   role: "Featured subject"
+uncle:
+  name: "Uncle"
+  role: "Person named in story"
+  profile_url: "https://www.instagram.com/uncle876"

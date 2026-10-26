@@ -3,13 +3,15 @@ layout: post
 title: "Compound Live"
 date: 2017-03-25 17:19:55 -0500
 date_string: "2017-03-25 17:19:55"
-modified: 2017-03-25 17:34:55 -0500
+modified: 2026-10-26 00:46:23 -0500
 permalink: /2017/03/25/compound-live/
 author: "lebosslynch"
 categories:
   - "CULTURE"
 tags:
-  - ""
+  - "uncle"
+mentioned_people:
+  - uncle
 excerpt: "Good vibes. Pure litness. Bare tings. Music and liquid courage buss inah poeple head. Dance floor shenanigans definitely keep."
 ---
 Compound Live was a <em>ting</em>. Lit performances. Lit vibes. Lit music. Lit. Lit. Lit. Very culture.
@@ -49,7 +51,7 @@ Good vibes. Pure litness. Bare tings. Music and liquid courage buss inah people 
 <figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7343.jpg" alt=""></figure>
 <figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7344.jpg" alt=""></figure>
 
-Few popular faces passed through. Star ting. Man like EvaFlow. Man like Iotosh (<a href="https://www.youtube.com/watch?v=E88jhjKVbe0" target="_blank">shot a music video for him recently</a>). Man like Kheemy. Tings like Roux &amp; Lila Ike. Love was shown. Art was also on display.
+Few popular faces passed through. Star ting. Man like EvaFlow. Man like Iotosh (<a href="https://www.youtube.com/watch?v=E88jhjKVbe0" target="_blank">shot a music video for him recently</a>). Man like <a href="https://www.instagram.com/uncle876" target="_blank" rel="noopener noreferrer">Uncle</a>. Tings like Roux &amp; Lila Ike. Love was shown. Art was also on display.
 
 <figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7478.jpg" alt=""></figure>
 <figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7487.jpg" alt=""></figure>
