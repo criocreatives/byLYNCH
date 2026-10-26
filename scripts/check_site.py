@@ -183,7 +183,7 @@ check(len([source for source in archive.sources if source.get("type") == "image/
       f"Archive should render {expected_post_count} responsive WebP picture sources")
 
 post_sources = sorted((ROOT / "_posts").glob("*.md"))
-check(len(post_sources) >= 53, f"Expected at least 53 published post sources, found {len(post_sources)}")
+check(len(post_sources) >= 54, f"Expected at least 54 published post sources, found {len(post_sources)}")
 post_urls: dict[str, str] = {}
 for path in post_sources:
     match = re.search(r"^permalink:\s*(/\S+/)\s*$", path.read_text(encoding="utf-8"), re.M)
@@ -382,6 +382,60 @@ if kosher_source.is_file():
         check(any(b.get("@type") == "BlogPosting" and
                   any(m.get("name") == "Kosher" for m in b.get("mentions", []))
                   for b in blog), "Kosher schema Person mention missing")
+
+# Setsuna: new replacement photo archive, independent card/hero and standard ads.
+setsuna_source = ROOT / "_posts" / "2024-10-26-setsuna.md"
+check(setsuna_source.is_file(), "Setsuna source post missing")
+if setsuna_source.is_file():
+    source = setsuna_source.read_text(encoding="utf-8")
+    sections = source.split("\\n---\\n", 1)
+    front, gallery = sections if len(sections) == 2 else (source, "")
+    originals = re.findall(r'<img src="(/assets/uploads/2024/10/[^"]+)"', gallery)
+    webps = re.findall(r'<source type="image/webp" srcset="([^"]+)"', gallery)
+    check(len(originals) == 13 and len(set(originals)) == 13,
+          "Setsuna must contain 13 distinct originals")
+    check(len(webps) == 13 and len(set(webps)) == 13,
+          "Setsuna must contain 13 distinct gallery WebP images")
+    for original_path in originals:
+        check((ROOT / original_path.lstrip("/")).is_file(),
+              "Setsuna photo absent from Git: " + original_path)
+        check((SITE / original_path.lstrip("/")).is_file(),
+              "Setsuna original absent from build: " + original_path)
+    for webp_path in webps:
+        check((ROOT / webp_path.lstrip("/")).is_file(),
+              "Setsuna WebP absent from Git: " + webp_path)
+        check((SITE / webp_path.lstrip("/")).is_file(),
+              "Setsuna WebP absent from build: " + webp_path)
+    card = "/assets/uploads/2024/10/IMG_8836.jpg"
+    header = "/assets/uploads/2024/10/IMG_8840.jpg"
+    check(card in originals and header in originals,
+          "Setsuna card and hero originals must also appear in the gallery")
+    check('header_image: "2024/10/IMG_8840.jpg"' in front,
+          "Setsuna header must be IMG_8840.jpg")
+    check('exclude_ads:' not in front,
+          "Setsuna must use standard AdSense placement, not a special opt-out")
+    check("setsuna" not in flagged, "Setsuna must not carry the nudity E rating")
+    url = post_urls.get("setsuna")
+    check(url == "/2024/10/26/setsuna/", "Setsuna URL/date incorrect")
+    if url:
+        html, parsed = inspect(url)
+        check('src="' + header + '"' in html,
+              "Setsuna hero image not found")
+        check('src="' + card + '"' in archive_html,
+              "Setsuna archive image not found")
+        check(html.count("pagead2.googlesyndication.com/pagead/js/adsbygoogle.js") == 1,
+              "Setsuna must load standard AdSense script once")
+        check(html.count('<ins class="adsbygoogle"') == 2,
+              "Setsuna must render two standard manual ad placements")
+        check('data-ad-slot="9856514493"' in html and
+              'data-ad-slot="7038779463"' in html,
+              "Setsuna standard ad slots missing")
+        check('class="content-rating-badge"' not in html,
+              "Setsuna must not receive the E rating badge")
+        check("Setsuna is a fleeting moment." in archive_html,
+              "Setsuna custom editorial archive blurb missing")
+check("Everything" in archive_html and "chalice by the fire" in archive_html,
+      "Kosher editorial archive blurb missing")
 
 # GA4 must remain independent of AdSense eligibility, including all nine mature galleries.
 GA_ID = "G-K95ENNDT6F"
