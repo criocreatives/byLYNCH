@@ -693,12 +693,3 @@ muhammad:
   sources:
     - url: "https://academic.oup.com/book/492"
   search_query: "Prophet Muhammad"
-vybz-kartel:
-  name: "Vybz Kartel"
-  role: "Dancehall artist"
-  role_is_occupation: true
-  profile_url: "https://www.grammy.com/artists/vybz-kartel/57975/"
-  verified_on: "2026-10-26"
-  verification: "public-profile"
-  sources:
-    - url: "https://www.grammy.com/artists/vybz-kartel/57975/"
