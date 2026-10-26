@@ -388,7 +388,7 @@ setsuna_source = ROOT / "_posts" / "2024-10-26-setsuna.md"
 check(setsuna_source.is_file(), "Setsuna source post missing")
 if setsuna_source.is_file():
     source = setsuna_source.read_text(encoding="utf-8")
-    sections = source.split("\\n---\\n", 1)
+    sections = source.split("\n---\n", 1)
     front, gallery = sections if len(sections) == 2 else (source, "")
     originals = re.findall(r'<img src="(/assets/uploads/2024/10/[^"]+)"', gallery)
     webps = re.findall(r'<source type="image/webp" srcset="([^"]+)"', gallery)
