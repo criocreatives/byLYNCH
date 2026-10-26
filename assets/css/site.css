@@ -1712,3 +1712,9 @@ body.lightbox-open{overflow:hidden}
 .lynch-credit-name:focus-visible{outline:2px solid #ed1744;outline-offset:5px}
 .lynch-credit-role{display:block;color:#666;font-size:12px;line-height:1.5;font-weight:700;margin-top:6px}
 @media(max-width:640px){.lynch-credits{margin:34px 0}.lynch-credits-inner{padding:32px 0 20px}.lynch-credits-grid{grid-template-columns:1fr;gap:20px}.lynch-credits-group{padding:18px 0 22px}}
+
+.lynch-credit-related{display:flex;flex-direction:column;align-items:flex-start;gap:5px;margin-top:14px}
+.lynch-credit-related-label{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#666;margin-bottom:2px}
+.lynch-credit-related-link{color:#333;font-size:12px;line-height:1.5;text-decoration:underline;text-decoration-color:#aaa;text-underline-offset:3px}
+.lynch-credit-related-link:hover{color:#ed1744}
+.lynch-credit-related-link:focus-visible{outline:2px solid #ed1744;outline-offset:3px}

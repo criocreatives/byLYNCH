@@ -584,6 +584,8 @@ class CreditRows(HTMLParser):
         self.names = []
         self.roles = []
         self.paragraphs = 0
+        self.related = {}
+        self.related_name = None
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
@@ -592,6 +594,11 @@ class CreditRows(HTMLParser):
             self.active = True
         if not self.active:
             return
+        if tag == "nav" and "lynch-credit-related" in classes:
+            self.related_name = attrs.get("aria-label", "").removeprefix("Also featured in: ")
+            self.related[self.related_name] = []
+        if tag == "a" and "lynch-credit-related-link" in classes and self.related_name:
+            self.related[self.related_name].append(attrs.get("href", ""))
         if tag == "p":
             self.paragraphs += 1
         if tag == "a" and "lynch-credit-name" in classes:
@@ -610,9 +617,25 @@ class CreditRows(HTMLParser):
         elif tag == "span" and self.capture == "role":
             self.roles.append(self.buffer.strip())
             self.capture = None
+        elif tag == "nav":
+            self.related_name = None
         elif tag == "section":
             self.active = False
 
+
+# Related stories must match registry associations and retain the ad exclusions.
+post_credit_ids = {}
+post_ad_excluded = {}
+for source in post_sources:
+    source_front = source.read_text(encoding="utf-8").split("\n---\n", 1)[0] + "\n"
+    source_slug = source.name[11:-3]
+    source_ids = set()
+    for field in ("featured_people", "collaborators", "mentioned_people"):
+        group = re.search(r"^" + field + r":\n((?:  - [a-z0-9-]+\n)+)", source_front, re.M)
+        if group:
+            source_ids.update(re.findall(r"  - ([a-z0-9-]+)", group.group(1)))
+    post_credit_ids[source_slug] = source_ids
+    post_ad_excluded[source_slug] = source_slug in flagged or bool(re.search(r"^exclude_ads: true$", source_front, re.M))
 
 for path in post_sources:
     front = path.read_text(encoding="utf-8").split("\n---\n", 1)[0] + "\n"
@@ -640,6 +663,12 @@ for path in post_sources:
         if index >= len(rows.names) or index >= len(rows.roles):
             continue
         name, href = rows.names[index]
+        related_expected = {post_urls[other_slug] for other_slug, other_ids in post_credit_ids.items()
+                            if other_slug != slug and person_id in other_ids
+                            and (post_ad_excluded[slug] or not post_ad_excluded[other_slug])}
+        related_actual = rows.related.get(person.get("name"), [])
+        check(set(related_actual) == related_expected and len(related_actual) == len(related_expected),
+              slug + ": Also featured in links missing or incorrect for " + person_id)
         check(name == person.get("name") and rows.roles[index] == person.get("role"),
               slug + ": name/role mismatch for " + person_id)
         if person.get("profile_url"):

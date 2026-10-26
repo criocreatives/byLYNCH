@@ -1,4 +1,5 @@
-{% assign credit_person = site.data.people[include.person_id] %}
+{% assign credit_id = include.person_id %}
+{% assign credit_person = site.data.people[credit_id] %}
 {% if credit_person %}
   {% assign credit_destination = credit_person.profile_url %}
   {% unless credit_destination %}
@@ -8,5 +9,25 @@
 <div class="lynch-credit-person">
   <a class="lynch-credit-name" href="{{ credit_destination | escape }}" target="_blank" rel="noopener noreferrer">{{ credit_person.name | escape }}</a>
   <span class="lynch-credit-role">{{ credit_person.role | escape }}</span>
+  {% capture person_related_links %}
+    {% for credit_other in site.posts %}
+      {% if credit_other.url != include.post.url %}
+        {% if credit_other.featured_people contains credit_id or credit_other.mentioned_people contains credit_id or credit_other.collaborators contains credit_id %}
+          {% assign credit_other_allowed = true %}
+          {% if include.ads_eligible %}
+            {% if site.data.content_flags.e_notice contains credit_other.slug or credit_other.exclude_ads %}{% assign credit_other_allowed = false %}{% endif %}
+          {% endif %}
+          {% if credit_other_allowed %}<a href="{{ credit_other.url | relative_url }}" class="lynch-credit-related-link">{{ credit_other.title | escape }}</a>{% endif %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  {% endcapture %}
+  {% assign clean_person_related_links = person_related_links | strip %}
+  {% if clean_person_related_links != '' %}
+  <nav class="lynch-credit-related" aria-label="Also featured in: {{ credit_person.name | escape }}">
+    <span class="lynch-credit-related-label">Also featured in</span>
+    {{ person_related_links }}
+  </nav>
+  {% endif %}
 </div>
 {% endif %}

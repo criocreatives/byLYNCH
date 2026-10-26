@@ -12,7 +12,7 @@
         <h3>{% case credit_group %}{% when 'featured_people' %}Featured{% when 'collaborators' %}Credits{% else %}Mentioned{% endcase %}</h3>
         <div class="lynch-credits-grid">
           {% for person_id in credit_people %}
-            {% include person_credit_card.html person_id=person_id %}
+            {% include person_credit_card.html person_id=person_id post=include.post ads_eligible=include.ads_eligible %}
           {% endfor %}
         </div>
       </div>
