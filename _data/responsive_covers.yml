@@ -363,3 +363,10 @@ yada:
   original_width: 1920
   small: 2017/02/img_4666-480.webp
   small_width: 480
+koshers-everything:
+  original_width: 1280
+  original_height: 1600
+  small: 2020/11/_MG_5112-480.webp
+  small_width: 480
+  large: 2020/11/_MG_5112-960.webp
+  large_width: 960
