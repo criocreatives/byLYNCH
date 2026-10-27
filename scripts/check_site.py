@@ -433,7 +433,7 @@ if setsuna_source.is_file():
               "Setsuna standard ad slots missing")
         check('class="content-rating-badge"' not in html,
               "Setsuna must not receive the E rating badge")
-        check("Setsuna is a fleeting moment." in archive_html,
+        check("An old friend, some lace and a little experimentation. Just making things look nice." in archive_html,
               "Setsuna custom editorial archive blurb missing")
 check("Everything" in archive_html and "chalice by the fire" in archive_html,
       "Kosher editorial archive blurb missing")
