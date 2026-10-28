@@ -30,3 +30,7 @@ jobs:
         run: jekyll build --trace
       - name: Validate SEO, archive and ad exclusions
         run: python3 scripts/check_site.py
+      - name: Check JavaScript syntax
+        run: |
+          node --check assets/js/site.js
+          node --check assets/js/privacy.js
