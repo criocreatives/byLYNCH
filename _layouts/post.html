@@ -43,12 +43,7 @@ layout: default
   <div class="content-area">
     <main class="site-main">
       <article class="hentry single-entry">
-        {% if page.eager_images %}
-          {% assign gallery_content = content %}
-        {% else %}
-          {% assign gallery_content = content | replace: '<img ', '<img loading="lazy" decoding="async" ' %}
-        {% endif %}
-        <div class="entry-content">{{ gallery_content }}</div>
+        <div class="entry-content">{{ content }}</div>
       </article>
       {% if page.featured_people or page.collaborators or page.mentioned_people %}
         {% include people_credits.html post=page ads_eligible=bylynch_ads_eligible %}
