@@ -16,7 +16,8 @@ byLYNCH is a photographic, editorial and cultural archive, hosted on GitHub Page
 - `_data/content_flags.yml`: nine classified galleries; badges and **AdSense exclusions** depend on this.
 - `_data/manual_ads.yml`: three publisher-issued manual ad slots. **Auto Ads and Auto optimise should remain OFF** in the AdSense dashboard.
 - `_layouts/` and `_includes/`: shared page and advertising templates.
-- `assets/css/site.css` and `assets/js/site.js`: card/gallery rendering and ad integration.
+- `assets/css/site.css` is the shared stylesheet; `assets/css/about.css` carries the existing About-page styles and is loaded only on `/about/`.
+- `assets/js/site.js` manages card/gallery behaviour and ad integration. The quality workflow runs `node --check` on both site and privacy scripts.
 
 ## Discovery and SEO
 
