@@ -11,6 +11,7 @@ import re
 import sys
 import zlib
 import xml.etree.ElementTree as ET
+from html import unescape
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import parse_qs, urlparse
@@ -107,6 +108,17 @@ if sitemap.is_file():
     except ET.ParseError as ex:
         errors.append("sitemap.xml is not valid XML: " + str(ex))
 
+# Internal source files should remain in Git but never ship in the public site.
+for private_file in (
+    "HOMEPAGE_AD_SETUP.md", "MANUAL_AD_SETUP.md",
+    "PRIVACY_IMPLEMENTATION.md", "SEO_MAINTENANCE_PROGRESS.md",
+    "migration-manifest.json", "migration-missing-media.txt",
+    "scripts/check_site.py", "scripts/optimize_images.py",
+    "scripts/import_wordpress.py",
+):
+    check(not (SITE / private_file).exists(),
+          "Internal maintenance file shipped in public site: " + private_file)
+
 home_html, home = inspect("/")
 
 # Social-sharing preview must use the original solid-brick LYNCH logo, not
@@ -191,6 +203,29 @@ for path in post_sources:
     check(match is not None, path.name + ": missing permalink")
     if match:
         post_urls[path.name[11:-3]] = match.group(1)
+
+# Archive previews are author/editor controlled data, not test-suite literals.
+# Validate all 56 against the actual rendered archive so caption edits do not
+# require editing arbitrary test assertions.
+preview_file = ROOT / "_data" / "card_previews.yml"
+card_previews: dict[str, str] = {}
+for row in preview_file.read_text(encoding="utf-8").splitlines():
+    if not row.strip() or row.lstrip().startswith("#"):
+        continue
+    if ": " not in row:
+        check(False, "Invalid card preview entry: " + row)
+        continue
+    slug, raw_value = row.split(": ", 1)
+    try:
+        card_previews[slug] = json.loads(raw_value)
+    except (ValueError, TypeError):
+        check(False, "Invalid quoted card preview: " + slug)
+check(set(card_previews) == set(post_urls),
+      "Card preview registry must match published post slugs")
+archive_text = unescape(archive_html)
+for slug, blurb in card_previews.items():
+    check(blurb in archive_text,
+          slug + ": curated archive preview missing from rendered listing")
 
 for slug, url in post_urls.items():
     content, parsed = inspect(url)
@@ -433,10 +468,6 @@ if setsuna_source.is_file():
               "Setsuna standard ad slots missing")
         check('class="content-rating-badge"' not in html,
               "Setsuna must not receive the E rating badge")
-        check("An old friend, some lace and a little experimentation. Just making things look nice." in archive_html,
-              "Setsuna custom editorial archive blurb missing")
-check("Everything" in archive_html and "chalice by the fire" in archive_html,
-      "Kosher editorial archive blurb missing")
 
 # Roux as Wednesday Addams: six photographs with distinct card and hero.
 roux_slug = "roux-as-wednesday-addams"
@@ -480,8 +511,6 @@ if roux_path.is_file():
               "Roux Wednesday hero image missing on post")
         check('src="' + card + '"' in archive_html,
               "Roux Wednesday card image missing from archive")
-        check("Wednesday Addams never needed colour." in archive_html,
-              "Roux Wednesday editorial card description missing")
         check('class="lynch-credits"' in html and "Roux" in html,
               "Roux Wednesday visible People & Credits missing")
         check("https://www.instagram.com/rouxrx/" in html,
@@ -546,8 +575,6 @@ if wrc_candids_source.is_file():
               "WRC article should not show an E badge")
         check('href="https://updates.wadadarunclub.com/"' in html,
               "WRC article must link to the official Wadada Run Club website")
-        check("The stopwatch got the miles." in archive_html,
-              "WRC archive card needs its custom editorial caption")
 
 # GA4 must remain independent of AdSense eligibility, including all nine mature galleries.
 GA_ID = "G-K95ENNDT6F"
