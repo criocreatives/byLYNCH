@@ -22,7 +22,20 @@
     const prev=box.querySelector('.photo-lightbox-prev');
     const next=box.querySelector('.photo-lightbox-next');
     const close=box.querySelector('.photo-lightbox-close');
-    let images=[],index=0,touchX=null;
+    let images=[],index=0,touchX=null,returnFocus=null;
+    const gallerySelector='.single .entry-content img';
+    // Only gallery imagery is interactive. Keep the image itself unchanged.
+    const makeAccessible=()=>{
+      document.querySelectorAll(gallerySelector).forEach(img=>{
+        if(img.dataset.lightboxReady)return;
+        img.dataset.lightboxReady='true';
+        if(!img.hasAttribute('tabindex'))img.setAttribute('tabindex','0');
+        img.setAttribute('role','button');
+        img.setAttribute('aria-haspopup','dialog');
+        img.setAttribute('aria-label',(img.alt||'Gallery photograph')+' — open photo viewer');
+      });
+    };
+    makeAccessible();
 
     const currentImages=()=>[...document.querySelectorAll('.single .entry-content img')].filter(img=>img.src);
     const render=()=>{
@@ -39,6 +52,7 @@
       next.style.display=multiple?'block':'none';
     };
     const open=(img)=>{
+      returnFocus=document.activeElement;
       images=currentImages();
       index=Math.max(0,images.indexOf(img));
       render();
@@ -50,6 +64,8 @@
       box.classList.remove('is-open');
       document.body.classList.remove('lightbox-open');
       view.removeAttribute('src');
+      if(returnFocus && returnFocus.isConnected && typeof returnFocus.focus==='function')returnFocus.focus();
+      returnFocus=null;
     };
     const move=(dir)=>{
       if(!images.length)return;
@@ -75,10 +91,23 @@
       touchX=null;
     },{passive:true});
     document.addEventListener('keydown',e=>{
-      if(!box.classList.contains('is-open'))return;
-      if(e.key==='Escape')hide();
-      else if(e.key==='ArrowLeft')move(-1);
-      else if(e.key==='ArrowRight')move(1);
+      if(!box.classList.contains('is-open')){
+        if((e.key==='Enter'||e.key===' ') &&
+           e.target?.matches?.(gallerySelector)){
+          e.preventDefault();open(e.target);
+        }
+        return;
+      }
+      if(e.key==='Escape'){e.preventDefault();hide();}
+      else if(e.key==='ArrowLeft'){e.preventDefault();move(-1);}
+      else if(e.key==='ArrowRight'){e.preventDefault();move(1);}
+      else if(e.key==='Tab'){
+        const focusable=[close,prev,next].filter(el=>getComputedStyle(el).display!=='none');
+        if(!focusable.length)return;
+        const i=focusable.indexOf(document.activeElement);
+        if(e.shiftKey && (i<=0)){e.preventDefault();focusable[focusable.length-1].focus();}
+        else if(!e.shiftKey && (i<0||i===focusable.length-1)){e.preventDefault();focusable[0].focus();}
+      }
     });
   }
   window.addEventListener('load',initPhotoLightbox);
