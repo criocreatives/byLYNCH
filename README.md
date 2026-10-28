@@ -49,6 +49,10 @@ byLYNCH is a photographic, editorial and cultural archive, hosted on GitHub Page
 - Curated `_data/card_previews.yml` entries drive archive card content; change those and the post excerpt together when the author approves editorial text.
 - Both homepage and incremental loading intentionally insert an ad after six **photo** cards. Keep the three supplied manual ad slots and all nine content exclusions unchanged.
 
+- `scripts/audit_external_links.py` and `.github/workflows/link-audit.yml` create review-only HTTP status reports. Rate limits, provider blocks, and timeouts are **inconclusive**, not permission to erase an original citation.
+- Historic gallery alt text is preserved exactly. Many legacy photographs have empty or missing descriptions; meaningful replacements require photograph-by-photograph editorial review, not generated guesses.
+- AdSense's nine exclusions and the three owner-issued manual slots are intentionally unchanged. Privacy & messaging and GA4 consent must be verified in their respective provider interfaces; GitHub build tests cannot certify legal compliance.
+
 ## Reversible comprehensive remediation
 
 - Exact original release: `d65d84ae7493be378a9f71065089124c4fef0cee`; permanent rollback branch: `backup/bylynch-before-complete-remediation-20261027`.
