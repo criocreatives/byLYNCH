@@ -2,7 +2,9 @@ name: Visual regression and performance baseline
 on:
   push:
     branches:
-      - fix/reversible-site-cleanup-20261027
+      - 'fix/**'
+      - 'seo/**'
+  pull_request:
   workflow_dispatch:
 
 concurrency:
@@ -31,12 +33,12 @@ jobs:
           gem install jekyll-paginate -v 1.1.0 --no-document
       - name: Build candidate
         run: jekyll build --trace
-      - name: Fetch and build exact pre-cleanup baseline
+      - name: Fetch and build current production baseline
         shell: bash
         run: |
           set -euo pipefail
-          git fetch --no-tags origin a3ab1254e85d9bc44ef9952c3453c120ade392e1 --depth=1
-          git worktree add --detach "$RUNNER_TEMP/bylynch-baseline" a3ab1254e85d9bc44ef9952c3453c120ade392e1
+          git fetch --no-tags origin main --depth=1
+          git worktree add --detach "$RUNNER_TEMP/bylynch-baseline" FETCH_HEAD
           jekyll build --source "$RUNNER_TEMP/bylynch-baseline" --destination "$RUNNER_TEMP/bylynch-baseline-site" --trace
       - name: Install browser testing dependencies
         run: |
@@ -44,10 +46,15 @@ jobs:
           python3 -m playwright install --with-deps chromium
       - name: Compare desktop and mobile snapshots and interactions
         run: |
+          EXTRA=()
+          if [[ "${GITHUB_REF_NAME}" == "fix/full-cleanup-reversible-20261027" ]]; then
+            # Author-approved archive copy changes on the homepage and archive.
+            EXTRA+=(--allow-visual-route / --allow-visual-route /archive/)
+          fi
           python3 scripts/visual_regression.py \
             --baseline "$RUNNER_TEMP/bylynch-baseline-site" \
             --candidate "_site" \
-            --out "$RUNNER_TEMP/bylynch-visual-comparison"
+            --out "$RUNNER_TEMP/bylynch-visual-comparison" "${EXTRA[@]}"
       - name: Preserve screenshot evidence and lab timings
         if: always()
         uses: actions/upload-artifact@v4
