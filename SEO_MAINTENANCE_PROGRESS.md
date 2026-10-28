@@ -1,5 +1,20 @@
 # SEO foundation and production safeguards
 
+> **Historical progress log.** Items dated 15 October represent the state *at
+> that time*, not the current TODO list. For current build/runtime architecture
+> consult `README.md`, `MANUAL_AD_SETUP.md` and `scripts/check_site.py`.
+>
+> **27 October 2026:** 56 published posts; 56 curated cover entries with 480px
+> and 960px WebP derivatives, plus distinct hero variants where configured.
+> Gallery WebP derivatives exist for the four recently published collections.
+> Manual advertising is configured in three placements, including homepage
+> tiles. The Jekyll regression suite verifies all 56 archive preview entries
+> against `_data/card_previews.yml` and excludes repository-only source files
+> from the public site build. Browser-based visual, Core Web Vitals and
+> regional consent checks remain separate. GitHub `main` branch protection
+> still requires repository administrator configuration.
+
+
 ## Implemented (15 October 2026)
 - Site-generated `/sitemap.xml` from Jekyll pages and all public posts.
 - `/robots.txt` with the canonical sitemap URL.
