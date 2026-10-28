@@ -25,4 +25,4 @@ This Sunday was for a river flex.
 
 
 <hr />
-<p style="text-align:left">Audio track by <a href="https://soundcloud.com/wavy-wavy-jones/tracks" target="_blank" rel="noopener">Wavy Jones</a>, member of <a href="https://bylynch.wordpress.com/2017/01/04/alpine-compound/" target="_blank" rel="noopener">Alpine Compound</a>.</p>
+<p style="text-align:left">Audio track by <a href="https://soundcloud.com/wavy-wavy-jones/tracks" target="_blank" rel="noopener">Wavy Jones</a>, member of <a href="https://bylynch.com/2017/01/04/alpine-compound/" target="_blank" rel="noopener">Alpine Compound</a>.</p>
