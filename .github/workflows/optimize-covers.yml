@@ -27,7 +27,7 @@ jobs:
           python-version: '3.11'
       - name: Install image optimization dependencies
         run: pip install 'Pillow>=10,<13' 'PyYAML>=6,<7'
-      - name: Generate and validate 52 curated cover variants
+      - name: Generate and validate curated cover variants
         run: python3 scripts/build_responsive_covers.py
       - name: Commit generated derivatives to this branch
         shell: bash
