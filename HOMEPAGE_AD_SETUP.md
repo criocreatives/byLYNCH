@@ -11,7 +11,9 @@
 - Existing post metadata and after-gallery slot IDs are preserved.
 - Google may take time to serve creatives; zero ad fill does not necessarily mean an installation error.
 
-## AdSense unit to create
+## Historical setup steps (unit already exists)
+**Do not repeat this setup for an already-configured slot.** The steps below record the original provisioning process, not an outstanding task.
+
 1. AdSense → Ads → **By ad unit** → **Display ads**.
 2. Name: `byLYNCH — Homepage Grid (6 Cards)`.
 3. Ad size: **Responsive** (not Fixed). The **Square** layout preview is closest to the site's 4:5 portrait tiles; the preview does not fix the served creative's dimensions.
