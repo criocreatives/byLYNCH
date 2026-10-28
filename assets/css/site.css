@@ -1546,3 +1546,7 @@ body.lightbox-open{overflow:hidden}
   margin:0 auto;
 }
 
+
+/* Interactive photographs: visible focus without changing default gallery design. */
+.single .entry-content img[data-lightbox-ready="true"]{cursor:zoom-in}
+.single .entry-content img[data-lightbox-ready="true"]:focus-visible{outline:3px solid currentColor;outline-offset:4px}
