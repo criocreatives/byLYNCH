@@ -97,7 +97,8 @@ def build_header(slug: str) -> None:
     if not found:
         raise RuntimeError(f"No custom header_image on {slug}")
     if re.search(r"^header_responsive:", front, re.M):
-        raise RuntimeError(f"header_responsive already present; refuse to overwrite {slug}")
+        print(f"Header already optimized for {slug}; no changes.")
+        return
     entry = convert(found.group(1), force=True)
     lines = ["header_responsive:"] + [
         f"  {key}: {value}" for key, value in entry.items()
