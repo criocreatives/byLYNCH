@@ -110,6 +110,14 @@ def capture(browser, root_url, path, label, width, height, output):
             page.wait_for_timeout(750)
             assert page.locator(".site-search-result").count() > 0, "Search must return Setsuna"
             page.keyboard.press("Escape")
+            page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
+            page.wait_for_function(
+                "document.querySelectorAll('[data-post-feed] > .hentry.format-gallery.has-post-thumbnail').length >= 24",
+                timeout=15000,
+            )
+            assert page.locator("[data-post-feed] > [data-home-grid-ad]").count() == 4, (
+                "Homepage ad-card placement changed after infinite scrolling"
+            )
         if path == "/2024/10/26/setsuna/":
             image = page.locator(".entry-content img").first
             assert image.count() == 1, "Setsuna gallery must contain images"
