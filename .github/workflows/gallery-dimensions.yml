@@ -1,0 +1,53 @@
+name: Annotate original gallery dimensions
+on:
+  push:
+    branches:
+      - 'seo/gallery-*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bylynch-gallery-meta-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  dimensions:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout gallery staging branch
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install Pillow
+        run: python3 -m pip install 'Pillow==11.3.0'
+      - name: Add measured dimensions without modifying originals
+        run: |
+          python3 scripts/annotate_gallery_dimensions.py --apply --report "$RUNNER_TEMP/gallery-dimensions.json"
+      - name: Commit source attribute changes only
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _posts/
+          if git diff --cached --quiet; then
+            echo "All published image dimensions are already current."
+          else
+            git commit -m "Annotate original gallery dimensions from source photo bytes"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
+      - name: Preserve metadata audit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: bylynch-gallery-dimension-audit
+          path: ${{ runner.temp }}/gallery-dimensions.json
+          if-no-files-found: warn
+          retention-days: 30
