@@ -392,9 +392,9 @@ wrc-candids:
   large: 2026/08/IMG_8618-960.webp
   large_width: 960
 hermina:
-  original_height: 1500
-  original_width: 1200
-  small: hermina-locked-480.webp
+  original_height: 1333
+  original_width: 2000
+  small: 2016/12/img_4444-480.webp
   small_width: 480
-  large: hermina-locked-960.webp
+  large: 2016/12/img_4444-960.webp
   large_width: 960

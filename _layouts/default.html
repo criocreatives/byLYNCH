@@ -3,7 +3,6 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-{% if page.protected %}<meta name="robots" content="noindex,nofollow,noarchive,noimageindex">{% endif %}
 {% comment %}GA4 measures all public pages. Mature-gallery exclusions below apply only to AdSense.{% endcomment %}
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -32,7 +31,7 @@ gtag('config', 'G-K95ENNDT6F', {
 {% assign e_posts = site.data.content_flags.e_notice %}
 {% assign adsense_allowed = true %}
 {% if page.exclude_ads %}{% assign adsense_allowed = false %}{% endif %}
-{% if page.layout == 'post' or page.layout == 'protected' %}
+{% if page.layout == 'post' %}
   {% assign page_url_slug = page.url | split: '/' | last %}
   {% if e_posts contains page.slug or e_posts contains page_url_slug %}
     {% assign adsense_allowed = false %}
@@ -76,7 +75,7 @@ gtag('config', 'G-K95ENNDT6F', {
 <link rel="canonical" href="{{ page.url | absolute_url }}">
 <meta property="og:site_name" content="byLYNCH">
 <meta property="og:locale" content="en_JM">
-<meta property="og:type" content="{% if page.layout == 'post' or page.layout == 'protected' %}article{% else %}website{% endif %}">
+<meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
 <meta property="og:title" content="{% if page.title %}{{ page.seo_title | default: page.title | escape }}{% else %}byLYNCH — Jamaican Photography{% endif %}">
 <meta property="og:description" content="{{ seo_description | escape }}">
 <meta property="og:url" content="{{ page.url | absolute_url }}">
@@ -150,7 +149,7 @@ gtag('config', 'G-K95ENNDT6F', {
 <link rel="stylesheet" href="{{ '/assets/css/credits.css' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M%S' }}">
 {% endif %}
 </head>
-<body class="{% if page.layout == 'post' or page.layout == 'protected' %}single{% elsif page.new_wave %}blog new-wave-page{% elsif page.archive %}blog archive-page{% elsif paginator or page.url == '/' %}blog{% endif %}">
+<body class="{% if page.layout == 'post' %}single{% elsif page.new_wave %}blog new-wave-page{% elsif page.archive %}blog archive-page{% elsif paginator or page.url == '/' %}blog{% endif %}">
 <div id="page" class="hfeed site-shell">
 <header class="site-header">
   <div class="site-header-inner">
