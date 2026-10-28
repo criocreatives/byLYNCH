@@ -9,5 +9,14 @@ plugins:
   - jekyll-paginate
 paginate: 12
 paginate_path: "/page/:num/"
+# Repository-only files must not be copied into the public _site output.
 exclude:
   - README.md
+  - HOMEPAGE_AD_SETUP.md
+  - MANUAL_AD_SETUP.md
+  - PRIVACY_IMPLEMENTATION.md
+  - SEO_MAINTENANCE_PROGRESS.md
+  - migration-manifest.json
+  - migration-missing-media.txt
+  - scripts/
+  - .github/
