@@ -1,0 +1,80 @@
+{
+  "version": 1,
+  "kdf": "PBKDF2-SHA256",
+  "iterations": 620000,
+  "salt": "087ef8d1336cbf1db0b9c1e74691534f",
+  "items": {
+    "article.html": {
+      "path": "/assets/protected/hermina/article.html.enc",
+      "type": "text/html",
+      "bytes": 4335
+    },
+    "img_9525d.webp": {
+      "path": "/assets/protected/hermina/img_9525d.webp.enc",
+      "type": "image/webp",
+      "bytes": 883498
+    },
+    "img_443921.webp": {
+      "path": "/assets/protected/hermina/img_443921.webp.enc",
+      "type": "image/webp",
+      "bytes": 160548
+    },
+    "img_4443.webp": {
+      "path": "/assets/protected/hermina/img_4443.webp.enc",
+      "type": "image/webp",
+      "bytes": 202640
+    },
+    "img_9756-g.webp": {
+      "path": "/assets/protected/hermina/img_9756-g.webp.enc",
+      "type": "image/webp",
+      "bytes": 819212
+    },
+    "img_4445.webp": {
+      "path": "/assets/protected/hermina/img_4445.webp.enc",
+      "type": "image/webp",
+      "bytes": 648426
+    },
+    "img_4446.webp": {
+      "path": "/assets/protected/hermina/img_4446.webp.enc",
+      "type": "image/webp",
+      "bytes": 716188
+    },
+    "img_4449-2.webp": {
+      "path": "/assets/protected/hermina/img_4449-2.webp.enc",
+      "type": "image/webp",
+      "bytes": 590206
+    },
+    "img_4448-2.webp": {
+      "path": "/assets/protected/hermina/img_4448-2.webp.enc",
+      "type": "image/webp",
+      "bytes": 622982
+    },
+    "img_7662.webp": {
+      "path": "/assets/protected/hermina/img_7662.webp.enc",
+      "type": "image/webp",
+      "bytes": 149348
+    },
+    "img_7661.webp": {
+      "path": "/assets/protected/hermina/img_7661.webp.enc",
+      "type": "image/webp",
+      "bytes": 603328
+    },
+    "img_44g79.webp": {
+      "path": "/assets/protected/hermina/img_44g79.webp.enc",
+      "type": "image/webp",
+      "bytes": 117794
+    },
+    "img_4447.webp": {
+      "path": "/assets/protected/hermina/img_4447.webp.enc",
+      "type": "image/webp",
+      "bytes": 597960
+    },
+    "img_4444.webp": {
+      "path": "/assets/protected/hermina/img_4444.webp.enc",
+      "type": "image/webp",
+      "bytes": 228332
+    }
+  },
+  "article": "article.html",
+  "featured": "img_4444.webp"
+}
