@@ -27,6 +27,7 @@ ROUTES = (
     ("/2017/11/14/dubwise-ft-chronixx-friends/", "dubwise"),
     ("/2021/02/18/falling-edge/", "falling-edge"),
     ("/2020/01/10/kraka/", "kraka"),
+    ("/2017/01/04/hermina/", "hermina"),
     ("/2024/09/26/swove-in-ledish/", "swove"),
     ("/contact/", "contact"),
 )
@@ -122,6 +123,12 @@ def capture(browser, root_url, path, label, width, height, output):
             assert page.locator("[data-post-feed] > [data-home-grid-ad]").count() == 4, (
                 "Homepage ad-card placement changed after infinite scrolling"
             )
+        if path == "/2017/01/04/hermina/":
+            assert page.locator("#hermina-password-form").count() == 0, "Old password gate remains"
+            assert page.locator(".content-rating-badge").count() >= 1, "Hermina E badge missing"
+            assert page.locator(".entry-content img").count() == 12, "Hermina needs 12 article images"
+            assert page.locator(".entry-hero img[src*='img_4444.webp']").count() == 1, "Original hero missing"
+            assert page.locator("ins.adsbygoogle").count() == 0, "Explicit post must not have ad units"
         if path == "/2024/10/26/setsuna/":
             gallery_image = page.locator(".entry-content img").first
             assert gallery_image.count() == 1, "Setsuna gallery must contain images"
