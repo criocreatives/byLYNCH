@@ -5,6 +5,10 @@ on:
       - fix/reversible-site-cleanup-20261027
   workflow_dispatch:
 
+concurrency:
+  group: bylynch-visual-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: read
 
