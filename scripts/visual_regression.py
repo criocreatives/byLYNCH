@@ -152,7 +152,10 @@ def capture(browser, root_url, path, label, width, height, output):
                 )
                 search.click()
                 assert page.locator(".site-search-panel.is-open").count() == 1, "Mobile search did not open"
-                assert page.locator(".site-search-input").is_focused(), "Mobile search input not focused"
+                page.wait_for_function(
+                    "document.activeElement === document.querySelector('.site-search-input')",
+                    timeout=5000,
+                )
                 page.locator(".site-search-input").fill("setsuna")
                 page.wait_for_function(
                     "document.querySelectorAll('.site-search-result').length > 0",
