@@ -930,6 +930,14 @@ body.lightbox-open{overflow:hidden}
 @media(min-width:1080px){.site-search-inner{width:960px}}
 @media(min-width:1380px){.site-search-inner{width:1260px}}
 
+/* Phone header: keep search accessible beside the menu, as on tablets. */
+@media(max-width:599px){
+  .site-branding{padding-right:135px}
+  .menu-toggle{right:59px}
+  .search-header,.search-toggle{display:block}
+  .search-toggle{z-index:3}
+}
+
 /* Search button hover */
 .search-toggle{
   cursor:pointer;
