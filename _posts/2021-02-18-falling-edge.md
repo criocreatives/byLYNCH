@@ -17,6 +17,13 @@ tags:
   - "tourist"
   - "visit Jamaica"
 header_image: "2021/02/share-eeb5f485-8ba8-4b99-96b4-f8eee5f30199.jpg"
+header_responsive:
+  original_width: 1536
+  original_height: 1920
+  small: 2021/02/share-eeb5f485-8ba8-4b99-96b4-f8eee5f30199-480.webp
+  small_width: 480
+  large: 2021/02/share-eeb5f485-8ba8-4b99-96b4-f8eee5f30199-960.webp
+  large_width: 960
 ---
 <!-- wp:paragraph -->
 <p>We took a short trip to the Falling Edge Waterfall in Stony Hill. Here’s what I saw... </p>
