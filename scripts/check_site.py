@@ -119,6 +119,9 @@ for private_file in (
     check(not (SITE / private_file).exists(),
           "Internal maintenance file shipped in public site: " + private_file)
 
+check(not (SITE / "romario" / "index.html").exists(),
+      "Standalone /romario/ must be completely absent from published output")
+
 home_html, home = inspect("/")
 
 # Social-sharing preview must use the original solid-brick LYNCH logo, not
@@ -224,14 +227,33 @@ check(set(card_previews) == set(post_urls),
       "Card preview registry must match published post slugs")
 archive_text = unescape(archive_html)
 for slug, blurb in card_previews.items():
-    check(blurb in archive_text,
-          slug + ": curated archive preview missing from rendered listing")
+    if blurb:
+        check(blurb in archive_text,
+              slug + ": curated archive preview missing from rendered listing")
+check(card_previews.get("kraka") == "",
+      "Kråka must not have a fabricated WordPress excerpt")
+check(card_previews.get("swove-in-ledish") == "Shot on iPhone 15 Pro Max #byLYNCH",
+      "Swove preview should reproduce its original published caption")
+check("A visual feature from the byLYNCH archive." not in archive_html,
+      "Unverified placeholder archive copy has returned")
 
 for slug, url in post_urls.items():
     content, parsed = inspect(url)
     check(parsed.meta.get("og:type") == "article", slug + ": OG article type missing")
     check(any('"@type": "BlogPosting"' in value for value in parsed.ld_json),
           slug + ": missing BlogPosting schema")
+    for photo in parsed.images:
+        if not photo.get("src", "").startswith("/assets/uploads/"):
+            continue
+        check(bool(photo.get("width")) and bool(photo.get("height")),
+              slug + ": original gallery photograph lacks intrinsic dimensions")
+    for markup in re.findall(r"<img\\b[^>]*>", content, flags=re.I | re.S):
+        if not re.search(r'\\bsrc=["\\\']/assets/uploads/', markup):
+            continue
+        check(len(re.findall(r"\\bloading\\s*=", markup)) <= 1,
+              slug + ": duplicated image loading attribute")
+        check(len(re.findall(r"\\bdecoding\\s*=", markup)) <= 1,
+              slug + ": duplicated image decoding attribute")
 
 featured = ROOT / "_data" / "featured.yml"
 for line in featured.read_text(encoding="utf-8").splitlines():
