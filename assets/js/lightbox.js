@@ -1,7 +1,7 @@
 /* byLYNCH: post-only photo viewer, retaining gallery image order. */
 (function(){
   function initPhotoLightbox(){
-    if(document.querySelector('.photo-lightbox'))return;
+    if(document.querySelector('.photo-lightbox')){window.bylynchRefreshPhotoLightbox?.();return;}
 
     const box=document.createElement('div');
     box.className='photo-lightbox';
@@ -35,6 +35,7 @@
         img.setAttribute('aria-label',(img.alt||'Gallery photograph')+' — open photo viewer');
       });
     };
+    window.bylynchRefreshPhotoLightbox=makeAccessible;
     makeAccessible();
 
     const currentImages=()=>[...document.querySelectorAll('.single .entry-content img')].filter(img=>img.src);
@@ -110,5 +111,6 @@
       }
     });
   }
+  window.bylynchInitPhotoLightbox=initPhotoLightbox;
   window.addEventListener('load',initPhotoLightbox);
 })();

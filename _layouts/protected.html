@@ -1,0 +1,29 @@
+---
+layout: default
+---
+<header class="entry-header entry-hero">
+  <div class="entry-header-wrapper"><div class="entry-header-inner">
+    <div class="entry-meta">PIXTAPE <span class="content-rating-badge" role="img" aria-label="Mature content: nudity" title="Mature content">E</span></div>
+    <h1 class="entry-title">{{ page.title | escape }}</h1>
+  </div></div>
+</header>
+<div class="bk-post-meta"><div class="bk-post-meta-inner"><div class="bk-post-meta-details">
+  <div class="bk-post-date"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time></div>
+</div></div></div>
+<div class="site-content-inner bk-redesign"><div class="content-area"><main class="site-main">
+  <article class="hentry single-entry">
+    <div id="hermina-password-shell" class="hermina-password-shell">
+      <form id="hermina-password-form">
+        <label for="hermina-password-input">Password</label>
+        <div class="hermina-password-controls">
+          <input id="hermina-password-input" name="password" type="password" autocomplete="off" required>
+          <button type="submit">Unlock gallery</button>
+        </div>
+        <p id="hermina-password-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+    <div id="hermina-protected-content" class="entry-content" hidden></div>
+  </article>
+</main></div></div>
+<link rel="stylesheet" href="{{ '/assets/css/hermina-protected.css' | relative_url }}">
+<script defer src="{{ '/assets/js/hermina-protected.js' | relative_url }}"></script>

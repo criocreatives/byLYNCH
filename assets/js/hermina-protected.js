@@ -35,8 +35,8 @@ form.addEventListener('submit',async e=>{
   out.replaceChildren(template.content);shell.hidden=true;out.hidden=false;
   input.value='';
   const lb=document.createElement('script');lb.src='/assets/js/lightbox.js';document.body.appendChild(lb);
-  // The shared lightbox registers a load handler; initialize it without re-running site scripts.
-  lb.onload=()=>window.dispatchEvent(new Event('load'));
+  // Initialize only the lightbox; do not re-run global page scripts.
+  lb.onload=()=>window.bylynchInitPhotoLightbox?.();
  }catch(error){
   loadedUrls.splice(0).forEach(URL.revokeObjectURL);
   status.textContent=error.name==='OperationError'?'Incorrect password.':'Unable to unlock this gallery.';

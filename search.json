@@ -3,7 +3,8 @@ layout: null
 permalink: /search.json
 ---
 [
-{% for post in site.posts %}
+{% assign searchable_posts = site.posts | where_exp: 'item', 'item.protected != true' %}
+{% for post in searchable_posts %}
   {
     "title": {{ post.title | jsonify }},
     "slug": {{ post.slug | jsonify }},

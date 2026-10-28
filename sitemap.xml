@@ -9,7 +9,7 @@ permalink: /sitemap.xml
   <url><loc>{{ p.url | absolute_url | xml_escape }}</loc></url>
 {% endif %}
 {% endfor %}
-{% for post in site.posts %}
+{% for post in site.posts %}{% unless post.protected %}
   <url><loc>{{ post.url | absolute_url | xml_escape }}</loc><lastmod>{{ post.modified | default: post.date | date_to_xmlschema }}</lastmod></url>
-{% endfor %}
+{% endunless %}{% endfor %}
 </urlset>

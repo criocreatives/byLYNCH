@@ -240,8 +240,9 @@ check("A visual feature from the byLYNCH archive." not in archive_html,
 for slug, url in post_urls.items():
     content, parsed = inspect(url)
     check(parsed.meta.get("og:type") == "article", slug + ": OG article type missing")
-    check(any('"@type": "BlogPosting"' in value for value in parsed.ld_json),
-          slug + ": missing BlogPosting schema")
+    if slug != "hermina":
+        check(any('"@type": "BlogPosting"' in value for value in parsed.ld_json),
+              slug + ": missing BlogPosting schema")
     for photo in parsed.images:
         if not photo.get("src", "").startswith("/assets/uploads/"):
             continue
@@ -265,7 +266,7 @@ for line in featured.read_text(encoding="utf-8").splitlines():
 
 flags = ROOT / "_data" / "content_flags.yml"
 flagged = re.findall(r"^\s*-\s+([a-z0-9-]+)\s*$", flags.read_text(encoding="utf-8"), re.M)
-check(len(flagged) == 9, f"Expected nine classified gallery slugs, found {len(flagged)}")
+check(len(flagged) == 10, f"Expected ten classified gallery slugs, found {len(flagged)}")
 for slug in flagged:
     url = post_urls.get(slug)
     check(bool(url), "Flagged gallery has no matching permalink: " + slug)
@@ -275,6 +276,46 @@ for slug in flagged:
               "AdSense library must be excluded from " + slug)
         check('<ins class="adsbygoogle"' not in html,
               "Manual ad units must be excluded from " + slug)
+
+# Protected Hermina has an intentionally public metadata-only page.
+# The original article and all 13 photographs are encrypted, never embedded
+# as plaintext or served from public /assets/uploads/ paths.
+hermina_url = "/2017/01/04/hermina/"
+hermina_html = rendered(hermina_url).read_text(encoding="utf-8")
+check('<meta name="robots" content="noindex,nofollow,noarchive,noimageindex">' in hermina_html,
+      "Hermina must have noindex/nofollow/noimageindex")
+check("hermina-password-form" in hermina_html and "hermina-protected-content" in hermina_html,
+      "Hermina password gate missing")
+check("Have you ever danced with the devil" not in hermina_html
+      and "cooter cave" not in hermina_html,
+      "Protected article prose leaked into generated page")
+check("pagead2.googlesyndication.com" not in hermina_html
+      and "google-adsense-account" not in hermina_html
+      and '<ins class="adsbygoogle"' not in hermina_html,
+      "Hermina must not load AdSense on its post")
+check('class="content-rating-badge"' in hermina_html,
+      "Hermina E badge missing")
+check("hermina" not in (SITE / "search.json").read_text(encoding="utf-8").lower(),
+      "Protected Hermina must not be in site search")
+check("2017/01/04/hermina/" not in (SITE / "sitemap.xml").read_text(encoding="utf-8"),
+      "Protected Hermina must not appear in sitemap")
+protected_root = SITE / "assets" / "protected" / "hermina"
+protected_manifest = protected_root / "manifest.json"
+check(protected_manifest.is_file(), "Encrypted Hermina media manifest missing")
+if protected_manifest.is_file():
+    protected_items = json.loads(protected_manifest.read_text(encoding="utf-8")).get("items", {})
+    check(len(protected_items) == 14, "Expected encrypted article and 13 protected WebPs")
+    for filename, record in protected_items.items():
+        relative = record.get("path", "").lstrip("/")
+        encrypted_file = SITE / relative
+        check(encrypted_file.is_file(), "Missing protected item: " + filename)
+        if encrypted_file.is_file():
+            contents = encrypted_file.read_bytes()
+            check(len(contents) > 28 and
+                  not contents.startswith((b"RIFF", b"<", b"<!doctype")),
+                  "Unencrypted media or HTML detected: " + filename)
+check(not (SITE / "assets" / "uploads" / "2016" / "12" / "img_4444.webp").exists(),
+      "Hermina original photograph must never be publicly available")
 
 # People & Credits: verify person associations, readable credits and structured data.
 expected_people = {
