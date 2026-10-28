@@ -1,0 +1,84 @@
+name: One-time Hermina public media conversion
+on:
+  push:
+    branches:
+      - media/hermina-public-20261028
+permissions:
+  contents: write
+jobs:
+  decrypt-and-clean:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install media processing dependencies
+        run: python3 -m pip install 'cryptography>=42,<47' 'Pillow>=10,<13'
+      - name: Convert uploaded encrypted media to original public WebPs
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, shutil
+          from pathlib import Path
+          from PIL import Image
+          from cryptography.hazmat.primitives.ciphers.aead import AESGCM
+
+          root = Path("assets/protected/hermina")
+          manifest = json.loads((root / "manifest.json").read_text(encoding="utf-8"))
+          key = hashlib.pbkdf2_hmac("sha256", b"bylynch", bytes.fromhex(manifest["salt"]), manifest["iterations"], dklen=32)
+          cipher = AESGCM(key)
+          dest = Path("assets/uploads/2016/12")
+          dest.mkdir(parents=True, exist_ok=True)
+          names = []
+          for name, record in manifest["items"].items():
+              if name == "article.html":
+                  continue
+              if not name.endswith(".webp"):
+                  raise RuntimeError("Unexpected protected media name: " + name)
+              data = (root / (name + ".enc")).read_bytes()
+              plain = cipher.decrypt(data[:12], data[12:], name.encode("utf-8"))
+              if plain[:4] != b"RIFF" or plain[8:12] != b"WEBP":
+                  raise RuntimeError("Decrypted media is not WebP: " + name)
+              image = dest / name
+              image.write_bytes(plain)
+              with Image.open(image) as im:
+                  im.verify()
+              names.append(name)
+          if len(names) != 13 or "img_4444.webp" not in names or "img_9756-g.webp" not in names:
+              raise RuntimeError("Original Hermina photo inventory incomplete")
+          cover = dest / "img_4444.webp"
+          with Image.open(cover) as im:
+              im = im.convert("RGB")
+              target = Path("assets/optimized/covers/2016/12")
+              target.mkdir(parents=True, exist_ok=True)
+              for width in (480, 960):
+                  img = im.resize((width, round(im.height * width / im.width)), Image.Resampling.LANCZOS)
+                  img.save(target / ("img_4444-" + str(width) + ".webp"), "WEBP", quality=82, method=6)
+          # These are no longer used or published. Original image bytes remain intact.
+          shutil.rmtree(root)
+          for file in [
+              "assets/css/hermina-protected.css",
+              "assets/js/hermina-protected.js",
+              "assets/optimized/covers/hermina-locked-480.webp",
+              "assets/optimized/covers/hermina-locked-960.webp",
+              "assets/uploads/2016/12/hermina-locked.jpg",
+              ".github/workflows/hermina-public-conversion.yml",
+          ]:
+              Path(file).unlink(missing_ok=True)
+          print("Restored", len(names), "original WebPs and the original-featured cover.")
+          PY
+      - name: Commit public originals and delete all encrypted files
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "byLYNCH Media Migration"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --check
+          git diff --cached --quiet && exit 1
+          git commit -m "Replace encrypted Hermina assets with original public WebPs"
+          git push origin HEAD:media/hermina-public-20261028
