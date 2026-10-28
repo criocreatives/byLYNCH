@@ -567,6 +567,9 @@
             .map(a=>new URL(a.getAttribute('href'),location.href).pathname)
         );
         let added=0;
+        // Count qualifying photo cards once per batch, not once per append.
+        // This preserves the existing ad cadence, including filtered duplicates.
+        let totalCards=feed.querySelectorAll(':scope > .hentry.format-gallery.has-post-thumbnail').length;
         incoming.forEach(card=>{
           const href=card.querySelector('.entry-title a')?.getAttribute('href');
           if(!href)return;
@@ -576,7 +579,7 @@
           feed.appendChild(document.importNode(card,true));
           added++;
           // Count only photographic post cards. Ad tiles never affect the six-card cadence.
-          const totalCards=feed.querySelectorAll(':scope > .hentry.format-gallery.has-post-thumbnail').length;
+          if(card.matches('.hentry.format-gallery.has-post-thumbnail'))totalCards++;
           if(totalCards%6===0&&feed.dataset.homeAdSlot){
             const ad=createHomeGridAd(feed.dataset.homeAdSlot);
             if(ad)feed.appendChild(ad);
