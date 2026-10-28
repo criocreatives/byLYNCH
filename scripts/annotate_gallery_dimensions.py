@@ -20,10 +20,10 @@ from PIL import Image, ImageOps
 ROOT = Path(__file__).resolve().parent.parent
 UPLOADS = (ROOT / "assets" / "uploads").resolve()
 POSTS = ROOT / "_posts"
-IMAGE_TAG = re.compile(r"<img\\b[^>]*>", re.I | re.S)
-SRC = re.compile(r'\\bsrc\\s*=\\s*["\\\']([^"\\\']+)["\\\']', re.I)
-WIDTH = re.compile(r'\\bwidth\\s*=\\s*["\\\']?\\d+', re.I)
-HEIGHT = re.compile(r'\\bheight\\s*=\\s*["\\\']?\\d+', re.I)
+IMAGE_TAG = re.compile(r"<img\b[^>]*>", re.I | re.S)
+SRC = re.compile(r"""\bsrc\s*=\s*["']([^"']+)["']""", re.I)
+WIDTH = re.compile(r"""\bwidth\s*=\s*["']?\d+""", re.I)
+HEIGHT = re.compile(r"""\bheight\s*=\s*["']?\d+""", re.I)
 cache: dict[str, tuple[int, int]] = {}
 
 
@@ -51,9 +51,9 @@ def normalize(source: str, stats: Counter) -> str:
         if measured is None:
             return tag
         stats["images"] += 1
-        if re.search(r'\\balt\\s*=\\s*["\\\']\\s*["\\\']', tag, re.I):
+        if re.search(r"""\balt\s*=\s*["']\s*["']""", tag, re.I):
             stats["alt_empty"] += 1
-        if not re.search(r'\\balt\\s*=', tag, re.I):
+        if not re.search(r"""\balt\s*=""", tag, re.I):
             stats["alt_missing"] += 1
         missing = []
         if not WIDTH.search(tag):
