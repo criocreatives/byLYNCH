@@ -24,7 +24,7 @@ She comes over to me and whispers into my ear:
 
 </blockquote>
 
-<figure class="wp-block-image size-large"><img src="/assets/uploads/2017/07/mg_4445.jpg" class="alignnone size-full wp-image-2394" alt="_MG_4445" width="3456" height="5184"></figure>
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2017/07/mg_4445.jpg" class="alignnone size-full wp-image-2394" alt="_MG_4445" width="3456" height="5184" loading="lazy" decoding="async"></figure>
 
 I am SHOOK.
 
@@ -34,32 +34,32 @@ Fast forward fifteen years. Her current significant other is about the same comp
 
 For years I witnessed the slander thrown at the dark skinned people. Dark skin was undesirable. Dark skin was unwanted. Dark skin is ew. Everybody wants a light skinned partner. Myself included up until I was about fifteen. I came to the conclusion that the mentality was foolish and shallow.
 
-<figure class="wp-block-image size-large"><img src="/assets/uploads/2017/07/mg_4447.jpg" class="alignnone size-full wp-image-2396" alt="_MG_4447" width="3456" height="4320"></figure>
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2017/07/mg_4447.jpg" class="alignnone size-full wp-image-2396" alt="_MG_4447" width="3456" height="4320" loading="lazy" decoding="async"></figure>
 
 Within the years after that, I noticed a change. <strong>Us dark skins</strong><em>&nbsp;</em>were becoming 'desirable'. I saw this as progress. I thought "wow, now they like us too". I thought the shadeism was ending. All shades could now flourish. Thrive. Prosper. It's lit!
 
-<figure class="wp-block-image size-large"><img src="/assets/uploads/2017/07/mg_4443.jpg" class="alignnone size-full wp-image-2393" alt="_MG_4443" width="5184" height="3456"></figure>
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2017/07/mg_4443.jpg" class="alignnone size-full wp-image-2393" alt="_MG_4443" width="5184" height="3456" loading="lazy" decoding="async"></figure>
 
 Things weren't really as they seemed. It wasn't progress... not entirely. It was something else. A paradigm shift. For a while, both shades flourished and prospered. Fast forward to the present. The same slander that was being thrown at <strong>us dark skins</strong>&nbsp;is now being thrown at the light skins.
 
 One was once undesirable because they're dark skinned. Now, one may be undesirable because they are light skinned. I see comments made on twitter where, if you switched the skin tone being referred, the <em>woke</em> task force would come for you. For example, I saw someone tweet something along the lines of "Why the hell would I want a <em>light skin nigga</em>? Ew!", and others chimed in to agree. Yikesicles. A few years ago, I would see something like this play out on Facebook. A <strong>dark skin nigga</strong> being the subject. Had this tweet been made about the now cherished chocolates, that girl would have been dragged across the TL for all to see.
 
-<figure class="wp-block-image size-large"><img src="/assets/uploads/2017/07/mg_4433.jpg" class="alignnone size-full wp-image-2401" alt="_MG_4433" width="3595" height="2883"></figure>
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2017/07/mg_4433.jpg" class="alignnone size-full wp-image-2401" alt="_MG_4433" width="3595" height="2883" loading="lazy" decoding="async"></figure>
 
 I've even seen someone say they've found a person with all the traits they're looking for except one draw back; they're light skinned. The common excuse of "<em>preference</em>" may be used here.
 
-<figure class="wp-block-image"><img src="/assets/uploads/2017/07/mg_4430.jpg" alt=""></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/07/mg_4446.jpg" alt=""></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/07/mg_4432.jpg" alt=""></figure>The offensive things once said about us dark skins are now frowned upon. That is good. Similar offensive comments being aimed at the light skins are lauded in a sense. This is bad.
+<figure class="wp-block-image"><img src="/assets/uploads/2017/07/mg_4430.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/07/mg_4446.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/07/mg_4432.jpg" alt="" loading="lazy" decoding="async"></figure>The offensive things once said about us dark skins are now frowned upon. That is good. Similar offensive comments being aimed at the light skins are lauded in a sense. This is bad.
 
 It's like when everyone wore baggy jeans and over-sized t-shirts. That was in style. Clothes that fit right were <em>ew</em>. Time passes. Everyone's clothes now fit (some closer than others. Ha!). Baggy and over-sized clothes are ridiculous. Laughed at.
 
 How long until the next shift?&nbsp;What's the next wave? I want know so I can pick who I have children with. Can't have the wrong colour kids now can we? Lol. <em>Taam</em>.
 
-<figure class="wp-block-image"><img src="/assets/uploads/2017/07/mg_4442.jpg" alt=""></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/07/mg_4436.jpg" alt=""></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/07/mg_4438.jpg" alt=""></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/07/mg_4437.jpg" alt=""></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/07/mg_4435.jpg" alt=""></figure>Let's stop offending our fellow humans because of skin tone. It's all the same stuff on the inside. Heart. Lungs. Liver.
+<figure class="wp-block-image"><img src="/assets/uploads/2017/07/mg_4442.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/07/mg_4436.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/07/mg_4438.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/07/mg_4437.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/07/mg_4435.jpg" alt="" loading="lazy" decoding="async"></figure>Let's stop offending our fellow humans because of skin tone. It's all the same stuff on the inside. Heart. Lungs. Liver.
 
 Excuse mi.
