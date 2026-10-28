@@ -8,7 +8,7 @@ byLYNCH is a photographic, editorial and cultural archive, hosted on GitHub Page
 
 ## Content and architecture
 
-- 52 published archive posts; original `/YYYY/MM/DD/slug/` permalinks are preserved.
+- 56 published archive posts (as of 27 October 2026); original `/YYYY/MM/DD/slug/` permalinks are preserved.
 - `_posts/`: articles and galleries in original WordPress-derived markup.
 - `assets/uploads/`: original photographic assets. Preserve originals; optimize only through separate derivatives.
 - `_data/featured.yml`: curated cover choices. Do not silently change these mappings.
@@ -27,10 +27,21 @@ byLYNCH is a photographic, editorial and cultural archive, hosted on GitHub Page
 
 ## Checks and deployment
 
-- `.github/workflows/quality-checks.yml` builds the Jekyll site and runs `scripts/check_site.py` on production changes and SEO staging branches.
+- `.github/workflows/quality-checks.yml` builds the Jekyll site and runs `scripts/check_site.py` on production changes, fix/seo staging branches, and pull requests.
 - The automated checks cover sitemap, critical metadata, native cover markup, file integrity and classified-gallery advertising exclusions.
 - GitHub Pages deployment is managed by GitHub. A passing CI build does **not** replace visual mobile/browser QA.
-- Use a staging branch for significant changes, review the diff, test, then merge into `main`. Branch protection is an outstanding administrative setting.
+- Use a staging branch for changes, review the diff, wait for CI, then update `main` only by a verified non-forced fast-forward. Do not rewrite production history.
+- GitHub reports `main` is **not branch-protected** as of 27 October 2026. A repository administrator must configure a ruleset in GitHub Settings to require the quality check and block force pushes; the repository connector cannot administer branch rules.
+- `scripts/check_site.py` validates generated HTML and curated metadata, but does not substitute for screenshot, browser-interaction, performance, or regional consent testing.
+
+## Maintenance safety
+
+- Original JPEG/PNG uploads under `assets/uploads/` are archival masters: never optimize them in place as part of publishing.
+- `scripts/optimize_images.py` is legacy: it reports candidates by default and requires explicit `--apply-in-place` to perform its original overwrite behaviour. Prefer `scripts/build_responsive_covers.py` for non-destructive cover derivatives.
+- `scripts/import_wordpress.py` is migration-only. It refuses to delete existing post files unless invoked with `--replace-existing-posts`. Even then, use a separate backed-up migration workspace, never production.
+- The `_config.yml` exclude list keeps internal scripts, migration metadata and setup documents out of public Jekyll output while retaining them in Git.
+- Curated `_data/card_previews.yml` entries drive archive card content; change those and the post excerpt together when the author approves editorial text.
+- Both homepage and incremental loading intentionally insert an ad after six **photo** cards. Keep the three supplied manual ad slots and all nine content exclusions unchanged.
 
 ## Editorial precautions
 
