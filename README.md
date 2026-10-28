@@ -40,11 +40,22 @@ byLYNCH is a photographic, editorial and cultural archive, hosted on GitHub Page
 ## Maintenance safety
 
 - Original JPEG/PNG uploads under `assets/uploads/` are archival masters: never optimize them in place as part of publishing.
-- `scripts/optimize_images.py` is legacy: it reports candidates by default and requires explicit `--apply-in-place` to perform its original overwrite behaviour. Prefer `scripts/build_responsive_covers.py` for non-destructive cover derivatives.
-- The discontinued WordPress importer and migration-only workflow were retired on 27 October 2026. Their full source remains recoverable from Git history and the `backup/bylynch-pre-extended-cleanup-20261027` ref. The original 3 October WXR backup remains in the user's private file Library. Never publish password-protected posts or the migration export as a side effect of cleanup.
+- The legacy in-place optimizer was removed from active code. The only supported derivative workflow is `scripts/build_responsive_covers.py`: incremental by default; `--only` and `--header-post` are explicit per-story operations.
+- All post-gallery `img` elements now carry an explicit loading/decoding attribute, except intentionally eager-loading content; the post layout no longer injects duplicate HTML attributes.
+- `scripts/annotate_gallery_dimensions.py` reads original photo dimensions (including EXIF orientation) and applies missing intrinsic metadata on a temporary staging branch. Never guess dimensions.
+- There is no authenticated historic WordPress excerpt for Kråka or Swove in Ledish. Kråka intentionally has no archive blurb; Swove uses its original in-post caption instead of invented copy.
+- The discontinued WordPress importer, in-place photo optimizer, migration manifest and migration-only workflow were retired on 27 October 2026. Their full source remains recoverable from Git history and the `backup/bylynch-pre-extended-cleanup-20261027` ref. The original 3 October WXR backup remains in the user's private file Library. Never publish password-protected posts or the migration export as a side effect of cleanup.
 - The `_config.yml` exclude list keeps internal scripts, migration metadata and setup documents out of public Jekyll output while retaining them in Git.
 - Curated `_data/card_previews.yml` entries drive archive card content; change those and the post excerpt together when the author approves editorial text.
 - Both homepage and incremental loading intentionally insert an ad after six **photo** cards. Keep the three supplied manual ad slots and all nine content exclusions unchanged.
+
+## Reversible comprehensive remediation
+
+- Exact original release: `d65d84ae7493be378a9f71065089124c4fef0cee`; permanent rollback branch: `backup/bylynch-before-complete-remediation-20261027`.
+- Staging: `fix/full-cleanup-reversible-20261027`; each batch is an ordinary Git commit, so revert individual changes in reverse dependency order or restore a clean staging branch from the backup before testing.
+- `/romario/` is intentionally removed, not redirected. Do not recreate it through front matter, scripts or GitHub Pages output.
+- Site styles and scripts use a Jekyll build-version suffix for cache invalidation. Gallery keyboard navigation must work without a pointer; lightbox focus is contained and restored on close.
+- Visual regression compares each staging build against current production `main`, including mobile viewports; planned editorial copy changes are explicitly allowed only for the named remediation branch. Third-party live behaviour and ads still require real browser QA.
 
 ## Reversible cleanup release
 
