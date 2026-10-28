@@ -56,6 +56,23 @@ def capture(browser, root_url, path, label, width, height, output):
         reduced_motion="reduce",
         locale="en-US",
     )
+    context.add_init_script("""(() => {
+      window.__bylynchLabVitals = {lcpMs:0, cls:0};
+      try {
+        new PerformanceObserver(list => {
+          for (const item of list.getEntries()) {
+            window.__bylynchLabVitals.lcpMs = Math.round(item.startTime);
+          }
+        }).observe({type:'largest-contentful-paint',buffered:true});
+      } catch (_) {}
+      try {
+        new PerformanceObserver(list => {
+          for (const item of list.getEntries()) {
+            if (!item.hadRecentInput) window.__bylynchLabVitals.cls += item.value;
+          }
+        }).observe({type:'layout-shift',buffered:true});
+      } catch (_) {}
+    })();""")
     page = context.new_page()
     page.route("**/*", lambda route: (
         route.continue_() if route.request.url.startswith(root_url + "/")
@@ -79,6 +96,9 @@ def capture(browser, root_url, path, label, width, height, output):
       durationMs: Math.round(performance.getEntriesByType('navigation')[0]?.duration || 0),
       firstContentfulPaintMs: Math.round(performance.getEntriesByType('paint').find(x=>x.name==='first-contentful-paint')?.startTime || 0),
       imageTransferBytes: Math.round(performance.getEntriesByType('resource').filter(x=>x.initiatorType==='img' || x.initiatorType==='image').reduce((s,x)=>s+(x.transferSize||0),0)),
+      localTransferBytes: Math.round(performance.getEntriesByType('resource').filter(x=>x.name.startsWith(location.origin)).reduce((s,x)=>s+(x.transferSize||0),0)),
+      lcpMs: window.__bylynchLabVitals?.lcpMs || null,
+      cls: Number((window.__bylynchLabVitals?.cls || 0).toFixed(4)),
       javascriptErrors: window.__bylynchCaptureErrors || []
     })""")
     if label.startswith("candidate-"):
@@ -139,7 +159,10 @@ def main():
                                    "candidate": after, "visual": diff})
                     if not diff["equal"]:
                         failures.append(f"{key}: screenshot changed {diff['differenceFraction']:.2%}")
-                    print(f"{key}: visual diff {diff['differenceFraction']:.2%}", flush=True)
+                    print(f"{key}: diff={diff['differenceFraction']:.2%}, "
+                          f"local FCP baseline/candidate={before['firstContentfulPaintMs']}/{after['firstContentfulPaintMs']}ms, "
+                          f"LCP baseline/candidate={before['lcpMs']}/{after['lcpMs']}ms, "
+                          f"transfer={before['localTransferBytes']}/{after['localTransferBytes']} bytes", flush=True)
             browser.close()
     (args.out / "report.json").write_text(json.dumps({"checks":report,"failures":failures},indent=2)+"\n")
     if failures:
