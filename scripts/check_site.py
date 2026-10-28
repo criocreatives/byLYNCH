@@ -622,6 +622,17 @@ for url in ("/2024/09/26/swove-in-ledish/", "/2020/01/04/fabricki/"):
 # Editorial UI policy: About page must use vector icons, not emoji/text arrows.
 about_source = (ROOT / "about" / "index.html").read_text(encoding="utf-8")
 about_html, about_parsed = inspect("/about/")
+# About-only styles were extracted byte-for-byte from the global CSS cascade.
+about_css = SITE / "assets" / "css" / "about.css"
+check(about_css.is_file(), "About stylesheet missing from Jekyll output")
+if about_css.is_file():
+    check(".lynch-about-hero" in about_css.read_text(encoding="utf-8")
+          and ".lynch-about .lynch-about-icon" in about_css.read_text(encoding="utf-8"),
+          "Extracted About CSS missing essential selectors")
+check('href="/assets/css/about.css' in about_html,
+      "About page must load its isolated stylesheet")
+check('href="/assets/css/about.css' not in home_html,
+      "Homepage must not load About-only CSS")
 arrow_characters = "\u2192\u2190\u2197\u2196\u2198\u2199\u27a1\u27a4\u279c\u2794"
 check(not any(ch in about_source for ch in arrow_characters),
       "About page must not contain Unicode navigation arrow glyphs")
