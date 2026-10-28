@@ -145,6 +145,9 @@ gtag('config', 'G-K95ENNDT6F', {
 {% if page.url == '/about/' %}
 <link rel="stylesheet" href="{{ '/assets/css/about.css' | relative_url }}?v=20261027-maintenance-1">
 {% endif %}
+{% if page.layout == 'post' %}
+<link rel="stylesheet" href="{{ '/assets/css/credits.css' | relative_url }}?v=20261027-cleanup-1">
+{% endif %}
 </head>
 <body class="{% if page.layout == 'post' %}single{% elsif page.new_wave %}blog new-wave-page{% elsif page.archive %}blog archive-page{% elsif paginator or page.url == '/' %}blog{% endif %}">
 <div id="page" class="hfeed site-shell">
@@ -189,5 +192,9 @@ gtag('config', 'G-K95ENNDT6F', {
 </div>
 <script type="application/json" id="bylynch-rating-slugs">{{ site.data.content_flags.e_notice | jsonify }}</script>
 <script defer src="{{ '/assets/js/privacy.js' | relative_url }}?v=20261015-media-normal"></script>
-<script defer src="{{ '/assets/js/site.js' | relative_url }}?v=20261015-covers-1"></script>
+<script defer src="{{ '/assets/js/site.js' | relative_url }}?v=20261027-cleanup-1"></script>
+{% if page.layout == 'post' %}
+<script defer src="{{ '/assets/js/lightbox.js' | relative_url }}?v=20261027-cleanup-1"></script>
+{% endif %}
+<script defer data-search-version="{{ site.time | date: '%Y%m%d%H%M%S' }}" src="{{ '/assets/js/search.js' | relative_url }}?v=20261027-cleanup-1"></script>
 </body></html>
