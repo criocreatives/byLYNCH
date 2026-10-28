@@ -1,0 +1,31 @@
+name: Report external links without modifying posts
+on:
+  push:
+    branches:
+      - 'audit/links-*'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: bylynch-link-audit-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  report-links:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+      - name: Audit original outside URLs
+        run: python3 scripts/audit_external_links.py --output "$RUNNER_TEMP/bylynch-external-links.json"
+      - name: Publish evidence for editorial review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: bylynch-external-link-review
+          path: ${{ runner.temp }}/bylynch-external-links.json
+          retention-days: 30
+          if-no-files-found: warn
