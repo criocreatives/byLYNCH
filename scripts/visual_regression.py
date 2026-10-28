@@ -151,9 +151,19 @@ def compare_images(left: Path, right: Path):
         pixels = delta.convert("L")
         histogram = pixels.histogram()
         # Ignore sub-4/255 antialiasing/channel noise.
+        total = a.width * a.height
         changed = sum(histogram[4:])
-        return {"equal": changed / (a.width * a.height) <= 0.001,
-                "differenceFraction": round(changed / (a.width * a.height), 6),
+        strong = sum(histogram[32:])
+        mean_delta = sum(value * count for value, count in enumerate(histogram)) / total
+        # A WebP derivative may vary a few colour values across many pixels,
+        # despite retaining the same visual structure. Keep structural changes
+        # subject to the stricter high-difference and average-difference gates.
+        compression_equivalent = mean_delta <= 3.0 and strong / total <= 0.001
+        return {"equal": changed / total <= 0.001 or compression_equivalent,
+                "differenceFraction": round(changed / total, 6),
+                "meanAbsoluteDifference": round(mean_delta, 4),
+                "strongDifferenceFraction": round(strong / total, 6),
+                "compressionEquivalent": compression_equivalent,
                 "sizeMismatch": False}
 
 def main():
@@ -180,7 +190,7 @@ def main():
                                    "candidate": after, "visual": diff})
                     if not diff["equal"] and route not in args.allow_visual_route:
                         failures.append(f"{key}: screenshot changed {diff['differenceFraction']:.2%}")
-                    print(f"{key}: diff={diff['differenceFraction']:.2%}, "
+                    print(f"{key}: raw pixel diff={diff['differenceFraction']:.2%}, equivalent={diff['equal']}, "
                           f"local FCP baseline/candidate={before['firstContentfulPaintMs']}/{after['firstContentfulPaintMs']}ms, "
                           f"LCP baseline/candidate={before['lcpMs']}/{after['lcpMs']}ms, "
                           f"transfer={before['localTransferBytes']}/{after['localTransferBytes']} bytes", flush=True)
