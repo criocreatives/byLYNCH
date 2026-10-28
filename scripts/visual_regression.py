@@ -102,7 +102,8 @@ def capture(browser, root_url, path, label, width, height, output):
       localTransferBytes: Math.round(performance.getEntriesByType('resource').filter(x=>x.name.startsWith(location.origin)).reduce((s,x)=>s+(x.transferSize||0),0)),
       lcpMs: window.__bylynchLabVitals?.lcpMs || null,
       cls: Number((window.__bylynchLabVitals?.cls || 0).toFixed(4)),
-      javascriptErrors: window.__bylynchCaptureErrors || []
+      javascriptErrors: window.__bylynchCaptureErrors || [],
+      headerBottomPx: Math.ceil(document.querySelector('.site-header')?.getBoundingClientRect().bottom || 0)
     })""")
     if label.startswith("candidate-"):
         if path == "/" and width >= 600:
@@ -133,20 +134,51 @@ def capture(browser, root_url, path, label, width, height, output):
             assert page.locator(".photo-lightbox.is-open").count() == 0, "Lightbox must close"
             assert gallery_image.evaluate("(img) => document.activeElement === img"), "Return focus to gallery photo"
         if path == "/" and width < 600:
-            nav = page.locator(".menu-toggle")
-            nav.click()
-            assert nav.get_attribute("aria-expanded") == "true", "Mobile menu should expand"
-            nav.click()
-            assert nav.get_attribute("aria-expanded") == "false", "Mobile menu should collapse"
+            # Check narrow phones and the full pre-tablet breakpoint.
+            for phone_width in (320, 390, 599):
+                page.set_viewport_size({"width": phone_width, "height": height})
+                search = page.locator(".search-toggle")
+                nav = page.locator(".menu-toggle")
+                assert search.is_visible(), f"Search hidden at {phone_width}px"
+                assert nav.is_visible(), f"Mobile menu hidden at {phone_width}px"
+                a, b = search.bounding_box(), nav.bounding_box()
+                assert a and b and a["x"] >= b["x"] + b["width"] - 1, (
+                    f"Mobile search overlaps navigation at {phone_width}px"
+                )
+                assert a["x"] + a["width"] <= phone_width, "Mobile search outside viewport"
+                logo = page.locator(".site-logo-link img").bounding_box()
+                assert logo and logo["x"] + logo["width"] <= b["x"] + 1, (
+                    f"Header logo overlaps controls at {phone_width}px"
+                )
+                search.click()
+                assert page.locator(".site-search-panel.is-open").count() == 1, "Mobile search did not open"
+                assert page.locator(".site-search-input").is_focused(), "Mobile search input not focused"
+                page.locator(".site-search-input").fill("setsuna")
+                page.wait_for_function(
+                    "document.querySelectorAll('.site-search-result').length > 0",
+                    timeout=10000,
+                )
+                page.keyboard.press("Escape")
+                assert page.locator(".site-search-panel.is-open").count() == 0, "Mobile search did not close"
+                nav.click()
+                assert nav.get_attribute("aria-expanded") == "true", "Mobile menu should expand"
+                nav.click()
+                assert nav.get_attribute("aria-expanded") == "false", "Mobile menu should collapse"
     context.close()
     return data, image_path
 
-def compare_images(left: Path, right: Path):
+def compare_images(left: Path, right: Path, ignore_top_px: int = 0):
     with Image.open(left) as a, Image.open(right) as b:
         if a.size != b.size:
             return {"equal": False, "differenceFraction": 1, "sizeMismatch": True}
-        if hashlib.sha256(left.read_bytes()).digest() == hashlib.sha256(right.read_bytes()).digest():
+        if not ignore_top_px and hashlib.sha256(left.read_bytes()).digest() == hashlib.sha256(right.read_bytes()).digest():
             return {"equal": True, "differenceFraction": 0, "sizeMismatch": False}
+        if ignore_top_px:
+            # An intentionally changed header is tested for layout and function
+            # separately. Still compare all content below the header strictly.
+            top = min(ignore_top_px, a.height - 1)
+            a = a.crop((0, top, a.width, a.height))
+            b = b.crop((0, top, b.width, b.height))
         delta = ImageChops.difference(a.convert("RGB"), b.convert("RGB"))
         pixels = delta.convert("L")
         histogram = pixels.histogram()
@@ -173,6 +205,8 @@ def main():
     ap.add_argument("--out", type=Path, required=True)
     ap.add_argument("--allow-visual-route", action="append", default=[],
                     help="Explicitly reviewed routes with intentional editorial changes")
+    ap.add_argument("--allow-mobile-header-change", action="store_true",
+                    help="Allow the mobile header to change, while comparing all content below it")
     args = ap.parse_args()
     args.out.mkdir(parents=True, exist_ok=True)
     report = []
@@ -185,9 +219,12 @@ def main():
                     key = slug + "-" + viewport
                     before, before_png = capture(browser, baseline_url, route, "baseline-" + key, width, height, args.out)
                     after, after_png = capture(browser, candidate_url, route, "candidate-" + key, width, height, args.out)
-                    diff = compare_images(before_png, after_png)
+                    header_crop = (max(before["headerBottomPx"], after["headerBottomPx"]) + 4
+                                   if args.allow_mobile_header_change and width < 600 else 0)
+                    diff = compare_images(before_png, after_png, ignore_top_px=header_crop)
                     report.append({"route": route, "viewport": viewport, "baseline": before,
-                                   "candidate": after, "visual": diff})
+                                   "candidate": after, "ignoredHeaderPixels": header_crop,
+                                   "visual": diff})
                     if not diff["equal"] and route not in args.allow_visual_route:
                         failures.append(f"{key}: screenshot changed {diff['differenceFraction']:.2%}")
                     print(f"{key}: raw pixel diff={diff['differenceFraction']:.2%}, equivalent={diff['equal']}, "
