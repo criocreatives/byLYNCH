@@ -247,12 +247,12 @@ for slug, url in post_urls.items():
             continue
         check(bool(photo.get("width")) and bool(photo.get("height")),
               slug + ": original gallery photograph lacks intrinsic dimensions")
-    for markup in re.findall(r"<img\\b[^>]*>", content, flags=re.I | re.S):
-        if not re.search(r'\\bsrc=["\\\']/assets/uploads/', markup):
+    for markup in re.findall(r"<img\b[^>]*>", content, flags=re.I | re.S):
+        if not re.search(r"""\bsrc=["']/assets/uploads/""", markup):
             continue
-        check(len(re.findall(r"\\bloading\\s*=", markup)) <= 1,
+        check(len(re.findall(r"\bloading\s*=", markup)) <= 1,
               slug + ": duplicated image loading attribute")
-        check(len(re.findall(r"\\bdecoding\\s*=", markup)) <= 1,
+        check(len(re.findall(r"\bdecoding\s*=", markup)) <= 1,
               slug + ": duplicated image decoding attribute")
 
 featured = ROOT / "_data" / "featured.yml"
