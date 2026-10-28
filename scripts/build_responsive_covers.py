@@ -21,7 +21,7 @@ TARGET = ROOT / "assets" / "optimized" / "covers"
 MANIFEST = ROOT / "_data" / "responsive_covers.yml"
 POSTS = ROOT / "_posts"
 WIDTHS = (480, 960)
-QUALITY = 82
+QUALITY = 82  # Fixed quality for non-destructive derivative creation
 
 
 def safe_original(rel_path: str) -> Path:
