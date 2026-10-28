@@ -21,32 +21,32 @@ seo_title: "Saturday Night Blues: Yanah & Kone"
 ---
 You don't need much to make music. Just a machine and some passion. We're at a house on Linstone Crescent. Build style is upscale 1960's-ish. Maybe 70's. A bedroom with a large desk. Empty beer bottles  and some herb for the culture. A laptop with an extra screen. Studio ting set.
 
-<figure class="wp-block-image size-large"><img class="alignnone size-full wp-image-1625" src="/assets/uploads/2017/01/img_6669.jpg" alt="IMG_6669.jpg" width="5999" height="3999" /></figure>
+<figure class="wp-block-image size-large"><img class="alignnone size-full wp-image-1625" src="/assets/uploads/2017/01/img_6669.jpg" alt="IMG_6669.jpg" width="5999" height="3999"  loading="lazy" decoding="async"/></figure>
 
 Here we have <a href="https://twitter.com/KoneLives" target="_blank" rel="noopener">Kone</a>, member of <a href="https://bylynch.wordpress.com/2017/01/04/alpine-compound/" target="_blank" rel="noopener">Alpine Compound</a>, and <a href="https://twitter.com/__Hanay" target="_blank" rel="noopener">Yanah</a>, the soulful voice on Leno Banton's track "<a href="https://soundcloud.com/lenobanton/regime-ft-irie-girl-prod-by-snr-remszn" target="_blank" rel="noopener">REGIME</a>".
 
 Good times and good vibes. Beers and chairs. Voice and sound choice. Creativity and resourcefulness are strong here; Ukulele strums recorded with earbuds and laid onto a beat. Beautiful sounds to come from Yanah's beautiful soul in the near future. Wait on it.
 
-<figure class="wp-block-image size-large"><img class="alignnone size-full wp-image-1646" src="/assets/uploads/2017/01/img_6676.jpg" alt="IMG_6676.jpg" width="5999" height="3999" /></figure>
+<figure class="wp-block-image size-large"><img class="alignnone size-full wp-image-1646" src="/assets/uploads/2017/01/img_6676.jpg" alt="IMG_6676.jpg" width="5999" height="3999"  loading="lazy" decoding="async"/></figure>
 
 <hr />
 
 <h2 style="text-align:center;">Gallery</h2>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_6661.jpg" alt=""></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_6667.jpg" alt=""></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_6668.jpg" alt=""></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_6671.jpg" alt=""></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_6695.jpg" alt=""></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_66941.jpg" alt=""></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_66651.jpg" alt=""></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_66931.jpg" alt=""></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_66641.jpg" alt=""></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_6692.jpg" alt=""></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_66631.jpg" alt=""></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_6690.jpg" alt=""></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_66611.jpg" alt=""></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_6660.jpg" alt=""></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_6677.jpg" alt=""></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_6659.jpg" alt=""></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_6673.jpg" alt=""></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_6689.jpg" alt=""></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_6661.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_6667.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_6668.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_6671.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_6695.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_66941.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_66651.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_66931.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_66641.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_6692.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_66631.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_6690.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_66611.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_6660.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_6677.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_6659.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_6673.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_6689.jpg" alt="" loading="lazy" decoding="async"></figure>
