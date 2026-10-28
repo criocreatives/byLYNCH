@@ -16,8 +16,10 @@ byLYNCH is a photographic, editorial and cultural archive, hosted on GitHub Page
 - `_data/content_flags.yml`: nine classified galleries; badges and **AdSense exclusions** depend on this.
 - `_data/manual_ads.yml`: three publisher-issued manual ad slots. **Auto Ads and Auto optimise should remain OFF** in the AdSense dashboard.
 - `_layouts/` and `_includes/`: shared page and advertising templates.
-- `assets/css/site.css` is the shared stylesheet; `assets/css/about.css` carries the existing About-page styles and is loaded only on `/about/`.
-- `assets/js/site.js` manages card/gallery behaviour and ad integration. The quality workflow runs `node --check` on both site and privacy scripts.
+- `assets/css/site.css` is the shared stylesheet; `assets/css/about.css` serves only `/about/`, and `assets/css/credits.css` serves only individual posts. Original CSS declarations and their order were retained in these extractions.
+- `assets/js/site.js` manages navigation, masonry, infinite scroll and ad initialization. Search and photo lightbox live in `assets/js/search.js` and `assets/js/lightbox.js`; the lightbox loads only on individual posts.
+- Search fetches the generated index with normal caching and a deployment-specific query version, so new site builds invalidate the cached index.
+- The quality workflow syntax-checks all runtime scripts; `.github/workflows/visual-regression.yml` builds the exact pre-cleanup commit and staged revision, compares representative desktop/mobile screenshots and smoke tests key browser interactions. It uploads screenshot and lab-timing evidence.
 
 ## Discovery and SEO
 
@@ -39,10 +41,17 @@ byLYNCH is a photographic, editorial and cultural archive, hosted on GitHub Page
 
 - Original JPEG/PNG uploads under `assets/uploads/` are archival masters: never optimize them in place as part of publishing.
 - `scripts/optimize_images.py` is legacy: it reports candidates by default and requires explicit `--apply-in-place` to perform its original overwrite behaviour. Prefer `scripts/build_responsive_covers.py` for non-destructive cover derivatives.
-- `scripts/import_wordpress.py` is migration-only. It refuses to delete existing post files unless invoked with `--replace-existing-posts`. Even then, use a separate backed-up migration workspace, never production.
+- The discontinued WordPress importer and migration-only workflow were retired on 27 October 2026. Their full source remains recoverable from Git history and the `backup/bylynch-pre-extended-cleanup-20261027` ref. The original 3 October WXR backup remains in the user's private file Library. Never publish password-protected posts or the migration export as a side effect of cleanup.
 - The `_config.yml` exclude list keeps internal scripts, migration metadata and setup documents out of public Jekyll output while retaining them in Git.
 - Curated `_data/card_previews.yml` entries drive archive card content; change those and the post excerpt together when the author approves editorial text.
 - Both homepage and incremental loading intentionally insert an ad after six **photo** cards. Keep the three supplied manual ad slots and all nine content exclusions unchanged.
+
+## Reversible cleanup release
+
+- Rollback anchor: `backup/bylynch-pre-extended-cleanup-20261027`, commit `a3ab1254e85d9bc44ef9952c3453c120ade392e1`.
+- Staging branch: `fix/reversible-site-cleanup-20261027`. No media or post data should be modified by this refactor.
+- To undo individual changes, use `git revert <specific cleanup commit>` on a staging branch (in reverse order if changes depend on each other), verify CI and deploy. For full restoration, reset a *new staging branch* to the backup ref and compare; avoid force-pushing production.
+- Browser screenshot comparison and local performance timing are lab evidence, not field Core Web Vitals or proof of ad fill/consent behaviour.
 
 ## Editorial precautions
 
