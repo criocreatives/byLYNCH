@@ -1,0 +1,54 @@
+name: Visual regression and performance baseline
+on:
+  push:
+    branches:
+      - fix/reversible-site-cleanup-20261027
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  baseline-comparison:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout candidate with its Git history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - name: Use supported Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+      - name: Install pinned Jekyll build tools
+        run: |
+          gem install jekyll -v 4.4.1 --no-document
+          gem install jekyll-paginate -v 1.1.0 --no-document
+      - name: Build candidate
+        run: jekyll build --trace
+      - name: Fetch and build exact pre-cleanup baseline
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin a3ab1254e85d9bc44ef9952c3453c120ade392e1 --depth=1
+          git worktree add --detach "$RUNNER_TEMP/bylynch-baseline" a3ab1254e85d9bc44ef9952c3453c120ade392e1
+          jekyll build --source "$RUNNER_TEMP/bylynch-baseline" --destination "$RUNNER_TEMP/bylynch-baseline-site" --trace
+      - name: Install browser testing dependencies
+        run: |
+          python3 -m pip install --user 'playwright==1.56.0' 'Pillow>=10,<12'
+          python3 -m playwright install --with-deps chromium
+      - name: Compare desktop and mobile snapshots and interactions
+        run: |
+          python3 scripts/visual_regression.py \
+            --baseline "$RUNNER_TEMP/bylynch-baseline-site" \
+            --candidate "_site" \
+            --out "$RUNNER_TEMP/bylynch-visual-comparison"
+      - name: Preserve screenshot evidence and lab timings
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: bylynch-visual-and-performance-report
+          path: ${{ runner.temp }}/bylynch-visual-comparison/
+          if-no-files-found: warn
+          retention-days: 14
