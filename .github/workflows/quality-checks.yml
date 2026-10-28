@@ -23,7 +23,9 @@ jobs:
         with:
           ruby-version: '3.3'
       - name: Install the supported Jekyll build dependencies
-        run: gem install jekyll jekyll-paginate --no-document
+        run: |
+          gem install jekyll -v 4.4.1 --no-document
+          gem install jekyll-paginate -v 1.1.0 --no-document
       - name: Build the site
         run: jekyll build --trace
       - name: Validate SEO, archive and ad exclusions
