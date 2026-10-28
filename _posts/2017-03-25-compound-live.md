@@ -50,42 +50,42 @@ My condolences to those who missed it. Don't fret; this is the first of many.
 
 The Spot was set on fire with performances from Courtni, Leno Banton, Pag3y, Blvk H3ro, Royal Blu, Chavez Illmatiq, Kione Ziare, Chike The Chemist, The Grei Show, &amp; Jeeby.
 
-<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7444.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7454.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7465.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7269.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7325.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7360.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7389.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7421.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7366.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7444.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7454.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7465.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7269.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7325.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7360.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7389.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7421.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7366.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
 
 When mic nah bun up, turn table a bun up. In comes man like R3wind. Man like JujuTron. Man like Joshera. Man like Wavy Jones!
 
-<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7251.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7290.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7337.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7237.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7251.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7290.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7337.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7237.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
 
 Good vibes. Pure litness. Bare tings. Music and liquid courage buss inah people head. Dance floor shenanigans definitely keep.
 
-<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7373.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7432.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7297.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7307.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7312.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7343.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7344.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7373.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7432.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7297.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7307.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7312.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7343.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7344.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
 
 Few popular faces passed through. Star ting. Man like EvaFlow. Man like Iotosh (<a href="https://www.youtube.com/watch?v=E88jhjKVbe0" target="_blank">shot a music video for him recently</a>). Man like <a href="https://www.instagram.com/uncle876" target="_blank" rel="noopener noreferrer">Uncle</a>. Tings like Roux &amp; Lila Ike. Love was shown. Art was also on display.
 
-<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7478.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7487.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7189.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7191.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7212.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7282.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7287.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7280.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7478.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7487.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7189.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7191.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7212.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7282.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7287.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/03/mg_7280.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
 
 Very lit. Very culture. Full photo album here: <a href="https://www.flickr.com/gp/lebosslynch/863d82" target="_blank">Compound Live (#seenbyLYNCH)</a>

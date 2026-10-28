@@ -34,51 +34,51 @@ header_responsive:
 <!-- /wp:paragraph -->
 
 <!-- wp:image {"id":3275,"sizeSlug":"large"} -->
-<figure class="wp-block-image size-large"><a href="https://youtu.be/Sgnyj8LXvxE"><img src="/assets/uploads/2021/02/img_0974-1.jpg" alt="" class="wp-image-3275"  loading="lazy" decoding="async"/></a></figure>
+<figure class="wp-block-image size-large"><a href="https://youtu.be/Sgnyj8LXvxE"><img src="/assets/uploads/2021/02/img_0974-1.jpg" alt="" class="wp-image-3275"  loading="lazy" decoding="async" width="1536" height="1920" /></a></figure>
 <!-- /wp:image -->
 
 <!-- wp:image {"id":3281,"sizeSlug":"large"} -->
-<figure class="wp-block-image size-large"><img src="/assets/uploads/2021/02/share-24fb74e0-94c3-4bb7-b441-737eb082a940.jpg" alt="" class="wp-image-3281"  loading="lazy" decoding="async"/></figure>
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2021/02/share-24fb74e0-94c3-4bb7-b441-737eb082a940.jpg" alt="" class="wp-image-3281"  loading="lazy" decoding="async" width="1920" height="1440" /></figure>
 <!-- /wp:image -->
 
 <!-- wp:image {"id":3271,"sizeSlug":"large"} -->
-<figure class="wp-block-image size-large"><img src="/assets/uploads/2021/02/img_0967.jpg" alt="" class="wp-image-3271"  loading="lazy" decoding="async"/></figure>
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2021/02/img_0967.jpg" alt="" class="wp-image-3271"  loading="lazy" decoding="async" width="1440" height="1920" /></figure>
 <!-- /wp:image -->
 
 <!-- wp:image {"id":3277,"sizeSlug":"large"} -->
-<figure class="wp-block-image size-large"><img src="/assets/uploads/2021/02/share-f188cde0-22e9-4d9a-927a-48e097ec1b26.jpg" alt="" class="wp-image-3277"  loading="lazy" decoding="async"/></figure>
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2021/02/share-f188cde0-22e9-4d9a-927a-48e097ec1b26.jpg" alt="" class="wp-image-3277"  loading="lazy" decoding="async" width="1536" height="1920" /></figure>
 <!-- /wp:image -->
 
 <!-- wp:image {"id":3276,"sizeSlug":"large"} -->
-<figure class="wp-block-image size-large"><img src="/assets/uploads/2021/02/img_1084-1.jpg" alt="" class="wp-image-3276"  loading="lazy" decoding="async"/></figure>
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2021/02/img_1084-1.jpg" alt="" class="wp-image-3276"  loading="lazy" decoding="async" width="1440" height="1920" /></figure>
 <!-- /wp:image -->
 
 <!-- wp:image {"id":3279,"sizeSlug":"large"} -->
-<figure class="wp-block-image size-large"><a href="https://youtu.be/Sgnyj8LXvxE"><img src="/assets/uploads/2021/02/share-eeb5f485-8ba8-4b99-96b4-f8eee5f30199.jpg" alt="" class="wp-image-3279"  loading="lazy" decoding="async"/></a></figure>
+<figure class="wp-block-image size-large"><a href="https://youtu.be/Sgnyj8LXvxE"><img src="/assets/uploads/2021/02/share-eeb5f485-8ba8-4b99-96b4-f8eee5f30199.jpg" alt="" class="wp-image-3279"  loading="lazy" decoding="async" width="1536" height="1920" /></a></figure>
 <!-- /wp:image -->
 
 <!-- wp:image {"id":3280,"sizeSlug":"large"} -->
-<figure class="wp-block-image size-large"><img src="/assets/uploads/2021/02/img_0972-1.jpg" alt="" class="wp-image-3280"  loading="lazy" decoding="async"/></figure>
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2021/02/img_0972-1.jpg" alt="" class="wp-image-3280"  loading="lazy" decoding="async" width="1536" height="1920" /></figure>
 <!-- /wp:image -->
 
 <!-- wp:image {"id":3282,"sizeSlug":"large"} -->
-<figure class="wp-block-image size-large"><img src="/assets/uploads/2021/02/img_1047.jpg" alt="" class="wp-image-3282"  loading="lazy" decoding="async"/></figure>
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2021/02/img_1047.jpg" alt="" class="wp-image-3282"  loading="lazy" decoding="async" width="1536" height="1920" /></figure>
 <!-- /wp:image -->
 
 <!-- wp:image {"id":3283,"sizeSlug":"large"} -->
-<figure class="wp-block-image size-large"><img src="/assets/uploads/2021/02/share-ea0488bd-6e9d-4356-879c-ee7110b872c3.jpg" alt="" class="wp-image-3283"  loading="lazy" decoding="async"/></figure>
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2021/02/share-ea0488bd-6e9d-4356-879c-ee7110b872c3.jpg" alt="" class="wp-image-3283"  loading="lazy" decoding="async" width="1536" height="1920" /></figure>
 <!-- /wp:image -->
 
 <!-- wp:image {"id":3285,"sizeSlug":"large"} -->
-<figure class="wp-block-image size-large"><img src="/assets/uploads/2021/02/img_1088.jpg" alt="" class="wp-image-3285"  loading="lazy" decoding="async"/></figure>
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2021/02/img_1088.jpg" alt="" class="wp-image-3285"  loading="lazy" decoding="async" width="1440" height="1920" /></figure>
 <!-- /wp:image -->
 
 <!-- wp:image {"id":3284,"sizeSlug":"large"} -->
-<figure class="wp-block-image size-large"><img src="/assets/uploads/2021/02/img_1077.jpg" alt="" class="wp-image-3284"  loading="lazy" decoding="async"/></figure>
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2021/02/img_1077.jpg" alt="" class="wp-image-3284"  loading="lazy" decoding="async" width="1536" height="1920" /></figure>
 <!-- /wp:image -->
 
 <!-- wp:image {"id":3286,"sizeSlug":"large"} -->
-<figure class="wp-block-image size-large"><img src="/assets/uploads/2021/02/img_1073.jpg" alt="" class="wp-image-3286"  loading="lazy" decoding="async"/></figure>
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2021/02/img_1073.jpg" alt="" class="wp-image-3286"  loading="lazy" decoding="async" width="1080" height="1920" /></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"textAlign":"center"} -->

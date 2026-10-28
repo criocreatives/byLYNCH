@@ -23,18 +23,18 @@ seo_description: "H.E.A.L.I.N.G. in Tivoli Gardens: Donisha Prendergast. Photogr
 <hr />
 
 <h2 style="text-align:center;">Gallery</h2>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_4481.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_4486.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_4487.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_4488.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_4495.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_4496.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_4497.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_4500.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_4515.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_4518.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_4519.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_4521.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_4523.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_4524.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_4525.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_4481.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_4486.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_4487.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_4488.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_4495.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_4496.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_4497.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_4500.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_4515.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_4518.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_4519.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_4521.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_4523.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_4524.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/01/img_4525.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>

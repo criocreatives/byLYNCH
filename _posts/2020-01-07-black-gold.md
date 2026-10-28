@@ -27,25 +27,25 @@ archived_comments:
 <p class="has-text-align-center">D'Sweeta D'Juice.</p>
 <!-- /wp:paragraph -->
 
-<figure class="wp-block-image size-large"><img src="/assets/uploads/2020/01/mg_1471.jpg" alt="" class="wp-image-3217"  loading="lazy" decoding="async"/></figure>
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2020/01/mg_1471.jpg" alt="" class="wp-image-3217"  loading="lazy" decoding="async" width="1920" height="1280" /></figure>
 
-<figure class="wp-block-image size-large"><img src="/assets/uploads/2020/01/mg_1423-2.jpg" alt="" class="wp-image-3221"  loading="lazy" decoding="async"/></figure>
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2020/01/mg_1423-2.jpg" alt="" class="wp-image-3221"  loading="lazy" decoding="async" width="1920" height="1536" /></figure>
 
-<figure class="wp-block-image size-large"><img src="/assets/uploads/2020/01/mg_1395.jpg" alt="" class="wp-image-3219"  loading="lazy" decoding="async"/></figure>
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2020/01/mg_1395.jpg" alt="" class="wp-image-3219"  loading="lazy" decoding="async" width="1280" height="1920" /></figure>
 
-<figure class="wp-block-image size-large"><img src="/assets/uploads/2020/01/mg_1448-2.jpg" alt="" class="wp-image-3223"  loading="lazy" decoding="async"/></figure>
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2020/01/mg_1448-2.jpg" alt="" class="wp-image-3223"  loading="lazy" decoding="async" width="1536" height="1920" /></figure>
 
-<figure class="wp-block-image size-large"><img src="/assets/uploads/2020/01/mg_1422.jpg" alt="" class="wp-image-3220"  loading="lazy" decoding="async"/></figure>
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2020/01/mg_1422.jpg" alt="" class="wp-image-3220"  loading="lazy" decoding="async" width="1536" height="1920" /></figure>
 
-<figure class="wp-block-image size-large"><img src="/assets/uploads/2020/01/mg_1452.jpg" alt="" class="wp-image-3225"  loading="lazy" decoding="async"/></figure>
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2020/01/mg_1452.jpg" alt="" class="wp-image-3225"  loading="lazy" decoding="async" width="1280" height="1920" /></figure>
 
-<figure class="wp-block-image size-large"><img src="/assets/uploads/2020/01/mg_1451-2.jpg" alt="" class="wp-image-3224"  loading="lazy" decoding="async"/></figure>
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2020/01/mg_1451-2.jpg" alt="" class="wp-image-3224"  loading="lazy" decoding="async" width="1280" height="1920" /></figure>
 
-<figure class="wp-block-image size-large"><img src="/assets/uploads/2020/01/mg_1483-2.jpg" alt="" class="wp-image-3218"  loading="lazy" decoding="async"/></figure>
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2020/01/mg_1483-2.jpg" alt="" class="wp-image-3218"  loading="lazy" decoding="async" width="1920" height="1080" /></figure>
 
-<figure class="wp-block-image size-large"><img src="/assets/uploads/2020/01/mg_1453-2.jpg" alt="" class="wp-image-3226"  loading="lazy" decoding="async"/></figure>
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2020/01/mg_1453-2.jpg" alt="" class="wp-image-3226"  loading="lazy" decoding="async" width="1280" height="1920" /></figure>
 
-<figure class="wp-block-image size-large"><img src="/assets/uploads/2020/01/mg_1454.jpg" alt="" class="wp-image-3227"  loading="lazy" decoding="async"/></figure>
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2020/01/mg_1454.jpg" alt="" class="wp-image-3227"  loading="lazy" decoding="async" width="1280" height="1920" /></figure>
 
 <!-- wp:heading {"textAlign":"center"} -->
 <h2 class="wp-block-heading has-text-align-center"><em>Fin.</em></h2>

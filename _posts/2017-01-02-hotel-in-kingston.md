@@ -28,20 +28,20 @@ seo_title: "Hotel in Kingston: Purpmiya Music Video"
 
 <p style="text-align:left;">We needed girls, but It's almost midnight. Studies show that at this hour, 86% of girls are either asleep, or out participating in <em><a href="https://www.urbandictionary.com/define.php?term=Hoe%20Activities" target="_blank" rel="noopener">hoe activities</a></em>.</p>
 <p style="text-align:left;">A couple of promo girls just coming from a night at work are who we could get our hands on. Haffi mek it work.</p>
-<figure class="wp-block-image"><img src="/assets/uploads/2016/12/img_3068.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2016/12/img_3070.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2016/12/img_3068.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2016/12/img_3070.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
 <p style="text-align:left;">Eyes heavy and body woozy. I load up the Canon and start with the shooting. Shots fired in the hotel lobby and everywhere else. Nothing fully scripted. Do dis, do dat. Perfect. Do it again. Speeding to another location. Doing 120km/h in the 80km/h zone. Race ting. Shots fired on the airport strip. Lit Lit Lit. It's done... The smoke clears...</p>
 
 <h3 style="text-align:left;">Here's the final product:</h3>
 <p style="text-align:center;"><div class="embed"><iframe src="https://www.youtube.com/embed/xUv7vH5A2y0" title="YouTube video" loading="lazy" allowfullscreen></iframe></div></p>
 
 <h3 style="text-align:center;">Gallery</h3>
-<figure class="wp-block-image"><img src="/assets/uploads/2016/12/img_3149.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2016/12/img_3146.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2016/12/img_3145.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2016/12/img_3122.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2016/12/img_3114.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2016/12/img_3108.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2016/12/img_3113.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2016/12/img_3119.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2016/12/img_3123.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2016/12/img_3149.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1920"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2016/12/img_3146.jpg" alt="" loading="lazy" decoding="async" width="1536" height="1920"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2016/12/img_3145.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1920"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2016/12/img_3122.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2016/12/img_3114.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2016/12/img_3108.jpg" alt="" loading="lazy" decoding="async" width="1536" height="1920"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2016/12/img_3113.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2016/12/img_3119.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2016/12/img_3123.jpg" alt="" loading="lazy" decoding="async" width="1536" height="1920"></figure>

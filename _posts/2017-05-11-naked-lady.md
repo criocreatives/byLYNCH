@@ -22,15 +22,15 @@ seo_description: "Naked Lady: Roux. Photography, film and culture from the byLYN
 </blockquote>
 Stir well and enjoy.
 
-<figure class="wp-block-image"><img src="/assets/uploads/2017/05/mg_0728-2.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/05/mg_0729-2.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/05/mg_0730-2.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/05/mg_0731-2.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/05/mg_0735-2.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/05/mg_0790.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/05/mg_0792.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/05/mg_0772.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/05/mg_0787.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/05/mg_0728-2.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/05/mg_0729-2.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/05/mg_0730-2.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/05/mg_0731-2.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/05/mg_0735-2.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/05/mg_0790.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/05/mg_0792.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/05/mg_0772.jpg" alt="" loading="lazy" decoding="async" width="1536" height="1920"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/05/mg_0787.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
 
 <figure class="wp-block-image size-large"><img class="alignnone size-full wp-image-2349" src="/assets/uploads/2017/05/mg_0942.jpg" alt="_MG_0942.jpg" width="5184" height="3456"  loading="lazy" decoding="async"/></figure>
 

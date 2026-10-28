@@ -48,18 +48,18 @@ One was once undesirable because they're dark skinned. Now, one may be undesirab
 
 I've even seen someone say they've found a person with all the traits they're looking for except one draw back; they're light skinned. The common excuse of "<em>preference</em>" may be used here.
 
-<figure class="wp-block-image"><img src="/assets/uploads/2017/07/mg_4430.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/07/mg_4446.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/07/mg_4432.jpg" alt="" loading="lazy" decoding="async"></figure>The offensive things once said about us dark skins are now frowned upon. That is good. Similar offensive comments being aimed at the light skins are lauded in a sense. This is bad.
+<figure class="wp-block-image"><img src="/assets/uploads/2017/07/mg_4430.jpg" alt="" loading="lazy" decoding="async" width="1536" height="1920"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/07/mg_4446.jpg" alt="" loading="lazy" decoding="async" width="1536" height="1920"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/07/mg_4432.jpg" alt="" loading="lazy" decoding="async" width="1536" height="1920"></figure>The offensive things once said about us dark skins are now frowned upon. That is good. Similar offensive comments being aimed at the light skins are lauded in a sense. This is bad.
 
 It's like when everyone wore baggy jeans and over-sized t-shirts. That was in style. Clothes that fit right were <em>ew</em>. Time passes. Everyone's clothes now fit (some closer than others. Ha!). Baggy and over-sized clothes are ridiculous. Laughed at.
 
 How long until the next shift?&nbsp;What's the next wave? I want know so I can pick who I have children with. Can't have the wrong colour kids now can we? Lol. <em>Taam</em>.
 
-<figure class="wp-block-image"><img src="/assets/uploads/2017/07/mg_4442.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/07/mg_4436.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/07/mg_4438.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/07/mg_4437.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/07/mg_4435.jpg" alt="" loading="lazy" decoding="async"></figure>Let's stop offending our fellow humans because of skin tone. It's all the same stuff on the inside. Heart. Lungs. Liver.
+<figure class="wp-block-image"><img src="/assets/uploads/2017/07/mg_4442.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/07/mg_4436.jpg" alt="" loading="lazy" decoding="async" width="1280" height="1920"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/07/mg_4438.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/07/mg_4437.jpg" alt="" loading="lazy" decoding="async" width="1280" height="1920"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/07/mg_4435.jpg" alt="" loading="lazy" decoding="async" width="1280" height="1920"></figure>Let's stop offending our fellow humans because of skin tone. It's all the same stuff on the inside. Heart. Lungs. Liver.
 
 Excuse mi.

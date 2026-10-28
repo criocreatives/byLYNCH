@@ -37,13 +37,13 @@ seo_description: "Phone Secks: Amanyea. Photography, film and culture from the b
 
 <figure><img class="alignnone size-full wp-image-2895" src="/assets/uploads/2018/03/mg_4603.jpg" alt="_MG_4603" width="3456" height="4320"  loading="lazy" decoding="async"/><figcaption>Thanks. I needed that.</figcaption></figure>
 
-<figure class="wp-block-image"><img src="/assets/uploads/2018/03/mg_4526.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2018/03/mg_4481.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2018/03/mg_4583-1.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2018/03/mg_4563.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2018/03/mg_4595.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2018/03/mg_4487.jpg" alt="" loading="lazy" decoding="async"></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2018/03/mg_4540.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2018/03/mg_4526.jpg" alt="" loading="lazy" decoding="async" width="1280" height="1920"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2018/03/mg_4481.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2018/03/mg_4583-1.jpg" alt="" loading="lazy" decoding="async" width="1280" height="1920"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2018/03/mg_4563.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1280"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2018/03/mg_4595.jpg" alt="" loading="lazy" decoding="async" width="1280" height="1920"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2018/03/mg_4487.jpg" alt="" loading="lazy" decoding="async" width="1536" height="1920"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2018/03/mg_4540.jpg" alt="" loading="lazy" decoding="async" width="1280" height="1920"></figure>
 
 <hr />
 
