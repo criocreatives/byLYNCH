@@ -633,6 +633,29 @@ check('href="/assets/css/about.css' in about_html,
       "About page must load its isolated stylesheet")
 check('href="/assets/css/about.css' not in home_html,
       "Homepage must not load About-only CSS")
+# Post-only assets must not bleed into the public landing pages.
+post_markup, _ = inspect("/2024/10/26/setsuna/")
+credit_css = SITE / "assets" / "css" / "credits.css"
+check(credit_css.is_file(), "Post credits stylesheet not generated")
+if credit_css.is_file():
+    check(".lynch-credit-related" in credit_css.read_text(encoding="utf-8"),
+          "Credits module missing related-story styling")
+check('href="/assets/css/credits.css' in post_markup,
+      "Individual post must include credits stylesheet")
+check('href="/assets/css/credits.css' not in home_html,
+      "Homepage must not include post-only credits styles")
+check('src="/assets/js/lightbox.js' in post_markup,
+      "Individual post must include photo lightbox module")
+check('src="/assets/js/lightbox.js' not in home_html,
+      "Homepage must not include post-only lightbox")
+check('src="/assets/js/search.js' in home_html and
+      'src="/assets/js/search.js' in post_markup,
+      "Search module must load across site")
+check('data-search-version="' in home_html,
+      "Search asset must have per-build cache version")
+for asset in ("search.js", "lightbox.js"):
+    check((SITE / "assets" / "js" / asset).is_file(),
+          "Missing generated JS module: " + asset)
 arrow_characters = "\u2192\u2190\u2197\u2196\u2198\u2199\u27a1\u27a4\u279c\u2794"
 check(not any(ch in about_source for ch in arrow_characters),
       "About page must not contain Unicode navigation arrow glyphs")
