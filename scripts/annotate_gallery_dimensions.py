@@ -2,7 +2,7 @@
 """Add verified intrinsic gallery dimensions from original photo bytes.
 
 Dry-run by default, --apply writes only missing width/height attributes in
-published Markdown <img> elements. No photos, order, titles, alt text, captions,
+published Markdown <img> elements, keeping source images and captions intact. No photos, order, titles, alt text, captions,
 links, publication dates or embeds are rewritten. Source dimensions are
 calculated after EXIF orientation correction.
 """
