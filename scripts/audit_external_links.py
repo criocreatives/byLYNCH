@@ -36,7 +36,12 @@ def collect():
                 url = match.rstrip(".,;:}])")
                 if "{" in url or "}}" in url or urlsplit(url).hostname is None:
                     continue
-                if urlsplit(url).hostname in {"bylynch.com", "www.bylynch.com"}:
+                host = urlsplit(url).hostname
+                if host in {"bylynch.com", "www.bylynch.com"}:
+                    continue
+                # Connection hints to Google Fonts are not browsable pages;
+                # their root endpoints commonly return 404 by design.
+                if host in {"fonts.googleapis.com", "fonts.gstatic.com"} and urlsplit(url).path in {"", "/"}:
                     continue
                 seen[url].add(path.relative_to(ROOT).as_posix())
     return seen
