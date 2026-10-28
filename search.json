@@ -11,7 +11,7 @@ permalink: /search.json
     "date": {{ post.date | date_to_xmlschema | jsonify }},
     "categories": {{ post.categories | jsonify }},
     "tags": {{ post.tags | jsonify }},
-    {% assign card_excerpt = site.data.card_previews[post.slug] | default: 'Explore this visual story from the byLYNCH archive.' %}
+    {% assign card_excerpt = site.data.card_previews[post.slug] | default: '' %}
     "excerpt": {{ card_excerpt | jsonify }},
     "text": {{ post.content | strip_html | strip_newlines | replace: '&nbsp;', ' ' | jsonify }}
   }{% unless forloop.last %},{% endunless %}
