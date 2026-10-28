@@ -3,6 +3,7 @@
 
 An HTTP 403, 429, timeout, or bot challenge is inconclusive, not a broken
 link. Never delete editorial links automatically based on this report.
+This branch runs a read-only inventory of historic outbound references.
 """
 from __future__ import annotations
 
