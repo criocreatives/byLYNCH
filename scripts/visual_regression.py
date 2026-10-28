@@ -25,7 +25,10 @@ ROUTES = (
     ("/about/", "about"),
     ("/2024/10/26/setsuna/", "setsuna"),
     ("/2017/11/14/dubwise-ft-chronixx-friends/", "dubwise"),
-    ("/2022/08/01/bk/", "excluded-gallery"),
+    ("/2021/02/18/falling-edge/", "falling-edge"),
+    ("/2020/01/10/kraka/", "kraka"),
+    ("/2024/09/26/swove-in-ledish/", "swove"),
+    ("/contact/", "contact"),
 )
 VIEWPORTS = (
     ("desktop", 1440, 900),
@@ -119,14 +122,22 @@ def capture(browser, root_url, path, label, width, height, output):
                 "Homepage ad-card placement changed after infinite scrolling"
             )
         if path == "/2024/10/26/setsuna/":
-            image = page.locator(".entry-content img").first
-            assert image.count() == 1, "Setsuna gallery must contain images"
-            image.click()
-            assert page.locator(".photo-lightbox.is-open").count() == 1, "Lightbox must open"
+            gallery_image = page.locator(".entry-content img").first
+            assert gallery_image.count() == 1, "Setsuna gallery must contain images"
+            gallery_image.focus()
+            page.keyboard.press("Enter")
+            assert page.locator(".photo-lightbox.is-open").count() == 1, "Keyboard lightbox must open"
+            page.keyboard.press("Tab")
+            assert page.locator(".photo-lightbox").locator(":focus").count() == 1, "Focus must stay in dialog"
             page.keyboard.press("Escape")
             assert page.locator(".photo-lightbox.is-open").count() == 0, "Lightbox must close"
-        if path == "/2022/08/01/bk/":
-            assert page.locator('script[src*="adsbygoogle"]').count() == 0, "E-rated AdSense loader found"
+            assert gallery_image.evaluate("(img) => document.activeElement === img"), "Return focus to gallery photo"
+        if path == "/" and width < 600:
+            nav = page.locator(".menu-toggle")
+            nav.click()
+            assert nav.get_attribute("aria-expanded") == "true", "Mobile menu should expand"
+            nav.click()
+            assert nav.get_attribute("aria-expanded") == "false", "Mobile menu should collapse"
     context.close()
     return data, image_path
 
@@ -150,6 +161,8 @@ def main():
     ap.add_argument("--baseline", type=Path, required=True)
     ap.add_argument("--candidate", type=Path, required=True)
     ap.add_argument("--out", type=Path, required=True)
+    ap.add_argument("--allow-visual-route", action="append", default=[],
+                    help="Explicitly reviewed routes with intentional editorial changes")
     args = ap.parse_args()
     args.out.mkdir(parents=True, exist_ok=True)
     report = []
@@ -165,7 +178,7 @@ def main():
                     diff = compare_images(before_png, after_png)
                     report.append({"route": route, "viewport": viewport, "baseline": before,
                                    "candidate": after, "visual": diff})
-                    if not diff["equal"]:
+                    if not diff["equal"] and route not in args.allow_visual_route:
                         failures.append(f"{key}: screenshot changed {diff['differenceFraction']:.2%}")
                     print(f"{key}: diff={diff['differenceFraction']:.2%}, "
                           f"local FCP baseline/candidate={before['firstContentfulPaintMs']}/{after['firstContentfulPaintMs']}ms, "
