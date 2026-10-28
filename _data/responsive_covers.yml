@@ -167,13 +167,6 @@ kingdom:
   original_width: 1536
   small: 2018/09/mg_9407-2-480.webp
   small_width: 480
-koshers-everything:
-  large: 2020/11/mg_5112-960.webp
-  large_width: 960
-  original_height: 1600
-  original_width: 1280
-  small: 2020/11/mg_5112-480.webp
-  small_width: 480
 kraka:
   large: 2024/09/img_6780-960.webp
   large_width: 960
@@ -286,13 +279,6 @@ riviere-flechir:
   original_width: 1920
   small: 2017/01/img_6001-480.webp
   small_width: 480
-roux-as-wednesday-addams:
-  large: 2025/10/IMG_7607-960.webp
-  large_width: 960
-  original_height: 1600
-  original_width: 1280
-  small: 2025/10/IMG_7607-480.webp
-  small_width: 480
 russian-rickolette:
   large: 2018/03/mg_5378-960.webp
   large_width: 960
@@ -313,13 +299,6 @@ sblv1:
   original_height: 1920
   original_width: 1536
   small: 2017/10/sblv1-promo2-480.webp
-  small_width: 480
-setsuna:
-  large: 2024/10/IMG_8836-960.webp
-  large_width: 960
-  original_height: 1600
-  original_width: 1200
-  small: 2024/10/IMG_8836-480.webp
   small_width: 480
 sherlock-shenanigans:
   large: 2017/01/img_6264-960.webp
@@ -377,13 +356,6 @@ unsicher:
   original_width: 1920
   small: 2017/09/img_2810-480.webp
   small_width: 480
-wrc-candids:
-  large: 2026/08/IMG_8618-960.webp
-  large_width: 960
-  original_height: 1600
-  original_width: 1067
-  small: 2026/08/IMG_8618-480.webp
-  small_width: 480
 yada:
   large: 2017/02/img_4666-960.webp
   large_width: 960
@@ -391,3 +363,31 @@ yada:
   original_width: 1920
   small: 2017/02/img_4666-480.webp
   small_width: 480
+koshers-everything:
+  original_width: 1280
+  original_height: 1600
+  small: 2020/11/mg_5112-480.webp
+  small_width: 480
+  large: 2020/11/mg_5112-960.webp
+  large_width: 960
+setsuna:
+  original_width: 1200
+  original_height: 1600
+  small: 2024/10/IMG_8836-480.webp
+  small_width: 480
+  large: 2024/10/IMG_8836-960.webp
+  large_width: 960
+roux-as-wednesday-addams:
+  original_width: 1280
+  original_height: 1600
+  small: 2025/10/IMG_7607-480.webp
+  small_width: 480
+  large: 2025/10/IMG_7607-960.webp
+  large_width: 960
+wrc-candids:
+  original_width: 1067
+  original_height: 1600
+  small: 2026/08/IMG_8618-480.webp
+  small_width: 480
+  large: 2026/08/IMG_8618-960.webp
+  large_width: 960
