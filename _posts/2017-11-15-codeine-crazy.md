@@ -18,14 +18,14 @@ excerpt: "Codeine crazy. Bodeine Brazy."
 
 &nbsp;
 
-<figure class="wp-block-image"><img src="/assets/uploads/2017/11/mg_9153.jpg" alt=""></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/11/mg_9173-e1511027428701.jpg" alt=""></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/11/mg_9159.jpg" alt=""></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/11/mg_9174.jpg" alt=""></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/11/mg_9139.jpg" alt=""></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/11/mg_9163.jpg" alt=""></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/11/mg_9190.jpg" alt=""></figure>
-<figure class="wp-block-image"><img src="/assets/uploads/2017/11/mg_9154.jpg" alt=""></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/11/mg_9153.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/11/mg_9173-e1511027428701.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/11/mg_9159.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/11/mg_9174.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/11/mg_9139.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/11/mg_9163.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/11/mg_9190.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure class="wp-block-image"><img src="/assets/uploads/2017/11/mg_9154.jpg" alt="" loading="lazy" decoding="async"></figure>
 
 <hr />
 
