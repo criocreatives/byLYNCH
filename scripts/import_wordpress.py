@@ -78,7 +78,23 @@ def main():
     ap.add_argument("--xml", required=True, type=Path)
     ap.add_argument("--media", required=True, type=Path)
     ap.add_argument("--repo", required=True, type=Path)
+    ap.add_argument(
+        "--replace-existing-posts", action="store_true",
+        help="Explicitly permit deleting existing Markdown posts during migration. "
+             "Use a separately backed-up migration workspace, never production.",
+    )
     args = ap.parse_args()
+
+    # The import historically unlinks every existing Markdown post. Fail closed
+    # when pointed at an established archive unless replacement was requested.
+    target_posts = args.repo.resolve() / "_posts"
+    existing_posts = sorted(target_posts.glob("*.md")) if target_posts.is_dir() else []
+    if existing_posts and not args.replace_existing_posts:
+        ap.error(
+            f"Refusing to replace {len(existing_posts)} existing posts in {target_posts}. "
+            "Import into an empty workspace, or explicitly pass "
+            "--replace-existing-posts after creating a full backup."
+        )
 
     root = ET.parse(args.xml).getroot()
     channel = root.find("channel")
