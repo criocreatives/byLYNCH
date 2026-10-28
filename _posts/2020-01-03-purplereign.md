@@ -27,21 +27,21 @@ seo_description: "Purple Reign: Roux. Photography, film and culture from the byL
 <p class="has-text-align-center">Stir well &amp; Enjoy.</p>
 <!-- /wp:paragraph -->
 
-<figure class="wp-block-image size-large"><img src="/assets/uploads/2020/01/mg_8380.jpg" alt="" class="wp-image-3186" /></figure>
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2020/01/mg_8380.jpg" alt="" class="wp-image-3186"  loading="lazy" decoding="async"/></figure>
 
-<figure class="wp-block-image size-large"><img src="/assets/uploads/2020/01/mg_8401.jpg" alt="" class="wp-image-3187" /></figure>
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2020/01/mg_8401.jpg" alt="" class="wp-image-3187"  loading="lazy" decoding="async"/></figure>
 
-<figure class="wp-block-image size-large"><img src="/assets/uploads/2020/01/mg_8378.jpg" alt="" class="wp-image-3185" /></figure>
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2020/01/mg_8378.jpg" alt="" class="wp-image-3185"  loading="lazy" decoding="async"/></figure>
 
-<figure class="wp-block-image size-large"><img src="/assets/uploads/2020/01/mg_8359.jpg" alt="" class="wp-image-3184" /></figure>
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2020/01/mg_8359.jpg" alt="" class="wp-image-3184"  loading="lazy" decoding="async"/></figure>
 
-<figure class="wp-block-image size-large"><img src="/assets/uploads/2020/01/mg_8349.jpg" alt="" class="wp-image-3183" /></figure>
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2020/01/mg_8349.jpg" alt="" class="wp-image-3183"  loading="lazy" decoding="async"/></figure>
 
-<figure class="wp-block-image size-large"><img src="/assets/uploads/2020/01/mg_8417.jpg" alt="" class="wp-image-3180" /></figure>
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2020/01/mg_8417.jpg" alt="" class="wp-image-3180"  loading="lazy" decoding="async"/></figure>
 
-<figure class="wp-block-image size-large"><img src="/assets/uploads/2020/01/mg_8486.jpg" alt="" class="wp-image-3181" /></figure>
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2020/01/mg_8486.jpg" alt="" class="wp-image-3181"  loading="lazy" decoding="async"/></figure>
 
-<figure class="wp-block-image size-large"><img src="/assets/uploads/2020/01/mg_8263.jpg" alt="" class="wp-image-3189" /></figure>
+<figure class="wp-block-image size-large"><img src="/assets/uploads/2020/01/mg_8263.jpg" alt="" class="wp-image-3189"  loading="lazy" decoding="async"/></figure>
 
 <!-- wp:heading {"textAlign":"center","level":3} -->
 <h3 class="wp-block-heading has-text-align-center"><strong><em>Fin.</em></strong></h3>
