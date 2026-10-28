@@ -16,7 +16,5 @@ exclude:
   - MANUAL_AD_SETUP.md
   - PRIVACY_IMPLEMENTATION.md
   - SEO_MAINTENANCE_PROGRESS.md
-  - migration-manifest.json
-  - migration-missing-media.txt
   - scripts/
   - .github/
