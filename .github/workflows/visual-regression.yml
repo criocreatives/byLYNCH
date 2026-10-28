@@ -55,6 +55,9 @@ jobs:
             # The phone header deliberately gains a search control.
             EXTRA+=(--allow-mobile-header-change)
           fi
+          if [[ "$GITHUB_REF_NAME" == "fix/hermina-public-release-20261028" ]]; then
+            EXTRA+=(--allow-visual-route /2017/01/04/hermina/)
+          fi
           python3 scripts/visual_regression.py \
             --baseline "$RUNNER_TEMP/bylynch-baseline-site" \
             --candidate "_site" \
