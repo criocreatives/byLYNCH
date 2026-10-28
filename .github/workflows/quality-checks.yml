@@ -43,3 +43,4 @@ jobs:
           python3 -m py_compile scripts/visual_regression.py
           python3 -m py_compile scripts/build_responsive_covers.py
           python3 -m py_compile scripts/annotate_gallery_dimensions.py
+          python3 -m py_compile scripts/audit_external_links.py
