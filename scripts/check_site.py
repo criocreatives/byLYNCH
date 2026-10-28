@@ -600,6 +600,28 @@ check("'allow_google_signals': false" in layout_source
 check("'page_location': window.location.origin + window.location.pathname" in layout_source,
       "GA4 must not send arbitrary URL query parameters")
 
+# Falling Edge editorial hero and listing cover are intentionally different
+# photographs already present in the 12-image source gallery.
+falling_post = (ROOT / "_posts" / "2021-02-18-falling-edge.md").read_text(encoding="utf-8")
+falling_card = "/assets/uploads/2021/02/img_1077.jpg"
+falling_header = "/assets/uploads/2021/02/share-eeb5f485-8ba8-4b99-96b4-f8eee5f30199.jpg"
+featured_content = (ROOT / "_data" / "featured.yml").read_text(encoding="utf-8")
+check("falling-edge: 2021/02/img_1077.jpg" in featured_content,
+      "Falling Edge archive card selection changed")
+check('header_image: "2021/02/share-eeb5f485-8ba8-4b99-96b4-f8eee5f30199.jpg"' in falling_post,
+      "Falling Edge header selection changed")
+check(falling_card in falling_post and falling_header in falling_post,
+      "Falling Edge selected images must remain present in original gallery")
+falling_html, _ = inspect("/2021/02/18/falling-edge/")
+check('src="' + falling_header + '"' in falling_html,
+      "Falling Edge custom hero does not render")
+check('src="' + falling_card + '"' in archive_html,
+      "Falling Edge archive card does not render")
+for suffix in ("480", "960"):
+    cover_variant = ROOT / "assets" / "optimized" / "covers" / "2021" / "02" / ("img_1077-" + suffix + ".webp")
+    check(cover_variant.is_file() and (SITE / cover_variant.relative_to(ROOT)).is_file(),
+          "Falling Edge responsive cover missing: " + suffix)
+
 # Optimized image files are checked as actual built assets, not just srcset strings.
 optimized = sorted((ROOT / "assets" / "optimized" / "covers").rglob("*.webp"))
 header_variant_count = sum(2 for p in post_sources if "header_responsive:" in p.read_text(encoding="utf-8"))
