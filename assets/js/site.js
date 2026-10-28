@@ -9,6 +9,13 @@
   }
   document.querySelectorAll('.main-navigation .menu-item-has-children').forEach(li=>{
     const b=document.createElement('button');b.className='dropdown-toggle';b.type='button';b.setAttribute('aria-expanded','false');
+    const submenu=li.querySelector('.sub-menu');
+    const label=li.querySelector(':scope > a')?.textContent?.trim()||'Menu';
+    b.setAttribute('aria-label','Toggle '+label+' submenu');
+    if(submenu){
+      if(!submenu.id)submenu.id='bylynch-submenu-'+Math.random().toString(36).slice(2,10);
+      b.setAttribute('aria-controls',submenu.id);
+    }
     li.appendChild(b);
     b.addEventListener('click',e=>{e.preventDefault();const sub=li.querySelector('.sub-menu');if(!sub)return;const on=sub.classList.toggle('toggled');b.classList.toggle('toggled',on);b.setAttribute('aria-expanded',on?'true':'false');});
   });
