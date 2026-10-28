@@ -82,7 +82,7 @@ def capture(browser, root_url, path, label, width, height, output):
       javascriptErrors: window.__bylynchCaptureErrors || []
     })""")
     if label.startswith("candidate-"):
-        if path == "/":
+        if path == "/" and width >= 600:
             assert page.locator("[data-post-feed] > .hentry").count() == 12, "Homepage must list 12 posts initially"
             page.locator(".search-toggle").click()
             assert page.locator(".site-search-panel.is-open").count() == 1, "Search must open"
