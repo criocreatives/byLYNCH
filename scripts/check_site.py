@@ -301,7 +301,7 @@ check(hermina_html.count('/assets/uploads/2016/12/img_4444.webp') >= 1,
 check("Have you ever danced with the devil" in hermina_html and
       "Fin." in hermina_html,
       "Original Hermina text missing")
-check(len(re.findall(r'<img[^>]+src="/assets/uploads/2016/12/[^"]+\\.webp"', hermina_html)) >= 12,
+check(len(re.findall(r'<img[^>]+src="/assets/uploads/2016/12/[^"]+\.webp"', hermina_html)) >= 12,
       "Hermina should contain its twelve original article photos")
 check("2017/01/04/hermina/" in (SITE / "sitemap.xml").read_text(encoding="utf-8"),
       "Public Hermina missing from sitemap")
