@@ -3,7 +3,7 @@ layout: post
 title: "Falling Edge"
 date: 2021-02-18 15:16:49 -0500
 date_string: "2021-02-18 15:16:49"
-modified: 2023-12-29 01:42:44 -0500
+modified: 2026-10-27 22:52:24 -0500
 permalink: /2021/02/18/falling-edge/
 author: "lebosslynch"
 categories:
