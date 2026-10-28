@@ -25,8 +25,8 @@ permalink: /archive/
         </header>
         <div class="card-copy">
           <h2 class="entry-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-          {% assign card_excerpt = site.data.card_previews[post.slug] | default: 'Explore this visual story from the byLYNCH archive.' %}
-          <div class="entry-summary"><p>{{ card_excerpt | escape }} <a class="more-link" href="{{ post.url | relative_url }}">View gallery</a></p></div>
+          {% assign card_excerpt = site.data.card_previews[post.slug] %}
+          {% if card_excerpt != blank %}<div class="entry-summary"><p>{{ card_excerpt | escape }} <a class="more-link" href="{{ post.url | relative_url }}">View gallery</a></p></div>{% endif %}
         </div>
       </article>
       {% endfor %}
