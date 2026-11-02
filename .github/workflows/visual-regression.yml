@@ -58,6 +58,10 @@ jobs:
           if [[ "$GITHUB_REF_NAME" == "fix/hermina-public-release-20261028" ]]; then
             EXTRA+=(--allow-visual-route /2017/01/04/hermina/)
           fi
+          if [[ "$GITHUB_REF_NAME" == "fix/rafjam-webp-release-20261102" ]]; then
+            # New archive post intentionally changes homepage and archive card listings.
+            EXTRA+=(--allow-visual-route / --allow-visual-route /archive/)
+          fi
           python3 scripts/visual_regression.py \
             --baseline "$RUNNER_TEMP/bylynch-baseline-site" \
             --candidate "_site" \
