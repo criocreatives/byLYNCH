@@ -398,3 +398,10 @@ hermina:
   small_width: 480
   large: 2016/12/img_4444-960.webp
   large_width: 960
+rafjam:
+  original_width: 1365
+  original_height: 2048
+  small: 2026/11/IMG_0817-converted-480.webp
+  small_width: 480
+  large: 2026/11/IMG_0817-converted-960.webp
+  large_width: 960
