@@ -62,6 +62,10 @@ jobs:
             # New archive post intentionally changes homepage and archive card listings.
             EXTRA+=(--allow-visual-route / --allow-visual-route /archive/)
           fi
+          if [[ "$GITHUB_REF_NAME" == "fix/rafjam-image-order-20261102" ]]; then
+            # RafJam cover and card excerpt changed intentionally; still test interactions and other pages.
+            EXTRA+=(--allow-visual-route / --allow-visual-route /archive/)
+          fi
           python3 scripts/visual_regression.py \
             --baseline "$RUNNER_TEMP/bylynch-baseline-site" \
             --candidate "_site" \
