@@ -1,3 +1,5 @@
+> Historical implementation record. See [README.md](README.md) for the current architecture, preservation rules and release checks. This document is not a current dashboard or compliance verification.
+
 # byLYNCH — current manual AdSense integration
 
 Status verified from production source on 27 October 2026. This is the

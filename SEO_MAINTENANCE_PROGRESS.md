@@ -1,3 +1,5 @@
+> Historical implementation record. See [README.md](README.md) for the current architecture, preservation rules and release checks. This document is not a current dashboard or compliance verification.
+
 # SEO foundation and production safeguards
 
 > **Historical progress log.** Items dated 15 October represent the state *at

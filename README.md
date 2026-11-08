@@ -9,7 +9,7 @@ byLYNCH is a photography, editorial and cultural archive documenting Jamaican pe
 
 ## Current architecture
 
-*Snapshot verified 28 October 2026: 57 published posts and 10 E-classified posts. Counts are not a substitute for checking the current Git tree.*
+*Archive verified 8 November 2026: 58 published posts and 10 E-classified posts. Counts are not a substitute for checking the current Git tree.*
 
 | Path | Responsibility |
 | --- | --- |
@@ -23,9 +23,12 @@ byLYNCH is a photography, editorial and cultural archive documenting Jamaican pe
 | `_data/content_flags.yml` | Single source of truth for E badges and E-article advertising exclusions |
 | `_data/manual_ads.yml` | Three existing Google-issued manual AdSense placements |
 | `_layouts/`, `_includes/` | Shared navigation, pages, galleries, SEO metadata and advertising logic |
-| `assets/css/site.css` | Shared responsive styles, including the mobile search control |
+| `assets/css/site.css` | Shared shell, navigation, search and policy styles |
+| `assets/css/cards.css`, `assets/css/post.css` | Listing and post presentation; superseded gallery/float experiments removed |
 | `assets/css/about.css`, `assets/css/credits.css` | Page-specific styles |
-| `assets/js/site.js` | Navigation, masonry, infinite scroll and manual ad tiles |
+| `assets/js/site.js` | Navigation, card excerpts, infinite scroll and ad activation |
+| `assets/js/post.js` | Idempotent legacy preparation and ordered masonry, loaded only on posts |
+| `_includes/post_card.html`, `_includes/content_policy.html` | Shared listing markup and classification/ad policy |
 | `assets/js/search.js`, `assets/js/lightbox.js` | Site search and accessible photo viewing |
 | `scripts/`, `.github/workflows/` | Quality, visual regression, image-derivative and audit tooling |
 
@@ -81,27 +84,30 @@ GA4 uses `G-K95ENNDT6F`. Google Privacy & messaging, consent behaviour, advertis
 
 ## Testing and release procedure
 
-Supported CI versions: **Jekyll 4.4.1** and **jekyll-paginate 1.1.0** (Ruby 3.3 in GitHub Actions).
+Supported CI versions: **Jekyll 4.4.1** and **jekyll-paginate 1.1.0** (Ruby 3.3, Python 3.12 and Ubuntu 24.04 in GitHub Actions). The OS is pinned because the original Playwright 1.56 toolchain does not support Ubuntu 26.04.
 
 ```sh
 gem install jekyll -v 4.4.1 --no-document
 gem install jekyll-paginate -v 1.1.0 --no-document
 jekyll build --trace
 python3 scripts/check_site.py
+python3 scripts/check_media.py
+python3 -m unittest discover -s scripts/tests -v
 node --check assets/js/site.js
+node --check assets/js/post.js
 node --check assets/js/search.js
 node --check assets/js/lightbox.js
 node --check assets/js/privacy.js
 ```
 
-- `.github/workflows/quality-checks.yml` builds Jekyll, runs `scripts/check_site.py` and checks script syntax on `main`, `fix/**`, `seo/**` and pull requests.
-- `.github/workflows/visual-regression.yml` runs on `fix/**`, `seo/**` and pull requests. It compares staged desktop/mobile pages and interactions against a freshly fetched production `main` baseline, retaining screenshot and lab-timing artifacts. Intentional visual changes need explicit test coverage.
+- `.github/workflows/quality-checks.yml` builds Jekyll, runs `scripts/check_site.py` and checks script syntax on `main`, `fix/**`, `seo/**`, `refactor/**` and pull requests.
+- `.github/workflows/visual-regression.yml` runs on `fix/**`, `seo/**`, `refactor/**` and pull requests. It compares staged desktop/mobile pages and interactions against a freshly fetched production `main` baseline, retaining screenshot and lab-timing artifacts. It covers 15 routes at 320, 390, 599, 768, 900 and 1440px, including all article-item geometry and three additional gallery viewports. Browser fixtures check node/caption/srcset preservation, repeated initialization, no-JS layouts and failed images. Historic branch-name visual bypasses are removed; intentional future visual exceptions must be supplied explicitly and reviewed.
 - `.github/workflows/link-audit.yml` and `scripts/audit_external_links.py` report suspect external links for review. Bot blocks and timeouts are inconclusive; never delete a historical link solely from an automated failure.
 
 **Safe release sequence:**
 
 1. Fetch current `main`, current workflows and applicable branch rules; inspect the exact files to change.
-2. Create an exact pre-change backup ref and a scoped `fix/**` staging branch. Limit the diff to the approved change.
+2. Create an exact pre-change backup ref and a scoped staging branch (`fix/**` or `refactor/**`). Limit the diff to the approved change.
 3. Run quality checks and desktop/mobile visual regression; inspect failures and intentional differences.
 4. Fast-forward `main` without force, using the expected current head. Recheck the branch if it has moved.
 5. Verify the **production quality run and GitHub Pages deployment** independently. A successful site build alone is not proof that Pages deployed.
@@ -109,6 +115,20 @@ node --check assets/js/privacy.js
 **Branch protection (verified 28 October 2026):** the active `byLYNCH Production Protection` ruleset (ID `26012554`) blocks deletion and non-fast-forward updates on the default branch. It **does not enforce required CI status checks**. Passing staging tests before publication is therefore a release procedure, not an automatic branch rule.
 
 Never force-push `main`, delete rollback history, or treat an earlier handoff SHA as guaranteed current.
+
+## Consolidation and preservation checks
+
+The 8 November consolidation began from `4bd86898b8cc659589616171261bc6ac299ee2e4`.
+Rollback reference: `backup/bylynch-before-consolidation-20261108`. The staging branch is `refactor/technical-consolidation-20261108`. Roll back with a new, tested revert commit; never force-reset production.
+
+- Cards and E/ad decisions render from shared includes. Infinite scrolling imports server-rendered cards and clones the shared inert ad template, preserving six-card cadence.
+- The post module moves complete legacy figures instead of cloning images. Ambiguous galleries with additional copy stay together. Text, separators and spacer nodes remain in the DOM; compatibility styling retains the established appearance. CSS grid remains the no-JS fallback, with the same 1/2/3 columns.
+- Cover generation accepts JPEG, PNG and WebP sources, rejects traversal and escaping symlinks, transposes orientation and retains ICC profiles. Unit tests encode actual Hermina/RafJam sources only into temporary directories; originals are never recompressed.
+- `check_media.py` validates all local gallery files, unique image references within each article, image signatures, orientation-aware aspect ratios, srcset widths and exact cover/header registry dimensions. Some WordPress HTML declares another resolution of the same photograph: those historical attributes are preserved, with one-pixel rounding tolerance at either resolution.
+- `editorial_checks.py` retains named archival requirements separately from general structure checks, including RafJam's 40 images, selections, caption, hero, card and linked closing credit.
+- Local browser runs can set `CHROMIUM_EXECUTABLE=/usr/bin/chromium`; CI installs the pinned Playwright browser. Install Python tooling with `Pillow>=10,<13`, `PyYAML>=6,<7` and `playwright==1.56.0` before running the checks.
+
+The pre-refactor expanded baseline revealed existing horizontal overflow on the Dubwise mobile article. The visual comparison records document width and rejects any increase; it does not silently recategorize pre-existing defects as refactor regressions. Third-party ads, embeds and Google Fonts are blocked during deterministic comparisons; their remote behavior still needs live verification. No post, registry, original or optimized photograph is changed by this consolidation.
 
 ## Maintenance history (reference only)
 

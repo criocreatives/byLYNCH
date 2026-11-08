@@ -1,3 +1,5 @@
+> Historical implementation record. See [README.md](README.md) for the current architecture, preservation rules and release checks. This document is not a current dashboard or compliance verification.
+
 # byLYNCH privacy and rights remediation — 15 October 2026
 
 This tracks F04, F06, F07 and F09. It does **not** certify privacy-law or AdSense compliance.

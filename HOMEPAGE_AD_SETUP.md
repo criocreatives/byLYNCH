@@ -1,3 +1,5 @@
+> Historical implementation record. See [README.md](README.md) for the current architecture, preservation rules and release checks. This document is not a current dashboard or compliance verification.
+
 # byLYNCH — Homepage grid ad (one after six posts)
 
 ## Activated: 15 October 2026
