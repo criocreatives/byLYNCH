@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - 'fix/**'
+      - 'refactor/**'
       - 'seo/**'
   pull_request:
   workflow_dispatch:
@@ -46,30 +47,10 @@ jobs:
           python3 -m playwright install --with-deps chromium
       - name: Compare desktop and mobile snapshots and interactions
         run: |
-          EXTRA=()
-          if [[ "${GITHUB_REF_NAME}" == "fix/full-cleanup-reversible-20261027" ]]; then
-            # Author-approved archive copy changes on the homepage and archive.
-            EXTRA+=(--allow-visual-route / --allow-visual-route /archive/)
-          fi
-          if [[ "${GITHUB_REF_NAME}" == "fix/mobile-search-visible-20261028" ]]; then
-            # The phone header deliberately gains a search control.
-            EXTRA+=(--allow-mobile-header-change)
-          fi
-          if [[ "$GITHUB_REF_NAME" == "fix/hermina-public-release-20261028" ]]; then
-            EXTRA+=(--allow-visual-route /2017/01/04/hermina/)
-          fi
-          if [[ "$GITHUB_REF_NAME" == "fix/rafjam-webp-release-20261102" ]]; then
-            # New archive post intentionally changes homepage and archive card listings.
-            EXTRA+=(--allow-visual-route / --allow-visual-route /archive/)
-          fi
-          if [[ "$GITHUB_REF_NAME" == "fix/rafjam-image-order-20261102" ]]; then
-            # RafJam cover and card excerpt changed intentionally; still test interactions and other pages.
-            EXTRA+=(--allow-visual-route / --allow-visual-route /archive/)
-          fi
           python3 scripts/visual_regression.py \
             --baseline "$RUNNER_TEMP/bylynch-baseline-site" \
             --candidate "_site" \
-            --out "$RUNNER_TEMP/bylynch-visual-comparison" "${EXTRA[@]}"
+            --out "$RUNNER_TEMP/bylynch-visual-comparison"
       - name: Preserve screenshot evidence and lab timings
         if: always()
         uses: actions/upload-artifact@v4

@@ -3,7 +3,7 @@
 
 Normal runs generate only missing/outdated featured cover mappings. --only
 explicitly rebuilds selected slugs, --header-post generates a custom hero, and
---rebuild-all is an intentional full resample. The original JPG/PNG files
+--rebuild-all is an intentional full resample. The original JPEG/PNG/WebP files
 are never modified, and unchanged manifest entries are preserved byte-for-byte.
 """
 from __future__ import annotations
@@ -26,9 +26,11 @@ QUALITY = 82  # Fixed quality for non-destructive derivative creation
 
 def safe_original(rel_path: str) -> Path:
     rel = Path(str(rel_path))
-    if rel.is_absolute() or ".." in rel.parts or rel.suffix.lower() not in {".jpg", ".jpeg", ".png"}:
+    if rel.is_absolute() or ".." in rel.parts or rel.suffix.lower() not in {".jpg", ".jpeg", ".png", ".webp"}:
         raise ValueError(f"Unsafe original image path: {rel_path}")
-    path = ORIGINALS / rel
+    path = (ORIGINALS / rel).resolve()
+    if not path.is_relative_to(ORIGINALS.resolve()):
+        raise ValueError(f"Original image escapes uploads: {rel_path}")
     if not path.is_file():
         raise FileNotFoundError(path)
     return path
@@ -115,7 +117,7 @@ def generate() -> None:
     parser.add_argument("--header-post", action="append", default=[], metavar="SLUG",
                         help="Generate custom responsive header for the selected post")
     parser.add_argument("--rebuild-all", action="store_true",
-                        help="Intentionally re-encode all 56 cards")
+                        help="Intentionally re-encode every registered card cover")
     args = parser.parse_args()
     if args.rebuild_all and args.only:
         parser.error("--rebuild-all and --only cannot be combined")

@@ -6,6 +6,7 @@ on:
       - main
       - 'seo/**'
       - 'fix/**'
+      - 'refactor/**'
   pull_request:
   workflow_dispatch:
 
@@ -30,10 +31,16 @@ jobs:
         run: |
           gem install jekyll -v 4.4.1 --no-document
           gem install jekyll-paginate -v 1.1.0 --no-document
+      - name: Install image validation dependencies
+        run: python3 -m pip install 'Pillow>=10,<13' 'PyYAML>=6,<7'
+      - name: Test non-destructive cover generation
+        run: python3 -m unittest discover -s scripts/tests -v
       - name: Build the site
         run: jekyll build --trace
       - name: Validate SEO, archive and ad exclusions
-        run: python3 scripts/check_site.py
+        run: |
+          python3 scripts/check_site.py
+          python3 scripts/check_media.py
       - name: Check JavaScript syntax
         run: |
           node --check assets/js/site.js

@@ -11,6 +11,7 @@ import argparse
 import contextlib
 import hashlib
 import json
+import os
 import threading
 from functools import partial
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
@@ -30,10 +31,19 @@ ROUTES = (
     ("/2017/01/04/hermina/", "hermina"),
     ("/2024/09/26/swove-in-ledish/", "swove"),
     ("/contact/", "contact"),
+    ("/2022/08/01/bk/", "bk"),
+    ("/2017/07/31/the-roze-the-rimz/", "summer-roze"),
+    ("/2026/08/29/wrc-candids/", "wrc-candids"),
+    ("/2026/11/01/rafjam/", "rafjam"),
+    ("/2016/11/23/anchor-studio-with-runkus/", "runkus"),
 )
 VIEWPORTS = (
     ("desktop", 1440, 900),
     ("mobile", 390, 844),
+    ("phone-small", 320, 844),
+    ("phone-wide", 599, 844),
+    ("tablet", 768, 900),
+    ("gallery-desktop", 900, 900),
 )
 
 class QuietHandler(SimpleHTTPRequestHandler):
@@ -82,6 +92,8 @@ def capture(browser, root_url, path, label, width, height, output):
         route.continue_() if route.request.url.startswith(root_url + "/")
         else route.abort()
     ))
+    javascript_errors = []
+    page.on("pageerror", lambda error: javascript_errors.append(str(error)))
     response = page.goto(root_url + path, wait_until="domcontentloaded", timeout=30000)
     if response is None or response.status != 200:
         raise RuntimeError(f"{label} {path}: HTTP {response.status if response else 'none'}")
@@ -89,6 +101,14 @@ def capture(browser, root_url, path, label, width, height, output):
         page.wait_for_load_state("load", timeout=18000)
     except Exception:
         pass  # Browser screenshot still demonstrates the fallback.
+    # Decode the complete article before measuring all masonry items. This catches
+    # failures below the first viewport and avoids lazy-load timing differences.
+    page.evaluate("""async () => {
+      await Promise.all([...document.querySelectorAll('.entry-content img')].map(async img => {
+        img.loading = 'eager';
+        try { await img.decode(); } catch (_) {}
+      }));
+    }""")
     page.wait_for_timeout(450)
     page.add_style_tag(content="*,*::before,*::after{animation:none!important;transition:none!important;caret-color:transparent!important}")
     image_path = output / f"{label}.png"
@@ -106,6 +126,31 @@ def capture(browser, root_url, path, label, width, height, output):
       javascriptErrors: window.__bylynchCaptureErrors || [],
       headerBottomPx: Math.ceil(document.querySelector('.site-header')?.getBoundingClientRect().bottom || 0)
     })""")
+    data["javascriptErrors"] = javascript_errors
+    assert not javascript_errors, f"{label}: JavaScript errors: {javascript_errors}"
+    data["geometry"] = page.evaluate("""() => {
+      const selectors = '.site-header,.site-logo-link,.menu-toggle,.search-toggle,.entry-hero,.entry-header-wrapper,.bk-post-meta,.entry-content,.entry-content > *,.entry-content img,.entry-content figcaption,.entry-content iframe,.lynch-credits,.post-chronology,.post-comments-outer,.site-footer,.site-main > .hentry';
+      return [...document.querySelectorAll(selectors)].filter(el => el.getClientRects().length && getComputedStyle(el).display !== 'none').map(el => {
+        const rect = el.getBoundingClientRect(), cs = getComputedStyle(el);
+        return {tag:el.tagName, classes:el.className, x:Math.round(rect.x*4)/4,
+          y:Math.round((rect.y+scrollY)*4)/4, width:Math.round(rect.width*4)/4, height:Math.round(rect.height*4)/4,
+          color:cs.color, background:cs.backgroundColor, radius:cs.borderRadius, font:cs.font,
+          src:el.getAttribute('src'), text:el.matches('.entry-content > *')?el.textContent.trim():null};
+      });
+    }""")
+    data["documentWidth"] = page.evaluate("document.documentElement.scrollWidth")
+    broken = page.locator('.entry-content img').evaluate_all("imgs => imgs.filter(i=>!i.complete||!i.naturalWidth).map(i=>i.src)")
+    assert not broken, f"{label}: gallery images failed to load: {broken}"
+    data["gallerySnapshots"] = []
+    if page.locator('.entry-content').count():
+        grid = page.locator('.entry-content').bounding_box()
+        for part, y in [('start', grid['y']), ('middle', grid['y']+grid['height']/2), ('end', grid['y']+grid['height']-height/2)]:
+            page.evaluate('(y) => scrollTo(0, y)', max(0, y-100))
+            page.wait_for_timeout(80)
+            name = f"{label}-gallery-{part}.png"
+            page.screenshot(path=str(output / name), animations="disabled")
+            data["gallerySnapshots"].append(name)
+        page.evaluate('scrollTo(0,0)')
     if label.startswith("candidate-"):
         if path == "/" and width >= 600:
             assert page.locator("[data-post-feed] > .hentry").count() == 12, "Homepage must list 12 posts initially"
@@ -223,7 +268,7 @@ def main():
     failures = []
     with serve(args.baseline.resolve()) as baseline_url, serve(args.candidate.resolve()) as candidate_url:
         with sync_playwright() as playwright:
-            browser = playwright.chromium.launch(headless=True, args=["--no-sandbox"])
+            browser = playwright.chromium.launch(executable_path=os.environ.get("CHROMIUM_EXECUTABLE"), headless=True, args=["--no-sandbox"])
             for route, slug in ROUTES:
                 for viewport, width, height in VIEWPORTS:
                     key = slug + "-" + viewport
@@ -231,6 +276,14 @@ def main():
                     after, after_png = capture(browser, candidate_url, route, "candidate-" + key, width, height, args.out)
                     header_crop = (max(before["headerBottomPx"], after["headerBottomPx"]) + 4
                                    if args.allow_mobile_header_change and width < 600 else 0)
+                    if after["documentWidth"] > max(width, before["documentWidth"]) + 1:
+                        failures.append(f"{key}: horizontal overflow increased")
+                    if before["geometry"] != after["geometry"] and route not in args.allow_visual_route:
+                        failures.append(f"{key}: content, style or page geometry changed")
+                    for left, right in zip(before["gallerySnapshots"], after["gallerySnapshots"]):
+                        gallery_diff = compare_images(args.out / left, args.out / right)
+                        if not gallery_diff["equal"] and route not in args.allow_visual_route:
+                            failures.append(f"{key}: gallery viewport changed: {right}")
                     diff = compare_images(before_png, after_png, ignore_top_px=header_crop)
                     report.append({"route": route, "viewport": viewport, "baseline": before,
                                    "candidate": after, "ignoredHeaderPixels": header_crop,
