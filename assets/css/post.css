@@ -10,8 +10,6 @@
   float: left;
 }
 
-
-
 .entry-hero {
   position: relative;
 }
@@ -35,14 +33,6 @@
 
 .entry-hero .entry-meta {
   color: var(--accent);
-}
-
-.single .site-main {
-  padding-top: 30px;
-}
-
-.single-entry {
-  overflow: hidden;
 }
 
 .entry-content {
@@ -102,112 +92,24 @@
   text-align: right;
 }
 
-.entry-footer {
-  color: var(--muted);
-  display: block;
-  font-size: 13px;
-  font-weight: 700;
-  line-height: 1.54;
-  margin-bottom: 30px;
-  text-transform: uppercase;
-  width: 100%;
-}
-
-.entry-footer span {
-  border-top: 1px solid #eee;
-  display: block;
-  padding: 5px 0;
-}
-
-.entry-footer span:last-of-type {
-  border-bottom: 1px solid #eee;
-}
-
-.comments-area {
-  border-top: 1px solid var(--line);
-  margin-top: 30px;
-  padding-top: 30px;
-}
-
-.comments-area h2 {
-  font-size: 25px;
-  line-height: 1.2;
-}
-
-.comment {
-  border-bottom: 1px solid #eee;
-  padding: 22px 0;
-}
-
 .comment-author {
   font-weight: 700;
 }
 
-.comment-date {
-  color: var(--muted);
-  font-size: 13px;
-  text-transform: uppercase;
-  margin: 3px 0 12px;
-}
+.comment-date { text-transform: uppercase; }
 
-@media (min-width:600px) {
-  .single .site-main {
-    padding-top: 60px;
-  }
-
-  .comments-area {
-    padding-top: 60px;
-  }
-}
-
-@media (min-width:960px) {
-  .single .site-main {
-    width: 615px;
-  }
-
-  .entry-hero .entry-title,
+@media (min-width:960px){
+.entry-hero .entry-title,
   .entry-hero .entry-meta {
     color: #fff;
     max-width: 930px;
     text-shadow: 0 0 .125em rgba(0,0,0,.3);
   }
 
-  .entry-hero .post-thumbnail img {
+.entry-hero .post-thumbnail img {
     width: 100%;
     max-height: 768px;
     object-fit: cover;
-  }
-
-  .single-entry {
-    padding-right: 60px;
-  }
-}
-
-@media (min-width:1080px) {
-  .single .site-main {
-    width: 705px;
-  }
-}
-
-@media (min-width:1380px) {
-  .single .site-main {
-    width: 930px;
-  }
-
-  .single .entry-content {
-    float: right;
-    width: 540px;
-  }
-
-  .entry-footer {
-    float: left;
-    width: 270px;
-  }
-
-  .comments-area {
-    clear: both;
-    margin-left: 330px;
-    width: 600px;
   }
 }
 
@@ -232,10 +134,6 @@
 .bk-post-meta-inner {
   padding: 16px 8px;
 }
-
-
-
-
 
 .bk-post-meta-inner,
 .bk-redesign .content-area {
@@ -328,36 +226,36 @@
   margin-bottom: 0;
 }
 
-@media (min-width:768px) {
-  .bk-post-meta-inner,
+@media (min-width:768px){
+.bk-post-meta-inner,
   .bk-redesign .content-area {
     width: 648px;
   }
 }
 
-@media (min-width:840px) {
-  .bk-post-meta-inner,
+@media (min-width:840px){
+.bk-post-meta-inner,
   .bk-redesign .content-area {
     width: 720px;
   }
 }
 
-@media (min-width:960px) {
-  .bk-post-meta-inner,
+@media (min-width:960px){
+.bk-post-meta-inner,
   .bk-redesign .content-area {
     width: 840px;
   }
 }
 
-@media (min-width:1080px) {
-  .bk-post-meta-inner,
+@media (min-width:1080px){
+.bk-post-meta-inner,
   .bk-redesign .content-area {
     width: 960px;
   }
 }
 
-@media (min-width:1380px) {
-  .bk-post-meta-inner,
+@media (min-width:1380px){
+.bk-post-meta-inner,
   .bk-redesign .content-area {
     width: 1260px;
   }
@@ -527,22 +425,22 @@ body.lightbox-open {
   overflow: hidden;
 }
 
-@media (max-width:839px) {
-  .photo-lightbox {
+@media (max-width:839px){
+.photo-lightbox {
     padding: 12px;
   }
 
-  .photo-lightbox-stage {
+.photo-lightbox-stage {
     max-width: 100%;
     max-height: 100%;
   }
 
-  .photo-lightbox-image {
+.photo-lightbox-image {
     max-height: calc(100vh - 72px);
     border-radius: 8px;
   }
 
-  .photo-lightbox-prev,
+.photo-lightbox-prev,
   .photo-lightbox-next {
     top: auto;
     bottom: 16px;
@@ -553,15 +451,15 @@ body.lightbox-open {
     font-size: 34px;
   }
 
-  .photo-lightbox-prev {
+.photo-lightbox-prev {
     left: 16px;
   }
 
-  .photo-lightbox-next {
+.photo-lightbox-next {
     right: 16px;
   }
 
-  .photo-lightbox-close {
+.photo-lightbox-close {
     top: 12px;
     right: 12px;
     width: 42px;
@@ -569,12 +467,12 @@ body.lightbox-open {
     font-size: 28px;
   }
 
-  .photo-lightbox-counter {
+.photo-lightbox-counter {
     left: 14px;
     top: 16px;
   }
 
-  .photo-lightbox-caption {
+.photo-lightbox-caption {
     padding: 0 64px 2px;
   }
 }
@@ -665,20 +563,20 @@ body.lightbox-open {
   outline-offset: -2px;
 }
 
-@media (max-width:599px) {
-  .post-chronology-inner {
+@media (max-width:599px){
+.post-chronology-inner {
     grid-template-columns: 1fr;
   }
 
-  .post-chronology-spacer {
+.post-chronology-spacer {
     display: none;
   }
 
-  .post-chronology-link {
+.post-chronology-link {
     padding: 24px 0;
   }
 
-  .post-chronology-next {
+.post-chronology-next {
     border-top: 1px solid #e6e6e6;
   }
 }
@@ -698,14 +596,14 @@ body.lightbox-open {
   top: auto !important;
 }
 
-@media (min-width:600px) {
-  .single .bk-redesign .entry-content:not(.masonry-initialized) {
+@media (min-width:600px){
+.single .bk-redesign .entry-content:not(.masonry-initialized) {
     grid-template-columns: repeat(2,minmax(0,1fr));
   }
 }
 
-@media (min-width:900px) {
-  .single .bk-redesign .entry-content:not(.masonry-initialized) {
+@media (min-width:900px){
+.single .bk-redesign .entry-content:not(.masonry-initialized) {
     grid-template-columns: repeat(3,minmax(0,1fr));
   }
 }
@@ -796,8 +694,8 @@ body.lightbox-open {
   text-align: right !important;
 }
 
-@media (max-width:599px) {
-  .post-chronology-next,
+@media (max-width:599px){
+.post-chronology-next,
   .post-chronology-prev {
     padding: 24px 0 !important;
     border-left: 0 !important;
@@ -805,11 +703,11 @@ body.lightbox-open {
     text-align: left !important;
   }
 
-  .post-chronology-prev {
+.post-chronology-prev {
     border-top: 1px solid #e6e6e6 !important;
   }
 
-  .post-comments-outer {
+.post-comments-outer {
     padding: 32px 0 38px;
   }
 }
@@ -939,12 +837,12 @@ body.lightbox-open {
   max-width: 100%;
 }
 
-@media (max-width:700px) {
-  .bk-post-meta-inner.bylynch-meta-has-ad {
+@media (max-width:700px){
+.bk-post-meta-inner.bylynch-meta-has-ad {
     display: block;
   }
 
-  .bylynch-manual-ad--metadata {
+.bylynch-manual-ad--metadata {
     width: 100%;
     margin-top: 14px;
     padding-top: 13px;
@@ -967,8 +865,8 @@ body.lightbox-open {
   margin: 0 auto;
 }
 
-@media (max-width:600px) {
-  .single .bk-redesign .bylynch-manual-ad--after-gallery {
+@media (max-width:600px){
+.single .bk-redesign .bylynch-manual-ad--after-gallery {
     margin-top: 24px;
     padding: 20px 12px 24px;
   }

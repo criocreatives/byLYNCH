@@ -53,6 +53,7 @@ jobs:
         run: |
           python3 scripts/test_post_rendering.py
           python3 scripts/test_fallbacks.py
+          python3 scripts/test_feed.py
       - name: Compare desktop and mobile snapshots and interactions
         run: |
           python3 scripts/visual_regression.py \
