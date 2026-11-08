@@ -28,15 +28,8 @@ gtag('config', 'G-K95ENNDT6F', {
   'page_location': window.location.origin + window.location.pathname
 });
 </script>
-{% assign e_posts = site.data.content_flags.e_notice %}
-{% assign adsense_allowed = true %}
-{% if page.exclude_ads %}{% assign adsense_allowed = false %}{% endif %}
-{% if page.layout == 'post' %}
-  {% assign page_url_slug = page.url | split: '/' | last %}
-  {% if e_posts contains page.slug or e_posts contains page_url_slug %}
-    {% assign adsense_allowed = false %}
-  {% endif %}
-{% endif %}
+{% include content_policy.html post=page %}
+{% assign adsense_allowed = content_ads_allowed %}
 {% if adsense_allowed %}
 <meta name="google-adsense-account" content="ca-pub-4888519100229596">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4888519100229596" crossorigin="anonymous"></script>
@@ -142,10 +135,14 @@ gtag('config', 'G-K95ENNDT6F', {
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap">
 <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M%S' }}">
+{% if page.new_wave or page.archive or paginator or page.url == '/' %}
+<link rel="stylesheet" href="{{ '/assets/css/cards.css' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M%S' }}">
+{% endif %}
 {% if page.url == '/about/' %}
 <link rel="stylesheet" href="{{ '/assets/css/about.css' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M%S' }}">
 {% endif %}
 {% if page.layout == 'post' %}
+<link rel="stylesheet" href="{{ '/assets/css/post.css' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M%S' }}">
 <link rel="stylesheet" href="{{ '/assets/css/credits.css' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M%S' }}">
 {% endif %}
 </head>
@@ -190,10 +187,10 @@ gtag('config', 'G-K95ENNDT6F', {
   </div>
 </footer>
 </div>
-<script type="application/json" id="bylynch-rating-slugs">{{ site.data.content_flags.e_notice | jsonify }}</script>
 <script defer src="{{ '/assets/js/privacy.js' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M%S' }}"></script>
 <script defer src="{{ '/assets/js/site.js' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M%S' }}"></script>
 {% if page.layout == 'post' %}
+<script type="module" src="{{ '/assets/js/post.js' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M%S' }}"></script>
 <script defer src="{{ '/assets/js/lightbox.js' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M%S' }}"></script>
 {% endif %}
 <script defer data-search-version="{{ site.time | date: '%Y%m%d%H%M%S' }}" src="{{ '/assets/js/search.js' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M%S' }}"></script>

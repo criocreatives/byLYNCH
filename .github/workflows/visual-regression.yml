@@ -17,13 +17,17 @@ permissions:
 
 jobs:
   baseline-comparison:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 25
     steps:
       - name: Checkout candidate with its Git history
         uses: actions/checkout@v4
         with:
           fetch-depth: 2
+      - name: Use supported Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
       - name: Use supported Ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -45,6 +49,10 @@ jobs:
         run: |
           python3 -m pip install --user 'playwright==1.56.0' 'Pillow>=10,<12'
           python3 -m playwright install --with-deps chromium
+      - name: Test legacy post preparation without content loss
+        run: |
+          python3 scripts/test_post_rendering.py
+          python3 scripts/test_fallbacks.py
       - name: Compare desktop and mobile snapshots and interactions
         run: |
           python3 scripts/visual_regression.py \

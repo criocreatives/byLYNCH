@@ -180,8 +180,8 @@ check(len([source for source in home.sources if source.get("type") == "image/web
       "Homepage must render 12 responsive WebP picture sources")
 
 # Regression guard: optimized <picture> images must fill 4:5 cover cards.
-css_text = (SITE / "assets/css/site.css").read_text(encoding="utf-8")
-image_rule = ".post-cover-picture > img.post-thumbnail-image{"
+css_text = (SITE / "assets/css/cards.css").read_text(encoding="utf-8")
+image_rule = ".post-cover-picture > img.post-thumbnail-image {"
 rule_at = css_text.find(image_rule)
 check(
     rule_at >= 0
@@ -275,6 +275,15 @@ for slug in flagged:
               "AdSense library must be excluded from " + slug)
         check('<ins class="adsbygoogle"' not in html,
               "Manual ad units must be excluded from " + slug)
+
+# Server-rendered badges are authoritative, including cards imported by scrolling.
+archive_cards = re.findall(r'<article class="hentry format-gallery has-post-thumbnail"[^>]*>(.*?)</article>', archive_html, re.S)
+for slug, url in post_urls.items():
+    matching = [card for card in archive_cards if 'href="' + url + '"' in card]
+    check(len(matching) == 1, slug + ": missing or repeated archive card")
+    if matching:
+        check(('class="content-rating-badge"' in matching[0]) == (slug in flagged),
+              slug + ": archive E badge differs from classification registry")
 
 # People & Credits: verify person associations, readable credits and structured data.
 expected_people = {

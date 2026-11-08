@@ -1,0 +1,11 @@
+{% comment %}One policy for card badges, article units and the publisher loader.{% endcomment %}
+{%- assign policy_slug = include.post.url | split: '/' | last -%}
+{%- assign content_is_explicit = false -%}
+{%- if site.data.content_flags.e_notice contains include.post.slug or site.data.content_flags.e_notice contains policy_slug -%}
+  {%- assign content_is_explicit = true -%}
+{%- endif -%}
+{%- assign content_ads_allowed = true -%}
+{%- if include.post.exclude_ads -%}{%- assign content_ads_allowed = false -%}{%- endif -%}
+{%- if include.post.layout == 'post' and content_is_explicit -%}
+  {%- assign content_ads_allowed = false -%}
+{%- endif -%}

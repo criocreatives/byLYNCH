@@ -1,0 +1,14 @@
+{% include content_policy.html post=include.post %}
+<article class="hentry format-gallery has-post-thumbnail"{% if include.archive %} data-categories="{{ include.post.categories | join: '||' | escape }}" data-tags="{{ include.post.tags | join: '||' | escape }}"{% endif %}>
+  {% include rating_badge.html %}
+  <header class="entry-header">
+    <a class="post-thumbnail" href="{{ include.post.url | relative_url }}">
+      {% include optimized_cover.html post=include.post priority=include.priority %}
+    </a>
+  </header>
+  <div class="card-copy">
+    <h2 class="entry-title"><a href="{{ include.post.url | relative_url }}">{{ include.post.title }}</a></h2>
+    {% assign card_excerpt = site.data.card_previews[include.post.slug] %}
+    {% if card_excerpt != blank %}<div class="entry-summary"><p>{{ card_excerpt | escape }} <a class="more-link" href="{{ include.post.url | relative_url }}">View gallery</a></p></div>{% endif %}
+  </div>
+</article>

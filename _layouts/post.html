@@ -2,20 +2,12 @@
 layout: default
 ---
 {% assign feature = site.data.featured[page.slug] %}
-{% assign excluded_posts = site.data.content_flags.e_notice %}
-{% assign url_slug = page.url | split: '/' | last %}
-{% assign bylynch_ads_eligible = true %}
-{% if page.exclude_ads %}{% assign bylynch_ads_eligible = false %}{% endif %}
-{% if excluded_posts contains page.slug or excluded_posts contains url_slug %}
-  {% assign bylynch_ads_eligible = false %}
-{% endif %}
+{% include content_policy.html post=page %}
+{% assign bylynch_ads_eligible = content_ads_allowed %}
 {% assign metadata_ad_slot = site.data.manual_ads.metadata_slot | default: '' | strip %}
 {% assign after_gallery_ad_slot = site.data.manual_ads.after_gallery_slot | default: '' | strip %}
 <header class="entry-header entry-hero" data-entry-hero>
-  {% assign e_posts = site.data.content_flags.e_notice %}
-  {% if e_posts contains page.slug %}
-  <span class="content-rating-badge" role="img" aria-label="Mature content: nudity" title="Mature content">E</span>
-  {% endif %}
+  {% include rating_badge.html %}
   <div class="post-thumbnail">
     {% include optimized_cover.html post=page hero=true %}
   </div>

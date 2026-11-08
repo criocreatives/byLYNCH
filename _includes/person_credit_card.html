@@ -15,7 +15,8 @@
         {% if credit_other.featured_people contains credit_id or credit_other.mentioned_people contains credit_id or credit_other.collaborators contains credit_id %}
           {% assign credit_other_allowed = true %}
           {% if include.ads_eligible %}
-            {% if site.data.content_flags.e_notice contains credit_other.slug or credit_other.exclude_ads %}{% assign credit_other_allowed = false %}{% endif %}
+            {% include content_policy.html post=credit_other %}
+            {% assign credit_other_allowed = content_ads_allowed %}
           {% endif %}
           {% if credit_other_allowed %}<a href="{{ credit_other.url | relative_url }}" class="lynch-credit-related-link">{{ credit_other.title | escape }}</a>{% endif %}
         {% endif %}

@@ -8,34 +8,16 @@ title:
     {% assign home_ad_slot = site.data.manual_ads.homepage_card_slot | default: '' | strip %}
     <main class="site-main" data-post-feed{% if home_ad_slot != '' %} data-home-ad-slot="{{ home_ad_slot | escape }}"{% endif %}>
       {% for post in paginator.posts %}
-      <article class="hentry format-gallery has-post-thumbnail">
-          {% assign e_posts = site.data.content_flags.e_notice %}
-          {% assign url_slug = post.url | split: '/' | last %}
-          {% if e_posts contains post.slug or e_posts contains url_slug %}
-          <span class="content-rating-badge" role="img" aria-label="Mature content: nudity" title="Mature content">E</span>
-          {% endif %}
-        <header class="entry-header">
-          {% assign feature = site.data.featured[post.slug] %}
-          <a class="post-thumbnail" href="{{ post.url | relative_url }}">
-            {% if feature %}
-            {% assign cover_prioritized = false %}
-            {% if forloop.index <= 3 and page.url == '/' %}{% assign cover_prioritized = true %}{% endif %}
-            {% include optimized_cover.html post=post priority=cover_prioritized %}
-            {% endif %}
-          </a>
-        </header>
-        <div class="card-copy">
-          <h2 class="entry-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-        {% assign card_excerpt = site.data.card_previews[post.slug] %}
-          {% if card_excerpt != blank %}<div class="entry-summary"><p>{{ card_excerpt | escape }} <a class="more-link" href="{{ post.url | relative_url }}">View gallery</a></p></div>{% endif %}
-        </div>
-      </article>
+      {% assign cover_prioritized = false %}
+      {% if forloop.index <= 3 and page.url == '/' %}{% assign cover_prioritized = true %}{% endif %}
+      {% include post_card.html post=post priority=cover_prioritized %}
       {% assign ad_interval = forloop.index | modulo: 6 %}
       {% if home_ad_slot != '' and ad_interval == 0 %}
         {% include home_grid_ad.html slot=home_ad_slot %}
       {% endif %}
       {% endfor %}
     </main>
+    <template id="home-grid-ad-template">{% include home_grid_ad.html slot=home_ad_slot %}</template>
     {% if paginator.next_page %}
     <div class="older-posts-wrap">
       <a class="older-posts-link" href="{{ paginator.next_page_path | relative_url }}">OLDER POSTS</a>
