@@ -458,21 +458,30 @@ alpine-compound:
     - url: "https://bylynch.com/2017/01/04/alpine-compound/"
   schema_type: "MusicGroup"
 pedro-deniro:
-  name: "Pedro Deniro"
-  role: "Portrait subject"
-  verified_on: "2026-10-26"
-  verification: "archive-credit"
+  name: "iRealPedro"
+  role: "Event producer & promoter"
+  role_is_occupation: true
+  alternate_names:
+    - "Shaquille Blake"
+    - "Pedro Deniro"
+    - "Pedrito"
+  profile_url: "https://x.com/iRealPedro"
+  verified_on: "2026-11-08"
+  verification: "public-profile"
   sources:
+    - url: "https://www.jamaicaobserver.com/2022/06/28/promoters-give/"
+    - url: "https://islandgrillstories.wordpress.com/2014/04/02/island-grill-refreshaah-fan-photos-irealpedro/"
     - url: "https://bylynch.com/2017/01/07/boaty-ft-pedro-deniro/"
-  search_query: "Pedro Deniro byLYNCH"
 raj:
-  name: "Raj"
+  name: "Saraj Dunstan"
   role: "Portrait subject"
-  verified_on: "2026-10-26"
-  verification: "archive-credit"
+  alternate_names:
+    - "Raj"
+  verified_on: "2026-11-08"
+  verification: "owner-confirmed"
   sources:
     - url: "https://bylynch.com/2017/01/09/raj-the-pretty-dress/"
-  search_query: "Raj byLYNCH"
+  search_query: "Saraj Dunstan"
 kone:
   name: "Kone"
   role: "Musician & guitarist"

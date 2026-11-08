@@ -11,7 +11,7 @@ tags:
   - "series"
 featured_people:
   - raj
-seo_description: "Raj & The Pretty Dress: Raj. Portraits and visual stories from the byLYNCH archive."
+seo_description: "Raj & The Pretty Dress: Saraj Dunstan. Portraits and visual stories from the byLYNCH archive."
 ---
 <figure class="wp-block-image size-large"><img src="/assets/uploads/2017/01/img_5676.jpg" alt="img_5676" class="wp-image-1041"  loading="lazy" decoding="async" width="1920" height="1280" /></figure>
 
